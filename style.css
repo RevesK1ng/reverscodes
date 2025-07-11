@@ -1,4 +1,4 @@
-/* Base Styles */
+/* === Base Styles === */
 *,
 *::before,
 *::after {
@@ -17,7 +17,8 @@ body {
   margin: 0 auto;
   padding: 1rem 0;
 }
-/* Side Accent Bars */
+
+/* === Accent Bars === */
 body::before,
 body::after {
   content: '';
@@ -25,92 +26,43 @@ body::after {
   top: 0;
   width: 6px;
   height: 100%;
-  background: #cccccc; /* Silver tone */
+  background: #ccc;
   z-index: -1;
 }
-body::before {
-  left: 0;
-}
-body::after {
-  right: 0;
-}
-/* Legal Sections */
-.legal-section {
-  font-size: 0.8rem;
-  color: #aaa;
-  background: #111;
-  border: 1px solid #444;
-  border-radius: 4px;
-  padding: 1rem;
-  margin: 2rem 0;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
-}
-.legal-section {
-  font-size: 0.8rem;
-  color: #aaa;
-  background: #111;
-  border: 1px solid #444;
-  border-radius: 4px;
-  padding: 1rem;
-  margin: 2rem auto;
-  max-width: 720px;         /* Keeps it comfortably narrow */
-  text-align: left;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
-}
+body::before { left: 0; }
+body::after { right: 0; }
 
-/* Navigation Bar */
-/* Top Navigation Styling */
+/* === Navigation === */
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 0;
+  justify-content: center;
+  gap: 1rem;
   padding: 0;
   margin: 1rem 0;
-  justify-content: center;
 }
-
 .site-nav li {
-  border-right: 1px solid #8b23b8; /* Purple divider line */
+  border-right: 1px solid #8b23b8;
 }
-
 .site-nav li:last-child {
   border-right: none;
 }
-
 .site-nav a {
-  display: block;
-  color: #fff;
-  font-weight: bold;
-  font-family: 'Orbitron', sans-serif;
+  color: #eee;
   text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
   padding: 0.6rem 1rem;
-  transition: all 0.3s ease;
+  border-radius: 4px;
   text-shadow: 0 0 6px #8b23b8;
+  transition: background 0.3s, box-shadow 0.3s;
 }
-
 .site-nav a:hover {
   background: #1a1a1a;
   box-shadow: 0 0 8px #8b23b8;
 }
 
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 1rem 0;
-}
-.site-nav a {
-  color: #eee;
-  text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-}
-.site-nav a:hover {
-  background: #222;
-}
-
-/* Header */
+/* === Header === */
 .site-header {
   background: #111;
   border-bottom: 1px solid #333;
@@ -128,31 +80,27 @@ body::after {
 .site-title {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px #8b23b8;
+  color: #fff;
   letter-spacing: 2px;
+  text-shadow: 0 0 10px #8b23b8;
 }
 .last-updated {
   font-size: 0.9rem;
   color: #aaa;
 }
 
-/* Section Headings */
-.overview h2,
-.codes-section h2,
-.redeem-section h2,
-.common-issues h2,
-.gallery h2 {
+/* === Section Headings === */
+section h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
   color: #fff;
-  text-shadow: 0 0 8px #8b23b8;
-  border-left: 4px solid #8b23b8;
-  padding-left: 1rem;
   margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #8b23b8;
+  text-shadow: 0 0 8px #8b23b8;
 }
 
-/* Advertisements */
+/* === Ads === */
 .ad {
   background: #222;
   color: #888;
@@ -162,24 +110,7 @@ body::after {
   font-size: 0.9rem;
 }
 
-/* Overview Section */
-.overview p {
-  margin-bottom: 1rem;
-}
-.screenshot-wrapper {
-  text-align: center;
-}
-.screenshot {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #444;
-}
-.screenshot-caption {
-  font-size: 0.8rem;
-  color: #777;
-}
-
-/* Codes Section */
+/* === Code List === */
 .codes-list {
   list-style: none;
   padding: 0;
@@ -194,99 +125,106 @@ body::after {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
-.codes-list li span.code {
+.codes-list span.code {
   font-family: monospace;
   color: #8b23b8;
 }
-.codes-list li button.copy-btn {
+.copy-btn {
   background: #8b23b8;
   color: #fff;
   border: none;
   padding: 0.3rem 0.6rem;
-  cursor: pointer;
   border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
 }
-.codes-list li button.copy-btn:hover {
+.copy-btn:hover {
   background: #a44ecf;
   box-shadow: 0 0 8px #a44ecf;
 }
 
-/* Expired Codes Message */
-.empty-message {
-  color: #bbb;
-  background: #111;
-  padding: 1rem;
-  border: 1px solid #333;
-  border-radius: 4px;
-  font-style: italic;
-}
-
-/* Redeem Section */
-.redeem-section ol {
-  padding-left: 1.2rem;
-}
-.redeem-section li {
-  margin-bottom: 0.5rem;
-}
-
-/* Common Issues */
-.common-issues ul {
-  padding-left: 1.2rem;
-}
-.common-issues li {
-  margin-bottom: 0.5rem;
-}
-
-/* Gallery Section */
-.gallery-img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #444;
-  border-radius: 4px;
-}
-.gallery .screenshot-caption {
-  font-size: 0.8rem;
-  color: #777;
+/* === Images & Screenshots === */
+.screenshot-wrapper {
   text-align: center;
-  margin-top: 0.5rem;
 }
 .screenshot {
   max-width: 100%;
   height: auto;
   border: 1px solid #444;
-  box-shadow: 0 0 15px rgba(139, 35, 184, 0.4); /* Purple glow */
+  box-shadow: 0 0 15px rgba(139, 35, 184, 0.4);
   transition: box-shadow 0.3s ease;
 }
 .screenshot:hover {
-  box-shadow: 0 0 20px rgba(139, 35, 184, 0.6); /* Slightly stronger on hover */
+  box-shadow: 0 0 20px rgba(139, 35, 184, 0.6);
 }
-/* News Section */
-.news-section h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.8rem;
-  color: #fff;
-  text-shadow: 0 0 8px #8b23b8;
-  border-left: 4px solid #8b23b8;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
+.screenshot-caption {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* === Legal Sections === */
+.legal-section {
+  font-size: 0.75rem;              /* Smaller text */
+  color: #999;                     /* Softer gray */
+  background: #0a0a0a;             /* Slightly darker than main background */
+  border: none;                    /* No visual border */
+  padding: 1rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 640px;
+  text-align: left;
+  line-height: 1.6;
+  box-shadow: none;
+  font-weight: normal;
+}
+.legal-section h2 {
+  font-size: 1rem;                 /* Smaller heading */
+  color: #bbb;
+  font-weight: normal;
+  text-shadow: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+
+/* === Redeem / Issues / News Lists === */
+.redeem-section ol,
+.common-issues ul {
+  padding-left: 1.2rem;
+}
+.redeem-section li,
+.common-issues li {
+  margin-bottom: 0.5rem;
 }
 .news-item {
   background: #111;
   border: 1px solid #333;
+  border-radius: 4px;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 4px;
 }
 .news-item h3 {
   font-size: 1.1rem;
   color: #8b23b8;
-  margin-bottom: 0.5rem;
 }
 .news-item p {
   font-size: 0.95rem;
   color: #ddd;
 }
-/* Mobile Toolbar */
+
+/* === Expired Message === */
+.empty-message {
+  background: #111;
+  border: 1px solid #333;
+  color: #bbb;
+  border-radius: 4px;
+  font-style: italic;
+  padding: 1rem;
+}
+
+/* === Mobile Toolbar === */
 .mobile-toolbar {
   display: none;
   position: fixed;
@@ -301,25 +239,33 @@ body::after {
   flex: 1;
   text-align: center;
   padding: 0.8rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
   font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
   text-shadow: 0 0 4px #8b23b8;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 .mobile-toolbar a:hover {
   background: #1a1a1a;
 }
-
-/* Show toolbar on small screens */
 @media (max-width: 600px) {
   .mobile-toolbar {
     display: flex;
   }
+  .site-title {
+    font-size: 2rem;
+  }
+  .codes-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .copy-btn {
+    margin-top: 0.5rem;
+  }
 }
 
-/* Footer */
+/* === Footer === */
 .site-footer {
   background: #111;
   text-align: center;
@@ -332,7 +278,7 @@ body::after {
   color: #777;
 }
 
-/* Scroll Fade Animation */
+/* === Fade-In Animation === */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -341,18 +287,4 @@ body::after {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .site-title {
-    font-size: 2rem;
-  }
-  .codes-list li {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .codes-list li button.copy-btn {
-    margin-top: 0.5rem;
-  }
 }
