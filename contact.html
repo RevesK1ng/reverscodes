@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ReversCodes Hub</title>
+    <meta name="description" content="Contact ReversCodes Hub - Get in touch with us for support, feedback, or questions.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <img src="images/RCNEWLOLGO.png" alt="ReversCodes" class="logo-img">
+                <span class="logo-text">ReversCodes</span>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Back to Hub</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="contact-content">
+                <h1>Contact Us</h1>
+                <p class="contact-subtitle">Get in touch with the ReversCodes team</p>
+
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <h2>Send us a Message</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">Name *</label>
+                                <input type="text" id="contactName" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail">Email *</label>
+                                <input type="email" id="contactEmail" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactSubject">Subject *</label>
+                                <select id="contactSubject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="legal">Legal Matter</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, we're here to help.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p>contact@reverscodes.com</p>
+                                    <p>We typically respond within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">📺</div>
+                                <div class="contact-details">
+                                    <h3>YouTube</h3>
+                                    <p>Watch our content</p>
+                                    <a href="https://youtube.com/@reverscodes" target="_blank" rel="noopener" class="contact-link">@reverscodes</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-faq">
+                            <h3>Frequently Asked Questions</h3>
+                            <div class="faq-item">
+                                <h4>How do I report a broken link?</h4>
+                                <p>Use the contact form above and select "Technical Support" as the subject. Include the specific link and we'll fix it as soon as possible.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h4>Can I suggest a new game to add?</h4>
+                                <p>Absolutely! Use the contact form and select "Feedback" as the subject. We're always looking to expand our game coverage.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h4>How do I remove my comment?</h4>
+                                <p>You can delete your own comments directly from the community section, or contact us if you need assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 ReversCodes. All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
+                <p>Designed by <strong>ReversCodes</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span class="notification-text"></span>
+        <button class="notification-close" aria-label="Close notification">&times;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Theme management
+        let currentTheme = localStorage.getItem('theme') || 'light';
+        
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            currentTheme = theme;
+            localStorage.setItem('theme', theme);
+            
+            const themeIcon = document.querySelector('.theme-icon');
+            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+        
+        function toggleTheme() {
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+        
+        // Contact form handling
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Store submission in localStorage (for demo purposes)
+            const submissions = JSON.parse(localStorage.getItem('submissions') || '[]');
+            const submission = {
+                id: Date.now(),
+                name: data.name,
+                email: data.email,
+                subject: data.subject,
+                message: data.message,
+                date: new Date().toISOString()
+            };
+            
+            submissions.push(submission);
+            localStorage.setItem('submissions', JSON.stringify(submissions));
+            
+            // Show success message
+            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+            
+            // Reset form
+            e.target.reset();
+        }
+        
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            const notificationText = notification.querySelector('.notification-text');
+            
+            notificationText.textContent = message;
+            notification.className = `notification show ${type}`;
+            
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+        
+        function hideNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('show');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setTheme(currentTheme);
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('contactForm').addEventListener('submit', handleContactSubmit);
+            document.querySelector('.notification-close').addEventListener('click', hideNotification);
+        });
+    </script>
+</body>
+</html> 
