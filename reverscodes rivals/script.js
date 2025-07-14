@@ -1,47 +1,22 @@
 // === ENHANCED CODE DATA STRUCTURE ===
 const activeCodes = [
-  {
-    code: 'VERYHIGHLIKEB',
-    reward: 'Gems, Capsules, Trait Burners (new)',
-    expires: '2025-07-30',
-    isNew: true,
-    category: 'gems'
-  },
-  {
-    code: 'ONEEIGHTYFIVELIKES',
-    reward: 'Gems, Capsules, Trait Burners',
-    expires: '2025-07-25',
-    isNew: false,
-    category: 'gems'
-  },
-  {
-    code: 'FORTYFIVELIKES',
-    reward: 'Gems, Capsules, Trait Burners',
-    expires: '2025-07-20',
-    isNew: false,
-    category: 'gems'
-  },
-  {
-    code: 'somanylikes',
-    reward: 'Gems, Basic Capsules, Trait Burners, Skill Orb Bags',
-    expires: '2025-07-28',
-    isNew: true,
-    category: 'gems'
-  },
-  {
-    code: 'AFIRSTTIME3001',
-    reward: '500 Gems, 5 Basic Capsules, 20 Trait Burners, 2 Skill Orb Bags',
-    expires: '2025-08-01',
-    isNew: false,
-    category: 'gems'
-  },
-  {
-    code: 'FREENIMBUSMOUNT',
-    reward: 'Nimbus Mount (Requires level 10)',
-    expires: '2025-08-05',
-    isNew: true,
-    category: 'mounts'
-  }
+  { code: 'COMMUNITY15', reward: 'x1 Community Wrap (Random Weapon)', expires: '', isNew: true, category: 'wrap' },
+  { code: 'COMMUNITY14', reward: 'x1 Community Wrap (Random Weapon)', expires: '', isNew: false, category: 'wrap' },
+  { code: 'UPDATE 12 PATCH', reward: '5 Keys (click “Enter Code” in patch notes)', expires: '', isNew: false, category: 'keys' },
+  { code: '5B_VISITS_WHATTTTTT', reward: '5B Visits Finisher (All Weapons)', expires: '', isNew: false, category: 'finisher' },
+  { code: 'COMMUNITY13', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY12', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY11', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY10', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY9', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY8', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'THANKYOU_1BVISITS!', reward: '1B Visits Wrap (All Weapons)', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY7', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY6', reward: 'x1 Community Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY5', reward: 'x1 Community Weapon Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: 'COMMUNITY4', reward: 'x1 Community Weapon Wrap', expires: '', isNew: false, category: 'wrap' },
+  { code: '100MVisits', reward: '100M Visits Charm (All Weapons)', expires: '', isNew: false, category: 'charm' },
+  { code: 'BONUS', reward: 'x1 Key', expires: '', isNew: false, category: 'keys' }
 ];
 
 // === TOAST NOTIFICATION SYSTEM ===
@@ -651,7 +626,13 @@ function highlightNav() {
 function setLastUpdated() {
   const el = document.getElementById('lastUpdated');
   if (el) {
-    el.textContent = 'July 15, 2025';
+    const today = new Date();
+    const options = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+    el.textContent = today.toLocaleDateString('en-US', options);
   }
 }
 
@@ -952,7 +933,12 @@ function setupComments() {
   // Handle form submission
   commentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
+    // Confirmation dialog
+    if (!confirm('Are you sure you would like to post this?')) {
+      return;
+    }
+
     const nickname = nicknameInput.value.trim();
     const comment = commentInput.value.trim();
     

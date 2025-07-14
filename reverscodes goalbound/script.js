@@ -651,7 +651,13 @@ function highlightNav() {
 function setLastUpdated() {
   const el = document.getElementById('lastUpdated');
   if (el) {
-    el.textContent = 'July 15, 2025';
+    const today = new Date();
+    const options = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+    el.textContent = today.toLocaleDateString('en-US', options);
   }
 }
 
@@ -952,7 +958,12 @@ function setupComments() {
   // Handle form submission
   commentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
+    // Confirmation dialog
+    if (!confirm('Are you sure you would like to post this?')) {
+      return;
+    }
+
     const nickname = nicknameInput.value.trim();
     const comment = commentInput.value.trim();
     

@@ -1,10 +1,10 @@
-# ReversCodes ASTDX Website
+# ReversCodes RIVALS Website
 
-A comprehensive website for All Star Tower Defense X codes, guides, and community features.
+A comprehensive website for RIVALS (Roblox FPS) codes, guides, and community features.
 
 ## Features
 
-- 🎮 **Active ASTDX Codes** - Real-time code updates with copy functionality
+- 🎮 **Active RIVALS Codes** - Real-time code updates with copy functionality
 - 📱 **Responsive Design** - Works perfectly on all devices
 - 🌙 **Dark/Light Theme** - User preference toggle
 - 💬 **Server-Side Comments** - Real-time community comments with moderation
@@ -15,7 +15,7 @@ A comprehensive website for All Star Tower Defense X codes, guides, and communit
 
 ## Server-Side Comment System
 
-The website now features a real-time comment system powered by Netlify Functions and MongoDB.
+The website features a real-time comment system powered by Netlify Functions and MongoDB.
 
 ### Features:
 - **Real-time comments** - All users see the same comments

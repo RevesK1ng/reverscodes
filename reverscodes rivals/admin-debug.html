@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel Debug | ReversCodes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .admin-secret {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .admin-secret p {
+      color: #666;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .secret-input-container {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .secret-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .secret-input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    .unlock-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .unlock-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    .success {
+      background: #4CAF50;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    .error {
+      background: #f44336;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔧 Admin Panel Debug</h1>
+    <p>This is a test version to check if the password input works.</p>
+    
+    <div class="admin-secret">
+      <p>🔒 This page is restricted to administrators only.</p>
+      <p>If you're an admin, enter the secret key:</p>
+      <div class="secret-input-container">
+        <input type="password" id="secretKey" placeholder="Enter secret key" class="secret-input">
+        <button id="unlockBtn" class="unlock-btn">🔓 Unlock</button>
+      </div>
+    </div>
+    
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const SECRET_KEY = 'reverscodes2025';
+    
+    document.getElementById('unlockBtn').addEventListener('click', () => {
+      const secretKey = document.getElementById('secretKey').value;
+      const resultDiv = document.getElementById('result');
+      
+      if (secretKey === SECRET_KEY) {
+        resultDiv.innerHTML = '<div class="success">✅ Success! Admin access granted!</div>';
+        resultDiv.innerHTML += '<p>You can now go to the real admin panel at <a href="/admin.html">/admin.html</a></p>';
+      } else {
+        resultDiv.innerHTML = '<div class="error">❌ Invalid secret key!</div>';
+        document.getElementById('secretKey').value = '';
+      }
+    });
+
+    document.getElementById('secretKey').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        document.getElementById('unlockBtn').click();
+      }
+    });
+  </script>
+</body>
+</html> 

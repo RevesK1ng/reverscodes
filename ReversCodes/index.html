@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReversCodes Hub - Ultimate Roblox Gaming Portal</title>
+    <meta name="description" content="Your ultimate Roblox gaming hub with latest news, game codes, and community features. Stay updated with accurate Roblox news and find codes for your favorite games.">
+    <meta name="keywords" content="Roblox, gaming hub, game codes, ASTDX, Blox Fruits, news, community">
+    <meta name="author" content="ReversCodes">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reverscodes.com">
+    <meta property="og:title" content="ReversCodes Hub - Ultimate Roblox Gaming Portal">
+    <meta property="og:description" content="Your ultimate Roblox gaming hub with latest news, game codes, and community features.">
+    <meta property="og:image" content="https://reverscodes.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://reverscodes.com">
+    <meta property="twitter:title" content="ReversCodes Hub - Ultimate Roblox Gaming Portal">
+    <meta property="twitter:description" content="Your ultimate Roblox gaming hub with latest news, game codes, and community features.">
+    <meta property="twitter:image" content="https://reverscodes.com/images/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ReversCodes",
+        "url": "https://reverscodes.com",
+        "logo": "https://reverscodes.com/images/RCNEWLOLGO.png",
+        "description": "Ultimate Roblox gaming hub providing latest news, game codes, and community features.",
+        "sameAs": [
+            "https://twitter.com/reverscodes",
+            "https://youtube.com/@reverscodes",
+            "https://discord.gg/reverscodes"
+        ]
+    }
+    </script>
+</head>
+<body class="light-theme">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <img src="images/RCNEWLOLGO.png" alt="ReversCodes" class="loading-logo">
+            <div class="loading-spinner"></div>
+            <p>Loading ReversCodes Hub...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo" onclick="refreshPage()" style="cursor: pointer;">
+                <img src="images/RCNEWLOLGO.png" alt="ReversCodes" class="logo-img">
+                <span class="logo-text">ReversCodes</span>
+            </div>
+            
+            <nav class="nav">
+                <a href="#home" class="nav-link active" onclick="scrollToSection('home')">Home</a>
+                <a href="#news" class="nav-link" onclick="scrollToSection('news')">News</a>
+                <a href="#games" class="nav-link" onclick="scrollToSection('games')">Game Codes</a>
+                <a href="#community" class="nav-link" onclick="scrollToSection('community')">Community</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background with Logo and Vignette -->
+    <div class="background-container">
+        <div class="logo-background"></div>
+        <div class="vignette-overlay"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Related Content Sidebar -->
+        <div class="related-content-sidebar">
+            <div class="related-content-box">
+                <h3>Related Content</h3>
+                <div class="related-links">
+                    <a href="astdx/" class="related-link">
+                        <img src="images/astdxlogo.png" alt="ASTDX" class="related-link-img">
+                        <span>ASTDX Codes</span>
+                    </a>
+                    <a href="goalbound/" class="related-link">
+                        <img src="images/goalbound.png" alt="Goalbound" class="related-link-img">
+                        <span>Goalbound Codes</span>
+                    </a>
+                    <a href="rivals/" class="related-link">
+                        <img src="images/rivals.png" alt="Rivals" class="related-link-img">
+                        <span>Rivals Codes</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="roblox-question-box">
+                <h3>Do you play Roblox often?</h3>
+                <div class="question-options">
+                    <button class="option-btn" onclick="answerQuestion('yes')">Yes</button>
+                    <button class="option-btn" onclick="answerQuestion('sometimes')">Sometimes</button>
+                    <button class="option-btn" onclick="answerQuestion('no')">No</button>
+                </div>
+            </div>
+        </div>
+            <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to ReversCodes Hub</h1>
+                <p class="hero-subtitle">Your ultimate destination for Roblox gaming news, codes, and community</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">Daily</span>
+                        <span class="stat-label">Updates</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Latest</span>
+                        <span class="stat-label">News</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Trusted</span>
+                        <span class="stat-label">Sources</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('games')">
+                        Game Codes
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('news')">
+                        Latest News
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="images/Robloxlogo.png" alt="Roblox Gaming" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+        <!-- Latest News Section -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Roblox News</h2>
+                    <p class="section-subtitle">Stay updated with the most accurate and latest Roblox gaming news</p>
+                </div>
+                
+                <div class="news-grid">
+                    <article class="news-card featured">
+                        <div class="news-image">
+                            <img src="images/TheHatch.png" alt="The Hatch 2025 Event" class="news-img">
+                            <div class="news-category">Major Event</div>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">The Hatch 2025 Event - Roblox's Biggest Egg Hunt Returns</h3>
+                            <p class="news-date">July 2-12, 2025</p>
+                            <p class="news-excerpt">
+                                Roblox's biggest egg-hunt returns from July 2 to July 12, 2025, spanning 400+ games across 10 elemental biomes. 
+                                Players collect 100 unique eggs to unlock exclusive avatar items and participate in a new RNG‐based system for randomized drops.
+                            </p>
+                            <button class="btn btn-outline" onclick="expandNews(this)">
+                                Read More
+                            </button>
+                            <div class="news-details" style="display: none;">
+                                <h4>Event Details:</h4>
+                                <ul>
+                                    <li>400+ games participating across 10 elemental biomes</li>
+                                    <li>100 unique eggs to collect</li>
+                                    <li>Exclusive avatar items and rewards</li>
+                                    <li>New RNG-based system for randomized drops</li>
+                                    <li>Limited time event - don't miss out!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="images/astdxlogo.png" alt="ASTDX Major Update" class="news-img">
+                            <div class="news-category">Game Update</div>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">ASTDX Major Update - New Mythic Units & Social Rewards</h3>
+                            <p class="news-date">July 12, 2025</p>
+                            <p class="news-excerpt">
+                                All Star Tower Defense X dropped a major update with new Mythic units, balance changes, 
+                                and social-reward codes for gems, trait burners, and summon tickets.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="images/dresstoimpress.png" alt="Dress to Impress Twitch Collab" class="news-img">
+                            <div class="news-category">Collaboration</div>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">Dress to Impress Twitch Collab - Cyberpunk Wings Code</h3>
+                            <p class="news-date">Until July 28, 2025</p>
+                            <p class="news-excerpt">
+                                DTI offers free outfits through promo codes. The latest Twitch collab code for Cyberpunk Wings 
+                                runs through July 28, 2025, and requires watching any creator's DTI stream on Twitch.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="images/jujutsuinfinite.png" alt="Jujutsu Infinite July Codes" class="news-img">
+                            <div class="news-category">Game Codes</div>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">Jujutsu Infinite - July Codes Available Now</h3>
+                            <p class="news-date">July 2025</p>
+                            <p class="news-excerpt">
+                                Inspired by Jujutsu Kaisen, this RPG grants up to 100 free spins via July codes like 
+                                'SOUL_REWORK_OUT' and 'SOUL_20K'. Codes expire at month's end.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="images/growagarden.png" alt="Grow a Garden Summer Update" class="news-img">
+                            <div class="news-category">Platform Update</div>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">Grow a Garden - Summer Update Breaks Records</h3>
+                            <p class="news-date">July 12, 2025</p>
+                            <p class="news-excerpt">
+                                Massive "Summer Update" launched just before July 12, pushing concurrent users to a 
+                                record-breaking 21.4 million - a historic milestone for the Roblox platform.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Codes Section -->
+        <section id="games" class="games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Game Codes</h2>
+                    <p class="section-subtitle">Find codes for your favorite Roblox games from trusted sources</p>
+                </div>
+                
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-header">
+                            <img src="images/astdxlogo.png" alt="All Star Tower Defense X" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">All Star Tower Defense X</h3>
+                                <span class="game-status active">Active</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Defend your base with powerful anime characters in this strategic tower defense game</p>
+                        <div class="game-links">
+                            <a href="astdx/" class="btn btn-primary">
+                                View Codes
+                            </a>
+                            <a href="https://www.pcgamesn.com/all-star-tower-defense-x/codes" class="btn btn-secondary" target="_blank" rel="noopener">
+                                PCGamesN
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-header">
+                            <img src="images/bloxfruits.png" alt="Blox Fruits" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">Blox Fruits</h3>
+                                <span class="game-status active">Active</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Master the seas with devil fruit powers in this epic adventure game</p>
+                        <div class="game-links">
+                            <a href="https://beebom.com/roblox-games-codes-list/" class="btn btn-primary" target="_blank" rel="noopener">
+                                Beebom
+                            </a>
+                            <a href="https://www.gamertweak.com/roblox-codes" class="btn btn-secondary" target="_blank" rel="noopener">
+                                GamerTweak
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-header">
+                            <img src="images/dresstoimpress.png" alt="Dress to Impress" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">Dress to Impress</h3>
+                                <span class="game-status active">Active</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Create stunning outfits and participate in fashion competitions</p>
+                        <div class="game-links">
+                            <a href="https://www.gamespot.com/articles/dress-to-impress-codes/1100-6533105/" class="btn btn-primary" target="_blank" rel="noopener">
+                                GameSpot
+                            </a>
+                            <a href="https://www.pockettactics.com/roblox/codes" class="btn btn-secondary" target="_blank" rel="noopener">
+                                Pocket Tactics
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-header">
+                            <img src="images/jujutsuinfinite.png" alt="Jujutsu Infinite" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">Jujutsu Infinite</h3>
+                                <span class="game-status active">Active</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Inspired by Jujutsu Kaisen, this RPG offers unique abilities and combat</p>
+                        <div class="game-links">
+                            <a href="https://www.analyticsinsight.net/games/jujutsu-infinite-codes-for-july-2025" class="btn btn-primary" target="_blank" rel="noopener">
+                                Analytics Insight
+                            </a>
+                            <a href="https://beebom.com/roblox-games-codes-list/" class="btn btn-secondary" target="_blank" rel="noopener">
+                                Beebom
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-header">
+                            <img src="images/growagarden.png" alt="Grow a Garden" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">Grow a Garden</h3>
+                                <span class="game-status inactive">No Active Codes</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Despite record player counts, currently has no active promo codes</p>
+                        <div class="game-links">
+                            <a href="https://gameranx.com/updates/id/543893/article/are-there-roblox-grow-a-garden-july-2025-codes/" class="btn btn-primary" target="_blank" rel="noopener">
+                                Gameranx
+                            </a>
+                            <a href="https://www.pockettactics.com/roblox/codes" class="btn btn-secondary" target="_blank" rel="noopener">
+                                Pocket Tactics
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-header">
+                            <img src="images/Robloxlogo.png" alt="All Roblox Games" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">All Roblox Games</h3>
+                                <span class="game-status active">Active</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Comprehensive list of codes for all top Roblox experiences</p>
+                        <div class="game-links">
+                            <a href="https://beebom.com/roblox-games-codes-list/" class="btn btn-primary" target="_blank" rel="noopener">
+                                Beebom
+                            </a>
+                            <a href="https://www.gamertweak.com/roblox-codes" class="btn btn-secondary" target="_blank" rel="noopener">
+                                GamerTweak
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Community</h2>
+                    <p class="section-subtitle">Join the discussion and share your thoughts with fellow gamers</p>
+                </div>
+                
+                <div class="community-content">
+                    <div class="comment-form-container">
+                        <h3>Leave a Comment</h3>
+                        <form class="comment-form" id="commentForm">
+                            <div class="form-group">
+                                <input type="email" id="commentEmail" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="commentName" placeholder="Your Nickname" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="commentText" placeholder="Share your thoughts..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post Comment</button>
+                        </form>
+                    </div>
+                    
+                    <div class="comments-container">
+                        <h3>Recent Comments</h3>
+                        <div class="comments-list" id="commentsList">
+                            <!-- Comments will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/RCNEWLOLGO.png" alt="ReversCodes" class="footer-logo-img">
+                        <span class="footer-logo-text">ReversCodes</span>
+                    </div>
+                    <p class="footer-description">
+                        Your trusted source for Roblox gaming news, codes, and community. 
+                        Stay connected to the latest updates and gaming information.
+                    </p>
+                    <div class="contact-info">
+                        <p class="contact-email">
+                            <strong>Contact:</strong> 
+                            <a href="mailto:contact@reverscodes.com">contact@reverscodes.com</a>
+                        </p>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:contact@reverscodes.com" class="social-link" aria-label="Email">
+                            <span class="social-icon">📧</span>
+                        </a>
+                        <a href="https://youtube.com/@reverscodes" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
+                            <span class="social-icon">📺</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                        <li><a href="#news" onclick="scrollToSection('news')">News</a></li>
+                        <li><a href="#games" onclick="scrollToSection('games')">Game Codes</a></li>
+                        <li><a href="#community" onclick="scrollToSection('community')">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 reverscodes.com - All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
+                <p>Designed by <strong>ReversCodes</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span class="back-to-top-icon">↑</span>
+    </button>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span class="notification-text"></span>
+        <button class="notification-close" aria-label="Close notification">&times;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+    "name": "ReversCodes Hub - Ultimate Roblox Code Portal",
+    "short_name": "ReversCodes",
+    "description": "Your ultimate destination for Roblox codes, updates, and gaming news. Get the latest codes for ASTDX, Blox Fruits, Shindo Life, Anime Adventures and more.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0F0F0F",
+    "theme_color": "#8B5CF6",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "images/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "images/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "images/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["games", "entertainment", "utilities"],
+    "lang": "en",
+    "dir": "ltr",
+    "scope": "/",
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "screenshots": [
+        {
+            "src": "images/screenshot-desktop.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "ReversCodes Hub Desktop View"
+        },
+        {
+            "src": "images/screenshot-mobile.png",
+            "sizes": "390x844",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "ReversCodes Hub Mobile View"
+        }
+    ]
+} 
