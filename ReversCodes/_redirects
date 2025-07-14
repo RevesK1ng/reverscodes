@@ -1,0 +1,12 @@
+# Redirects for ReversCodes subpages
+/astdx/* /astdx/index.html 200
+/goalbound/* /goalbound/index.html 200
+/rivals/* /rivals/index.html 200
+
+# Handle trailing slashes
+/astdx /astdx/ 301
+/goalbound /goalbound/ 301
+/rivals /rivals/ 301
+
+# Fallback for SPA routing (if needed)
+/* /index.html 200 
