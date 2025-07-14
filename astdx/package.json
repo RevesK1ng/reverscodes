@@ -1,0 +1,20 @@
+{
+  "name": "reverscodes-website",
+  "version": "1.0.0",
+  "description": "ReversCodes ASTDX website with server-side comments",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required'",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "keywords": ["roblox", "astdx", "codes", "gaming"],
+  "author": "Samuel",
+  "license": "MIT"
+} 
