@@ -1,0 +1,17 @@
+body { font-family: 'Inter', Arial, sans-serif; background: #f8fafc; color: #222; margin: 0; }
+.site-header { background: #fff; border-bottom: 2px solid #e2e8f0; padding: 1rem 0; }
+.logo-title { display: flex; align-items: center; gap: 1rem; }
+.logo { width: 40px; height: 40px; border-radius: 8px; }
+.site-title { font-family: 'Orbitron', sans-serif; font-size: 2rem; color: #4f46e5; margin: 0; }
+.back-link { color: #6366f1; text-decoration: none; font-weight: 600; margin-right: 2rem; }
+.back-link:hover { text-decoration: underline; }
+.container { max-width: 700px; margin: 0 auto; padding: 0 1rem; }
+.codes-section, .redeem-section { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #e0e7ef; margin: 2rem 0; padding: 2rem; }
+.codes-section h2, .redeem-section h2 { color: #4f46e5; font-family: 'Orbitron', sans-serif; }
+.codes-list { list-style: none; padding: 0; margin: 1rem 0; }
+.code-item { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; }
+.code { font-family: 'Orbitron', monospace; font-weight: bold; color: #10b981; font-size: 1.1rem; }
+.reward-info { color: #64748b; font-size: 0.95rem; }
+.empty-message { color: #a1a1aa; font-style: italic; margin-top: 1rem; }
+.redeem-section ol { padding-left: 1.5rem; }
+.redeem-section li { margin-bottom: 0.5rem; } 
