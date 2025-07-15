@@ -810,26 +810,81 @@ function copyCode(code) {
     });
 }
 
-// Copy All Codes Functions
-function copyAllASTDX() {
-    const codes = ['SOCIALREWARDS', 'THANKYOU', 'UPDATE', 'RELEASE'];
-    copyAllCodes(codes, 'ASTDX');
-}
+// Copy all codes functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // ASTDX Copy All
+    const copyAllASTDX = document.getElementById('copyAllASTDX');
+    if (copyAllASTDX) {
+        copyAllASTDX.addEventListener('click', function() {
+            const codes = [
+                'THREEHUNDREDTHOUSANDPLAYERS',
+                'THANKYOUFORSUPPORT',
+                'UPD1',
+                'LIKEF5',
+                'VERYHIGHLIKEB',
+                'ONEEIGHTYFIVELIKES',
+                'FORTYFIVELIKES',
+                'somanylikes',
+                'AFIRSTTIME3001',
+                'FREENIMBUSMOUNT'
+            ];
+            copyCodesToClipboard(codes, 'ASTDX codes copied to clipboard!');
+        });
+    }
 
-function copyAllGoalbound() {
-    const codes = ['ITOSHI', 'EGOSOONIPROMISE', 'SRY4EGO', '200KLIKES', '300KLIKES', 'IMETGEN', 'UPDATE1SOON', 'SRYFORBUGS', 'RELEASE', 'DELAYBOUND'];
-    copyAllCodes(codes, 'Goalbound');
-}
+    // Goalbound Copy All
+    const copyAllGoalbound = document.getElementById('copyAllGoalbound');
+    if (copyAllGoalbound) {
+        copyAllGoalbound.addEventListener('click', function() {
+            const codes = [
+                'ITOSHI',
+                'EGOSOONIPROMISE',
+                'SRY4EGO',
+                'IMETGEN',
+                '300KLIKES',
+                '200KLIKES',
+                'UPDATE1SOON',
+                'SRYFORBUGS',
+                'RELEASE',
+                'DELAYBOUND'
+            ];
+            copyCodesToClipboard(codes, 'Goalbound codes copied to clipboard!');
+        });
+    }
 
-function copyAllRivals() {
-    const codes = ['COMMUNITY15', 'COMMUNITY14', '5B_VISITS_WHATTTTTT', 'COMMUNITY13', 'COMMUNITY12', 'COMMUNITY11', 'REWARD53', 'COMMUNITY10', 'REWARD52', 'REWARD49'];
-    copyAllCodes(codes, 'Rivals');
-}
+    // Rivals Copy All
+    const copyAllRivals = document.getElementById('copyAllRivals');
+    if (copyAllRivals) {
+        copyAllRivals.addEventListener('click', function() {
+            const codes = [
+                'COMMUNITY15',
+                'COMMUNITY14',
+                'COMMUNITY13',
+                'COMMUNITY12',
+                'COMMUNITY11',
+                'COMMUNITY10',
+                'COMMUNITY9',
+                'COMMUNITY8',
+                '5B_VISITS_WHATTTTTT',
+                'REWARD53',
+                'REWARD52',
+                'REWARD49',
+                'REWARD47',
+                'REWARD46',
+                'roblox_rtc',
+                'THANKYOU_1BVISITS!',
+                'BONUS'
+            ];
+            copyCodesToClipboard(codes, 'Rivals codes copied to clipboard!');
+        });
+    }
+});
 
-function copyAllCodes(codes, gameName) {
+// Function to copy multiple codes to clipboard
+function copyCodesToClipboard(codes, message) {
     const codesText = codes.join('\n');
     navigator.clipboard.writeText(codesText).then(function() {
-        showNotification(`All ${gameName} codes copied to clipboard!`, 'success');
+        showNotification(message, 'success');
         
         // Update button text temporarily
         const button = event.target;
@@ -846,28 +901,6 @@ function copyAllCodes(codes, gameName) {
         showNotification('Failed to copy codes. Please try again.', 'error');
     });
 }
-
-// Initialize copy all buttons
-document.addEventListener('DOMContentLoaded', function() {
-    const copyAllASTDXBtn = document.getElementById('copyAllASTDX');
-    const copyAllGoalboundBtn = document.getElementById('copyAllGoalbound');
-    const copyAllRivalsBtn = document.getElementById('copyAllRivals');
-    
-    if (copyAllASTDXBtn) {
-        copyAllASTDXBtn.addEventListener('click', copyAllASTDX);
-    }
-    if (copyAllGoalboundBtn) {
-        copyAllGoalboundBtn.addEventListener('click', copyAllGoalbound);
-    }
-    if (copyAllRivalsBtn) {
-        copyAllRivalsBtn.addEventListener('click', copyAllRivals);
-    }
-});
-
-// Export the new functions
-window.copyAllASTDX = copyAllASTDX;
-window.copyAllGoalbound = copyAllGoalbound;
-window.copyAllRivals = copyAllRivals;
 
 // Game Page Navigation Functions
 function showGamePage(pageId) {
