@@ -787,3 +787,158 @@ window.clearData = clearData;
 window.showNotification = showNotification;
 window.answerQuestion = answerQuestion;
 window.closeAdminPanel = closeAdminPanel;
+window.copyCode = copyCode;
+
+// Copy Code Function
+function copyCode(code) {
+    navigator.clipboard.writeText(code).then(function() {
+        showNotification(`Code "${code}" copied to clipboard!`, 'success');
+        
+        // Update button text temporarily
+        const button = event.target;
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        button.style.background = 'var(--success-color)';
+        
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.background = '';
+        }, 1500);
+    }).catch(function(err) {
+        console.error('Failed to copy code: ', err);
+        showNotification('Failed to copy code. Please try again.', 'error');
+    });
+}
+
+// Copy All Codes Functions
+function copyAllASTDX() {
+    const codes = ['SOCIALREWARDS', 'THANKYOU', 'UPDATE', 'RELEASE'];
+    copyAllCodes(codes, 'ASTDX');
+}
+
+function copyAllGoalbound() {
+    const codes = ['ITOSHI', 'EGOSOONIPROMISE', 'SRY4EGO', '200KLIKES', '300KLIKES', 'IMETGEN', 'UPDATE1SOON', 'SRYFORBUGS', 'RELEASE', 'DELAYBOUND'];
+    copyAllCodes(codes, 'Goalbound');
+}
+
+function copyAllRivals() {
+    const codes = ['COMMUNITY15', 'COMMUNITY14', '5B_VISITS_WHATTTTTT', 'COMMUNITY13', 'COMMUNITY12', 'COMMUNITY11', 'REWARD53', 'COMMUNITY10', 'REWARD52', 'REWARD49'];
+    copyAllCodes(codes, 'Rivals');
+}
+
+function copyAllCodes(codes, gameName) {
+    const codesText = codes.join('\n');
+    navigator.clipboard.writeText(codesText).then(function() {
+        showNotification(`All ${gameName} codes copied to clipboard!`, 'success');
+        
+        // Update button text temporarily
+        const button = event.target;
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        button.style.background = 'var(--success-color)';
+        
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.background = '';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy codes: ', err);
+        showNotification('Failed to copy codes. Please try again.', 'error');
+    });
+}
+
+// Initialize copy all buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const copyAllASTDXBtn = document.getElementById('copyAllASTDX');
+    const copyAllGoalboundBtn = document.getElementById('copyAllGoalbound');
+    const copyAllRivalsBtn = document.getElementById('copyAllRivals');
+    
+    if (copyAllASTDXBtn) {
+        copyAllASTDXBtn.addEventListener('click', copyAllASTDX);
+    }
+    if (copyAllGoalboundBtn) {
+        copyAllGoalboundBtn.addEventListener('click', copyAllGoalbound);
+    }
+    if (copyAllRivalsBtn) {
+        copyAllRivalsBtn.addEventListener('click', copyAllRivals);
+    }
+});
+
+// Export the new functions
+window.copyAllASTDX = copyAllASTDX;
+window.copyAllGoalbound = copyAllGoalbound;
+window.copyAllRivals = copyAllRivals;
+
+// Game Page Navigation Functions
+function showGamePage(pageId) {
+    // Hide main content
+    const mainContent = document.querySelector('.main-content');
+    const header = document.getElementById('header');
+    const footer = document.querySelector('.footer');
+    const backgroundContainer = document.querySelector('.background-container');
+    
+    if (mainContent) mainContent.style.display = 'none';
+    if (header) header.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+    if (backgroundContainer) backgroundContainer.style.display = 'none';
+    
+    // Show game page
+    const gamePage = document.getElementById(pageId);
+    if (gamePage) {
+        gamePage.style.display = 'block';
+        gamePage.classList.add('show');
+        
+        // Scroll to top of game page
+        gamePage.scrollTop = 0;
+        
+        // Update URL without page reload
+        history.pushState({ page: pageId }, '', `#${pageId}`);
+    }
+}
+
+function showHub() {
+    // Hide all game pages
+    const gamePages = document.querySelectorAll('.game-page');
+    gamePages.forEach(page => {
+        page.style.display = 'none';
+        page.classList.remove('show');
+    });
+    
+    // Show main content
+    const mainContent = document.querySelector('.main-content');
+    const header = document.getElementById('header');
+    const footer = document.querySelector('.footer');
+    const backgroundContainer = document.querySelector('.background-container');
+    
+    if (mainContent) mainContent.style.display = 'block';
+    if (header) header.style.display = 'block';
+    if (footer) footer.style.display = 'block';
+    if (backgroundContainer) backgroundContainer.style.display = 'block';
+    
+    // Update URL
+    history.pushState({ page: 'hub' }, '', '#home');
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', function(event) {
+    if (event.state && event.state.page && event.state.page !== 'hub') {
+        showGamePage(event.state.page);
+    } else {
+        showHub();
+    }
+});
+
+// Initialize page based on URL hash
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash;
+    if (hash && (hash === '#astdx-page' || hash === '#goalbound-page' || hash === '#rivals-page')) {
+        showGamePage(hash.substring(1));
+    }
+});
+
+// Export the navigation functions
+window.showGamePage = showGamePage;
+window.showHub = showHub;

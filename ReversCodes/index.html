@@ -99,17 +99,17 @@
         <!-- Related Content Sidebar -->
         <div class="related-content-sidebar">
             <div class="related-content-box">
-                <h3>Related Content</h3>
+                <h3>Game Codes</h3>
                 <div class="related-links">
-                    <a href="astdx/" class="related-link">
+                    <a href="#astdx-page" class="related-link" onclick="showGamePage('astdx-page')">
                         <img src="images/astdxlogo.png" alt="ASTDX" class="related-link-img">
                         <span>ASTDX Codes</span>
                     </a>
-                    <a href="goalbound/" class="related-link">
+                    <a href="#goalbound-page" class="related-link" onclick="showGamePage('goalbound-page')">
                         <img src="images/goalbound.png" alt="Goalbound" class="related-link-img">
                         <span>Goalbound Codes</span>
                     </a>
-                    <a href="rivals/" class="related-link">
+                    <a href="#rivals-page" class="related-link" onclick="showGamePage('rivals-page')">
                         <img src="images/rivals.png" alt="Rivals" class="related-link-img">
                         <span>Rivals Codes</span>
                     </a>
@@ -125,40 +125,41 @@
                 </div>
             </div>
         </div>
-            <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Welcome to ReversCodes Hub</h1>
-                <p class="hero-subtitle">Your ultimate destination for Roblox gaming news, codes, and community</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">Daily</span>
-                        <span class="stat-label">Updates</span>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to ReversCodes Hub</h1>
+                    <p class="hero-subtitle">Your ultimate destination for Roblox gaming news, codes, and community</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">Daily</span>
+                            <span class="stat-label">Updates</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">Latest</span>
+                            <span class="stat-label">News</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">Trusted</span>
+                            <span class="stat-label">Sources</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">Latest</span>
-                        <span class="stat-label">News</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Trusted</span>
-                        <span class="stat-label">Sources</span>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('games')">
+                            Game Codes
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('news')">
+                            Latest News
+                        </button>
                     </div>
                 </div>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="scrollToSection('games')">
-                        Game Codes
-                    </button>
-                    <button class="btn btn-secondary" onclick="scrollToSection('news')">
-                        Latest News
-                    </button>
+                <div class="hero-visual">
+                    <img src="images/Robloxlogo.png" alt="Roblox Gaming" class="hero-image">
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="images/Robloxlogo.png" alt="Roblox Gaming" class="hero-image">
-            </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Latest News Section -->
         <section id="news" class="news-section">
@@ -269,7 +270,7 @@
                 </div>
                 
                 <div class="games-grid">
-                    <div class="game-card">
+                    <div class="game-card" onclick="showGamePage('astdx-page')">
                         <div class="game-header">
                             <img src="images/astdxlogo.png" alt="All Star Tower Defense X" class="game-logo">
                             <div class="game-info">
@@ -277,14 +278,43 @@
                                 <span class="game-status active">Active</span>
                             </div>
                         </div>
-                        <p class="game-description">Defend your base with powerful anime characters in this strategic tower defense game</p>
+                        <p class="game-description">Defend your base with powerful anime characters</p>
                         <div class="game-links">
-                            <a href="astdx/" class="btn btn-primary">
+                            <button class="btn btn-primary">
                                 View Codes
-                            </a>
-                            <a href="https://www.pcgamesn.com/all-star-tower-defense-x/codes" class="btn btn-secondary" target="_blank" rel="noopener">
-                                PCGamesN
-                            </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card" onclick="showGamePage('goalbound-page')">
+                        <div class="game-header">
+                            <img src="images/goalbound.png" alt="Goalbound" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">Goalbound</h3>
+                                <span class="game-status active">Active</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Soccer-inspired Roblox experience with team building and competitive matches</p>
+                        <div class="game-links">
+                            <button class="btn btn-primary">
+                                View Codes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card" onclick="showGamePage('rivals-page')">
+                        <div class="game-header">
+                            <img src="images/rivals.png" alt="Rivals" class="game-logo">
+                            <div class="game-info">
+                                <h3 class="game-title">Rivals</h3>
+                                <span class="game-status active">Active</span>
+                            </div>
+                        </div>
+                        <p class="game-description">Fast-paced first-person shooter with tactical duels</p>
+                        <div class="game-links">
+                            <button class="btn btn-primary">
+                                View Codes
+                            </button>
                         </div>
                     </div>
 
@@ -344,44 +374,6 @@
                             </a>
                         </div>
                     </div>
-
-                    <div class="game-card">
-                        <div class="game-header">
-                            <img src="images/growagarden.png" alt="Grow a Garden" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">Grow a Garden</h3>
-                                <span class="game-status inactive">No Active Codes</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Despite record player counts, currently has no active promo codes</p>
-                        <div class="game-links">
-                            <a href="https://gameranx.com/updates/id/543893/article/are-there-roblox-grow-a-garden-july-2025-codes/" class="btn btn-primary" target="_blank" rel="noopener">
-                                Gameranx
-                            </a>
-                            <a href="https://www.pockettactics.com/roblox/codes" class="btn btn-secondary" target="_blank" rel="noopener">
-                                Pocket Tactics
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="game-card">
-                        <div class="game-header">
-                            <img src="images/Robloxlogo.png" alt="All Roblox Games" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">All Roblox Games</h3>
-                                <span class="game-status active">Active</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Comprehensive list of codes for all top Roblox experiences</p>
-                        <div class="game-links">
-                            <a href="https://beebom.com/roblox-games-codes-list/" class="btn btn-primary" target="_blank" rel="noopener">
-                                Beebom
-                            </a>
-                            <a href="https://www.gamertweak.com/roblox-codes" class="btn btn-secondary" target="_blank" rel="noopener">
-                                GamerTweak
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -420,9 +412,351 @@
                 </div>
             </div>
         </section>
-
-
     </main>
+
+    <!-- ASTDX Game Page -->
+    <div id="astdx-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/astdxlogo.png" alt="ASTDX Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/astdxlogo.png" alt="ASTDX" class="game-page-logo">
+                        <div>
+                            <h1>All Star Tower Defense X</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is All Star Tower Defense X?</h2>
+                    <p>ASTDX is a Roblox anime tower defense game with over 60 characters. Defend waves across Story, Infinite, Trials, and Raids. Redeem codes for gems, trait burners, summon tickets, and premium capsules to strengthen your squad.</p>
+                </div>
+
+                <div class="codes-section">
+                    <h2>🎁 Active Codes</h2>
+                    <div class="codes-controls">
+                        <button id="copyAllASTDX" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    
+                    <ul class="codes-list">
+                        <li class="code-item">
+                            <span class="code">SOCIALREWARDS</span>
+                            <span class="reward">500 Gems</span>
+                            <button class="copy-btn" onclick="copyCode('SOCIALREWARDS')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">THANKYOU</span>
+                            <span class="reward">300 Gems</span>
+                            <button class="copy-btn" onclick="copyCode('THANKYOU')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">UPDATE</span>
+                            <span class="reward">200 Gems</span>
+                            <button class="copy-btn" onclick="copyCode('UPDATE')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">RELEASE</span>
+                            <span class="reward">100 Gems</span>
+                            <button class="copy-btn" onclick="copyCode('RELEASE')">Copy</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Launch All Star Tower Defense X in Roblox</li>
+                        <li>Click on the Twitter icon in the game</li>
+                        <li>Enter the code exactly as shown above</li>
+                        <li>Click "Redeem" to claim your rewards</li>
+                    </ol>
+                </div>
+
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Join the official ASTDX Discord for early code announcements</li>
+                        <li>Follow the developers on social media for new codes</li>
+                        <li>Codes are case-sensitive, so type them exactly as shown</li>
+                        <li>Some codes expire quickly, so redeem them as soon as possible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goalbound Game Page -->
+    <div id="goalbound-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/goalbound.png" alt="Goalbound Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/goalbound.png" alt="Goalbound" class="game-page-logo">
+                        <div>
+                            <h1>Goalbound</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What Is Goalbound?</h2>
+                    <p>Goalbound is a soccer-inspired Roblox experience where you assemble your dream team, spin for rare player cards, and compete in high-stakes matches against other users.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><strong>Team Building:</strong> Collect player cards of varying rarities to craft the ultimate squad</li>
+                        <li><strong>Spin Mechanic:</strong> Spend Spins and Lucky Spins to roll for new athletes and special items</li>
+                        <li><strong>Competitive Matches:</strong> Face off in real-time soccer matches to rise up global leaderboards</li>
+                        <li><strong>Progression & Rewards:</strong> Complete daily quests, limited-time events, and challenges</li>
+                    </ul>
+                </div>
+
+                <div class="codes-section">
+                    <h2>🎁 Active Codes</h2>
+                    <div class="codes-controls">
+                        <button id="copyAllGoalbound" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    
+                    <ul class="codes-list">
+                        <li class="code-item">
+                            <span class="code">ITOSHI</span>
+                            <span class="reward">15 Spins, 7 Lucky Spins</span>
+                            <button class="copy-btn" onclick="copyCode('ITOSHI')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">EGOSOONIPROMISE</span>
+                            <span class="reward">2 Lucky Spins</span>
+                            <button class="copy-btn" onclick="copyCode('EGOSOONIPROMISE')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">SRY4EGO</span>
+                            <span class="reward">5 Spins, 1 Lucky Spin</span>
+                            <button class="copy-btn" onclick="copyCode('SRY4EGO')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">200KLIKES</span>
+                            <span class="reward">10 Lucky Ego Spins, 10 Lucky Spins</span>
+                            <button class="copy-btn" onclick="copyCode('200KLIKES')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">300KLIKES</span>
+                            <span class="reward">10 Spins, 10 Ego Spins</span>
+                            <button class="copy-btn" onclick="copyCode('300KLIKES')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">IMETGEN</span>
+                            <span class="reward">Exclusive Emote</span>
+                            <button class="copy-btn" onclick="copyCode('IMETGEN')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">UPDATE1SOON</span>
+                            <span class="reward">5 Lucky Spins</span>
+                            <button class="copy-btn" onclick="copyCode('UPDATE1SOON')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">SRYFORBUGS</span>
+                            <span class="reward">10 Spins, 2 Lucky Spins</span>
+                            <button class="copy-btn" onclick="copyCode('SRYFORBUGS')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">RELEASE</span>
+                            <span class="reward">5 Spins, 3 Lucky Spins</span>
+                            <button class="copy-btn" onclick="copyCode('RELEASE')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">DELAYBOUND</span>
+                            <span class="reward">10 Spins, 5 Lucky Spins</span>
+                            <button class="copy-btn" onclick="copyCode('DELAYBOUND')">Copy</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Join the official EGO Roblox group (click the maker name under the game title and hit "Join Group")</li>
+                        <li>Launch Goalbound in Roblox</li>
+                        <li>Click the envelope icon at the top-left of your screen, or step into the circular "Codes" area near the lobby's shop signage</li>
+                        <li>Enter one of the active codes exactly as shown above (codes are case-sensitive)</li>
+                        <li>Hit <strong>Redeem</strong> and enjoy your rewards!</li>
+                    </ol>
+                </div>
+
+                <div class="tips-section">
+                    <h2>💡 Pro Tips for Maximizing Freebies</h2>
+                    <ul>
+                        <li>Log in daily to claim the free Spin reward from the lobby's Spins wheel</li>
+                        <li>Complete Daily Quests to earn extra Spins and in-game currency</li>
+                        <li>Participate in limited-time events and community challenges</li>
+                        <li>Keep this page bookmarked and check back whenever you hop into Goalbound</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rivals Game Page -->
+    <div id="rivals-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/rivals.png" alt="Rivals Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/rivals.png" alt="Rivals" class="game-page-logo">
+                        <div>
+                            <h1>Rivals</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What Is RIVALS?</h2>
+                    <p><strong>RIVALS</strong> is a fast-paced first-person shooter on Roblox, developed by Nosniy Games. Released on June 28, 2024, it supports cross-platform play (PC, mobile, Xbox, PS5) and centers on tactical 1v1 to 5v5 duels. Matches are won by being the first to five eliminations, with keys earned in-game used to unlock new weapons, skins, and cosmetic finishers.</p>
+                    
+                    <h3>Core Gameplay Loop</h3>
+                    <ul>
+                        <li><strong>Duel Pads & Matchmaking:</strong> Step on duel pads in the lobby for 1v1–5v5 rounds</li>
+                        <li><strong>Loadouts & Progression:</strong> Each player equips a primary, secondary, melee, and utility weapon</li>
+                        <li><strong>Maps & Movement:</strong> Matches rotate across competitive maps like Arena, Crossroads, Backrooms, and Splash</li>
+                        <li><strong>Currencies:</strong> Keys unlock weapons, skins, and finishers</li>
+                    </ul>
+                </div>
+
+                <div class="update-section">
+                    <h2>🆕 Latest Major Update: Update 13 (Massive Gamemodes)</h2>
+                    <p>Released June 18, 2025, Update 13 overhauls RIVALS with weekly-rotating game modes, new skins, and balance tweaks:</p>
+                    <ul>
+                        <li><strong>Weekly Gamemodes:</strong> Juggernaut (1 vs All), Swift Stand-off (1-bullet shootouts), and more modes rotate every week</li>
+                        <li><strong>New Skins (Skin Case 3):</strong> 11 skins across weapon categories, including Legendary Spray Bottle, Rare Cerulean Axe, and Common Bag o' Money</li>
+                        <li><strong>New Codes:</strong> <span class="code">FREE95</span> – Redeem for 3 free keys</li>
+                        <li><strong>Weapon Balances:</strong> Burst Rifle (increased cooldown, reduced ammo), Grenade Launcher (increased projectile speed), and more adjustments</li>
+                    </ul>
+                </div>
+
+                <div class="codes-section">
+                    <h2>🎁 Active RIVALS Codes (July 2025)</h2>
+                    <div class="codes-controls">
+                        <button id="copyAllRivals" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    
+                    <ul class="codes-list">
+                        <li class="code-item">
+                            <span class="code">COMMUNITY15</span>
+                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
+                            <button class="copy-btn" onclick="copyCode('COMMUNITY15')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">COMMUNITY14</span>
+                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
+                            <button class="copy-btn" onclick="copyCode('COMMUNITY14')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">5B_VISITS_WHATTTTTT</span>
+                            <span class="reward">5B Visits Finisher (All Weapons)</span>
+                            <button class="copy-btn" onclick="copyCode('5B_VISITS_WHATTTTTT')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">COMMUNITY13</span>
+                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
+                            <button class="copy-btn" onclick="copyCode('COMMUNITY13')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">COMMUNITY12</span>
+                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
+                            <button class="copy-btn" onclick="copyCode('COMMUNITY12')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">COMMUNITY11</span>
+                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
+                            <button class="copy-btn" onclick="copyCode('COMMUNITY11')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">REWARD53</span>
+                            <span class="reward">Keys</span>
+                            <button class="copy-btn" onclick="copyCode('REWARD53')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">COMMUNITY10</span>
+                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
+                            <button class="copy-btn" onclick="copyCode('COMMUNITY10')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">REWARD52</span>
+                            <span class="reward">Keys</span>
+                            <button class="copy-btn" onclick="copyCode('REWARD52')">Copy</button>
+                        </li>
+                        <li class="code-item">
+                            <span class="code">REWARD49</span>
+                            <span class="reward">3 Keys</span>
+                            <button class="copy-btn" onclick="copyCode('REWARD49')">Copy</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Launch <strong>RIVALS</strong> on Roblox</li>
+                        <li>Click the <strong>Rewards</strong> icon at the bottom of the screen</li>
+                        <li>Scroll down, enter your Roblox username, and click <strong>Verify</strong></li>
+                        <li>Paste or type your code into the <strong>Enter a special code here</strong> box</li>
+                        <li>Click <strong>Redeem</strong> to claim your reward immediately</li>
+                    </ol>
+                </div>
+
+                <div class="tips-section">
+                    <h2>💡 Tips & Tricks</h2>
+                    <ul>
+                        <li>Reach <strong>Level 10</strong> in-game to unlock the Rewards icon</li>
+                        <li>Follow the devs on X (Twitter) at <strong>@NosniyRBLX</strong> and <strong>@Sensei_RBX</strong></li>
+                        <li>Join the <strong>Nosniy Games</strong> Roblox group to ensure codes work properly</li>
+                        <li>Combine rotating game modes with specific loadouts to maximize your win streaks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
