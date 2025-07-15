@@ -22,20 +22,433 @@ const commentForm = document.getElementById('commentForm');
 const commentsList = document.getElementById('commentsList');
 // submissionsList is only used in admin modal, so we'll get it when needed
 
+// === GAME GALLERY DATA & LOGIC ===
+
+// Game data array (add new games here)
+const gamesData = [
+  {
+    id: 'bloxfruits-page',
+    name: 'Blox Fruits',
+    img: 'images/bloxfruits.png',
+    desc: 'Master the seas with devil fruit powers in this epic adventure game',
+  },
+  {
+    id: 'dresstoimpress-page',
+    name: 'Dress to Impress',
+    img: 'images/dresstoimpress.png',
+    desc: 'Create stunning outfits and participate in fashion competitions',
+  },
+  {
+    id: 'jujutsuinfinite-page',
+    name: 'Jujutsu Infinite',
+    img: 'images/jujutsuinfinite.png',
+    desc: 'Inspired by Jujutsu Kaisen, this RPG offers unique abilities and combat',
+  },
+  {
+    id: 'astdx-page',
+    name: 'All Star Tower Defense X',
+    img: 'images/astdxlogo.png',
+    desc: 'Defend your base with powerful anime characters',
+  },
+  {
+    id: 'goalbound-page',
+    name: 'Goalbound',
+    img: 'images/goalbound.png',
+    desc: 'Soccer-inspired Roblox experience with team building and competitive matches',
+  },
+  {
+    id: 'rivals-page',
+    name: 'Rivals',
+    img: 'images/rivals.png',
+    desc: 'Fast-paced first-person shooter with tactical duels',
+  },
+  // New games (add more as needed)
+  {
+    id: 'animeadventures-page',
+    name: 'Anime Adventures',
+    img: 'images/animeadventures.png',
+    desc: 'Summon anime units and defend against waves in this tower-defense RPG',
+  },
+  {
+    id: 'fruitbattlegrounds-page',
+    name: 'Fruit Battlegrounds',
+    img: 'images/fruitbattlegrounds.png',
+    desc: 'Spin for Devil Fruits and battle other players in this PvP brawler',
+  },
+  {
+    id: 'shindolife-page',
+    name: 'Shindo Life',
+    img: 'images/shindolife.png',
+    desc: 'Naruto-inspired ninja RPG with spins, RELL Coins, and bloodline rerolls',
+  },
+  {
+    id: 'projectslayers-page',
+    name: 'Project Slayers',
+    img: 'images/projectslayers.png',
+    desc: 'Demon Slayer-themed RPG focusing on breathing styles and demon hunts',
+  },
+  {
+    id: 'kinglegacy-page',
+    name: 'King Legacy',
+    img: 'images/kinglegacy.png',
+    desc: 'One Piece-themed open-world RPG—complete quests, collect gems, and upgrade',
+  },
+  {
+    id: 'animelaststand-page',
+    name: 'Anime Last Stand',
+    img: 'images/animelaststand.png',
+    desc: 'Deploy anime units to protect against waves in this TD/clicker game',
+  },
+  {
+    id: 'sakurastand-page',
+    name: 'Sakura Stand',
+    img: 'images/sakurastand.png',
+    desc: 'JoJo’s Bizarre Adventure–inspired fighting game—unlock stands, grind ranks',
+  },
+  {
+    id: 'bladeball-page',
+    name: 'Blade Ball',
+    img: 'images/bladeball.png',
+    desc: 'PvP arena where players fight with blade combos and spin wheels for skins',
+  },
+  {
+    id: 'fruitwarriors-page',
+    name: 'Fruit Warriors',
+    img: 'images/fruitwarriors.png',
+    desc: 'Fruit-themed PvP game—spin for fruits and battle in the arena',
+  },
+  {
+    id: 'basketballzero-page',
+    name: 'Basketball: Zero',
+    img: 'images/basketballzero.png',
+    desc: 'Fast-paced anime basketball game with flashy moves and zone mechanics',
+  },
+  {
+    id: 'bluelockrivals-page',
+    name: 'Blue Lock Rivals',
+    img: 'images/bluelockrivals.png',
+    desc: '5v5 soccer inspired by Blue Lock manga/anime, unlock powerful striker abilities',
+  },
+  {
+    id: 'volleyballlegends-page',
+    name: 'Volleyball Legends',
+    img: 'images/volleyballlegends.png',
+    desc: '6v6 anime-style volleyball sim inspired by Haikyuu!! with ability spins',
+  },
+];
+
+// Bookmarking logic
+const BOOKMARK_KEY = 'bookmarkedGames';
+function getBookmarkedGames() {
+  return JSON.parse(localStorage.getItem(BOOKMARK_KEY)) || [];
+}
+function setBookmarkedGames(arr) {
+  localStorage.setItem(BOOKMARK_KEY, JSON.stringify(arr));
+}
+function toggleBookmark(gameId) {
+  let bookmarks = getBookmarkedGames();
+  if (bookmarks.includes(gameId)) {
+    bookmarks = bookmarks.filter(id => id !== gameId);
+  } else {
+    bookmarks.push(gameId);
+  }
+  setBookmarkedGames(bookmarks);
+  renderGameGallery();
+}
+
+// Render the Game Gallery
+function renderGameGallery() {
+  const gallery = document.getElementById('gamesGallery');
+  if (!gallery) return;
+  const searchVal = (document.getElementById('gameSearch')?.value || '').toLowerCase();
+  const bookmarks = getBookmarkedGames();
+  gallery.innerHTML = '';
+  gamesData
+    .filter(game => game.name.toLowerCase().includes(searchVal))
+    .forEach(game => {
+      const card = document.createElement('div');
+      card.className = 'game-card-gallery';
+      card.setAttribute('role', 'listitem');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', `${game.name}: ${game.desc}`);
+      card.addEventListener('click', () => openGamePage(game.id));
+      card.addEventListener('keypress', e => { if (e.key === 'Enter') openGamePage(game.id); });
+      // Image
+      const img = document.createElement('img');
+      img.src = game.img;
+      img.alt = `${game.name} logo`;
+      img.className = 'game-img';
+      img.loading = 'lazy';
+      card.appendChild(img);
+      // Title
+      const title = document.createElement('div');
+      title.className = 'game-title';
+      title.textContent = game.name;
+      card.appendChild(title);
+      // Desc
+      const desc = document.createElement('div');
+      desc.className = 'game-desc';
+      desc.textContent = game.desc;
+      card.appendChild(desc);
+      // Bookmark star
+      const star = document.createElement('span');
+      star.className = 'bookmark-star' + (bookmarks.includes(game.id) ? ' active' : '');
+      star.setAttribute('role', 'button');
+      star.setAttribute('tabindex', '0');
+      star.setAttribute('aria-label', bookmarks.includes(game.id) ? 'Unbookmark game' : 'Bookmark game');
+      star.innerHTML = bookmarks.includes(game.id) ? '★' : '☆';
+      star.addEventListener('click', e => { e.stopPropagation(); toggleBookmark(game.id); });
+      star.addEventListener('keypress', e => { if (e.key === 'Enter') { e.stopPropagation(); toggleBookmark(game.id); } });
+      card.appendChild(star);
+      // Highlight if bookmarked
+      if (bookmarks.includes(game.id)) card.style.boxShadow = '0 0 0 3px var(--color-star-active, #ffd700)';
+      gallery.appendChild(card);
+    });
+}
+
+// Open game page/section
+function openGamePage(pageId) {
+  // Hide all game pages
+  document.querySelectorAll('.game-page').forEach(page => page.style.display = 'none');
+  // Show selected game page if exists
+  const page = document.getElementById(pageId);
+  if (page) {
+    page.style.display = 'block';
+    page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  // Optionally, hide main content if needed
+  // document.querySelector('.main-content').style.display = 'none';
+}
+
+// Search bar event
+const gameSearch = document.getElementById('gameSearch');
+if (gameSearch) {
+  gameSearch.addEventListener('input', renderGameGallery);
+}
+
+// Support scrollToSection for 'game-gallery'
+function scrollToSection(sectionId) {
+  if (sectionId === 'game-gallery') {
+    const galleryHeader = document.querySelector('.games-gallery, #gamesGallery');
+    if (galleryHeader) {
+      galleryHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+  }
+  // Fallback to default
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// See More Games button event (if not using scrollToSection inline)
+const seeMoreGamesBtn = document.querySelector('.see-more-games-btn');
+if (seeMoreGamesBtn) {
+  seeMoreGamesBtn.addEventListener('click', () => scrollToSection('game-gallery'));
+}
+
+// Initial render
+if (document.getElementById('gamesGallery')) {
+  renderGameGallery();
+}
+
+// --- Main Page Game Gallery Logic ---
+const mainGalleryGames = [
+  {
+    id: 'bloxfruits-page',
+    name: 'Blox Fruits',
+    img: 'images/bloxfruits.png',
+    desc: 'Master the seas with devil fruit powers in this epic adventure game',
+  },
+  {
+    id: 'dresstoimpress-page',
+    name: 'Dress to Impress',
+    img: 'images/dresstoimpress.png',
+    desc: 'Create stunning outfits and participate in fashion competitions',
+  },
+  {
+    id: 'jujutsuinfinite-page',
+    name: 'Jujutsu Infinite',
+    img: 'images/jujutsuinfinite.png',
+    desc: 'Inspired by Jujutsu Kaisen, this RPG offers unique abilities and combat',
+  },
+  {
+    id: 'astdx-page',
+    name: 'All Star Tower Defense X',
+    img: 'images/astdxlogo.png',
+    desc: 'Defend your base with powerful anime characters',
+  },
+  {
+    id: 'goalbound-page',
+    name: 'Goalbound',
+    img: 'images/goalbound.png',
+    desc: 'Soccer-inspired Roblox experience with team building and competitive matches',
+  },
+  {
+    id: 'rivals-page',
+    name: 'Rivals',
+    img: 'images/rivals.png',
+    desc: 'Fast-paced first-person shooter with tactical duels',
+  },
+  {
+    id: 'animeadventures-page',
+    name: 'Anime Adventures',
+    img: 'images/animeadventures.png',
+    desc: 'Summon anime units and defend against waves in this tower-defense RPG',
+  },
+  {
+    id: 'fruitbattlegrounds-page',
+    name: 'Fruit Battlegrounds',
+    img: 'images/fruitbattlegrounds.png',
+    desc: 'Spin for Devil Fruits and battle other players in this PvP brawler',
+  },
+  {
+    id: 'shindolife-page',
+    name: 'Shindo Life',
+    img: 'images/shindolife.png',
+    desc: 'Naruto-inspired ninja RPG with spins, RELL Coins, and bloodline rerolls',
+  },
+  {
+    id: 'projectslayers-page',
+    name: 'Project Slayers',
+    img: 'images/projectslayers.png',
+    desc: 'Demon Slayer-themed RPG focusing on breathing styles and demon hunts',
+  },
+  {
+    id: 'kinglegacy-page',
+    name: 'King Legacy',
+    img: 'images/kinglegacy.png',
+    desc: 'One Piece-themed open-world RPG—complete quests, collect gems, and upgrade',
+  },
+  {
+    id: 'animelaststand-page',
+    name: 'Anime Last Stand',
+    img: 'images/animelaststand.png',
+    desc: 'Deploy anime units to protect against waves in this TD/clicker game',
+  },
+  {
+    id: 'sakurastand-page',
+    name: 'Sakura Stand',
+    img: 'images/sakurastand.png',
+    desc: 'JoJo’s Bizarre Adventure–inspired fighting game—unlock stands, grind ranks',
+  },
+  {
+    id: 'bladeball-page',
+    name: 'Blade Ball',
+    img: 'images/bladeball.png',
+    desc: 'PvP arena where players fight with blade combos and spin wheels for skins',
+  },
+  {
+    id: 'fruitwarriors-page',
+    name: 'Fruit Warriors',
+    img: 'images/fruitwarriors.png',
+    desc: 'Fruit-themed PvP game—spin for fruits and battle in the arena',
+  },
+  {
+    id: 'basketballzero-page',
+    name: 'Basketball: Zero',
+    img: 'images/basketballzero.png',
+    desc: 'Fast-paced anime basketball game with flashy moves and zone mechanics',
+  },
+  {
+    id: 'bluelockrivals-page',
+    name: 'Blue Lock Rivals',
+    img: 'images/bluelockrivals.png',
+    desc: '5v5 soccer inspired by Blue Lock manga/anime, unlock powerful striker abilities',
+  },
+  {
+    id: 'volleyballlegends-page',
+    name: 'Volleyball Legends',
+    img: 'images/volleyballlegends.png',
+    desc: '6v6 anime-style volleyball sim inspired by Haikyuu!! with ability spins',
+  },
+];
+const MAIN_BOOKMARK_KEY = 'mainGalleryFavorites';
+function getMainGalleryFavorites() {
+  return JSON.parse(localStorage.getItem(MAIN_BOOKMARK_KEY)) || [];
+}
+function setMainGalleryFavorites(arr) {
+  localStorage.setItem(MAIN_BOOKMARK_KEY, JSON.stringify(arr));
+}
+function toggleMainGalleryFavorite(gameId) {
+  let favs = getMainGalleryFavorites();
+  if (favs.includes(gameId)) {
+    favs = favs.filter(id => id !== gameId);
+  } else {
+    favs.push(gameId);
+  }
+  setMainGalleryFavorites(favs);
+  renderMainGamesGallery();
+}
+function renderMainGamesGallery() {
+  const gallery = document.getElementById('mainGamesGallery');
+  if (!gallery) return;
+  const searchVal = (document.getElementById('gallerySearch')?.value || '').toLowerCase();
+  const favs = getMainGalleryFavorites();
+  // Sort: favorites first, then alpha
+  let games = [...mainGalleryGames];
+  games = games.filter(game => game.name.toLowerCase().includes(searchVal));
+  games.sort((a, b) => {
+    const aFav = favs.includes(a.id);
+    const bFav = favs.includes(b.id);
+    if (aFav && !bFav) return -1;
+    if (!aFav && bFav) return 1;
+    return a.name.localeCompare(b.name);
+  });
+  gallery.innerHTML = '';
+  games.forEach(game => {
+    const card = document.createElement('div');
+    card.className = 'game-card';
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `${game.name}: ${game.desc}`);
+    card.addEventListener('click', () => showGamePage(game.id));
+    card.addEventListener('keypress', e => { if (e.key === 'Enter') showGamePage(game.id); });
+    // Image
+    const img = document.createElement('img');
+    img.src = game.img;
+    img.alt = `${game.name} logo`;
+    img.className = 'game-logo';
+    img.loading = 'lazy';
+    card.appendChild(img);
+    // Title
+    const title = document.createElement('div');
+    title.className = 'game-title';
+    title.textContent = game.name;
+    card.appendChild(title);
+    // Desc
+    const desc = document.createElement('div');
+    desc.className = 'game-description';
+    desc.textContent = game.desc;
+    card.appendChild(desc);
+    // Favorite star
+    const star = document.createElement('span');
+    star.className = 'bookmark-star' + (favs.includes(game.id) ? ' active' : '');
+    star.setAttribute('role', 'button');
+    star.setAttribute('tabindex', '0');
+    star.setAttribute('aria-label', favs.includes(game.id) ? 'Unfavorite game' : 'Favorite game');
+    star.innerHTML = favs.includes(game.id) ? '★' : '☆';
+    star.addEventListener('click', e => { e.stopPropagation(); toggleMainGalleryFavorite(game.id); });
+    star.addEventListener('keypress', e => { if (e.key === 'Enter') { e.stopPropagation(); toggleMainGalleryFavorite(game.id); } });
+    card.appendChild(star);
+    // Highlight if favorited
+    if (favs.includes(game.id)) card.style.boxShadow = '0 0 0 3px var(--color-star-active, #ffd700)';
+    gallery.appendChild(card);
+  });
+}
+// Attach search event
+const gallerySearchInput = document.getElementById('gallerySearch');
+if (gallerySearchInput) {
+  gallerySearchInput.addEventListener('input', renderMainGamesGallery);
+}
+// Initial render on page load
+if (document.getElementById('mainGamesGallery')) {
+  renderMainGamesGallery();
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
-});
-
-// Wait for window to fully load before hiding loading screen
-window.addEventListener('load', function() {
-    // Ensure all resources are loaded before hiding loading screen
-    setTimeout(() => {
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    }, 1000);
 });
 
 // Main initialization function
@@ -788,6 +1201,10 @@ window.showNotification = showNotification;
 window.answerQuestion = answerQuestion;
 window.closeAdminPanel = closeAdminPanel;
 window.copyCode = copyCode;
+window.hideGeneratingIndicator = function() {
+  var el = document.getElementById('generating-indicator');
+  if (el) el.style.display = 'none';
+};
 
 // Copy Code Function
 function copyCode(code) {
@@ -972,6 +1389,69 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Update navigation links to use 'game-gallery' instead of 'games'
+document.querySelectorAll('a.nav-link, .hero-buttons .btn').forEach(link => {
+  if (link.getAttribute('href') === '#games' || link.textContent.trim() === 'Game Codes') {
+    link.setAttribute('href', '#game-gallery');
+    link.onclick = function(e) { e.preventDefault(); scrollToSection('game-gallery'); };
+  }
+});
+
 // Export the navigation functions
 window.showGamePage = showGamePage;
 window.showHub = showHub;
+
+// Sticky/revealing header on scroll up
+(function() {
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  const header = document.getElementById('header');
+  let lastDirection = 'up';
+  function onScroll() {
+    const currentY = window.scrollY;
+    if (currentY < 0) return;
+    if (currentY < 50) {
+      header.style.transform = 'translateY(0)';
+      header.style.boxShadow = '';
+      lastDirection = 'up';
+    } else if (currentY > lastScrollY) {
+      // Scrolling down
+      if (lastDirection !== 'down') {
+        header.style.transform = 'translateY(-100%)';
+        header.style.boxShadow = '';
+        lastDirection = 'down';
+      }
+    } else {
+      // Scrolling up
+      if (lastDirection !== 'up') {
+        header.style.transform = 'translateY(0)';
+        header.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
+        lastDirection = 'up';
+      }
+    }
+    lastScrollY = currentY;
+    ticking = false;
+  }
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }
+  if (header) {
+    header.style.transition = 'transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.2s';
+    window.addEventListener('scroll', requestTick);
+  }
+})();
+
+(function updateLastUpdatedBar() {
+  var el = document.getElementById('lastUpdatedDate');
+  if (!el) return;
+  var now = new Date();
+  var months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  var formatted = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+  el.textContent = formatted;
+})();

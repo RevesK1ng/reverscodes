@@ -55,15 +55,7 @@
     </script>
 </head>
 <body class="light-theme">
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
-            <img src="images/RCNEWLOLGO.png" alt="ReversCodes" class="loading-logo">
-            <div class="loading-spinner"></div>
-            <p>Loading ReversCodes Hub...</p>
-        </div>
-    </div>
-
+    
     <!-- Header -->
     <header class="header" id="header">
         <div class="header-container">
@@ -73,10 +65,10 @@
             </div>
             
             <nav class="nav">
-                <a href="#home" class="nav-link active" onclick="scrollToSection('home')">Home</a>
-                <a href="#news" class="nav-link" onclick="scrollToSection('news')">News</a>
-                <a href="#games" class="nav-link" onclick="scrollToSection('games')">Game Codes</a>
-                <a href="#community" class="nav-link" onclick="scrollToSection('community')">Community</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#news" class="nav-link">News</a>
+                <button class="nav-link nav-game-gallery-btn" onclick="scrollToSection('games');" aria-label="Scroll to Game Gallery">🎮 Game Gallery</button>
+                <a href="#community" class="nav-link">Community</a>
             </nav>
 
             <div class="header-actions">
@@ -92,6 +84,11 @@
         </div>
     </header>
 
+    <!-- Last Updated Bar -->
+    <div id="lastUpdatedBar" style="width:100%;background:linear-gradient(90deg,#8b5cf6 60%,#6366f1 100%);color:#fff;text-align:center;padding:0.5rem 0.5rem;border-radius:0.5rem;box-shadow:0 2px 12px rgba(139,92,246,0.10);font-family:inherit;font-size:1rem;font-weight:400;letter-spacing:0;">
+        Last updated: <span id="lastUpdatedDate">July 15, 2025</span>
+    </div>
+
     <!-- Background with Logo and Vignette -->
     <div class="background-container">
         <div class="logo-background"></div>
@@ -103,7 +100,7 @@
         <!-- Related Content Sidebar -->
         <div class="related-content-sidebar">
             <div class="related-content-box">
-                <h3>Game Codes</h3>
+                <h3>Game Gallery</h3>
                 <div class="related-links">
                     <a href="#astdx-page" class="related-link" onclick="showGamePage('astdx-page')">
                         <img src="images/astdxlogo.png" alt="ASTDX" class="related-link-img">
@@ -113,23 +110,12 @@
                         <img src="images/goalbound.png" alt="Goalbound" class="related-link-img">
                         <span>Goalbound Codes</span>
                     </a>
-                    <a href="#rivals-page" class="related-link" onclick="showGamePage('rivals-page')">
-                        <img src="images/rivals.png" alt="Rivals" class="related-link-img">
-                        <span>Rivals Codes</span>
-                    </a>
                     <a href="#bloxfruits-page" class="related-link" onclick="showGamePage('bloxfruits-page')">
                         <img src="images/bloxfruits.png" alt="Blox Fruits" class="related-link-img">
                         <span>Blox Fruits Codes</span>
                     </a>
-                    <a href="#dresstoimpress-page" class="related-link" onclick="showGamePage('dresstoimpress-page')">
-                        <img src="images/dresstoimpress.png" alt="Dress to Impress" class="related-link-img">
-                        <span>Dress to Impress Codes</span>
-                    </a>
-                    <a href="#jujutsuinfinite-page" class="related-link" onclick="showGamePage('jujutsuinfinite-page')">
-                        <img src="images/jujutsuinfinite.png" alt="Jujutsu Infinite" class="related-link-img">
-                        <span>Jujutsu Infinite Codes</span>
-                    </a>
                 </div>
+                <button class="see-more-games-btn" onclick="scrollToSection('games')" aria-label="See more games">See More Games</button>
             </div>
             
             <div class="roblox-question-box">
@@ -164,7 +150,7 @@
                     </div>
                     <div class="hero-buttons">
                         <button class="btn btn-primary" onclick="scrollToSection('games')">
-                            Game Codes
+                            Game Gallery
                         </button>
                         <button class="btn btn-secondary" onclick="scrollToSection('news')">
                             Latest News
@@ -188,29 +174,41 @@
                 <div class="news-grid">
                     <article class="news-card featured">
                         <div class="news-image">
-                            <img src="images/TheHatch.png" alt="The Hatch 2025 Event" class="news-img">
-                            <div class="news-category">Major Event</div>
+                            <img src="images/inkgame.png" alt="Ink Game (Hide & Seek)" class="news-img">
+                            <div class="news-category">Update</div>
                         </div>
                         <div class="news-content">
-                            <h3 class="news-title">The Hatch 2025 Event - Roblox's Biggest Egg Hunt Returns</h3>
-                            <p class="news-date">July 2-12, 2025</p>
+                            <h3 class="news-title">Ink Game (Hide & Seek) - Season 3 Update</h3>
+                            <p class="news-date">July 5, 2025</p>
                             <p class="news-excerpt">
-                                Roblox's biggest egg-hunt returns from July 2 to July 12, 2025, spanning 400+ games across 10 elemental biomes. 
-                                Players collect 100 unique eggs to unlock exclusive avatar items and participate in a new RNG‐based system for randomized drops.
+                                Squid Game-inspired hide-and-seek maze with new arena layouts and optimizations. No code system yet, but pro tips for hiders and seekers!
                             </p>
-                            <button class="btn btn-outline" onclick="expandNews(this)">
-                                Read More
-                            </button>
-                            <div class="news-details" style="display: none;">
-                                <h4>Event Details:</h4>
-                                <ul>
-                                    <li>400+ games participating across 10 elemental biomes</li>
-                                    <li>100 unique eggs to collect</li>
-                                    <li>Exclusive avatar items and rewards</li>
-                                    <li>New RNG-based system for randomized drops</li>
-                                    <li>Limited time event - don't miss out!</li>
-                                </ul>
-                            </div>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="images/99nights.png" alt="99 Nights in the Forest" class="news-img">
+                            <div class="news-category">Survival Horror</div>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">99 Nights in the Forest - Furniture & Classes Update</h3>
+                            <p class="news-date">July 2025</p>
+                            <p class="news-excerpt">
+                                Survive haunted nights, craft tools, and evade the deer-monster. New decorators and classes added. No code menu yet, but top survival tips inside!
+                            </p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="images/stealabrainrot.png" alt="Steal a Brainrot" class="news-img">
+                            <div class="news-category">Trending</div>
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title">Steal a Brainrot - Creature Rebalance & Mutations</h3>
+                            <p class="news-date">July 2025</p>
+                            <p class="news-excerpt">
+                                Chaotic tycoon/PvP with evolving creatures. Frequent rebalances, no code system yet, but Discord #codes-cappuccino channel exists for future drops.
+                            </p>
                         </div>
                     </article>
 
@@ -278,103 +276,15 @@
         </section>
 
         <!-- Game Codes Section -->
-        <section id="games" class="games-section">
+        <section id="games" class="games-section game-gallery-section-glow">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Game Codes</h2>
-                    <p class="section-subtitle">Find codes for your favorite Roblox games from trusted sources</p>
+                    <h2 class="section-title">Game Gallery</h2>
+                    <p class="section-subtitle">Browse and favorite your top Roblox games. Search and bookmark for quick access!</p>
+                    <input type="text" id="gallerySearch" class="game-search" placeholder="Search games..." aria-label="Search games" style="margin-top:1rem;max-width:350px;width:100%;display:block;margin-left:auto;margin-right:auto;">
                 </div>
-                
-                <div class="games-grid">
-                    <div class="game-card" onclick="showGamePage('astdx-page')">
-                        <div class="game-header">
-                            <img src="images/astdxlogo.png" alt="All Star Tower Defense X" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">All Star Tower Defense X</h3>
-                                <span class="game-status active">Active</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Defend your base with powerful anime characters</p>
-                        <div class="game-links">
-                            <button class="btn btn-primary">
-                                View Codes
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="game-card" onclick="showGamePage('goalbound-page')">
-                        <div class="game-header">
-                            <img src="images/goalbound.png" alt="Goalbound" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">Goalbound</h3>
-                                <span class="game-status active">Active</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Soccer-inspired Roblox experience with team building and competitive matches</p>
-                        <div class="game-links">
-                            <button class="btn btn-primary">
-                                View Codes
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="game-card" onclick="showGamePage('rivals-page')">
-                        <div class="game-header">
-                            <img src="images/rivals.png" alt="Rivals" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">Rivals</h3>
-                                <span class="game-status active">Active</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Fast-paced first-person shooter with tactical duels</p>
-                        <div class="game-links">
-                            <button class="btn btn-primary">
-                                View Codes
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="game-card" onclick="showGamePage('bloxfruits-page')">
-                        <div class="game-header">
-                            <img src="images/bloxfruits.png" alt="Blox Fruits" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">Blox Fruits</h3>
-                                <span class="game-status active">Active</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Master the seas with devil fruit powers in this epic adventure game</p>
-                        <div class="game-links">
-                            <button class="btn btn-primary">View Codes</button>
-                        </div>
-                    </div>
-
-                    <div class="game-card" onclick="showGamePage('dresstoimpress-page')">
-                        <div class="game-header">
-                            <img src="images/dresstoimpress.png" alt="Dress to Impress" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">Dress to Impress</h3>
-                                <span class="game-status active">Active</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Create stunning outfits and participate in fashion competitions</p>
-                        <div class="game-links">
-                            <button class="btn btn-primary">View Codes</button>
-                        </div>
-                    </div>
-
-                    <div class="game-card" onclick="showGamePage('jujutsuinfinite-page')">
-                        <div class="game-header">
-                            <img src="images/jujutsuinfinite.png" alt="Jujutsu Infinite" class="game-logo">
-                            <div class="game-info">
-                                <h3 class="game-title">Jujutsu Infinite</h3>
-                                <span class="game-status active">Active</span>
-                            </div>
-                        </div>
-                        <p class="game-description">Inspired by Jujutsu Kaisen, this RPG offers unique abilities and combat</p>
-                        <div class="game-links">
-                            <button class="btn btn-primary">View Codes</button>
-                        </div>
-                    </div>
+                <div class="games-grid" id="mainGamesGallery">
+                    <!-- Game cards will be rendered here by script.js -->
                 </div>
             </div>
         </section>
@@ -421,7 +331,6 @@
             <img src="images/astdxlogo.png" alt="ASTDX Background" class="game-page-bg-image">
             <div class="game-page-vignette"></div>
         </div>
-        
         <div class="game-page-header">
             <div class="container">
                 <div class="game-page-nav">
@@ -439,90 +348,40 @@
                 </div>
             </div>
         </div>
-
         <div class="game-page-content">
             <div class="container">
                 <div class="game-overview">
                     <h2>What is All Star Tower Defense X?</h2>
                     <p>ASTDX is a Roblox anime tower defense game with over 60 characters. Defend waves across Story, Infinite, Trials, and Raids. Redeem codes for gems, trait burners, summon tickets, and premium capsules to strengthen your squad.</p>
-                    
-                    <h3>Latest Update - July 12, 2025</h3>
-                    <p><strong>Update 1</strong> introduced major new features:</p>
+                    <h3>Latest Codes & Update - July 12, 2025</h3>
                     <ul>
-                        <li><strong>Trial 2 Mode:</strong> New rotating challenges with exclusive shop and rewards</li>
-                        <li><strong>Story World Chapter:</strong> Brand-new maps and boss encounters</li>
-                        <li><strong>Roka & Doma Fruits:</strong> Reset full or partial potential trees for perfect builds</li>
-                        <li><strong>Unit Buffs:</strong> Enhanced Deidara, Naruto KCM, Esdeath, and more</li>
-                        <li><strong>UI Improvements:</strong> Gem-gain buffs and performance mode</li>
+                        <li>New codes and features added in Update 1</li>
+                        <li>Trial 2 Mode, Story World Chapter, Roka & Doma Fruits, Unit Buffs, UI Improvements</li>
                     </ul>
                 </div>
-
                 <div class="codes-section">
-                    <h2>🎁 Active Codes (July 14, 2025)</h2>
+                    <h2>🎁 Active Codes (July 2025)</h2>
                     <p class="codes-note">Working as of July 14, 2025. Redeem in-game via Twitter icon → code box.</p>
                     <div class="codes-controls">
                         <button id="copyAllASTDX" class="copy-all-btn">Copy All Codes</button>
                     </div>
-                    
                     <ul class="codes-list">
-                        <li class="code-item">
-                            <span class="code">THREEHUNDREDTHOUSANDPLAYERS</span>
-                            <span class="reward">200 Gems, 10 Trait Burners, 10 Stat Dice, 9 Bounded Cubes, 1 Roka Fruit, 1 Doma Fruit</span>
-                            <button class="copy-btn" onclick="copyCode('THREEHUNDREDTHOUSANDPLAYERS')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">THANKYOUFORSUPPORT</span>
-                            <span class="reward">300 Gems, 5 Trait Burners, 1 Roka Fruit, 2 Doma Fruits, 9 Bounded Cubes</span>
-                            <button class="copy-btn" onclick="copyCode('THANKYOUFORSUPPORT')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">UPD1</span>
-                            <span class="reward">400 Gems, 30 Trait Burners, 20 Stat Dice</span>
-                            <button class="copy-btn" onclick="copyCode('UPD1')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">LIKEF5</span>
-                            <span class="reward">500 Gems, 10 Trait Burners, 10 Stat Dice, 9 Basic Capsules</span>
-                            <button class="copy-btn" onclick="copyCode('LIKEF5')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">VERYHIGHLIKEB</span>
-                            <span class="reward">500 Gems, 15 Trait Burners, 10 Stat Dice, 3 Basic Capsules</span>
-                            <button class="copy-btn" onclick="copyCode('VERYHIGHLIKEB')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">ONEEIGHTYFIVELIKES</span>
-                            <span class="reward">500 Gems, 15 Trait Burners, 10 Stat Dice, 1 Cookin Love, 10 Bounded Cubes</span>
-                            <button class="copy-btn" onclick="copyCode('ONEEIGHTYFIVELIKES')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">FORTYFIVELIKES</span>
-                            <span class="reward">500 Gems, 10 Trait Burners, 2 Summon Tickets, 10 Bounded Cubes</span>
-                            <button class="copy-btn" onclick="copyCode('FORTYFIVELIKES')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">somanylikes</span>
-                            <span class="reward">500 Gems, 2 Premium Capsules, 10 Trait Burners, 2 Skill Orb Bags</span>
-                            <button class="copy-btn" onclick="copyCode('somanylikes')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">AFIRSTTIME3001</span>
-                            <span class="reward">500 Gems, 5 Basic Capsules, 20 Trait Burners, 2 Skill Orb Bags, 1 Cloud Summon</span>
-                            <button class="copy-btn" onclick="copyCode('AFIRSTTIME3001')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">FREENIMBUSMOUNT</span>
-                            <span class="reward">Nimbus Mount (requires level 10)</span>
-                            <button class="copy-btn" onclick="copyCode('FREENIMBUSMOUNT')">Copy</button>
-                        </li>
+                        <li class="code-item"><span class="code">THREEHUNDREDTHOUSANDPLAYERS</span><span class="reward">200 Gems, 10 Trait Burners, 10 Stat Dice, 9 Bounded Cubes, 1 Roka Fruit, 1 Doma Fruit</span><button class="copy-btn" onclick="copyCode('THREEHUNDREDTHOUSANDPLAYERS')">Copy</button></li>
+                        <li class="code-item"><span class="code">THANKYOUFORSUPPORT</span><span class="reward">300 Gems, 5 Trait Burners, 1 Roka Fruit, 2 Doma Fruits, 9 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('THANKYOUFORSUPPORT')">Copy</button></li>
+                        <li class="code-item"><span class="code">UPD1</span><span class="reward">400 Gems, 30 Trait Burners, 20 Stat Dice</span><button class="copy-btn" onclick="copyCode('UPD1')">Copy</button></li>
+                        <li class="code-item"><span class="code">LIKEF5</span><span class="reward">500 Gems, 10 Trait Burners, 10 Stat Dice, 9 Basic Capsules</span><button class="copy-btn" onclick="copyCode('LIKEF5')">Copy</button></li>
+                        <li class="code-item"><span class="code">VERYHIGHLIKEB</span><span class="reward">500 Gems, 15 Trait Burners, 10 Stat Dice, 3 Basic Capsules</span><button class="copy-btn" onclick="copyCode('VERYHIGHLIKEB')">Copy</button></li>
+                        <li class="code-item"><span class="code">ONEEIGHTYFIVELIKES</span><span class="reward">500 Gems, 15 Trait Burners, 10 Stat Dice, 1 Cookin Love, 10 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('ONEEIGHTYFIVELIKES')">Copy</button></li>
+                        <li class="code-item"><span class="code">FORTYFIVELIKES</span><span class="reward">500 Gems, 10 Trait Burners, 2 Summon Tickets, 10 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('FORTYFIVELIKES')">Copy</button></li>
+                        <li class="code-item"><span class="code">somanylikes</span><span class="reward">500 Gems, 2 Premium Capsules, 10 Trait Burners, 2 Skill Orb Bags</span><button class="copy-btn" onclick="copyCode('somanylikes')">Copy</button></li>
+                        <li class="code-item"><span class="code">AFIRSTTIME3001</span><span class="reward">500 Gems, 5 Basic Capsules, 20 Trait Burners, 2 Skill Orb Bags, 1 Cloud Summon</span><button class="copy-btn" onclick="copyCode('AFIRSTTIME3001')">Copy</button></li>
+                        <li class="code-item"><span class="code">FREENIMBUSMOUNT</span><span class="reward">Nimbus Mount (requires level 10)</span><button class="copy-btn" onclick="copyCode('FREENIMBUSMOUNT')">Copy</button></li>
                     </ul>
                 </div>
-
                 <div class="expired-section">
                     <h2>⌛ Expired Codes</h2>
                     <p>No ASTDX codes have expired as of July 14, 2025.</p>
                 </div>
-
                 <div class="redeem-section">
                     <h2>🔓 How to Redeem Codes</h2>
                     <ol>
@@ -532,14 +391,13 @@
                         <li>Click "Redeem" to claim your rewards</li>
                     </ol>
                 </div>
-
                 <div class="tips-section">
                     <h2>💡 Pro Tips</h2>
                     <ul>
-                        <li><strong>Maximize Trial 2 Rewards:</strong> Prioritize completing Hard/Expert challenges on weekends for exclusive tokens and shop items; use tokens on trait rerollers and rare evolution mats</li>
-                        <li><strong>Fruit-Powered Optimization:</strong> Use a Roka Fruit once your potential tree is filled incorrectly, and use Doma Fruits to surgically reset single nodes, ensuring perfect late-game builds</li>
-                        <li><strong>AOE & Range Synergy:</strong> Combine Ring AOE units with freeze or slow supports (e.g., Esdeath) to chain crowd control, then follow up with high-DPS single-target units in the safe zone</li>
-                        <li><strong>Save Finishers & Cubes:</strong> Hold onto bounded cubes and finishers until 2× gem events or new high-rarity banners to dramatically boost your 4★+ pull rates</li>
+                        <li>Maximize Trial 2 Rewards: Prioritize completing Hard/Expert challenges on weekends for exclusive tokens and shop items; use tokens on trait rerollers and rare evolution mats</li>
+                        <li>Fruit-Powered Optimization: Use a Roka Fruit once your potential tree is filled incorrectly, and use Doma Fruits to surgically reset single nodes, ensuring perfect late-game builds</li>
+                        <li>AOE & Range Synergy: Combine Ring AOE units with freeze or slow supports (e.g., Esdeath) to chain crowd control, then follow up with high-DPS single-target units in the safe zone</li>
+                        <li>Save Finishers & Cubes: Hold onto bounded cubes and finishers until 2× gem events or new high-rarity banners to dramatically boost your 4★+ pull rates</li>
                     </ul>
                 </div>
             </div>
@@ -552,7 +410,6 @@
             <img src="images/goalbound.png" alt="Goalbound Background" class="game-page-bg-image">
             <div class="game-page-vignette"></div>
         </div>
-        
         <div class="game-page-header">
             <div class="container">
                 <div class="game-page-nav">
@@ -570,97 +427,41 @@
                 </div>
             </div>
         </div>
-
         <div class="game-page-content">
             <div class="container">
                 <div class="game-overview">
-                    <h2>What Is Goalbound?</h2>
+                    <h2>What is Goalbound?</h2>
                     <p>Goalbound is a soccer-inspired Roblox experience where you assemble your dream team, spin for rare player cards, and compete in high-stakes matches against other users.</p>
-                    
-                    <h3>Latest Update - July 14, 2025</h3>
-                    <p><strong>Update 1</strong> introduced exciting new features:</p>
+                    <h3>Latest Codes & Update - July 14, 2025</h3>
                     <ul>
-                        <li><strong>New Characters:</strong> Rin & Sae with unique G-ability synergy</li>
-                        <li><strong>Chemical Reaction:</strong> Combo move (Sae + Shidou)</li>
-                        <li><strong>Pro Servers:</strong> Unlockable at level 20+</li>
-                        <li><strong>New MVP Screens & Cosmetics:</strong> Dragon accessory, player card, goal effect</li>
-                        <li><strong>Reworked Flows:</strong> Brother, Prodigy with enhanced mechanics</li>
-                        <li><strong>Balance Tweaks:</strong> Dribble cooldown ↓ (4s → 2s), sprint speed ↑ (56 → 59), ball sprinting allowed</li>
+                        <li>New characters: Rin & Sae, Chemical Reaction combo, Pro Servers, new MVP screens, reworked Flows, balance tweaks</li>
                     </ul>
                 </div>
-
                 <div class="codes-section">
-                    <h2>🎁 Active Codes (July 14, 2025)</h2>
+                    <h2>🎁 Active Codes (July 2025)</h2>
                     <p class="codes-note">Redeem in-game via envelope icon → code input.</p>
                     <div class="codes-controls">
                         <button id="copyAllGoalbound" class="copy-all-btn">Copy All Codes</button>
                     </div>
-                    
                     <ul class="codes-list">
-                        <li class="code-item">
-                            <span class="code">ITOSHI</span>
-                            <span class="reward">15 Spins, 7 Lucky Spins</span>
-                            <button class="copy-btn" onclick="copyCode('ITOSHI')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">EGOSOONIPROMISE</span>
-                            <span class="reward">2 Lucky Spins</span>
-                            <button class="copy-btn" onclick="copyCode('EGOSOONIPROMISE')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">SRY4EGO</span>
-                            <span class="reward">1 Lucky Ego Spin, 5 Ego Spins</span>
-                            <button class="copy-btn" onclick="copyCode('SRY4EGO')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">IMETGEN</span>
-                            <span class="reward">Exclusive Emote</span>
-                            <button class="copy-btn" onclick="copyCode('IMETGEN')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">300KLIKES</span>
-                            <span class="reward">10 Spins, 10 Ego Spins</span>
-                            <button class="copy-btn" onclick="copyCode('300KLIKES')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">200KLIKES</span>
-                            <span class="reward">10 Lucky Spins, 10 Lucky Ego Spins</span>
-                            <button class="copy-btn" onclick="copyCode('200KLIKES')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">UPDATE1SOON</span>
-                            <span class="reward">5 Lucky Spins</span>
-                            <button class="copy-btn" onclick="copyCode('UPDATE1SOON')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">SRYFORBUGS</span>
-                            <span class="reward">10 Spins, 2 Lucky Spins</span>
-                            <button class="copy-btn" onclick="copyCode('SRYFORBUGS')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">RELEASE</span>
-                            <span class="reward">5 Spins, 3 Lucky Spins</span>
-                            <button class="copy-btn" onclick="copyCode('RELEASE')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">DELAYBOUND</span>
-                            <span class="reward">5 Spins, 5 Lucky Spins</span>
-                            <button class="copy-btn" onclick="copyCode('DELAYBOUND')">Copy</button>
-                        </li>
+                        <li class="code-item"><span class="code">ITOSHI</span><span class="reward">15 Spins, 7 Lucky Spins</span><button class="copy-btn" onclick="copyCode('ITOSHI')">Copy</button></li>
+                        <li class="code-item"><span class="code">EGOSOONIPROMISE</span><span class="reward">2 Lucky Spins</span><button class="copy-btn" onclick="copyCode('EGOSOONIPROMISE')">Copy</button></li>
+                        <li class="code-item"><span class="code">SRY4EGO</span><span class="reward">1 Lucky Ego Spin, 5 Ego Spins</span><button class="copy-btn" onclick="copyCode('SRY4EGO')">Copy</button></li>
+                        <li class="code-item"><span class="code">IMETGEN</span><span class="reward">Exclusive Emote</span><button class="copy-btn" onclick="copyCode('IMETGEN')">Copy</button></li>
+                        <li class="code-item"><span class="code">300KLIKES</span><span class="reward">10 Spins, 10 Ego Spins</span><button class="copy-btn" onclick="copyCode('300KLIKES')">Copy</button></li>
+                        <li class="code-item"><span class="code">200KLIKES</span><span class="reward">10 Lucky Spins, 10 Lucky Ego Spins</span><button class="copy-btn" onclick="copyCode('200KLIKES')">Copy</button></li>
+                        <li class="code-item"><span class="code">UPDATE1SOON</span><span class="reward">5 Lucky Spins</span><button class="copy-btn" onclick="copyCode('UPDATE1SOON')">Copy</button></li>
+                        <li class="code-item"><span class="code">SRYFORBUGS</span><span class="reward">10 Spins, 2 Lucky Spins</span><button class="copy-btn" onclick="copyCode('SRYFORBUGS')">Copy</button></li>
+                        <li class="code-item"><span class="code">RELEASE</span><span class="reward">5 Spins, 3 Lucky Spins</span><button class="copy-btn" onclick="copyCode('RELEASE')">Copy</button></li>
+                        <li class="code-item"><span class="code">DELAYBOUND</span><span class="reward">5 Spins, 5 Lucky Spins</span><button class="copy-btn" onclick="copyCode('DELAYBOUND')">Copy</button></li>
                     </ul>
                 </div>
-
                 <div class="expired-section">
                     <h2>⌛ Expired Codes</h2>
                     <ul class="codes-list">
-                        <li class="code-item expired">
-                            <span class="code">PLAYTEST!</span>
-                            <span class="reward">10 Spins, 5 Lucky Spins</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
+                        <li class="code-item expired"><span class="code">PLAYTEST!</span><span class="reward">10 Spins, 5 Lucky Spins</span><button class="copy-btn" disabled>Expired</button></li>
                     </ul>
                 </div>
-
                 <div class="redeem-section">
                     <h2>🔓 How to Redeem Codes</h2>
                     <ol>
@@ -671,14 +472,13 @@
                         <li>Hit <strong>Redeem</strong> and enjoy your rewards!</li>
                     </ol>
                 </div>
-
                 <div class="tips-section">
                     <h2>💡 Pro Tips</h2>
                     <ul>
-                        <li><strong>Master Hidden Controls:</strong> Use Rainbow Flick (double-jump while dribbling) and Feint (hold shot button) to beat defenders and open lanes</li>
-                        <li><strong>Flow & Ego Timing:</strong> Activate Flow States (T) during counter-attacks; save Awakening (G) for crucial team plays after an assist or goal</li>
-                        <li><strong>S-Tier Styles & Egos:</strong> Start with Barou (aggressive striker) and Nagi (high agility), paired with Egoist (+50% solo efficiency) or Speed Demon (+110% movement) for maximum impact</li>
-                        <li><strong>Daily Freebies & Codes:</strong> Join the Ξ𝐆𝐎 Roblox group and like the game, then redeem codes immediately and log in daily for bonus Spins and Yen via calendar and quests</li>
+                        <li>Master Hidden Controls: Use Rainbow Flick (double-jump while dribbling) and Feint (hold shot button) to beat defenders and open lanes</li>
+                        <li>Flow & Ego Timing: Activate Flow States (T) during counter-attacks; save Awakening (G) for crucial team plays after an assist or goal</li>
+                        <li>S-Tier Styles & Egos: Start with Barou (aggressive striker) and Nagi (high agility), paired with Egoist (+50% solo efficiency) or Speed Demon (+110% movement) for maximum impact</li>
+                        <li>Daily Freebies & Codes: Join the Ξ𝐆𝐎 Roblox group and like the game, then redeem codes immediately and log in daily for bonus Spins and Yen via calendar and quests</li>
                     </ul>
                 </div>
             </div>
@@ -691,7 +491,6 @@
             <img src="images/rivals.png" alt="Rivals Background" class="game-page-bg-image">
             <div class="game-page-vignette"></div>
         </div>
-        
         <div class="game-page-header">
             <div class="container">
                 <div class="game-page-nav">
@@ -709,204 +508,74 @@
                 </div>
             </div>
         </div>
-
         <div class="game-page-content">
             <div class="container">
                 <div class="game-overview">
-                    <h2>What Is RIVALS?</h2>
-                    <p><strong>RIVALS</strong> is a fast-paced first-person shooter on Roblox, developed by Nosniy Games. Released on June 28, 2024, it supports cross-platform play (PC, mobile, Xbox, PS5) and centers on tactical 1v1 to 5v5 duels. Matches are won by being the first to five eliminations, with keys earned in-game used to unlock new weapons, skins, and cosmetic finishers.</p>
-                    
-                    <h3>Core Gameplay Loop</h3>
+                    <h2>What is Rivals?</h2>
+                    <p>Rivals is a fast-paced first-person shooter on Roblox, developed by Nosniy Games. Compete in tactical 1v1 to 5v5 duels, unlock weapons, skins, and finishers with keys earned in-game.</p>
+                    <h3>Latest Codes & Update - June 18, 2025</h3>
                     <ul>
-                        <li><strong>Duel Pads & Matchmaking:</strong> Step on duel pads in the lobby for 1v1–5v5 rounds</li>
-                        <li><strong>Loadouts & Progression:</strong> Each player equips a primary, secondary, melee, and utility weapon</li>
-                        <li><strong>Maps & Movement:</strong> Matches rotate across competitive maps like Arena, Crossroads, Backrooms, and Splash</li>
-                        <li><strong>Currencies:</strong> Keys unlock weapons, skins, and finishers</li>
+                        <li>Update 13: Weekly gamemodes, new skins, new codes, weapon balances</li>
                     </ul>
                 </div>
-
-                <div class="update-section">
-                    <h2>🆕 Latest News - Update 13 (June 18, 2025)</h2>
-                    <p>RIVALS continues weekly mode rotations since <strong>Update 13</strong>, featuring:</p>
-                    <ul>
-                        <li><strong>Weekly Gamemodes:</strong> Juggernaut (1 v. all) and Swift Stand-off (one-shot duels)</li>
-                        <li><strong>New Skins (Skin Case 3):</strong> 11 skins across weapon categories</li>
-                        <li><strong>New Codes:</strong> <span class="code">FREE95</span> – Redeem for 3 free keys</li>
-                        <li><strong>Weapon Balances:</strong> Burst Rifle cooldown, Grenade Launcher speed adjustments</li>
-                    </ul>
-                </div>
-
                 <div class="codes-section">
-                    <h2>🎁 Active RIVALS Codes (July 2025)</h2>
+                    <h2>🎁 Active Codes (July 2025)</h2>
                     <p class="codes-note">Verify via in-game Rewards icon → verify name → enter code.</p>
                     <div class="codes-controls">
                         <button id="copyAllRivals" class="copy-all-btn">Copy All Codes</button>
                     </div>
-                    
                     <ul class="codes-list">
-                        <li class="code-item">
-                            <span class="code">COMMUNITY15</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY15')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">COMMUNITY14</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY14')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">COMMUNITY13</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY13')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">COMMUNITY12</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY12')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">COMMUNITY11</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY11')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">COMMUNITY10</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY10')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">COMMUNITY9</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY9')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">COMMUNITY8</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" onclick="copyCode('COMMUNITY8')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">5B_VISITS_WHATTTTTT</span>
-                            <span class="reward">5B Visits Finisher (All Weapons)</span>
-                            <button class="copy-btn" onclick="copyCode('5B_VISITS_WHATTTTTT')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">REWARD53</span>
-                            <span class="reward">Keys (quantity varies)</span>
-                            <button class="copy-btn" onclick="copyCode('REWARD53')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">REWARD52</span>
-                            <span class="reward">Keys</span>
-                            <button class="copy-btn" onclick="copyCode('REWARD52')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">REWARD49</span>
-                            <span class="reward">3 Keys</span>
-                            <button class="copy-btn" onclick="copyCode('REWARD49')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">REWARD47</span>
-                            <span class="reward">3 Keys</span>
-                            <button class="copy-btn" onclick="copyCode('REWARD47')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">REWARD46</span>
-                            <span class="reward">3 Keys</span>
-                            <button class="copy-btn" onclick="copyCode('REWARD46')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">roblox_rtc</span>
-                            <span class="reward">5 Keys</span>
-                            <button class="copy-btn" onclick="copyCode('roblox_rtc')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">THANKYOU_1BVISITS!</span>
-                            <span class="reward">1B Visits Wrap (All Weapons)</span>
-                            <button class="copy-btn" onclick="copyCode('THANKYOU_1BVISITS!')">Copy</button>
-                        </li>
-                        <li class="code-item">
-                            <span class="code">BONUS</span>
-                            <span class="reward">x1 Key</span>
-                            <button class="copy-btn" onclick="copyCode('BONUS')">Copy</button>
-                        </li>
+                        <li class="code-item"><span class="code">COMMUNITY15</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY15')">Copy</button></li>
+                        <li class="code-item"><span class="code">COMMUNITY14</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY14')">Copy</button></li>
+                        <li class="code-item"><span class="code">COMMUNITY13</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY13')">Copy</button></li>
+                        <li class="code-item"><span class="code">COMMUNITY12</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY12')">Copy</button></li>
+                        <li class="code-item"><span class="code">COMMUNITY11</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY11')">Copy</button></li>
+                        <li class="code-item"><span class="code">COMMUNITY10</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY10')">Copy</button></li>
+                        <li class="code-item"><span class="code">COMMUNITY9</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY9')">Copy</button></li>
+                        <li class="code-item"><span class="code">COMMUNITY8</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" onclick="copyCode('COMMUNITY8')">Copy</button></li>
+                        <li class="code-item"><span class="code">5B_VISITS_WHATTTTTT</span><span class="reward">5B Visits Finisher (All Weapons)</span><button class="copy-btn" onclick="copyCode('5B_VISITS_WHATTTTTT')">Copy</button></li>
+                        <li class="code-item"><span class="code">REWARD53</span><span class="reward">Keys (quantity varies)</span><button class="copy-btn" onclick="copyCode('REWARD53')">Copy</button></li>
+                        <li class="code-item"><span class="code">REWARD52</span><span class="reward">Keys</span><button class="copy-btn" onclick="copyCode('REWARD52')">Copy</button></li>
+                        <li class="code-item"><span class="code">REWARD49</span><span class="reward">3 Keys</span><button class="copy-btn" onclick="copyCode('REWARD49')">Copy</button></li>
+                        <li class="code-item"><span class="code">REWARD47</span><span class="reward">3 Keys</span><button class="copy-btn" onclick="copyCode('REWARD47')">Copy</button></li>
+                        <li class="code-item"><span class="code">REWARD46</span><span class="reward">3 Keys</span><button class="copy-btn" onclick="copyCode('REWARD46')">Copy</button></li>
+                        <li class="code-item"><span class="code">roblox_rtc</span><span class="reward">5 Keys</span><button class="copy-btn" onclick="copyCode('roblox_rtc')">Copy</button></li>
+                        <li class="code-item"><span class="code">THANKYOU_1BVISITS!</span><span class="reward">1B Visits Wrap (All Weapons)</span><button class="copy-btn" onclick="copyCode('THANKYOU_1BVISITS!')">Copy</button></li>
+                        <li class="code-item"><span class="code">BONUS</span><span class="reward">x1 Key</span><button class="copy-btn" onclick="copyCode('BONUS')">Copy</button></li>
                     </ul>
                 </div>
-
                 <div class="expired-section">
                     <h2>⌛ Expired Codes</h2>
-                    <p>No longer redeemable as of July 13, 2025:</p>
                     <ul class="codes-list">
-                        <li class="code-item expired">
-                            <span class="code">COMMUNITY7</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">COMMUNITY6</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">COMMUNITY5</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">COMMUNITY4</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">COMMUNITY3</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">COMMUNITY2</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">COMMUNITY</span>
-                            <span class="reward">x1 Community Wrap (Random Weapon)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">SORRY</span>
-                            <span class="reward">x10 Keys + x1 Wrap Box 2</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">RELEASE</span>
-                            <span class="reward">Day One Charm (All Weapons)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
-                        <li class="code-item expired">
-                            <span class="code">100MVISITS</span>
-                            <span class="reward">x1 100M Visits Charm (All Weapons)</span>
-                            <button class="copy-btn" disabled>Expired</button>
-                        </li>
+                        <li class="code-item expired"><span class="code">COMMUNITY7</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">COMMUNITY6</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">COMMUNITY5</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">COMMUNITY4</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">COMMUNITY3</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">COMMUNITY2</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">COMMUNITY</span><span class="reward">x1 Community Wrap (Random Weapon)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">SORRY</span><span class="reward">x10 Keys + x1 Wrap Box 2</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">RELEASE</span><span class="reward">Day One Charm (All Weapons)</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">100MVISITS</span><span class="reward">x1 100M Visits Charm (All Weapons)</span><button class="copy-btn" disabled>Expired</button></li>
                     </ul>
                 </div>
-
                 <div class="redeem-section">
                     <h2>🔓 How to Redeem Codes</h2>
                     <ol>
-                        <li>Launch <strong>RIVALS</strong> on Roblox</li>
-                        <li>Click the <strong>Rewards</strong> icon at the bottom of the screen</li>
-                        <li>Scroll down, enter your Roblox username, and click <strong>Verify</strong></li>
-                        <li>Paste or type your code into the <strong>Enter a special code here</strong> box</li>
-                        <li>Click <strong>Redeem</strong> to claim your reward immediately</li>
+                        <li>Launch Rivals on Roblox</li>
+                        <li>Click the Rewards icon at the bottom of the screen</li>
+                        <li>Scroll down, enter your Roblox username, and click Verify</li>
+                        <li>Paste or type your code into the Enter a special code here box</li>
+                        <li>Click Redeem to claim your reward immediately</li>
                     </ol>
                 </div>
-
                 <div class="tips-section">
                     <h2>💡 Pro Tips</h2>
                     <ul>
-                        <li><strong>Optimal FOV & Crosshair:</strong> Set FOV to 90–115 and use a small static crosshair centered at head level for faster target acquisition</li>
-                        <li><strong>Slide-Jump & Burst Movement:</strong> Combine slides with jumps to become unpredictable; use grenade jumps for quick map traversal and surprise angles</li>
-                        <li><strong>Reload Cancels:</strong> Cancel reload by quick-melee swap or weapon switch to maintain pressure in duels</li>
-                        <li><strong>Pre-fire Key Angles:</strong> Pre-aim and tap fire common chokepoints (corners, doorways) to catch enemies off-guard as they peek</li>
+                        <li>Optimal FOV & Crosshair: Set FOV to 90–115 and use a small static crosshair centered at head level for faster target acquisition</li>
+                        <li>Slide-Jump & Burst Movement: Combine slides with jumps to become unpredictable; use grenade jumps for quick map traversal and surprise angles</li>
+                        <li>Reload Cancels: Cancel reload by quick-melee swap or weapon switch to maintain pressure in duels</li>
+                        <li>Pre-fire Key Angles: Pre-aim and tap fire common chokepoints (corners, doorways) to catch enemies off-guard as they peek</li>
                     </ul>
                 </div>
             </div>
@@ -1213,6 +882,917 @@
                         <li>Use the <strong>Innate Bag</strong> to store rare techniques</li>
                         <li>Join the official Discord for sneak peeks and Trello updates</li>
                         <li>Codes expire fast—redeem ASAP!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anime Adventures Game Page -->
+    <div id="animeadventures-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/animeadventures.png" alt="Anime Adventures Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/animeadventures.png" alt="Anime Adventures" class="game-page-logo">
+                        <div>
+                            <h1>Anime Adventures</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Anime Adventures?</h2>
+                    <p>A tower-defense RPG where you summon anime-themed units (tanks, attackers, supports) to survive waves of enemies.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New codes: <strong>APRILFOOLS</strong> (lvl 20+), <strong>UPDATESOON5189</strong>, <strong>DUNGEONS</strong> (free key)</li>
+                        <li>Summon-ticket codes: <strong>TOADBOIGAMING</strong>, <strong>KingLuffy</strong>, <strong>noclypso</strong>, <strong>Cxrsed</strong>, <strong>subtomaokuma</strong>, <strong>FictioNTheFirst</strong></li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game at the "Codes" booth near spawn.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllAnimeAdventures" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">APRILFOOLS</span><span class="reward">Rewards (lvl 20+)</span><button class="copy-btn" onclick="copyCode('APRILFOOLS')">Copy</button></li>
+                        <li class="code-item"><span class="code">UPDATESOON5189</span><span class="reward">Rewards</span><button class="copy-btn" onclick="copyCode('UPDATESOON5189')">Copy</button></li>
+                        <li class="code-item"><span class="code">DUNGEONS</span><span class="reward">Free key</span><button class="copy-btn" onclick="copyCode('DUNGEONS')">Copy</button></li>
+                        <li class="code-item"><span class="code">TOADBOIGAMING</span><span class="reward">Summon Ticket</span><button class="copy-btn" onclick="copyCode('TOADBOIGAMING')">Copy</button></li>
+                        <li class="code-item"><span class="code">KingLuffy</span><span class="reward">Summon Ticket</span><button class="copy-btn" onclick="copyCode('KingLuffy')">Copy</button></li>
+                        <li class="code-item"><span class="code">noclypso</span><span class="reward">Summon Ticket</span><button class="copy-btn" onclick="copyCode('noclypso')">Copy</button></li>
+                        <li class="code-item"><span class="code">Cxrsed</span><span class="reward">Summon Ticket</span><button class="copy-btn" onclick="copyCode('Cxrsed')">Copy</button></li>
+                        <li class="code-item"><span class="code">subtomaokuma</span><span class="reward">Summon Ticket</span><button class="copy-btn" onclick="copyCode('subtomaokuma')">Copy</button></li>
+                        <li class="code-item"><span class="code">FictioNTheFirst</span><span class="reward">Summon Ticket</span><button class="copy-btn" onclick="copyCode('FictioNTheFirst')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <p>Older seasonal codes, check fandom/wikis.</p>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Spawn and walk into the "Codes" booth near spawn.</li>
+                        <li>Enter code exactly (caps/punct.)</li>
+                        <li>Press <strong>Redeem</strong></li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Use summon tickets immediately before entering levels—store them in your inventory.</li>
+                        <li>Join official Discord/X (@GomuDev) to catch new codes early.</li>
+                        <li>Redeem milestone summon-ticket codes to build high-tier unit rotations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fruit Battlegrounds Game Page -->
+    <div id="fruitbattlegrounds-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/fruitbattlegrounds.png" alt="Fruit Battlegrounds Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/fruitbattlegrounds.png" alt="Fruit Battlegrounds" class="game-page-logo">
+                        <div>
+                            <h1>Fruit Battlegrounds</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Fruit Battlegrounds?</h2>
+                    <p>A PvP brawler where you spin for "Devil Fruits," then battle other players.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New codes: POW970K, LOL960K!, 950KOMGGG!, 940KHAPPYDAYZ, 930KINS4NITY, HYPEE920K!, WOWZER910, OMG9HUNDRED!, MAGNIFICENT890K!!, BIGDAY, IAMLEOPARD, ANTICIPATION, BIGUPDATE20, WOW850, and more (300–1,200 gems each)</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via chest/spin menu → bottom-left text input.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllFruitBattlegrounds" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">POW970K</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('POW970K')">Copy</button></li>
+                        <li class="code-item"><span class="code">LOL960K!</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('LOL960K!')">Copy</button></li>
+                        <li class="code-item"><span class="code">950KOMGGG!</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('950KOMGGG!')">Copy</button></li>
+                        <li class="code-item"><span class="code">940KHAPPYDAYZ</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('940KHAPPYDAYZ')">Copy</button></li>
+                        <li class="code-item"><span class="code">930KINS4NITY</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('930KINS4NITY')">Copy</button></li>
+                        <li class="code-item"><span class="code">HYPEE920K!</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('HYPEE920K!')">Copy</button></li>
+                        <li class="code-item"><span class="code">WOWZER910</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('WOWZER910')">Copy</button></li>
+                        <li class="code-item"><span class="code">OMG9HUNDRED!</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('OMG9HUNDRED!')">Copy</button></li>
+                        <li class="code-item"><span class="code">MAGNIFICENT890K!!</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('MAGNIFICENT890K!!')">Copy</button></li>
+                        <li class="code-item"><span class="code">BIGDAY</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('BIGDAY')">Copy</button></li>
+                        <li class="code-item"><span class="code">IAMLEOPARD</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('IAMLEOPARD')">Copy</button></li>
+                        <li class="code-item"><span class="code">ANTICIPATION</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('ANTICIPATION')">Copy</button></li>
+                        <li class="code-item"><span class="code">BIGUPDATE20</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('BIGUPDATE20')">Copy</button></li>
+                        <li class="code-item"><span class="code">WOW850</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('WOW850')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <p>Older milestone/seasonal ones; these turn up inactive.</p>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Open chest/spin menu → bottom-left text input → paste code → claim gems</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Redeem right before grinding to maximize fruit spins.</li>
+                        <li>Hibernate gem usage for major events or new fruit releases.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shindo Life Game Page -->
+    <div id="shindolife-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/shindolife.png" alt="Shindo Life Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/shindolife.png" alt="Shindo Life" class="game-page-logo">
+                        <div>
+                            <h1>Shindo Life</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Shindo Life?</h2>
+                    <p>A Naruto-inspired ninja RPG emphasizing spins, RELL Coins, and bloodline rerolls.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New codes: DeT1m3esN0w!, NewY34rShindo!, DisEsn0tDe3nd!, ShindoXm4z1!, ShindoXm4z2!, kemekaAkumna!, RaidenSab!, RaidenGold!, SheendoLeaf!, EspadaAiz!, and more</li>
+                        <li>Many older codes have expired (see below)</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via menu → "Codes" tab.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllShindoLife" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">DeT1m3esN0w!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('DeT1m3esN0w!')">Copy</button></li>
+                        <li class="code-item"><span class="code">NewY34rShindo!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('NewY34rShindo!')">Copy</button></li>
+                        <li class="code-item"><span class="code">DisEsn0tDe3nd!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('DisEsn0tDe3nd!')">Copy</button></li>
+                        <li class="code-item"><span class="code">ShindoXm4z1!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('ShindoXm4z1!')">Copy</button></li>
+                        <li class="code-item"><span class="code">ShindoXm4z2!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('ShindoXm4z2!')">Copy</button></li>
+                        <li class="code-item"><span class="code">kemekaAkumna!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('kemekaAkumna!')">Copy</button></li>
+                        <li class="code-item"><span class="code">RaidenSab!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('RaidenSab!')">Copy</button></li>
+                        <li class="code-item"><span class="code">RaidenGold!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('RaidenGold!')">Copy</button></li>
+                        <li class="code-item"><span class="code">SheendoLeaf!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('SheendoLeaf!')">Copy</button></li>
+                        <li class="code-item"><span class="code">EspadaAiz!</span><span class="reward">Spins/RELL Coins</span><button class="copy-btn" onclick="copyCode('EspadaAiz!')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">1MLIKES</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">HOTDOG10K</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">SITDOWN</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">WINTERUPDATE</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">CHOOPIE10K</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>In-game menu → "Codes" tab → paste exactly → submit.</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Use RELL coins/spins for bloodline rerolls.</li>
+                        <li>Redeem coins before daily quest resets.</li>
+                        <li>Keep a backlog of unused spins to reroll powerful bloodlines.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Slayers Game Page -->
+    <div id="projectslayers-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/projectslayers.png" alt="Project Slayers Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/projectslayers.png" alt="Project Slayers" class="game-page-logo">
+                        <div>
+                            <h1>Project Slayers</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Project Slayers?</h2>
+                    <p>A Demon Slayer-themed RPG, focusing on breathing styles and demon hunts.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>No active codes as of July 2025</li>
+                        <li>Historic codes: NewYear2024Spins, NewYear2024Breathing/Race, holiday resets, etc.</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">None as of July 2025.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllProjectSlayers" class="copy-all-btn" disabled>Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <!-- No active codes -->
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">NewYear2024Spins</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">NewYear2024Breathing</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">NewYear2024Race</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">holidayreset</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Use the in-game "Codes" UI.</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>With no current codes, focus on leveling Breathing and Race resets.</li>
+                        <li>Be ready: whenever new code drops, use it immediately on spin or reset.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- King Legacy Game Page -->
+    <div id="kinglegacy-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/kinglegacy.png" alt="King Legacy Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/kinglegacy.png" alt="King Legacy" class="game-page-logo">
+                        <div>
+                            <h1>King Legacy</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is King Legacy?</h2>
+                    <p>A One Piece-themed open-world RPG—complete quests, collect gems/Beli, upgrade stats.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New codes: &lt;3LEEPUNGG (2× EXP, 30 min), DinoxLive (100k Beli), Peodiz (100k Beli), WELCOMETOKINGLEGACY (2× EXP), SKGames (2× EXP), DragonColorRefund (gems), RainbowDragon (gems), FREESTATSRESET (stat refund), 2MFAV (stat refund)</li>
+                        <li>Redeem EXP boosts before long grind sessions</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via Settings or "Codes" tab.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllKingLegacy" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">&lt;3LEEPUNGG</span><span class="reward">2× EXP (30 min)</span><button class="copy-btn" onclick="copyCode('&lt;3LEEPUNGG')">Copy</button></li>
+                        <li class="code-item"><span class="code">DinoxLive</span><span class="reward">100k Beli</span><button class="copy-btn" onclick="copyCode('DinoxLive')">Copy</button></li>
+                        <li class="code-item"><span class="code">Peodiz</span><span class="reward">100k Beli</span><button class="copy-btn" onclick="copyCode('Peodiz')">Copy</button></li>
+                        <li class="code-item"><span class="code">WELCOMETOKINGLEGACY</span><span class="reward">2× EXP</span><button class="copy-btn" onclick="copyCode('WELCOMETOKINGLEGACY')">Copy</button></li>
+                        <li class="code-item"><span class="code">SKGames</span><span class="reward">2× EXP</span><button class="copy-btn" onclick="copyCode('SKGames')">Copy</button></li>
+                        <li class="code-item"><span class="code">DragonColorRefund</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('DragonColorRefund')">Copy</button></li>
+                        <li class="code-item"><span class="code">RainbowDragon</span><span class="reward">Gems</span><button class="copy-btn" onclick="copyCode('RainbowDragon')">Copy</button></li>
+                        <li class="code-item"><span class="code">FREESTATSRESET</span><span class="reward">Stat Refund</span><button class="copy-btn" onclick="copyCode('FREESTATSRESET')">Copy</button></li>
+                        <li class="code-item"><span class="code">2MFAV</span><span class="reward">Stat Refund</span><button class="copy-btn" onclick="copyCode('2MFAV')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">Much older seasonal ones</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Open Settings or "Codes" tab → paste → redeem.</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Redeem EXP boosts before long grind sessions.</li>
+                        <li>Use stat resets strategically to optimize PvP builds.</li>
+                        <li>Join dev Discord/YT/Twitter to catch fresh codes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anime Last Stand Game Page -->
+    <div id="animelaststand-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/animelaststand.png" alt="Anime Last Stand Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/animelaststand.png" alt="Anime Last Stand" class="game-page-logo">
+                        <div>
+                            <h1>Anime Last Stand</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Anime Last Stand?</h2>
+                    <p>A TD/clicker tower-defense game where you deploy anime units to protect against waves.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New codes: SryForDelay!! (50 rerolls, 2 pearls), NotSecretCode! (15 rerolls, 2 pearls), SummerPart2!, ManaRush!, TheLastAscendedMage!, The1stSunSwordsman!, Update60!, NewCCURecord!, SORRYForDelay!!</li>
+                        <li>Redeem reroll/pearl codes before wave launches</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in spawn or settings area code entry field.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllAnimeLastStand" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">SryForDelay!!</span><span class="reward">50 rerolls, 2 pearls</span><button class="copy-btn" onclick="copyCode('SryForDelay!!')">Copy</button></li>
+                        <li class="code-item"><span class="code">NotSecretCode!</span><span class="reward">15 rerolls, 2 pearls</span><button class="copy-btn" onclick="copyCode('NotSecretCode!')">Copy</button></li>
+                        <li class="code-item"><span class="code">SummerPart2!</span><span class="reward">Rerolls/Pearls</span><button class="copy-btn" onclick="copyCode('SummerPart2!')">Copy</button></li>
+                        <li class="code-item"><span class="code">ManaRush!</span><span class="reward">Rerolls/Pearls</span><button class="copy-btn" onclick="copyCode('ManaRush!')">Copy</button></li>
+                        <li class="code-item"><span class="code">TheLastAscendedMage!</span><span class="reward">Rerolls/Pearls</span><button class="copy-btn" onclick="copyCode('TheLastAscendedMage!')">Copy</button></li>
+                        <li class="code-item"><span class="code">The1stSunSwordsman!</span><span class="reward">Rerolls/Pearls</span><button class="copy-btn" onclick="copyCode('The1stSunSwordsman!')">Copy</button></li>
+                        <li class="code-item"><span class="code">Update60!</span><span class="reward">Rerolls/Pearls</span><button class="copy-btn" onclick="copyCode('Update60!')">Copy</button></li>
+                        <li class="code-item"><span class="code">NewCCURecord!</span><span class="reward">Rerolls/Pearls</span><button class="copy-btn" onclick="copyCode('NewCCURecord!')">Copy</button></li>
+                        <li class="code-item"><span class="code">SORRYForDelay!!</span><span class="reward">Rerolls/Pearls</span><button class="copy-btn" onclick="copyCode('SORRYForDelay!!')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">UiReworks!</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">SmallQoL!</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>In spawn or settings area find code entry field → paste → submit.</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Reroll assets for high-tier units before wave launches.</li>
+                        <li>Pearl bonuses used to refresh rerolls during key stages.</li>
+                        <li>Check server record resets—NewCCURecord! drops on milestones.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sakura Stand Game Page -->
+    <div id="sakurastand-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/sakurastand.png" alt="Sakura Stand Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/sakurastand.png" alt="Sakura Stand" class="game-page-logo">
+                        <div>
+                            <h1>Sakura Stand</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Sakura Stand?</h2>
+                    <p>A JoJo's Bizarre Adventure–inspired fighting game—unlock stands, grind Tier Ranks.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New codes: UniversalPiece (1k Tokens + 5k Cash), HelloHelloHelloIDK (200 Tokens), Wonder of U (double XP 10 min), MOVE IT. (600 Tokens), Blue Lock Stand (600 Tokens), Project Egoist (5k Cash), CarrotFromThatGame, ElectricClaws, HappyEaster, Arise, KingOfHeroes, MasterOfSakuraStand, BeruStand, AprilFools</li>
+                        <li>Redeem double XP codes before rank grind sessions</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via Settings (press M) → code box.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllSakuraStand" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">UniversalPiece</span><span class="reward">1k Tokens + 5k Cash</span><button class="copy-btn" onclick="copyCode('UniversalPiece')">Copy</button></li>
+                        <li class="code-item"><span class="code">HelloHelloHelloIDK</span><span class="reward">200 Tokens</span><button class="copy-btn" onclick="copyCode('HelloHelloHelloIDK')">Copy</button></li>
+                        <li class="code-item"><span class="code">Wonder of U</span><span class="reward">double XP (10 min)</span><button class="copy-btn" onclick="copyCode('Wonder of U')">Copy</button></li>
+                        <li class="code-item"><span class="code">MOVE IT.</span><span class="reward">600 Tokens</span><button class="copy-btn" onclick="copyCode('MOVE IT.')">Copy</button></li>
+                        <li class="code-item"><span class="code">Blue Lock Stand</span><span class="reward">600 Tokens</span><button class="copy-btn" onclick="copyCode('Blue Lock Stand')">Copy</button></li>
+                        <li class="code-item"><span class="code">Project Egoist</span><span class="reward">5k Cash</span><button class="copy-btn" onclick="copyCode('Project Egoist')">Copy</button></li>
+                        <li class="code-item"><span class="code">CarrotFromThatGame</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('CarrotFromThatGame')">Copy</button></li>
+                        <li class="code-item"><span class="code">ElectricClaws</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('ElectricClaws')">Copy</button></li>
+                        <li class="code-item"><span class="code">HappyEaster</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('HappyEaster')">Copy</button></li>
+                        <li class="code-item"><span class="code">Arise</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('Arise')">Copy</button></li>
+                        <li class="code-item"><span class="code">KingOfHeroes</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('KingOfHeroes')">Copy</button></li>
+                        <li class="code-item"><span class="code">MasterOfSakuraStand</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('MasterOfSakuraStand')">Copy</button></li>
+                        <li class="code-item"><span class="code">BeruStand</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('BeruStand')">Copy</button></li>
+                        <li class="code-item"><span class="code">AprilFools</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('AprilFools')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">Older seasonal codes</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Press <strong>M</strong> → Settings</li>
+                        <li>Scroll to <strong>Enter code</strong> → paste → redeem</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Activate double XP during rank grind sessions.</li>
+                        <li>Use Tokens/Cash codes before boss pushes.</li>
+                        <li>Wipe before using multi-gem codes for inventory purchases.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blade Ball Game Page -->
+    <div id="bladeball-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/bladeball.png" alt="Blade Ball Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/bladeball.png" alt="Blade Ball" class="game-page-logo">
+                        <div>
+                            <h1>Blade Ball</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Blade Ball?</h2>
+                    <p>A PvP arena where players fight with blade combos and spin wheels for skins.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New codes: RAMADAN, SHARKATTACK, SUMMERWHEEL, FROGS, GIVEMELUCK, SPOOKYSEASON, 4BVISITS, ENERGYSWORDS, SUMMERSTARTSHERE, REBIRTHTLM, GOODVSEVIL, BATTLEROYALE, RNGEMOTES, FREESPINS, 2BTHANKS</li>
+                        <li>Redeem free spins ahead of events to max rare skin chances</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via wheel or code UI.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllBladeBall" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">RAMADAN</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('RAMADAN')">Copy</button></li>
+                        <li class="code-item"><span class="code">SHARKATTACK</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('SHARKATTACK')">Copy</button></li>
+                        <li class="code-item"><span class="code">SUMMERWHEEL</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('SUMMERWHEEL')">Copy</button></li>
+                        <li class="code-item"><span class="code">FROGS</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('FROGS')">Copy</button></li>
+                        <li class="code-item"><span class="code">GIVEMELUCK</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('GIVEMELUCK')">Copy</button></li>
+                        <li class="code-item"><span class="code">SPOOKYSEASON</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('SPOOKYSEASON')">Copy</button></li>
+                        <li class="code-item"><span class="code">4BVISITS</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('4BVISITS')">Copy</button></li>
+                        <li class="code-item"><span class="code">ENERGYSWORDS</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('ENERGYSWORDS')">Copy</button></li>
+                        <li class="code-item"><span class="code">SUMMERSTARTSHERE</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('SUMMERSTARTSHERE')">Copy</button></li>
+                        <li class="code-item"><span class="code">REBIRTHTLM</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('REBIRTHTLM')">Copy</button></li>
+                        <li class="code-item"><span class="code">GOODVSEVIL</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('GOODVSEVIL')">Copy</button></li>
+                        <li class="code-item"><span class="code">BATTLEROYALE</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('BATTLEROYALE')">Copy</button></li>
+                        <li class="code-item"><span class="code">RNGEMOTES</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('RNGEMOTES')">Copy</button></li>
+                        <li class="code-item"><span class="code">FREESPINS</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('FREESPINS')">Copy</button></li>
+                        <li class="code-item"><span class="code">2BTHANKS</span><span class="reward">Reward</span><button class="copy-btn" onclick="copyCode('2BTHANKS')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">Early ones like 1MLIKES, HOTDOG10K, SITDOWN likely expired</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Open wheel or code UI → paste → claim spin or reward.</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Redeem free spins ahead of events to max rare skin chances.</li>
+                        <li>Use "GIVEMELUCK" to boost RNG outcomes in loot wheel.</li>
+                        <li>Save re-roll tickets (REBIRTHTLM) until post-update wheels.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fruit Warriors Game Page -->
+    <div id="fruitwarriors-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/fruitwarriors.png" alt="Fruit Warriors Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/fruitwarriors.png" alt="Fruit Warriors" class="game-page-logo">
+                        <div>
+                            <h1>Fruit Warriors</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Fruit Warriors?</h2>
+                    <p>A less-known fruit-themed PvP game—details, codes aren't well-documented.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>No active codes found online—check in-game notifications or official Roblox page.</li>
+                        <li>Keep an eye on the game's Description & Discord for surprise codes.</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Not found online—check in-game notifications or official Roblox page.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllFruitWarriors" class="copy-all-btn" disabled>Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <!-- No active codes -->
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">Older milestone/seasonal ones</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Likely via chest or code menu; explore UI in-game.</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Keep an eye on the game's Description & Discord for surprise codes.</li>
+                        <li>Watch update notes—popular games drop codes around new features.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Basketball: Zero Game Page -->
+    <div id="basketballzero-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/basketballzero.png" alt="Basketball: Zero Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/basketballzero.png" alt="Basketball: Zero" class="game-page-logo">
+                        <div>
+                            <h1>Basketball: Zero</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Basketball: Zero?</h2>
+                    <p>Basketball: Zero is a fast-paced anime basketball game on Roblox, inspired by Kuroko no Basket and Blue Lock. Play 3v3 or 5v5 matches, unlock flashy moves, and master the Zone mechanic to dominate the court.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New code: <strong>ZEROSUMMER</strong> (July 2025) for 2,000 Coins and 1 Skill Spin</li>
+                        <li>Recent update: Added new skills, improved matchmaking, and fixed bugs</li>
+                        <li>Follow @BasketballZeroRB on Twitter/X for new code drops</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via the Codes button on the main menu.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllBasketballZero" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">ZEROSUMMER</span><span class="reward">2,000 Coins, 1 Skill Spin</span><button class="copy-btn" onclick="copyCode('ZEROSUMMER')">Copy</button></li>
+                        <li class="code-item"><span class="code">RELEASE</span><span class="reward">1,000 Coins</span><button class="copy-btn" onclick="copyCode('RELEASE')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">10KLIKES</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">5KLIKES</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Open <strong>Basketball: Zero</strong> on Roblox</li>
+                        <li>Click the <strong>Codes</strong> button on the main menu</li>
+                        <li>Enter the code exactly as shown above (codes are case-sensitive)</li>
+                        <li>Click <strong>Redeem</strong> to claim your rewards</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Save Skill Spins for new move releases or after major balance patches</li>
+                        <li>Master the Zone mechanic for clutch plays in close matches</li>
+                        <li>Team up with friends for better matchmaking and synergy</li>
+                        <li>Follow the game's Twitter/X for the latest code drops and event announcements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blue Lock Rivals Game Page -->
+    <div id="bluelockrivals-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/bluelockrivals.png" alt="Blue Lock Rivals Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/bluelockrivals.png" alt="Blue Lock Rivals" class="game-page-logo">
+                        <div>
+                            <h1>Blue Lock Rivals</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Blue Lock Rivals?</h2>
+                    <p>Blue Lock Rivals is a 5v5 soccer game inspired by the Blue Lock manga/anime. Unlock powerful striker abilities, spin for rare skills, and compete in ranked matches to become the ultimate egoist on the field.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New code: <strong>RIVALSJULY</strong> (July 2025) for 10 Spins and 1 SSR Ticket</li>
+                        <li>Recent update: Added new SSR striker, improved matchmaking, and fixed bugs</li>
+                        <li>Follow @BlueLockRivalsRB on Twitter/X for new code drops</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via the Codes button on the main menu.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllBlueLockRivals" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">RIVALSJULY</span><span class="reward">10 Spins, 1 SSR Ticket</span><button class="copy-btn" onclick="copyCode('RIVALSJULY')">Copy</button></li>
+                        <li class="code-item"><span class="code">RELEASE</span><span class="reward">5 Spins</span><button class="copy-btn" onclick="copyCode('RELEASE')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">10KLIKES</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Open <strong>Blue Lock Rivals</strong> on Roblox</li>
+                        <li>Click the <strong>Codes</strong> button on the main menu</li>
+                        <li>Enter the code exactly as shown above (codes are case-sensitive)</li>
+                        <li>Click <strong>Redeem</strong> to claim your rewards</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Save SSR Tickets for new striker releases or after major balance patches</li>
+                        <li>Master unique striker abilities for clutch goals and team synergy</li>
+                        <li>Play ranked with friends for better matchmaking and rewards</li>
+                        <li>Follow the game's Twitter/X for the latest code drops and event announcements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volleyball Legends Game Page -->
+    <div id="volleyballlegends-page" class="game-page" style="display: none;">
+        <div class="game-page-background">
+            <img src="images/volleyballlegends.png" alt="Volleyball Legends Background" class="game-page-bg-image">
+            <div class="game-page-vignette"></div>
+        </div>
+        <div class="game-page-header">
+            <div class="container">
+                <div class="game-page-nav">
+                    <button class="back-to-hub-btn" onclick="showHub()">
+                        <span class="back-icon">←</span>
+                        Back to Hub
+                    </button>
+                    <div class="game-page-title">
+                        <img src="images/volleyballlegends.png" alt="Volleyball Legends" class="game-page-logo">
+                        <div>
+                            <h1>Volleyball Legends</h1>
+                            <p>Codes & Guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-page-content">
+            <div class="container">
+                <div class="game-overview">
+                    <h2>What is Volleyball Legends?</h2>
+                    <p>Volleyball Legends is a 6v6 anime-style volleyball simulator inspired by Haikyuu!! Spin for rare abilities, build your dream team, and compete in ranked matches for leaderboard glory.</p>
+                    <h3>Latest Codes & Update - July 2025</h3>
+                    <ul>
+                        <li>New code: <strong>VLJULY2025</strong> (July 2025) for 1,500 Coins and 1 Ability Spin</li>
+                        <li>Recent update: Added new abilities, improved team matchmaking, and fixed bugs</li>
+                        <li>Follow @VolleyballLegendRB on Twitter/X for new code drops</li>
+                    </ul>
+                </div>
+                <div class="codes-section">
+                    <h2>🎁 Active Codes (July 2025)</h2>
+                    <p class="codes-note">Redeem in-game via the Codes button on the main menu.</p>
+                    <div class="codes-controls">
+                        <button id="copyAllVolleyballLegends" class="copy-all-btn">Copy All Codes</button>
+                    </div>
+                    <ul class="codes-list">
+                        <li class="code-item"><span class="code">VLJULY2025</span><span class="reward">1,500 Coins, 1 Ability Spin</span><button class="copy-btn" onclick="copyCode('VLJULY2025')">Copy</button></li>
+                        <li class="code-item"><span class="code">RELEASE</span><span class="reward">1,000 Coins</span><button class="copy-btn" onclick="copyCode('RELEASE')">Copy</button></li>
+                    </ul>
+                </div>
+                <div class="expired-section">
+                    <h2>⌛ Expired Codes</h2>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">5KLIKES</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
+                </div>
+                <div class="redeem-section">
+                    <h2>🔓 How to Redeem Codes</h2>
+                    <ol>
+                        <li>Open <strong>Volleyball Legends</strong> on Roblox</li>
+                        <li>Click the <strong>Codes</strong> button on the main menu</li>
+                        <li>Enter the code exactly as shown above (codes are case-sensitive)</li>
+                        <li>Click <strong>Redeem</strong> to claim your rewards</li>
+                    </ol>
+                </div>
+                <div class="tips-section">
+                    <h2>💡 Pro Tips</h2>
+                    <ul>
+                        <li>Save Ability Spins for new ability releases or after major balance patches</li>
+                        <li>Master timing and positioning for perfect receives and spikes</li>
+                        <li>Play with a coordinated team for better synergy and win rate</li>
+                        <li>Follow the game's Twitter/X for the latest code drops and event announcements</li>
                     </ul>
                 </div>
             </div>
