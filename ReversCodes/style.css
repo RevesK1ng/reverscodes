@@ -2785,3 +2785,48 @@ html {
     top: 0;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
+
+/* Make ASTDX, Goalbound, and Rivals backgrounds cover the entire viewport */
+#astdx-page.game-page,
+#goalbound-page.game-page,
+#rivals-page.game-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  z-index: 2000;
+  overflow-y: auto;
+  background: var(--bg-primary);
+  display: none;
+}
+#astdx-page .game-page-background,
+#goalbound-page .game-page-background,
+#rivals-page .game-page-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+#astdx-page .game-page-content,
+#goalbound-page .game-page-content,
+#rivals-page .game-page-content {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+}
+#astdx-page .game-page-bg-image,
+#goalbound-page .game-page-bg-image,
+#rivals-page .game-page-bg-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.3;
+  user-select: none;
+  pointer-events: none;
+}
