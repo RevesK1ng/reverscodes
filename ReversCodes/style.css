@@ -3112,27 +3112,21 @@ body.dark-theme .code-item .code {
   background: #fff;
   transition: box-shadow 0.3s, border-color 0.3s, background 0.3s;
   z-index: 1;
-  animation: rgb-glow 3s linear infinite;
+  animation: gallery-glow 3s linear infinite;
 }
 [data-theme="dark"] .game-card {
   background: #18122b;
   border-color: #222;
 }
-@keyframes rgb-glow {
+@keyframes gallery-glow {
   0% {
-    box-shadow: 0 0 16px 0 #8b5cf6, 0 0 32px 0 #f59e0b, 0 0 0 0 #fff;
-  }
-  25% {
-    box-shadow: 0 0 16px 0 #f59e0b, 0 0 32px 0 #6366f1, 0 0 0 0 #fff;
+    box-shadow: 0 0 8px 0 #8b5cf622, 0 0 16px 0 #6366f122, 0 0 0 0 #f59e0b11;
   }
   50% {
-    box-shadow: 0 0 16px 0 #6366f1, 0 0 32px 0 #8b5cf6, 0 0 0 0 #fff;
-  }
-  75% {
-    box-shadow: 0 0 16px 0 #8b5cf6, 0 0 32px 0 #f59e0b, 0 0 0 0 #fff;
+    box-shadow: 0 0 12px 0 #6366f122, 0 0 20px 0 #8b5cf622, 0 0 0 0 #f59e0b22;
   }
   100% {
-    box-shadow: 0 0 16px 0 #8b5cf6, 0 0 32px 0 #f59e0b, 0 0 0 0 #fff;
+    box-shadow: 0 0 8px 0 #8b5cf622, 0 0 16px 0 #6366f122, 0 0 0 0 #f59e0b11;
   }
 }
 
