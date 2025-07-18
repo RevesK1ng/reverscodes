@@ -24,7 +24,7 @@ const commentsList = document.getElementById('commentsList');
 
 // === GAME GALLERY DATA & LOGIC ===
 
-// Game data array (add new games here)
+// Game data array
 const gamesData = [
   {
     id: 'bloxfruits-page',
@@ -62,7 +62,6 @@ const gamesData = [
     img: 'images/rivals.png',
     desc: 'Fast-paced first-person shooter with tactical duels',
   },
-  // New games (add more as needed)
   {
     id: 'animeadventures-page',
     name: 'Anime Adventures',
@@ -100,10 +99,10 @@ const gamesData = [
     desc: 'Deploy anime units to protect against waves in this TD/clicker game',
   },
   {
-    id: 'sakurastand-page',
-    name: 'Sakura Stand',
-    img: 'images/sakurastand.png',
-    desc: 'JoJo’s Bizarre Adventure–inspired fighting game—unlock stands, grind ranks',
+    id: 'murdermystery2-page',
+    name: 'Murder Mystery 2',
+    img: 'images/murdermystery2.png',
+    desc: 'Classic Roblox social deduction game—trade, collect, and solve mysteries!',
   },
   {
     id: 'bladeball-page',
@@ -112,10 +111,10 @@ const gamesData = [
     desc: 'PvP arena where players fight with blade combos and spin wheels for skins',
   },
   {
-    id: 'fruitwarriors-page',
-    name: 'Fruit Warriors',
-    img: 'images/fruitwarriors.png',
-    desc: 'Fruit-themed PvP game—spin for fruits and battle in the arena',
+    id: 'animerangersx-page',
+    name: 'Anime Rangers X',
+    img: 'images/AnimeRangersX.png',
+    desc: 'Tower defense game with Bleach units, rerolls, and meta events. TYBW update live!',
   },
   {
     id: 'basketballzero-page',
@@ -134,6 +133,42 @@ const gamesData = [
     name: 'Volleyball Legends',
     img: 'images/volleyballlegends.png',
     desc: '6v6 anime-style volleyball sim inspired by Haikyuu!! with ability spins',
+  },
+  {
+    id: 'combatwarriors-page',
+    name: 'Combat Warriors',
+    img: 'images/combatwarriors.png',
+    desc: 'PVP brawler with weapons, chaos, and aether rewards.',
+  },
+  {
+    id: 'jujutsushenanigans-page',
+    name: 'Jujutsu Shenanigans',
+    img: 'images/jujutsushenanigans.png',
+    desc: 'Anime brawler/roleplay with cursed techniques and parties.',
+  },
+  {
+    id: 'projectegoist-page',
+    name: 'Project Egoist',
+    img: 'images/projectegoist.png',
+    desc: 'Soccer anime sim—unlock ego skills, compete, and reroll!',
+  },
+  {
+    id: 'spongebobtowerdefense-page',
+    name: 'SpongeBob Tower Defense',
+    img: 'images/spongebobtowerdefense.png',
+    desc: 'TD game in Bikini Bottom—collect units, fight bosses.',
+  },
+  {
+    id: 'towerdefensesimulator-page',
+    name: 'Tower Defense Simulator',
+    img: 'images/towerdefensesimulator.png',
+    desc: 'Classic TD—defend against zombie waves, unlock skins.',
+  },
+  {
+    id: 'animevanguards-page',
+    name: 'Anime Vanguards',
+    img: 'images/animevanguards.png',
+    desc: 'Anime TD with evolving units, traits, and stat chips.',
   },
 ];
 
@@ -328,10 +363,10 @@ const mainGalleryGames = [
     desc: 'Deploy anime units to protect against waves in this TD/clicker game',
   },
   {
-    id: 'sakurastand-page',
-    name: 'Sakura Stand',
-    img: 'images/sakurastand.png',
-    desc: 'JoJo’s Bizarre Adventure–inspired fighting game—unlock stands, grind ranks',
+    id: 'murdermystery2-page',
+    name: 'Murder Mystery 2',
+    img: 'images/murdermystery2.png',
+    desc: 'Classic Roblox social deduction game—trade, collect, and solve mysteries!',
   },
   {
     id: 'bladeball-page',
@@ -340,10 +375,10 @@ const mainGalleryGames = [
     desc: 'PvP arena where players fight with blade combos and spin wheels for skins',
   },
   {
-    id: 'fruitwarriors-page',
-    name: 'Fruit Warriors',
-    img: 'images/fruitwarriors.png',
-    desc: 'Fruit-themed PvP game—spin for fruits and battle in the arena',
+    id: 'animerangersx-page',
+    name: 'Anime Rangers X',
+    img: 'images/AnimeRangersX.png',
+    desc: 'Tower defense game with Bleach units, rerolls, and meta events. TYBW update live!',
   },
   {
     id: 'basketballzero-page',
@@ -362,6 +397,42 @@ const mainGalleryGames = [
     name: 'Volleyball Legends',
     img: 'images/volleyballlegends.png',
     desc: '6v6 anime-style volleyball sim inspired by Haikyuu!! with ability spins',
+  },
+  {
+    id: 'combatwarriors-page',
+    name: 'Combat Warriors',
+    img: 'images/combatwarriors.png',
+    desc: 'PVP brawler with weapons, chaos, and aether rewards.',
+  },
+  {
+    id: 'jujutsushenanigans-page',
+    name: 'Jujutsu Shenanigans',
+    img: 'images/jujutsushenanigans.png',
+    desc: 'Anime brawler/roleplay with cursed techniques and parties.',
+  },
+  {
+    id: 'projectegoist-page',
+    name: 'Project Egoist',
+    img: 'images/projectegoist.png',
+    desc: 'Soccer anime sim—unlock ego skills, compete, and reroll!',
+  },
+  {
+    id: 'spongebobtowerdefense-page',
+    name: 'SpongeBob Tower Defense',
+    img: 'images/spongebobtowerdefense.png',
+    desc: 'TD game in Bikini Bottom—collect units, fight bosses.',
+  },
+  {
+    id: 'towerdefensesimulator-page',
+    name: 'Tower Defense Simulator',
+    img: 'images/towerdefensesimulator.png',
+    desc: 'Classic TD—defend against zombie waves, unlock skins.',
+  },
+  {
+    id: 'animevanguards-page',
+    name: 'Anime Vanguards',
+    img: 'images/animevanguards.png',
+    desc: 'Anime TD with evolving units, traits, and stat chips.',
   },
 ];
 const MAIN_BOOKMARK_KEY = 'mainGalleryFavorites';
@@ -686,7 +757,7 @@ function handleContactSubmit(e) {
     submissions.unshift(submission);
     
     // Save to localStorage
-    localStorage.setItem('submissions', JSON.stringify(submissions));
+    localStorage.setItem('helpSubmissions', JSON.stringify(submissions));
     
     // Clear form
     nameInput.value = '';

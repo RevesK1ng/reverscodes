@@ -164,7 +164,7 @@
             const data = Object.fromEntries(formData);
             
             // Store submission in localStorage (for demo purposes)
-            const submissions = JSON.parse(localStorage.getItem('submissions') || '[]');
+            const submissions = JSON.parse(localStorage.getItem('helpSubmissions') || '[]');
             const submission = {
                 id: Date.now(),
                 name: data.name,
@@ -175,7 +175,7 @@
             };
             
             submissions.push(submission);
-            localStorage.setItem('submissions', JSON.stringify(submissions));
+            localStorage.setItem('helpSubmissions', JSON.stringify(submissions));
             
             // Show success message
             showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
