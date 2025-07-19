@@ -563,6 +563,8 @@ function initializeEventListeners() {
     // Comment form submission
     commentForm.addEventListener('submit', handleCommentSubmit);
     
+
+    
     // Contact form submission (if exists)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -706,6 +708,21 @@ function refreshPage() {
 // News expansion
 function expandNews(button) {
     const newsDetails = button.nextElementSibling;
+    const isExpanded = newsDetails.style.display !== 'none';
+    
+    if (isExpanded) {
+        newsDetails.style.display = 'none';
+        button.textContent = 'Read More';
+    } else {
+        newsDetails.style.display = 'block';
+        button.textContent = 'Read Less';
+    }
+}
+
+// Expand individual news card
+function expandNewsCard(button) {
+    const newsCard = button.closest('.news-card');
+    const newsDetails = newsCard.querySelector('.news-details');
     const isExpanded = newsDetails.style.display !== 'none';
     
     if (isExpanded) {

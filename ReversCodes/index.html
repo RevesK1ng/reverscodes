@@ -86,7 +86,7 @@
 
     <!-- Last Updated Bar -->
     <div id="lastUpdatedBar" style="width:100%;background:linear-gradient(90deg,#8b5cf6 60%,#6366f1 100%);color:#fff;text-align:center;padding:0.5rem 0.5rem;border-radius:0.5rem;box-shadow:0 2px 12px rgba(139,92,246,0.10);font-family:inherit;font-size:1rem;font-weight:400;letter-spacing:0;">
-        Last updated: <span id="lastUpdatedDate">July 15, 2025</span>
+        Last updated: <span id="lastUpdatedDate">July 19, 2025</span>
     </div>
 
     <!-- Background with Logo and Vignette -->
@@ -171,104 +171,123 @@
                     <p class="section-subtitle">Stay updated with the most accurate and latest Roblox gaming news</p>
                 </div>
                 
-                <div class="news-grid">
+                <div class="news-grid" id="newsGrid">
                     <article class="news-card featured">
                         <div class="news-image">
                             <img src="images/inkgame.png" alt="Ink Game (Hide & Seek)" class="news-img">
                             <div class="news-category">Update</div>
                         </div>
                         <div class="news-content">
-                            <h3 class="news-title">Ink Game (Hide & Seek) - Season 3 Update</h3>
-                            <p class="news-date">July 5, 2025</p>
+                            <h3 class="news-title">Ink Game - Jump Rope Update Live Now</h3>
+                            <p class="news-date">July 19, 2025</p>
                             <p class="news-excerpt">
-                                Squid Game-inspired hide-and-seek maze with new arena layouts and optimizations. No code system yet, but pro tips for hiders and seekers!
+                                New "Jump Rope" update with interactive mechanics. Creators like KreekCraft streaming fresh content. Community calling for macro support in AFK modes.
                             </p>
+                            <div class="news-details" style="display: none;">
+                                <h4>Full Update Details:</h4>
+                                <ul>
+                                    <li>New "Jump Rope" minigame with interactive mechanics</li>
+                                    <li>Creators like KreekCraft and PMdamiann streaming fresh content</li>
+                                    <li>Community discussions on Reddit calling for macro support in AFK modes</li>
+                                    <li>Enhanced gameplay with new arena layouts and optimizations</li>
+                                </ul>
+                            </div>
+                            <button class="read-more-btn-card" onclick="expandNewsCard(this)">Read More</button>
                         </div>
                     </article>
                     <article class="news-card">
                         <div class="news-image">
                             <img src="images/99nights.png" alt="99 Nights in the Forest" class="news-img">
-                            <div class="news-category">Survival Horror</div>
+                            <div class="news-category">Major Update</div>
                         </div>
                         <div class="news-content">
-                            <h3 class="news-title">99 Nights in the Forest - Furniture & Classes Update</h3>
-                            <p class="news-date">July 2025</p>
+                            <h3 class="news-title">99 Nights in the Forest - Alien Invasion Update</h3>
+                            <p class="news-date">July 19, 2025</p>
                             <p class="news-excerpt">
-                                Survive haunted nights, craft tools, and evade the deer-monster. New decorators and classes added. No code menu yet, but top survival tips inside!
+                                Major "Alien" update with Alien Class, Cyborg Class, and full UFO invasion event. New walkthroughs and completion strategies available.
                             </p>
+                            <div class="news-details" style="display: none;">
+                                <h4>Full Update Details:</h4>
+                                <ul>
+                                    <li>New Alien Class and Cyborg Class added to the game</li>
+                                    <li>Full Alien UFO invasion event with exclusive rewards</li>
+                                    <li>Multiple YouTube walkthroughs and completion strategies available</li>
+                                    <li>Enhanced survival mechanics and new tools for crafting</li>
+                                </ul>
+                            </div>
+                            <button class="read-more-btn-card" onclick="expandNewsCard(this)">Read More</button>
                         </div>
                     </article>
                     <article class="news-card">
                         <div class="news-image">
                             <img src="images/stealabrainrot.png" alt="Steal a Brainrot" class="news-img">
-                            <div class="news-category">Trending</div>
+                            <div class="news-category">Secret Update</div>
                         </div>
                         <div class="news-content">
-                            <h3 class="news-title">Steal a Brainrot - Creature Rebalance & Mutations</h3>
-                            <p class="news-date">July 2025</p>
+                            <h3 class="news-title">Steal a Brainrot - New Secret Showcase</h3>
+                            <p class="news-date">July 19, 2025</p>
                             <p class="news-excerpt">
-                                Chaotic tycoon/PvP with evolving creatures. Frequent rebalances, no code system yet, but Discord #codes-cappuccino channel exists for future drops.
+                                New "Bubblegum Machine" mechanic with UI changes and secrets. "Admin Abuse" live events and multiple YouTube guides available.
                             </p>
+                            <div class="news-details" style="display: none;">
+                                <h4>Full Update Details:</h4>
+                                <ul>
+                                    <li>New secret showcase featuring "Bubblegum Machine" mechanic</li>
+                                    <li>Recent UI changes and hidden secrets throughout the game</li>
+                                    <li>"Admin Abuse" live events with exclusive rewards</li>
+                                    <li>Multiple YouTube videos detailing completion strategies</li>
+                                </ul>
+                            </div>
+                            <button class="read-more-btn-card" onclick="expandNewsCard(this)">Read More</button>
                         </div>
                     </article>
 
                     <article class="news-card">
                         <div class="news-image">
-                            <img src="images/astdxlogo.png" alt="ASTDX Major Update" class="news-img">
-                            <div class="news-category">Game Update</div>
+                            <img src="images/growagarden.png" alt="Grow a Garden Zen Update" class="news-img">
+                            <div class="news-category">Record Breaking</div>
                         </div>
                         <div class="news-content">
-                            <h3 class="news-title">ASTDX Major Update - New Mythic Units & Social Rewards</h3>
-                            <p class="news-date">July 12, 2025</p>
+                            <h3 class="news-title">Grow a Garden - Zen Update & 22M Players</h3>
+                            <p class="news-date">July 19, 2025</p>
                             <p class="news-excerpt">
-                                All Star Tower Defense X dropped a major update with new Mythic units, balance changes, 
-                                and social-reward codes for gems, trait burners, and summon tickets.
+                                Zen Update with communal Zen Tree, new seeds, and prehistoric pets. Record 22M concurrent players! Dinosaur eggs (Spinosaurus, Dilophosaurus) available.
                             </p>
+                            <div class="news-details" style="display: none;">
+                                <h4>Full Update Details:</h4>
+                                <ul>
+                                    <li>Zen Update launched July 19 with communal Zen Tree</li>
+                                    <li>Tranquil-themed seeds, cosmetics, and new pets added</li>
+                                    <li>Record-breaking 22 million concurrent players milestone</li>
+                                    <li>Prehistoric update with dinosaur eggs (Spinosaurus, Dilophosaurus)</li>
+                                    <li>Next update scheduled for July 26, 2025 at 10 AM ET</li>
+                                </ul>
+                            </div>
+                            <button class="read-more-btn-card" onclick="expandNewsCard(this)">Read More</button>
                         </div>
                     </article>
 
                     <article class="news-card">
                         <div class="news-image">
-                            <img src="images/dresstoimpress.png" alt="Dress to Impress Twitch Collab" class="news-img">
-                            <div class="news-category">Collaboration</div>
+                            <img src="images/dresstoimpress.png" alt="Dress to Impress Summer Items" class="news-img">
+                            <div class="news-category">Fashion Update</div>
                         </div>
                         <div class="news-content">
-                            <h3 class="news-title">Dress to Impress Twitch Collab - Cyberpunk Wings Code</h3>
-                            <p class="news-date">Until July 28, 2025</p>
+                            <h3 class="news-title">Dress to Impress - Summer Items & New Codes</h3>
+                            <p class="news-date">July 19, 2025</p>
                             <p class="news-excerpt">
-                                DTI offers free outfits through promo codes. The latest Twitch collab code for Cyberpunk Wings 
-                                runs through July 28, 2025, and requires watching any creator's DTI stream on Twitch.
+                                New summer outfit pieces and seasonal fashion. Codes like 3NCHANTEDD1ZZY and ANGELT4NKED active. Twitch rewards and fashion streams ongoing.
                             </p>
-                        </div>
-                    </article>
-
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="images/jujutsuinfinite.png" alt="Jujutsu Infinite July Codes" class="news-img">
-                            <div class="news-category">Game Codes</div>
-                        </div>
-                        <div class="news-content">
-                            <h3 class="news-title">Jujutsu Infinite - July Codes Available Now</h3>
-                            <p class="news-date">July 2025</p>
-                            <p class="news-excerpt">
-                                Inspired by Jujutsu Kaisen, this RPG grants up to 100 free spins via July codes like 
-                                'SOUL_REWORK_OUT' and 'SOUL_20K'. Codes expire at month's end.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="images/growagarden.png" alt="Grow a Garden Summer Update" class="news-img">
-                            <div class="news-category">Platform Update</div>
-                        </div>
-                        <div class="news-content">
-                            <h3 class="news-title">Grow a Garden - Summer Update Breaks Records</h3>
-                            <p class="news-date">July 12, 2025</p>
-                            <p class="news-excerpt">
-                                Massive "Summer Update" launched just before July 12, pushing concurrent users to a 
-                                record-breaking 21.4 million - a historic milestone for the Roblox platform.
-                            </p>
+                            <div class="news-details" style="display: none;">
+                                <h4>Full Update Details:</h4>
+                                <ul>
+                                    <li>New summer-themed outfit items and seasonal fashion pieces</li>
+                                    <li>Active codes: 3NCHANTEDD1ZZY, ANGELT4NKED, and drop-based Twitch rewards</li>
+                                    <li>Ongoing fashion streams and community events</li>
+                                    <li>Enhanced customization options and new accessories</li>
+                                </ul>
+                            </div>
+                            <button class="read-more-btn-card" onclick="expandNewsCard(this)">Read More</button>
                         </div>
                     </article>
                 </div>
@@ -353,36 +372,39 @@
                 <div class="game-overview">
                     <h2>What is All Star Tower Defense X?</h2>
                     <p>ASTDX is a Roblox anime tower defense game with over 60 characters. Defend waves across Story, Infinite, Trials, and Raids. Redeem codes for gems, trait burners, summon tickets, and premium capsules to strengthen your squad.</p>
-                    <h3>Latest Codes & Update - July 15, 2025</h3>
+                    <h3>Latest Codes & Update - July 19, 2025</h3>
                     <ul>
-                        <li>New codes: FOLLOWS10KBREAD, updated rewards and level requirements</li>
+                        <li>New code: <strong>MADAO90YAY</strong> (150 Gems, 10 Trait Burners)</li>
+                        <li>Recently expired: ONEEIGHTYFIVELIKES, FORTYFIVELIKES, somanylikes</li>
                         <li>Trial 2 Mode, Story World Chapter, Roka & Doma Fruits, Unit Buffs, UI Improvements</li>
                         <li>Level requirements: UPD1 (Level 2+), VERYHIGHLIKEB (Level 15+)</li>
                     </ul>
                 </div>
                 <div class="codes-section">
                     <h2>🎁 Active Codes (July 2025)</h2>
-                    <p class="codes-note">Working as of July 15, 2025. Redeem in-game via Twitter icon → code box.</p>
+                    <p class="codes-note">Working as of July 19, 2025. Redeem in-game via Twitter icon → code box.</p>
                     <div class="codes-controls">
                         <button id="copyAllASTDX" class="copy-all-btn">Copy All Codes</button>
                     </div>
                     <ul class="codes-list">
+                        <li class="code-item"><span class="code">MADAO90YAY</span><span class="reward">150 Gems, 10 Trait Burners</span><button class="copy-btn" onclick="copyCode('MADAO90YAY')">Copy</button></li>
                         <li class="code-item"><span class="code">FOLLOWS10KBREAD</span><span class="reward">100 Gems, 10 Trait Burners, 1 Doma Fruit, 9 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('FOLLOWS10KBREAD')">Copy</button></li>
                         <li class="code-item"><span class="code">THREEHUNDREDTHOUSANDPLAYERS</span><span class="reward">200 Gems, 10 Trait Burners, 10 Stat Dice, 1 Roka Fruit, 1 Doma Fruit, 9 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('THREEHUNDREDTHOUSANDPLAYERS')">Copy</button></li>
                         <li class="code-item"><span class="code">THANKYOUFORSUPPORT</span><span class="reward">300 Gems, 5 Trait Burners, 1 Roka Fruit, 2 Doma Fruits, 9 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('THANKYOUFORSUPPORT')">Copy</button></li>
                         <li class="code-item"><span class="code">LIKEF5</span><span class="reward">500 Gems, 10 Trait Burners, 10 Stat Dice, 9 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('LIKEF5')">Copy</button></li>
                         <li class="code-item"><span class="code">UPD1</span><span class="reward">400 Gems, 30 Trait Burners, 20 Stat Dice (Level 2+)</span><button class="copy-btn" onclick="copyCode('UPD1')">Copy</button></li>
                         <li class="code-item"><span class="code">VERYHIGHLIKEB</span><span class="reward">500 Gems, 15 Trait Burners, 10 Stat Dice, 3 Basic Capsules (Level 15+)</span><button class="copy-btn" onclick="copyCode('VERYHIGHLIKEB')">Copy</button></li>
-                        <li class="code-item"><span class="code">ONEEIGHTYFIVELIKES</span><span class="reward">500 Gems, 15 Trait Burners, 10 Stat Dice, 1 Cookin Love, 10 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('ONEEIGHTYFIVELIKES')">Copy</button></li>
-                        <li class="code-item"><span class="code">FORTYFIVELIKES</span><span class="reward">500 Gems, 10 Trait Burners, 2 Summon Tickets, 10 Bounded Cubes</span><button class="copy-btn" onclick="copyCode('FORTYFIVELIKES')">Copy</button></li>
-                        <li class="code-item"><span class="code">somanylikes</span><span class="reward">500 Gems, 2 Premium Capsules, 10 Trait Burners, 2 Skill Orb Bags</span><button class="copy-btn" onclick="copyCode('somanylikes')">Copy</button></li>
                         <li class="code-item"><span class="code">AFIRSTTIME3001</span><span class="reward">500 Gems, 5 Basic Capsules, 20 Trait Burners, 2 Skill Orb Bags, 1 Cloud Summon</span><button class="copy-btn" onclick="copyCode('AFIRSTTIME3001')">Copy</button></li>
                         <li class="code-item"><span class="code">FREENIMBUSMOUNT</span><span class="reward">Nimbus Mount (requires level 10)</span><button class="copy-btn" onclick="copyCode('FREENIMBUSMOUNT')">Copy</button></li>
                     </ul>
                 </div>
                 <div class="expired-section">
                     <h2>⌛ Expired Codes</h2>
-                    <p>No ASTDX codes have expired as of July 15, 2025.</p>
+                    <ul class="codes-list">
+                        <li class="code-item expired"><span class="code">ONEEIGHTYFIVELIKES</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">FORTYFIVELIKES</span><button class="copy-btn" disabled>Expired</button></li>
+                        <li class="code-item expired"><span class="code">somanylikes</span><button class="copy-btn" disabled>Expired</button></li>
+                    </ul>
                 </div>
                 <div class="redeem-section">
                     <h2>🔓 How to Redeem Codes</h2>
@@ -612,17 +634,17 @@
                 <div class="game-overview">
                     <h2>What is Blox Fruits?</h2>
                     <p>Blox Fruits is a Roblox adventure game where you master the seas, collect devil fruits, and battle powerful bosses. Redeem codes for EXP boosts, stat resets, and Beli to power up your journey.</p>
-                    <h3>Latest Codes & Update - July 15, 2025</h3>
+                    <h3>Latest Codes & Update - July 19, 2025</h3>
                     <ul>
-                        <li>New XP boost codes: <strong>ADMINFIGHT</strong>, <strong>GIFTING_HOURS</strong>, <strong>KITTGAMING</strong>, <strong>Sub2OfficialNoobie</strong>, <strong>Enyu_is_Pro</strong></li>
-                        <li>New stat reset codes: <strong>ADMINHACKED</strong>, <strong>JULYUPDATE_RESET</strong></li>
+                        <li>New XP boost codes: <strong>kittgaming</strong>, <strong>Magicbus</strong>, <strong>Sub2Fer999</strong>, <strong>STRAWHATMAINE</strong>, <strong>TantaiGaming</strong></li>
+                        <li>Previously added: <strong>ADMINFIGHT</strong>, <strong>GIFTING_HOURS</strong>, <strong>ADMINHACKED</strong>, <strong>JULYUPDATE_RESET</strong></li>
                         <li>Follow @BloxFruits on Twitter/X for new drops</li>
                         <li>Save codes for double XP weekends for 4x effect!</li>
                     </ul>
                 </div>
                 <div class="codes-section">
                     <h2>🎁 Active Codes (July 2025)</h2>
-                    <p class="codes-note">Working as of July 15, 2025. Redeem in-game via gift icon → code box.</p>
+                    <p class="codes-note">Working as of July 19, 2025. Redeem in-game via gift icon → code box.</p>
                     <div class="codes-controls">
                         <button id="copyAllBloxFruits" class="copy-all-btn">Copy All Codes</button>
                     </div>
@@ -631,7 +653,11 @@
                         <li class="code-item"><span class="code">1LOSTADMIN</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('1LOSTADMIN')">Copy</button></li>
                         <li class="code-item"><span class="code">ADMINFIGHT</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('ADMINFIGHT')">Copy</button></li>
                         <li class="code-item"><span class="code">GIFTING_HOURS</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('GIFTING_HOURS')">Copy</button></li>
-                        <li class="code-item"><span class="code">KITTGAMING</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('KITTGAMING')">Copy</button></li>
+                        <li class="code-item"><span class="code">kittgaming</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('kittgaming')">Copy</button></li>
+                        <li class="code-item"><span class="code">Magicbus</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('Magicbus')">Copy</button></li>
+                        <li class="code-item"><span class="code">Sub2Fer999</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('Sub2Fer999')">Copy</button></li>
+                        <li class="code-item"><span class="code">STRAWHATMAINE</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('STRAWHATMAINE')">Copy</button></li>
+                        <li class="code-item"><span class="code">TantaiGaming</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('TantaiGaming')">Copy</button></li>
                         <li class="code-item"><span class="code">JCWK</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('JCWK')">Copy</button></li>
                         <li class="code-item"><span class="code">StarcodeHEO</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('StarcodeHEO')">Copy</button></li>
                         <li class="code-item"><span class="code">Sub2CaptainMaui</span><span class="reward">20 min 2x EXP</span><button class="copy-btn" onclick="copyCode('Sub2CaptainMaui')">Copy</button></li>
@@ -1636,10 +1662,10 @@
                 <div class="game-overview">
                     <h2>What is Basketball: Zero?</h2>
                     <p>Basketball: Zero is a fast-paced anime basketball game on Roblox, inspired by Kuroko no Basket and Blue Lock. Play 3v3 or 5v5 matches, unlock flashy moves, and master the Zone mechanic to dominate the court.</p>
-                    <h3>Latest Codes & Update - July 15, 2025</h3>
+                    <h3>Latest Codes & Update - July 19, 2025</h3>
                     <ul>
-                        <li>New codes: <strong>DOBETTERPLS</strong> (20 Style & Zone Spins), <strong>SABOTAGEISSHAMEFUL</strong> (5 Style & Zone Spins), <strong>UNCLESAM</strong>, <strong>VERYSRRYDELAY</strong>, <strong>OIL</strong></li>
-                        <li>Community favorites: <strong>GOODWEEKEND</strong>, <strong>CHROLLODROPHOORAY</strong>, <strong>LEWISAYSSORRY</strong></li>
+                        <li>New codes: <strong>SORRY4RESTARTAGAIN</strong> (15 Style & 15 Zone Spins), <strong>SEASON2COSMETICS</strong> (20 Style & 10 Zone Spins), <strong>SEASON2TODAY</strong> (5 Style & 5 Zone Spins)</li>
+                        <li>Community favorites: <strong>DOBETTERPLS</strong>, <strong>SABOTAGEISSHAMEFUL</strong>, <strong>UNCLESAM</strong>, <strong>VERYSRRYDELAY</strong>, <strong>OIL</strong>, <strong>GOODWEEKEND</strong>, <strong>CHROLLODROPHOORAY</strong>, <strong>LEWISAYSSORRY</strong></li>
                         <li>Recent update: Added new skills, improved matchmaking, and fixed bugs</li>
                         <li>Follow @BasketballZeroRB on Twitter/X for new code drops</li>
                     </ul>
@@ -1651,6 +1677,9 @@
                         <button id="copyAllBasketballZero" class="copy-all-btn">Copy All Codes</button>
                     </div>
                     <ul class="codes-list">
+                        <li class="code-item"><span class="code">SORRY4RESTARTAGAIN</span><span class="reward">15 Style & 15 Zone Spins</span><button class="copy-btn" onclick="copyCode('SORRY4RESTARTAGAIN')">Copy</button></li>
+                        <li class="code-item"><span class="code">SEASON2COSMETICS</span><span class="reward">20 Style & 10 Zone Spins</span><button class="copy-btn" onclick="copyCode('SEASON2COSMETICS')">Copy</button></li>
+                        <li class="code-item"><span class="code">SEASON2TODAY</span><span class="reward">5 Style & 5 Zone Spins</span><button class="copy-btn" onclick="copyCode('SEASON2TODAY')">Copy</button></li>
                         <li class="code-item"><span class="code">DOBETTERPLS</span><span class="reward">20 Style & Zone Spins</span><button class="copy-btn" onclick="copyCode('DOBETTERPLS')">Copy</button></li>
                         <li class="code-item"><span class="code">SABOTAGEISSHAMEFUL</span><span class="reward">5 Style & Zone Spins</span><button class="copy-btn" onclick="copyCode('SABOTAGEISSHAMEFUL')">Copy</button></li>
                         <li class="code-item"><span class="code">UNCLESAM</span><span class="reward">Style & Zone Spins</span><button class="copy-btn" onclick="copyCode('UNCLESAM')">Copy</button></li>
