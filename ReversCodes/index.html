@@ -114,6 +114,48 @@
       ]
     }
     </script>
+
+    <!-- Add modal styles for mobile and accessibility -->
+    <style>
+      #disclaimerModal .modal-content {
+        background: #fff3cd;
+        color: #856404;
+        margin: 5% auto;
+        padding: 2rem 1.2rem;
+        border-radius: 1rem;
+        max-width: 600px;
+        width: 95vw;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+        position: relative;
+        font-size: 1.05rem;
+      }
+      #disclaimerModal .close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2.2rem;
+        cursor: pointer;
+        line-height: 1;
+        padding: 0.25em 0.5em;
+        border-radius: 0.5em;
+        transition: background 0.2s;
+      }
+      #disclaimerModal .close:focus, #disclaimerModal .close:hover {
+        background: #ffeeba;
+        outline: none;
+      }
+      @media (max-width: 600px) {
+        #disclaimerModal .modal-content {
+          padding: 1.2rem 0.5rem;
+          font-size: 0.98rem;
+        }
+        #disclaimerModal .close {
+          font-size: 2.5rem;
+          right: 0.7rem;
+          top: 0.7rem;
+        }
+      }
+    </style>
 </head>
 <body class="light-theme">
     
@@ -130,6 +172,7 @@
                 <a href="#news" class="nav-link">News</a>
                 <button class="nav-link nav-game-gallery-btn" onclick="scrollToSection('games');" aria-label="Scroll to Game Gallery">🎮 Game Gallery</button>
                 <a href="#community" class="nav-link">Community</a>
+                <a href="disclaimer.html" class="nav-link" aria-label="Disclaimer">Disclaimer</a>
             </nav>
 
             <div class="header-actions">
