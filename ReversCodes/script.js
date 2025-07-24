@@ -1289,10 +1289,13 @@ window.showNotification = showNotification;
 window.answerQuestion = answerQuestion;
 window.closeAdminPanel = closeAdminPanel;
 window.copyCode = copyCode;
-window.hideGeneratingIndicator = function() {
+
+// Hide Generating Indicator
+function hideGeneratingIndicator() {
   var el = document.getElementById('generating-indicator');
   if (el) el.style.display = 'none';
-};
+}
+window.hideGeneratingIndicator = hideGeneratingIndicator;
 
 // Copy Code Function
 function copyCode(code) {
