@@ -27,36 +27,334 @@ const commentForm = document.getElementById('commentForm');
 const commentsList = document.getElementById('commentsList');
 // submissionsList is only used in admin modal, so we'll get it when needed
 
-// === ADBLOCKER DETECTION ===
+// === ROBUST ADBLOCKER DETECTION ===
 
-// Function to detect AdBlocker
-function detectAdBlocker() {
-    // Create a fake ad element
-    const testAd = document.createElement('div');
-    testAd.innerHTML = '&nbsp;';
-    testAd.className = 'adsbox';
-    testAd.style.position = 'absolute';
-    testAd.style.left = '-10000px';
-    testAd.style.top = '-1000px';
-    testAd.style.width = '1px';
-    testAd.style.height = '1px';
-    testAd.style.overflow = 'hidden';
-    document.body.appendChild(testAd);
+// Multiple detection methods for maximum coverage
+let adBlockerDetectionAttempts = 0;
+const MAX_DETECTION_ATTEMPTS = 3;
+
+// Method 1: DOM-based detection with multiple ad-like elements
+function detectAdBlockerDOM() {
+    const adElements = [
+        { className: 'adsbox', content: '&nbsp;' },
+        { className: 'adsbygoogle', content: '<ins class="adsbygoogle"></ins>' },
+        { className: 'advertisement', content: '<div class="ad-banner">Advertisement</div>' },
+        { className: 'google-ad', content: '<div class="google-ad">Google Ad</div>' }
+    ];
     
-    // Check if the ad element is hidden or removed
+    let blockedCount = 0;
+    const totalElements = adElements.length;
+    
+    adElements.forEach((adConfig, index) => {
+        const testAd = document.createElement('div');
+        testAd.innerHTML = adConfig.content;
+        testAd.className = adConfig.className;
+        testAd.style.cssText = `
+            position: absolute;
+            left: -10000px;
+            top: -1000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: -9999;
+        `;
+        document.body.appendChild(testAd);
+        
+        setTimeout(() => {
+            const isBlocked = !testAd.offsetHeight || 
+                             testAd.offsetHeight === 0 || 
+                             testAd.style.display === 'none' ||
+                             testAd.style.visibility === 'hidden' ||
+                             testAd.offsetParent === null;
+            
+            if (isBlocked) blockedCount++;
+            
+            document.body.removeChild(testAd);
+            
+            // Check if majority of elements are blocked
+            if (index === totalElements - 1 && blockedCount >= Math.ceil(totalElements * 0.7)) {
+                adBlockerDetected = true;
+                handleAdBlockerDetected();
+            }
+        }, 50 * (index + 1));
+    });
+}
+
+// Method 2: Network failure detection for ad scripts
+function detectAdBlockerNetwork() {
+    const adScripts = [
+        'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'https://www.googletagmanager.com/gtag/js',
+        'https://securepubads.g.doubleclick.net/tag/js/gpt.js'
+    ];
+    
+    let failedScripts = 0;
+    const totalScripts = adScripts.length;
+    
+    adScripts.forEach((scriptSrc, index) => {
+        const script = document.createElement('script');
+        script.src = scriptSrc;
+        script.onerror = function() {
+            failedScripts++;
+            if (failedScripts >= Math.ceil(totalScripts * 0.6)) {
+                adBlockerDetected = true;
+                handleAdBlockerDetected();
+            }
+        };
+        script.onload = function() {
+            // Script loaded successfully, not blocked
+        };
+        document.head.appendChild(script);
+        
+        // Remove script after detection
+        setTimeout(() => {
+            if (script.parentNode) {
+                script.parentNode.removeChild(script);
+            }
+        }, 2000);
+    });
+}
+
+// Method 3: Behavior-based detection with timing analysis
+function detectAdBlockerBehavior() {
+    // Create a more sophisticated ad-like element
+    const sophisticatedAd = document.createElement('div');
+    sophisticatedAd.innerHTML = `
+        <div class="ad-container" style="width: 728px; height: 90px; background: #f0f0f0; border: 1px solid #ccc;">
+            <div class="ad-content" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                <span style="color: #666;">Advertisement</span>
+            </div>
+        </div>
+    `;
+    sophisticatedAd.className = 'sophisticated-ad-test';
+    sophisticatedAd.style.cssText = `
+        position: absolute;
+        left: -10000px;
+        top: -1000px;
+        z-index: -9999;
+    `;
+    document.body.appendChild(sophisticatedAd);
+    
+    // Check multiple times with different delays
+    const checkTimes = [100, 500, 1000, 2000];
+    let checksPassed = 0;
+    
+    checkTimes.forEach((delay, index) => {
+        setTimeout(() => {
+            const adElement = sophisticatedAd.querySelector('.ad-container');
+            const isBlocked = !adElement || 
+                             adElement.offsetHeight === 0 || 
+                             adElement.style.display === 'none' ||
+                             adElement.offsetParent === null ||
+                             window.getComputedStyle(adElement).display === 'none';
+            
+            if (!isBlocked) checksPassed++;
+            
+            // If most checks fail, likely blocked
+            if (index === checkTimes.length - 1 && checksPassed < Math.ceil(checkTimes.length * 0.3)) {
+                adBlockerDetected = true;
+                handleAdBlockerDetected();
+            }
+        }, delay);
+    });
+    
+    // Clean up after final check
     setTimeout(() => {
-        const isAdBlockerActive = !testAd.offsetHeight || 
-                                 testAd.offsetHeight === 0 || 
-                                 testAd.style.display === 'none' ||
-                                 testAd.style.visibility === 'hidden';
-        
-        document.body.removeChild(testAd);
-        
-        if (isAdBlockerActive) {
-            adBlockerDetected = true;
-            handleAdBlockerDetected();
+        if (sophisticatedAd.parentNode) {
+            sophisticatedAd.parentNode.removeChild(sophisticatedAd);
         }
-    }, 100);
+    }, 3000);
+}
+
+// Method 4: CSS-based detection
+function detectAdBlockerCSS() {
+    // Create a style element with ad-blocker bait
+    const style = document.createElement('style');
+    style.textContent = `
+        .ad-bait { display: block !important; }
+        .adsbygoogle { display: block !important; }
+        .advertisement { display: block !important; }
+    `;
+    document.head.appendChild(style);
+    
+    // Create bait elements
+    const baitElements = ['ad-bait', 'adsbygoogle', 'advertisement'];
+    let blockedBait = 0;
+    
+    baitElements.forEach((className, index) => {
+        const bait = document.createElement('div');
+        bait.className = className;
+        bait.style.cssText = `
+            position: absolute;
+            left: -10000px;
+            top: -1000px;
+            width: 1px;
+            height: 1px;
+            z-index: -9999;
+        `;
+        document.body.appendChild(bait);
+        
+        setTimeout(() => {
+            const computedStyle = window.getComputedStyle(bait);
+            const isBlocked = computedStyle.display === 'none' || 
+                             computedStyle.visibility === 'hidden' ||
+                             bait.offsetHeight === 0;
+            
+            if (isBlocked) blockedBait++;
+            
+            document.body.removeChild(bait);
+            
+            if (index === baitElements.length - 1 && blockedBait >= Math.ceil(baitElements.length * 0.6)) {
+                adBlockerDetected = true;
+                handleAdBlockerDetected();
+            }
+        }, 100 * (index + 1));
+    });
+    
+    // Remove style element
+    setTimeout(() => {
+        if (style.parentNode) {
+            style.parentNode.removeChild(style);
+        }
+    }, 2000);
+}
+
+// Method 5: Malwarebytes-specific detection
+function detectAdBlockerMalwarebytes() {
+    // Malwarebytes often blocks specific patterns and domains
+    const malwarebytesBait = [
+        { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', type: 'script' },
+        { src: 'https://www.googletagmanager.com/gtag/js?id=UA-123456789-1', type: 'script' },
+        { src: 'https://securepubads.g.doubleclick.net/tag/js/gpt.js', type: 'script' },
+        { src: 'https://tpc.googlesyndication.com/safeframe/1-0-38/html/container.html', type: 'iframe' }
+    ];
+    
+    let blockedBait = 0;
+    const totalBait = malwarebytesBait.length;
+    
+    malwarebytesBait.forEach((bait, index) => {
+        const element = document.createElement(bait.type);
+        element.src = bait.src;
+        element.style.cssText = `
+            position: absolute;
+            left: -10000px;
+            top: -1000px;
+            width: 1px;
+            height: 1px;
+            z-index: -9999;
+        `;
+        
+        element.onerror = function() {
+            blockedBait++;
+            if (blockedBait >= Math.ceil(totalBait * 0.5)) {
+                adBlockerDetected = true;
+                handleAdBlockerDetected();
+            }
+        };
+        
+        element.onload = function() {
+            // Successfully loaded, not blocked
+        };
+        
+        document.body.appendChild(element);
+        
+        // Clean up after detection
+        setTimeout(() => {
+            if (element.parentNode) {
+                element.parentNode.removeChild(element);
+            }
+        }, 3000);
+    });
+}
+
+// Method 6: Mutation Observer detection
+function detectAdBlockerMutationObserver() {
+    // Create ad-like elements and watch for removal
+    const adElements = [
+        '<div class="adsbygoogle" style="display: block; width: 728px; height: 90px;"></div>',
+        '<ins class="adsbygoogle" style="display: block; width: 728px; height: 90px;"></ins>',
+        '<div class="advertisement" style="display: block; width: 728px; height: 90px;">Advertisement</div>'
+    ];
+    
+    let removedElements = 0;
+    const totalElements = adElements.length;
+    
+    // Create a container for our test elements
+    const testContainer = document.createElement('div');
+    testContainer.id = 'ad-blocker-test-container';
+    testContainer.style.cssText = `
+        position: absolute;
+        left: -10000px;
+        top: -1000px;
+        z-index: -9999;
+    `;
+    document.body.appendChild(testContainer);
+    
+    // Add elements to container
+    adElements.forEach((html, index) => {
+        const element = document.createElement('div');
+        element.innerHTML = html;
+        element.id = `ad-test-${index}`;
+        testContainer.appendChild(element);
+    });
+    
+    // Set up mutation observer to watch for removals
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'childList') {
+                mutation.removedNodes.forEach((node) => {
+                    if (node.id && node.id.startsWith('ad-test-')) {
+                        removedElements++;
+                        if (removedElements >= Math.ceil(totalElements * 0.6)) {
+                            adBlockerDetected = true;
+                            handleAdBlockerDetected();
+                            observer.disconnect();
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
+    observer.observe(testContainer, {
+        childList: true,
+        subtree: true
+    });
+    
+    // Clean up after detection period
+    setTimeout(() => {
+        observer.disconnect();
+        if (testContainer.parentNode) {
+            testContainer.parentNode.removeChild(testContainer);
+        }
+    }, 5000);
+}
+
+// Main detection function that combines all methods
+function detectAdBlocker() {
+    if (adBlockerDetectionAttempts >= MAX_DETECTION_ATTEMPTS) {
+        return; // Prevent infinite loops
+    }
+    
+    adBlockerDetectionAttempts++;
+    
+    // Run all detection methods with staggered timing
+    setTimeout(() => detectAdBlockerDOM(), 0);
+    setTimeout(() => detectAdBlockerNetwork(), 500);
+    setTimeout(() => detectAdBlockerBehavior(), 1000);
+    setTimeout(() => detectAdBlockerCSS(), 1500);
+    setTimeout(() => detectAdBlockerMalwarebytes(), 2000);
+    setTimeout(() => detectAdBlockerMutationObserver(), 2500);
+    
+    // Fallback detection after all methods complete
+    setTimeout(() => {
+        if (!adBlockerDetected) {
+            // If no detection triggered, try one more time with different timing
+            if (adBlockerDetectionAttempts < MAX_DETECTION_ATTEMPTS) {
+                detectAdBlocker();
+            }
+        }
+    }, 6000);
 }
 
 // Function to handle AdBlocker detection
@@ -687,10 +985,24 @@ function initializeApp() {
         showNotification('Welcome to ReversCodes Hub! 🎮', 'success');
     }, 3000);
     
-    // Detect AdBlocker after a short delay
+    // Detect AdBlocker with multiple attempts and longer delays
     setTimeout(() => {
         detectAdBlocker();
-    }, 2000);
+    }, 1000);
+    
+    // Second detection attempt after page is fully loaded
+    setTimeout(() => {
+        if (!adBlockerDetected) {
+            detectAdBlocker();
+        }
+    }, 5000);
+    
+    // Final detection attempt
+    setTimeout(() => {
+        if (!adBlockerDetected) {
+            detectAdBlocker();
+        }
+    }, 10000);
 }
 
 // Initialize all event listeners
@@ -1725,3 +2037,4 @@ window.showHub = showHub;
   var formatted = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
   el.textContent = formatted;
 })();
+
