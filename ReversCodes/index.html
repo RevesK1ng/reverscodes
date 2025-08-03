@@ -155,6 +155,152 @@
           top: 0.7rem;
         }
       }
+
+      /* AdBlocker Detection Modal Styles */
+      #adBlockerModal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+      }
+
+      #adBlockerModal .modal-content {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        color: white;
+        margin: 5% auto;
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        max-width: 500px;
+        width: 90vw;
+        box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        position: relative;
+        text-align: center;
+        animation: modalSlideIn 0.3s ease-out;
+      }
+
+      @keyframes modalSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      #adBlockerModal .modal-header {
+        margin-bottom: 1.5rem;
+      }
+
+      #adBlockerModal .modal-header h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+
+      #adBlockerModal .modal-header .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      #adBlockerModal .modal-body {
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      #adBlockerModal .modal-body p {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      #adBlockerModal .modal-body .highlight {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+        font-weight: 600;
+      }
+
+      #adBlockerModal .modal-footer {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      #adBlockerModal .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      #adBlockerModal .btn-primary {
+        background: #f59e0b;
+        color: white;
+      }
+
+      #adBlockerModal .btn-primary:hover {
+        background: #d97706;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+      }
+
+      #adBlockerModal .btn-secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      #adBlockerModal .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      #adBlockerModal .strikes-info {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      #adBlockerModal .strikes-count {
+        font-weight: 700;
+        color: #f59e0b;
+      }
+
+      @media (max-width: 600px) {
+        #adBlockerModal .modal-content {
+          padding: 2rem 1.5rem;
+          margin: 10% auto;
+        }
+        
+        #adBlockerModal .modal-header h2 {
+          font-size: 1.5rem;
+        }
+        
+        #adBlockerModal .modal-footer {
+          flex-direction: column;
+        }
+        
+        #adBlockerModal .btn {
+          width: 100%;
+        }
+      }
     </style>
 </head>
 <body class="light-theme">
@@ -2538,7 +2684,43 @@
         <button class="notification-close" aria-label="Close notification">&times;</button>
     </div>
 
+    <!-- AdBlocker Detection Modal -->
+    <div id="adBlockerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="icon">🛡️</span>
+                <h2>Ad Blocker Detected</h2>
+            </div>
+            <div class="modal-body">
+                <p>We noticed you're using an ad blocker. While we understand the preference for an ad-free experience, ads help keep ReversCodes Hub free and accessible to everyone.</p>
+                
+                <div class="highlight">
+                    <strong>Your support through ads helps us:</strong><br>
+                    • Keep the site running and updated<br>
+                    • Provide accurate, up-to-date game codes<br>
+                    • Maintain our community features<br>
+                    • Cover hosting and development costs
+                </div>
+                
+                <p>We'd really appreciate if you could disable your ad blocker for ReversCodes Hub to help support our work!</p>
+                
+                <div class="strikes-info" id="strikesInfo">
+                    <span>Free entries remaining: <span class="strikes-count" id="strikesCount">3</span></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="disableAdBlocker()">
+                    Disable Ad Blocker
+                </button>
+                <button class="btn btn-secondary" onclick="continueWithAdBlocker()">
+                    No Thanks
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
+    <script src="security.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

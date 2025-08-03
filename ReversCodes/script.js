@@ -8,6 +8,11 @@ let adminAccessAttempts = 0;
 let adminPassword = '';
 let adminNumber = '';
 
+// AdBlocker Detection Variables
+let adBlockerStrikes = parseInt(localStorage.getItem('adBlockerStrikes')) || 3;
+let adBlockerDetected = false;
+let adBlockerModalShown = false;
+
 // DOM Elements
 const loadingScreen = document.getElementById('loadingScreen');
 const themeToggle = document.getElementById('themeToggle');
@@ -21,6 +26,143 @@ const notificationClose = notification.querySelector('.notification-close');
 const commentForm = document.getElementById('commentForm');
 const commentsList = document.getElementById('commentsList');
 // submissionsList is only used in admin modal, so we'll get it when needed
+
+// === ADBLOCKER DETECTION ===
+
+// Function to detect AdBlocker
+function detectAdBlocker() {
+    // Create a fake ad element
+    const testAd = document.createElement('div');
+    testAd.innerHTML = '&nbsp;';
+    testAd.className = 'adsbox';
+    testAd.style.position = 'absolute';
+    testAd.style.left = '-10000px';
+    testAd.style.top = '-1000px';
+    testAd.style.width = '1px';
+    testAd.style.height = '1px';
+    testAd.style.overflow = 'hidden';
+    document.body.appendChild(testAd);
+    
+    // Check if the ad element is hidden or removed
+    setTimeout(() => {
+        const isAdBlockerActive = !testAd.offsetHeight || 
+                                 testAd.offsetHeight === 0 || 
+                                 testAd.style.display === 'none' ||
+                                 testAd.style.visibility === 'hidden';
+        
+        document.body.removeChild(testAd);
+        
+        if (isAdBlockerActive) {
+            adBlockerDetected = true;
+            handleAdBlockerDetected();
+        }
+    }, 100);
+}
+
+// Function to handle AdBlocker detection
+function handleAdBlockerDetected() {
+    if (adBlockerModalShown) return;
+    
+    // Check if user has strikes remaining
+    if (adBlockerStrikes > 0) {
+        showAdBlockerModal();
+    } else {
+        // No strikes left, show blocking message
+        showAdBlockerBlockingMessage();
+    }
+}
+
+// Function to show AdBlocker modal
+function showAdBlockerModal() {
+    adBlockerModalShown = true;
+    const modal = document.getElementById('adBlockerModal');
+    const strikesCount = document.getElementById('strikesCount');
+    
+    strikesCount.textContent = adBlockerStrikes;
+    modal.style.display = 'block';
+    
+    // Prevent scrolling on body
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to hide AdBlocker modal
+function hideAdBlockerModal() {
+    const modal = document.getElementById('adBlockerModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Function called when user clicks "Disable Ad Blocker"
+function disableAdBlocker() {
+    hideAdBlockerModal();
+    showNotification('Thank you for supporting ReversCodes Hub! Please refresh the page after disabling your ad blocker.', 'success');
+    
+    // Reset strikes when they disable ad blocker
+    adBlockerStrikes = 3;
+    localStorage.setItem('adBlockerStrikes', adBlockerStrikes.toString());
+}
+
+// Function called when user clicks "No Thanks"
+function continueWithAdBlocker() {
+    adBlockerStrikes--;
+    localStorage.setItem('adBlockerStrikes', adBlockerStrikes.toString());
+    
+    hideAdBlockerModal();
+    
+    if (adBlockerStrikes > 0) {
+        showNotification(`You have ${adBlockerStrikes} free entries remaining. Please consider disabling your ad blocker to support us!`, 'warning');
+    } else {
+        showAdBlockerBlockingMessage();
+    }
+}
+
+// Function to show blocking message when no strikes left
+function showAdBlockerBlockingMessage() {
+    // Create a blocking overlay
+    const blockingOverlay = document.createElement('div');
+    blockingOverlay.id = 'adBlockerBlockingOverlay';
+    blockingOverlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+    `;
+    
+    blockingOverlay.innerHTML = `
+        <div style="max-width: 500px;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🛡️</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ad Blocker Required to Disable</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                To continue using ReversCodes Hub, please disable your ad blocker and refresh the page. 
+                Your support through ads helps keep our site free and updated!
+            </p>
+            <button onclick="location.reload()" style="
+                background: #f59e0b;
+                color: white;
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.background='#d97706'" onmouseout="this.style.background='#f59e0b'">
+                Refresh Page
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(blockingOverlay);
+}
 
 // === GAME GALLERY DATA & LOGIC ===
 
@@ -544,6 +686,11 @@ function initializeApp() {
     setTimeout(() => {
         showNotification('Welcome to ReversCodes Hub! 🎮', 'success');
     }, 3000);
+    
+    // Detect AdBlocker after a short delay
+    setTimeout(() => {
+        detectAdBlocker();
+    }, 2000);
 }
 
 // Initialize all event listeners
@@ -790,6 +937,14 @@ function handleContactSubmit(e) {
 function handleCommentSubmit(e) {
     e.preventDefault();
     
+    // Check rate limiting
+    const clientIP = SecurityConfig.getClientIP();
+    if (!SecurityConfig.checkRateLimit(clientIP)) {
+        showNotification('Too many requests. Please wait a moment before trying again.', 'error');
+        SecurityConfig.logSecurityEvent('rate_limit_exceeded', { clientIP });
+        return;
+    }
+    
     const emailInput = document.getElementById('commentEmail');
     const nameInput = document.getElementById('commentName');
     const textInput = document.getElementById('commentText');
@@ -803,10 +958,22 @@ function handleCommentSubmit(e) {
         return;
     }
     
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    // Security validation
+    if (!SecurityConfig.validateEmail(email)) {
         showNotification('Please enter a valid email address!', 'error');
+        SecurityConfig.logSecurityEvent('invalid_email_attempt', { email });
+        return;
+    }
+    
+    if (!SecurityConfig.validateUsername(name)) {
+        showNotification('Username must be 3-20 characters and contain only letters, numbers, underscores, and hyphens.', 'error');
+        SecurityConfig.logSecurityEvent('invalid_username_attempt', { name });
+        return;
+    }
+    
+    if (!SecurityConfig.validateComment(text)) {
+        showNotification('Comment contains invalid content or is too long/short.', 'error');
+        SecurityConfig.logSecurityEvent('invalid_comment_attempt', { textLength: text.length });
         return;
     }
     
@@ -822,12 +989,17 @@ function handleCommentSubmit(e) {
         return;
     }
     
+    // Sanitize inputs
+    const sanitizedEmail = SecurityConfig.sanitizeInput(email);
+    const sanitizedName = SecurityConfig.sanitizeInput(name);
+    const sanitizedText = SecurityConfig.sanitizeInput(text);
+    
     // Create new comment
     const comment = {
         id: Date.now(),
-        email: email,
-        name: name,
-        text: text,
+        email: sanitizedEmail,
+        name: sanitizedName,
+        text: sanitizedText,
         date: new Date().toISOString(),
         likes: 0
     };
@@ -845,6 +1017,13 @@ function handleCommentSubmit(e) {
     emailInput.value = '';
     nameInput.value = '';
     textInput.value = '';
+    
+    // Log successful comment
+    SecurityConfig.logSecurityEvent('comment_posted', {
+        commentId: comment.id,
+        nameLength: sanitizedName.length,
+        textLength: sanitizedText.length
+    });
     
     // Show success notification
     showNotification('Comment posted successfully!', 'success');
