@@ -423,12 +423,80 @@ function hideAdBlockerModal() {
 
 // Function called when user clicks "Disable Ad Blocker"
 function disableAdBlocker() {
-    hideAdBlockerModal();
-    showNotification('Thank you for supporting ReversCodes Hub! Please refresh the page after disabling your ad blocker.', 'success');
+    // Keep modal on screen but change content to show refresh button
+    const modal = document.getElementById('adBlockerModal');
+    const modalBody = modal.querySelector('.modal-body');
+    const modalFooter = modal.querySelector('.modal-footer');
     
-    // Reset strikes when they disable ad blocker
+    // Update modal content to show refresh option
+    modalBody.innerHTML = `
+        <p>Thank you for supporting ReversCodes Hub! Please disable your ad blocker and then click the refresh button below to check if it was successfully disabled.</p>
+        
+        <div class="highlight">
+            <strong>To disable your ad blocker:</strong><br>
+            • Look for the ad blocker icon in your browser toolbar<br>
+            • Click on it and select "Disable for this site" or similar option<br>
+            • Or add this site to your ad blocker's whitelist
+        </div>
+        
+        <p>Once you've disabled your ad blocker, click the refresh button to verify.</p>
+    `;
+    
+    // Update footer to show refresh button
+    modalFooter.innerHTML = `
+        <button class="btn btn-primary" onclick="checkAdBlockerStatus()">
+            🔄 Refresh & Check
+        </button>
+        <button class="btn btn-secondary" onclick="continueWithAdBlocker()">
+            No Thanks
+        </button>
+    `;
+    
+    // Reset strikes when they attempt to disable ad blocker
     adBlockerStrikes = 3;
     localStorage.setItem('adBlockerStrikes', adBlockerStrikes.toString());
+}
+
+// Function to check if ad blocker is still active after user attempts to disable it
+function checkAdBlockerStatus() {
+    // Re-run ad blocker detection
+    const isAdBlockerActive = detectAdBlocker();
+    
+    if (!isAdBlockerActive) {
+        // Ad blocker successfully disabled
+        hideAdBlockerModal();
+        showNotification('Great! Ad blocker has been successfully disabled. Thank you for supporting ReversCodes Hub!', 'success');
+        // Refresh the page to reload with ads enabled
+        location.reload();
+    } else {
+        // Ad blocker still active
+        const modal = document.getElementById('adBlockerModal');
+        const modalBody = modal.querySelector('.modal-body');
+        
+        modalBody.innerHTML = `
+            <p>We still detect an ad blocker. Please make sure you've completely disabled it and try again.</p>
+            
+            <div class="highlight">
+                <strong>Common ad blocker locations:</strong><br>
+                • Browser toolbar (look for shield or ad blocker icons)<br>
+                • Browser extensions menu<br>
+                • Browser settings > Privacy & Security<br>
+                • Make sure to refresh the page after disabling
+            </div>
+            
+            <p>If you're still having trouble, you can continue with limited access or contact us for help.</p>
+        `;
+        
+        const modalFooter = modal.querySelector('.modal-footer');
+        modalFooter.innerHTML = `
+            <button class="btn btn-primary" onclick="checkAdBlockerStatus()">
+                🔄 Try Again
+            </button>
+            <button class="btn btn-secondary" onclick="continueWithAdBlocker()">
+                Continue with Limited Access
+            </button>
+        `;
+    }
 }
 
 // Function called when user clicks "No Thanks"
