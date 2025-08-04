@@ -1,5 +1,36 @@
 // ReversCodes Hub - Main JavaScript File
 
+// Performance optimizations
+const requestIdleCallback = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+const cancelIdleCallback = window.cancelIdleCallback || ((id) => clearTimeout(id));
+
+// Debounce function for performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Throttle function for scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
 // Global variables
 let currentTheme = localStorage.getItem('theme') || 'light';
 let comments = JSON.parse(localStorage.getItem('comments')) || [];
@@ -1090,51 +1121,64 @@ function toggleMobileMenu() {
     });
 }
 
-// Scroll effects
+// Scroll effects with performance optimizations
 function initializeScrollEffects() {
-    window.addEventListener('scroll', function() {
-        // Back to top button visibility
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-        
-        // Header background on scroll
-        const header = document.getElementById('header');
-        if (window.pageYOffset > 50) {
-            header.style.background = 'var(--bg-header)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'transparent';
-            header.style.backdropFilter = 'none';
-        }
-        
-        // Active navigation link highlighting
-        highlightActiveNavLink();
-    });
+    const handleScroll = throttle(() => {
+        requestAnimationFrame(() => {
+            // Back to top button visibility
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+            
+            // Header background on scroll
+            const header = document.getElementById('header');
+            if (window.pageYOffset > 50) {
+                header.style.background = 'var(--bg-header)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'transparent';
+                header.style.backdropFilter = 'none';
+            }
+            
+            // Active navigation link highlighting
+            highlightActiveNavLink();
+        });
+    }, 16); // ~60fps
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
-// Highlight active navigation link based on scroll position
+// Highlight active navigation link based on scroll position (optimized)
 function highlightActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     
     let current = '';
-    sections.forEach(section => {
+    const scrollY = window.pageYOffset;
+    
+    for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
         const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
+            break;
         }
-    });
+    }
     
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+    for (let i = 0; i < navLinks.length; i++) {
+        const link = navLinks[i];
+        const href = link.getAttribute('href');
+        if (href === `#${current}`) {
+            if (!link.classList.contains('active')) {
+                link.classList.add('active');
+            }
+        } else {
+            link.classList.remove('active');
         }
-    });
+    }
 }
 
 // Smooth scrolling to sections

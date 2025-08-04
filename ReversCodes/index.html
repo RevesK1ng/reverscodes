@@ -29,6 +29,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
     <link rel="manifest" href="site.webmanifest">
 
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="images/RCNEWLOLGO.png" as="image">
+    <link rel="preload" href="images/favicon.png" as="image">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -318,6 +323,7 @@
                 <a href="#news" class="nav-link">News</a>
                 <button class="nav-link nav-game-gallery-btn" onclick="scrollToSection('games');" aria-label="Scroll to Game Gallery">🎮 Game Gallery</button>
                 <a href="#community" class="nav-link">Community</a>
+                <a href="#giveaway" class="nav-link">🎁 Giveaway</a>
                 <a href="disclaimer.html" class="nav-link" aria-label="Disclaimer">Disclaimer</a>
             </nav>
 
@@ -351,20 +357,20 @@
         <div class="related-content-sidebar">
             <div class="related-content-box">
                 <h3>Game Gallery</h3>
-                <div class="related-links">
-                    <a href="#astdx-page" class="related-link" onclick="showGamePage('astdx-page')">
-                        <img src="images/astdxlogo.png" alt="ASTDX Game Logo" class="related-link-img" loading="lazy">
-                        <span>ASTDX Codes</span>
-                    </a>
-                    <a href="#goalbound-page" class="related-link" onclick="showGamePage('goalbound-page')">
-                        <img src="images/goalbound.png" alt="Goalbound Game Logo" class="related-link-img" loading="lazy">
-                        <span>Goalbound Codes</span>
-                    </a>
-                    <a href="#bloxfruits-page" class="related-link" onclick="showGamePage('bloxfruits-page')">
-                        <img src="images/bloxfruits.png" alt="Blox Fruits Game Logo" class="related-link-img" loading="lazy">
-                        <span>Blox Fruits Codes</span>
-                    </a>
-                </div>
+                                    <div class="related-links">
+                        <a href="#astdx-page" class="related-link" onclick="showGamePage('astdx-page')">
+                            <img src="images/astdxlogo.png" alt="ASTDX Game Logo" class="related-link-img" loading="lazy" decoding="async">
+                            <span>ASTDX Codes</span>
+                        </a>
+                        <a href="#goalbound-page" class="related-link" onclick="showGamePage('goalbound-page')">
+                            <img src="images/goalbound.png" alt="Goalbound Game Logo" class="related-link-img" loading="lazy" decoding="async">
+                            <span>Goalbound Codes</span>
+                        </a>
+                        <a href="#bloxfruits-page" class="related-link" onclick="showGamePage('bloxfruits-page')">
+                            <img src="images/bloxfruits.png" alt="Blox Fruits Game Logo" class="related-link-img" loading="lazy" decoding="async">
+                            <span>Blox Fruits Codes</span>
+                        </a>
+                    </div>
                 <button class="see-more-games-btn" onclick="scrollToSection('games')" aria-label="See more games">See More Games</button>
             </div>
             
@@ -601,6 +607,47 @@
             </div>
         </section>
     </main>
+
+    <!-- Giveaway Section -->
+    <section id="giveaway" class="giveaway-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🎁 1000 Robux Giveaway</h2>
+                <p class="section-subtitle">Enter for a chance to win 1000 Robux! First 1000 entries only.</p>
+            </div>
+            
+            <div class="giveaway-content">
+                <div class="giveaway-card">
+                    <div class="giveaway-icon">🎮</div>
+                    <h3>Win 1000 Robux!</h3>
+                    <p>Join our exciting giveaway and you could be the lucky winner of 1000 Robux! Simply enter your details below for a chance to win.</p>
+                    
+                    <div class="giveaway-details">
+                        <div class="giveaway-detail">
+                            <span class="detail-icon">💰</span>
+                            <span class="detail-text">Prize: 1000 Robux</span>
+                        </div>
+                        <div class="giveaway-detail">
+                            <span class="detail-icon">👥</span>
+                            <span class="detail-text">First 1000 entries only</span>
+                        </div>
+                        <div class="giveaway-detail">
+                            <span class="detail-icon">📺</span>
+                            <span class="detail-text">Winner announced on YouTube</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://forms.gle/utRuSJhtHCknRrWb6" target="_blank" rel="noopener" class="btn btn-primary giveaway-btn">
+                        <span class="btn-icon">🎯</span>
+                        Enter Giveaway Now
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    
+                    <p class="giveaway-note">*Terms and conditions apply.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ASTDX Game Page -->
     <div id="astdx-page" class="game-page" style="display: none;">
@@ -2652,6 +2699,7 @@
                         <li><a href="#news" onclick="scrollToSection('news')">News</a></li>
                         <li><a href="#games" onclick="scrollToSection('games')">Game Codes</a></li>
                         <li><a href="#community" onclick="scrollToSection('community')">Community</a></li>
+                        <li><a href="#giveaway" onclick="scrollToSection('giveaway')">🎁 Giveaway</a></li>
                     </ul>
                 </div>
                 
