@@ -97,6 +97,25 @@ let adBlockerStrikes = parseInt(localStorage.getItem('adBlockerStrikes')) || 3;
 let adBlockerDetected = false;
 let adBlockerModalShown = false;
 
+// New variables for 3 free entries feature
+let freeEntriesUsed = parseInt(localStorage.getItem('freeEntriesUsed')) || 0;
+let lastModalShownTime = parseInt(localStorage.getItem('lastModalShownTime')) || 0;
+let entriesResetDate = parseInt(localStorage.getItem('entriesResetDate')) || 0;
+
+// Check if we need to reset entries (every 2 days)
+const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000; // 2 days in milliseconds
+const TEN_MINUTES_MS = 10 * 60 * 1000; // 10 minutes in milliseconds
+
+// Reset entries if 2 days have passed
+if (Date.now() - entriesResetDate > TWO_DAYS_MS) {
+    freeEntriesUsed = 0;
+    lastModalShownTime = 0;
+    entriesResetDate = Date.now();
+    localStorage.setItem('freeEntriesUsed', '0');
+    localStorage.setItem('lastModalShownTime', '0');
+    localStorage.setItem('entriesResetDate', entriesResetDate.toString());
+}
+
 // DOM Elements
 const loadingScreen = document.getElementById('loadingScreen');
 const themeToggle = document.getElementById('themeToggle');
@@ -119,6 +138,7 @@ const MAX_DETECTION_ATTEMPTS = 3;
 
 // Method 1: DOM-based detection with multiple ad-like elements
 function detectAdBlockerDOM() {
+    console.log('DOM detection method started');
     const adElements = [
         { className: 'adsbox', content: '&nbsp;' },
         { className: 'adsbygoogle', content: '<ins class="adsbygoogle"></ins>' },
@@ -157,6 +177,7 @@ function detectAdBlockerDOM() {
             
             // Check if majority of elements are blocked
             if (index === totalElements - 1 && blockedCount >= Math.ceil(totalElements * 0.7)) {
+                console.log('DOM detection: Ad blocker detected!', blockedCount, 'out of', totalElements, 'elements blocked');
                 adBlockerDetected = true;
                 handleAdBlockerDetected();
             }
@@ -416,11 +437,14 @@ function detectAdBlockerMutationObserver() {
 
 // Main detection function that combines all methods
 function detectAdBlocker() {
+    console.log('detectAdBlocker called, attempts:', adBlockerDetectionAttempts);
     if (adBlockerDetectionAttempts >= MAX_DETECTION_ATTEMPTS) {
+        console.log('Max detection attempts reached');
         return; // Prevent infinite loops
     }
     
     adBlockerDetectionAttempts++;
+    console.log('Starting ad blocker detection methods...');
     
     // Run all detection methods with staggered timing
     setTimeout(() => detectAdBlockerDOM(), 0);
@@ -432,9 +456,11 @@ function detectAdBlocker() {
     
     // Fallback detection after all methods complete
     setTimeout(() => {
+        console.log('Fallback detection check, adBlockerDetected:', adBlockerDetected);
         if (!adBlockerDetected) {
             // If no detection triggered, try one more time with different timing
             if (adBlockerDetectionAttempts < MAX_DETECTION_ATTEMPTS) {
+                console.log('Retrying detection...');
                 detectAdBlocker();
             }
         }
@@ -443,34 +469,69 @@ function detectAdBlocker() {
 
 // Function to handle AdBlocker detection
 function handleAdBlockerDetected() {
+    console.log('Ad blocker detected! Free entries used:', freeEntriesUsed);
+    console.log('Modal already shown:', adBlockerModalShown);
+    console.log('Time since last shown:', Date.now() - lastModalShownTime);
+    
     if (adBlockerModalShown) return;
     
-    // Check if user has strikes remaining
-    if (adBlockerStrikes > 0) {
+    // Check if we're in a 10-minute cooldown period
+    if (lastModalShownTime > 0 && (Date.now() - lastModalShownTime) < TEN_MINUTES_MS) {
+        console.log('Still in cooldown period, not showing modal');
+        return;
+    }
+    
+    // Check if user has free entries remaining
+    if (freeEntriesUsed < 3) {
+        console.log('Showing ad blocker modal... Free entries remaining:', 3 - freeEntriesUsed);
         showAdBlockerModal();
     } else {
-        // No strikes left, show blocking message
+        // No free entries left, show blocking message
+        console.log('No free entries left, showing blocking message...');
         showAdBlockerBlockingMessage();
     }
 }
 
 // Function to show AdBlocker modal
 function showAdBlockerModal() {
+    console.log('Showing ad blocker modal');
     adBlockerModalShown = true;
+    lastModalShownTime = Date.now();
+    localStorage.setItem('lastModalShownTime', lastModalShownTime.toString());
+    
     const modal = document.getElementById('adBlockerModal');
     const strikesCount = document.getElementById('strikesCount');
     
-    strikesCount.textContent = adBlockerStrikes;
-    modal.style.display = 'block';
+    console.log('Modal element found:', !!modal);
+    console.log('Strikes count element found:', !!strikesCount);
     
-    // Prevent scrolling on body
-    document.body.style.overflow = 'hidden';
+    if (modal && strikesCount) {
+        strikesCount.textContent = 3 - freeEntriesUsed;
+        
+        // Conditionally show/hide the "Maybe Later" button
+        const maybeLaterButton = modal.querySelector('.btn-secondary');
+        if (maybeLaterButton) {
+            if (freeEntriesUsed >= 3) {
+                maybeLaterButton.style.display = 'none';
+            } else {
+                maybeLaterButton.style.display = 'inline-block';
+            }
+        }
+        
+        modal.classList.add('show');
+        console.log('Modal show class added');
+        
+        // Prevent scrolling on body
+        document.body.style.overflow = 'hidden';
+    } else {
+        console.error('Modal elements not found:', { modal: !!modal, strikesCount: !!strikesCount });
+    }
 }
 
 // Function to hide AdBlocker modal
 function hideAdBlockerModal() {
     const modal = document.getElementById('adBlockerModal');
-    modal.style.display = 'none';
+    modal.classList.remove('show');
     document.body.style.overflow = 'auto';
 }
 
@@ -505,9 +566,11 @@ function disableAdBlocker() {
         </button>
     `;
     
-    // Reset strikes when they attempt to disable ad blocker
-    adBlockerStrikes = 3;
-    localStorage.setItem('adBlockerStrikes', adBlockerStrikes.toString());
+    // Reset free entries when they attempt to disable ad blocker
+    freeEntriesUsed = 0;
+    lastModalShownTime = 0;
+    localStorage.setItem('freeEntriesUsed', '0');
+    localStorage.setItem('lastModalShownTime', '0');
 }
 
 // Function to check if ad blocker is still active after user attempts to disable it
@@ -552,15 +615,16 @@ function checkAdBlockerStatus() {
     }
 }
 
-// Function called when user clicks "No Thanks"
+// Function called when user clicks "Maybe Later"
 function continueWithAdBlocker() {
-    adBlockerStrikes--;
-    localStorage.setItem('adBlockerStrikes', adBlockerStrikes.toString());
+    freeEntriesUsed++;
+    localStorage.setItem('freeEntriesUsed', freeEntriesUsed.toString());
     
     hideAdBlockerModal();
     
-    if (adBlockerStrikes > 0) {
-        showNotification(`You have ${adBlockerStrikes} free entries remaining. Please consider disabling your ad blocker to support us!`, 'warning');
+    if (freeEntriesUsed < 3) {
+        const remainingEntries = 3 - freeEntriesUsed;
+        showNotification(`You have ${remainingEntries} free entries remaining. The modal will be available again in 10 minutes.`, 'warning');
     } else {
         showAdBlockerBlockingMessage();
     }
@@ -1135,6 +1199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Main initialization function
 function initializeApp() {
+    console.log('initializeApp called');
     // Set initial theme
     setTheme(currentTheme);
     
@@ -1163,12 +1228,15 @@ function initializeApp() {
     }
     
     // Detect AdBlocker with multiple attempts and longer delays
+    console.log('Scheduling first ad blocker detection...');
     setTimeout(() => {
+        console.log('First ad blocker detection starting...');
         detectAdBlocker();
     }, 1000);
     
     // Second detection attempt after page is fully loaded
     setTimeout(() => {
+        console.log('Second ad blocker detection check...');
         if (!adBlockerDetected) {
             detectAdBlocker();
         }
@@ -1176,6 +1244,7 @@ function initializeApp() {
     
     // Final detection attempt
     setTimeout(() => {
+        console.log('Final ad blocker detection check...');
         if (!adBlockerDetected) {
             detectAdBlocker();
         }
@@ -3628,6 +3697,22 @@ function processAssistantMessage(message) {
 
 // Initialize community features when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded event fired');
+    
+    // Check cooldown status and log it
+    if (lastModalShownTime > 0) {
+        const timeSinceLastShown = Date.now() - lastModalShownTime;
+        const cooldownRemaining = Math.max(0, TEN_MINUTES_MS - timeSinceLastShown);
+        const minutesRemaining = Math.ceil(cooldownRemaining / (60 * 1000));
+        
+        console.log(`Cooldown status: ${minutesRemaining} minutes remaining until next free entry`);
+        console.log(`Free entries used: ${freeEntriesUsed}/3`);
+    }
+    
+    // Initialize the main app first
+    initializeApp();
+    
+    // Initialize community features
     initializeCommunityFeatures();
     
     // Add event listener for assistant input (Enter key)
