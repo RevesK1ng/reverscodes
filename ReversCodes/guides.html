@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Guides - ReversCodes Hub</title>
+    <meta name="description" content="Master your favorite games with our expert gaming guides. Learn FPS tips, battle royale strategies, gaming setup guides, and streaming tips from professional gamers.">
+    <meta name="keywords" content="gaming guides, FPS tips, battle royale strategies, gaming setup, streaming guide, gaming tips, pro gaming, gaming tutorials">
+    <meta name="author" content="ReversCodes">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reverscodes.com/guides.html">
+    <meta property="og:title" content="Gaming Guides - ReversCodes Hub">
+    <meta property="og:description" content="Master your favorite games with our expert gaming guides and strategies.">
+    <meta property="og:image" content="https://reverscodes.com/images/og-image.jpg">
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MNVC6EFFH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9MNVC6EFFH');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="images/RCNEWLOLGO.png" as="image">
+    <link rel="preload" href="images/favicon.png" as="image">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9521802974687428"
+     crossorigin="anonymous"></script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://reverscodes.com/guides.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Gaming Guides - ReversCodes Hub",
+        "url": "https://reverscodes.com/guides.html",
+        "description": "Master your favorite games with our expert gaming guides and strategies",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "FPS Gaming Guide",
+                    "url": "https://reverscodes.com/guides.html#fps-guide"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Battle Royale Guide",
+                    "url": "https://reverscodes.com/guides.html#battle-royale-guide"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Gaming Setup Guide",
+                    "url": "https://reverscodes.com/guides.html#setup-guide"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Streaming Guide",
+                    "url": "https://reverscodes.com/guides.html#streaming-guide"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo" onclick="refreshPage()" style="cursor: pointer;">
+                <img src="images/RCNEWLOLGO.png" alt="ReversCodes Logo" class="logo-img" loading="lazy">
+                <span class="logo-text">ReversCodes</span>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="trending.html" class="nav-link">🔥 Trending</a>
+                <a href="guides.html" class="nav-link">🎯 Guides</a>
+                                        <button class="nav-link nav-game-gallery-btn" onclick="window.location.href='index.html#games';" aria-label="Scroll to Roblox Game Codes">🎮 Roblox Game Codes</button>
+                <a href="index.html#giveaway" class="nav-link">🎁 Giveaway</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="background-gradient"></div>
+        <div class="background-pattern"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section for Guides Page -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">🎯 Gaming Guides</h1>
+                    <p class="hero-subtitle">Master your favorite games with expert tips and strategies<br>From beginners to advanced players, we've got you covered</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides Topics Grid -->
+        <section class="guides-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🎯 Popular Gaming Guides</h2>
+                    <p class="section-subtitle">Master your favorite games with our expert tips and strategies</p>
+                </div>
+                
+                <div class="guides-grid">
+                    <div class="guide-card" id="fps-guide" onclick="scrollToSection('fps-guide-details')">
+                        <div class="guide-icon">⚔️</div>
+                        <h3>How to Get Better at FPS Games</h3>
+                        <p>Master aim, movement, and game sense with proven techniques used by pro players</p>
+                        <ul class="guide-tips">
+                            <li>Crosshair placement fundamentals</li>
+                            <li>Recoil control patterns</li>
+                            <li>Map awareness strategies</li>
+                        </ul>
+                        <span class="guide-badge">Beginner Friendly</span>
+                    </div>
+                    
+                    <div class="guide-card" id="battle-royale-guide" onclick="scrollToSection('battle-royale-guide-details')">
+                        <div class="guide-icon">🏆</div>
+                        <h3>Battle Royale Survival Tips</h3>
+                        <p>Increase your win rate with advanced positioning and decision-making strategies</p>
+                        <ul class="guide-tips">
+                            <li>Drop location optimization</li>
+                            <li>Circle management tactics</li>
+                            <li>End-game positioning</li>
+                        </ul>
+                        <span class="guide-badge">Advanced</span>
+                    </div>
+                    
+                    <div class="guide-card" id="setup-guide" onclick="scrollToSection('setup-guide-details')">
+                        <div class="guide-icon">💰</div>
+                        <h3>Gaming Setup on a Budget</h3>
+                        <p>Build a competitive gaming setup without breaking the bank</p>
+                        <ul class="guide-tips">
+                            <li>Best budget gaming mice</li>
+                            <li>Affordable mechanical keyboards</li>
+                            <li>Monitor recommendations</li>
+                        </ul>
+                        <span class="guide-badge">Budget Guide</span>
+                    </div>
+                    
+                    <div class="guide-card" id="streaming-guide" onclick="scrollToSection('streaming-guide-details')">
+                        <div class="guide-icon">🎮</div>
+                        <h3>Streaming Setup Guide</h3>
+                        <p>Start your gaming content creation journey with professional setup tips</p>
+                        <ul class="guide-tips">
+                            <li>OBS Studio configuration</li>
+                            <li>Audio setup essentials</li>
+                            <li>Lighting and camera tips</li>
+                        </ul>
+                        <span class="guide-badge">Content Creator</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Sections -->
+        <section class="guides-details">
+            <div class="container">
+                <!-- FPS Guide Details -->
+                <div class="guide-detail-section" id="fps-guide-details">
+                    <div class="guide-content">
+                        <div class="guide-info">
+                            <h3>⚔️ How to Get Better at FPS Games</h3>
+                            <h4>Advanced Techniques:</h4>
+                            <ul>
+                                <li>Practice aim training for 30 minutes daily</li>
+                                <li>Learn spray patterns for your main weapons</li>
+                                <li>Use pre-aiming to reduce reaction time</li>
+                                <li>Study professional player demos</li>
+                                <li>Focus on crosshair placement at head level</li>
+                                <li>Master movement mechanics and strafing</li>
+                                <li>Learn common angles and pre-fire spots</li>
+                                <li>Practice flick shots and tracking</li>
+                                <li>Use sound cues to your advantage</li>
+                                <li>Develop game sense through experience</li>
+                            </ul>
+                            <h4>Recommended Training Routines:</h4>
+                            <ul>
+                                <li>10 minutes of aim training (Aim Lab, KovaaK's)</li>
+                                <li>15 minutes of deathmatch practice</li>
+                                <li>5 minutes of spray control practice</li>
+                                <li>Review your gameplay recordings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Battle Royale Guide Details -->
+                <div class="guide-detail-section" id="battle-royale-guide-details">
+                    <div class="guide-content">
+                        <div class="guide-info">
+                            <h3>🏆 Battle Royale Survival Tips</h3>
+                            <h4>Pro Strategies:</h4>
+                            <ul>
+                                <li>Always have an escape route planned</li>
+                                <li>Use sound cues to track enemy positions</li>
+                                <li>Manage inventory efficiently</li>
+                                <li>Stay on the edge of the circle early</li>
+                                <li>Use vehicles strategically for rotations</li>
+                                <li>Learn the map and popular drop locations</li>
+                                <li>Master building and editing (for Fortnite)</li>
+                                <li>Use cover effectively in gunfights</li>
+                                <li>Communicate with your team</li>
+                                <li>Stay calm under pressure</li>
+                            </ul>
+                            <h4>Drop Location Strategy:</h4>
+                            <ul>
+                                <li>Hot drops for aggressive players</li>
+                                <li>Safe drops for passive players</li>
+                                <li>Edge drops for strategic positioning</li>
+                                <li>Vehicle spawn locations for mobility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Setup Guide Details -->
+                <div class="guide-detail-section" id="setup-guide-details">
+                    <div class="guide-content">
+                        <div class="guide-info">
+                            <h3>💰 Gaming Setup on a Budget</h3>
+                            <h4>Budget Recommendations:</h4>
+                            <ul>
+                                <li>Gaming Mouse: Logitech G203 ($25-30)</li>
+                                <li>Keyboard: Redragon K552 ($40-50)</li>
+                                <li>Monitor: AOC 24G2 ($180-200)</li>
+                                <li>Headset: HyperX Cloud Stinger ($40-50)</li>
+                                <li>Mousepad: SteelSeries QcK ($10-15)</li>
+                                <li>Webcam: Logitech C270 ($25-30)</li>
+                                <li>Microphone: Blue Snowball ($50-60)</li>
+                                <li>Desk: IKEA LINNMON ($30-40)</li>
+                                <li>Chair: Gaming chair alternatives ($100-150)</li>
+                                <li>Lighting: LED strip lights ($15-25)</li>
+                            </ul>
+                            <h4>Setup Tips:</h4>
+                            <ul>
+                                <li>Prioritize monitor and mouse for gaming</li>
+                                <li>Invest in a good chair for long sessions</li>
+                                <li>Proper cable management for clean setup</li>
+                                <li>Good lighting reduces eye strain</li>
+                                <li>Ergonomic positioning prevents injuries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Streaming Guide Details -->
+                <div class="guide-detail-section" id="streaming-guide-details">
+                    <div class="guide-content">
+                        <div class="guide-info">
+                            <h3>🎮 Streaming Setup Guide</h3>
+                            <h4>Essential Equipment:</h4>
+                            <ul>
+                                <li>Microphone: Blue Yeti or Audio-Technica AT2020</li>
+                                <li>Webcam: Logitech C920 or Razer Kiyo</li>
+                                <li>Lighting: Ring light or softbox setup</li>
+                                <li>Capture Card: Elgato HD60S for console streaming</li>
+                                <li>Green Screen: For professional background removal</li>
+                                <li>Stream Deck: For scene transitions and alerts</li>
+                                <li>Pop Filter: Reduces unwanted audio noise</li>
+                                <li>Shock Mount: Prevents desk vibrations</li>
+                                <li>Audio Interface: For professional sound quality</li>
+                                <li>Dual Monitors: For chat and stream management</li>
+                            </ul>
+                            <h4>Software Setup:</h4>
+                            <ul>
+                                <li>OBS Studio for streaming software</li>
+                                <li>Streamlabs for overlays and alerts</li>
+                                <li>Voicemeeter for audio mixing</li>
+                                <li>Social media for promotion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ReversCodes</h3>
+                    <p>Your ultimate gaming hub for Roblox codes, gaming news, and expert guides.</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@reverscodes" target="_blank" rel="noopener" aria-label="YouTube">
+                            <span class="social-icon">📺</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="trending.html">Trending</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ReversCodes. All rights reserved.</p>
+                <p>Last updated: August 6th, 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+        <span>↑</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Function to refresh page (for logo click)
+        function refreshPage() {
+            window.location.href = 'index.html';
+        }
+
+        // Function to scroll to section (for navigation)
+        function scrollToSection(sectionId) {
+            window.location.href = 'index.html#' + sectionId;
+        }
+
+        // Add click handlers for guide cards to scroll to details
+        document.querySelectorAll('.guide-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const id = this.id;
+                const detailsSection = document.getElementById(id + '-details');
+                if (detailsSection) {
+                    detailsSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

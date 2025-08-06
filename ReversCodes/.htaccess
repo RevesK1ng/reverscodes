@@ -1,10 +1,10 @@
-# ReversCodes Hub - Security Configuration
-# This file contains security headers and configurations for Apache servers
+# ReversCodes Hub - Security & Performance Configuration
+# This file contains security headers, performance optimizations, and SEO configurations for Apache servers
 
 # Security Headers
 <IfModule mod_headers.c>
     # Prevent clickjacking
-    Header always set X-Frame-Options "DENY"
+    Header always set X-Frame-Options "SAMEORIGIN"
     
     # Prevent MIME type sniffing
     Header always set X-Content-Type-Options "nosniff"
@@ -15,15 +15,22 @@
     # Referrer policy
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     
-    # Content Security Policy
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://pagead2.googlesyndication.com; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
+    # Content Security Policy (Enhanced for better compatibility)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://pagead2.googlesyndication.com https://www.google-analytics.com; frame-src https://www.google.com https://pagead2.googlesyndication.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
     
     # Permissions Policy
-    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
     
     # Remove server signature
     Header always unset Server
     Header always unset X-Powered-By
+    
+    # Performance headers
+    Header always set Cache-Control "public, max-age=31536000, immutable" env=HTTPS
+    Header always set Vary "Accept-Encoding"
+    
+    # SEO headers
+    Header always set X-Robots-Tag "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 </IfModule>
 
 # Prevent access to sensitive files
@@ -58,33 +65,115 @@ Options -Indexes
 # Set default character set
 AddDefaultCharset UTF-8
 
-# Enable compression
+# Enable compression (Enhanced)
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/xml
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/rss+xml
+    # Active compression
+    SetOutputFilter DEFLATE
+    # Force deflate for mangled headers
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodingX)$ ^(.*)gzip(.*)$ HAVE_Accept-Encoding
+            Header append Vary Accept-Encoding env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+    # Compress all output labeled with one of the following MIME-types
+    AddOutputFilterByType DEFLATE application/atom+xml
     AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
+    AddOutputFilterByType DEFLATE application/manifest+json
+    AddOutputFilterByType DEFLATE application/rdf+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/eot
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    # Remove browser bugs
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
 </IfModule>
 
-# Set cache headers for static assets
+# Set cache headers for static assets (Enhanced)
 <IfModule mod_expires.c>
     ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/ico "access plus 1 year"
+    ExpiresByType image/icon "access plus 1 year"
+    ExpiresByType text/ico "access plus 1 year"
+    ExpiresByType application/ico "access plus 1 year"
+    
+    # Video
+    ExpiresByType video/ogg "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+    
+    # Audio
+    ExpiresByType audio/ogg "access plus 1 year"
+    ExpiresByType audio/mp4 "access plus 1 year"
+    ExpiresByType audio/mpeg "access plus 1 year"
+    
+    # HTC files (css3pie)
+    ExpiresByType text/x-component "access plus 1 month"
+    
+    # HTML
+    ExpiresByType text/html "access plus 1 day"
+    
+    # Data
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType text/json "access plus 0 seconds"
+    
+    # RSS feed
+    ExpiresByType application/rss+xml "access plus 1 hour"
+    
+    # Favicon (cannot be renamed)
+    ExpiresByType image/x-icon "access plus 1 week"
+    
+    # Media: images, video, audio
+    ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/jpg "access plus 1 month"
     ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
-    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType video/ogg "access plus 1 month"
+    ExpiresByType audio/ogg "access plus 1 month"
+    
+    # HTC files (css3pie)
+    ExpiresByType text/x-component "access plus 1 month"
+    
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    
+    # Others
     ExpiresByType application/pdf "access plus 1 month"
-    ExpiresByType text/javascript "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType application/x-javascript "access plus 1 month"
     ExpiresByType application/x-shockwave-flash "access plus 1 month"
-    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Default
     ExpiresDefault "access plus 2 days"
 </IfModule>
 
@@ -111,4 +200,65 @@ ErrorDocument 500 /offline.html
 #     RewriteEngine On
 #     RewriteCond %{HTTPS} off
 #     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-# </IfModule> 
+# </IfModule>
+
+# Performance optimizations
+<IfModule mod_headers.c>
+    # Enable keep-alive
+    Header set Connection keep-alive
+    
+    # Preload critical resources
+    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache HTML files for a shorter time
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>
+
+# Enable HTTP/2 Server Push (if supported)
+<IfModule mod_http2.c>
+    H2Push on
+    H2PushResource add /style.css
+    H2PushResource add /script.js
+    H2PushResource add /images/RCNEWLOLGO.png
+</IfModule>
+
+# Optimize for mobile
+<IfModule mod_headers.c>
+    Header set Vary "User-Agent"
+</IfModule>
+
+# Security: Prevent access to sensitive files
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.sql">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.bak">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# SEO: Redirect www to non-www (or vice versa)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# </IfModule>
+
+# Performance: Enable ETags
+FileETag MTime Size
+
+# Performance: Disable ETags for better caching
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None 

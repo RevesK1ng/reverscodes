@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Gaming Topics - ReversCodes Hub</title>
+    <meta name="description" content="Discover the latest trending gaming topics, from GTA 6 updates to Fortnite Chapter 5. Stay ahead with the most searched gaming content.">
+    <meta name="keywords" content="trending games, GTA 6, Fortnite Chapter 5, Call of Duty Warzone, Minecraft updates, Among Us 2, Valorant agents, gaming trends">
+    <meta name="author" content="ReversCodes">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reverscodes.com/trending.html">
+    <meta property="og:title" content="Trending Gaming Topics - ReversCodes Hub">
+    <meta property="og:description" content="Discover the latest trending gaming topics, from GTA 6 updates to Fortnite Chapter 5.">
+    <meta property="og:image" content="https://reverscodes.com/images/og-image.jpg">
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MNVC6EFFH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9MNVC6EFFH');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9521802974687428"
+     crossorigin="anonymous"></script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://reverscodes.com/trending.html">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo" onclick="refreshPage()" style="cursor: pointer;">
+                <img src="images/RCNEWLOLGO.png" alt="ReversCodes Logo" class="logo-img" loading="lazy">
+                <span class="logo-text">ReversCodes</span>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="trending.html" class="nav-link">🔥 Trending</a>
+                <a href="guides.html" class="nav-link">🎯 Guides</a>
+                                        <button class="nav-link nav-game-gallery-btn" onclick="window.location.href='index.html#games';" aria-label="Scroll to Roblox Game Codes">🎮 Roblox Game Codes</button>
+                <a href="index.html#giveaway" class="nav-link">🎁 Giveaway</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background with Logo and Vignette -->
+    <div class="background-container">
+        <div class="logo-background"></div>
+        <div class="vignette-overlay"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">🔥 Trending Gaming Topics</h1>
+                    <p class="hero-subtitle">Discover what gamers are searching for right now<br>Stay ahead with the latest trends and updates</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Topics Grid -->
+        <section class="trending-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What's Hot Right Now</h2>
+                    <p class="section-subtitle">The most searched gaming topics and trending discussions</p>
+                </div>
+                
+                <div class="trending-grid">
+                    <div id="gta6" class="trending-card">
+                        <div class="trending-icon">🎮</div>
+                        <h3>GTA 6 Release Date</h3>
+                        <p>Latest updates on Grand Theft Auto 6 release, trailers, and gameplay details</p>
+                        <span class="trending-badge">Trending</span>
+                    </div>
+                    
+                    <div id="fortnite" class="trending-card">
+                        <div class="trending-icon">⚡</div>
+                        <h3>Fortnite Chapter 5</h3>
+                        <p>New season updates, battle pass rewards, and map changes</p>
+                        <span class="trending-badge">Hot</span>
+                    </div>
+                    
+                    <div id="warzone" class="trending-card">
+                        <div class="trending-icon">🏆</div>
+                        <h3>Call of Duty Warzone</h3>
+                        <p>Latest meta weapons, loadouts, and battle royale strategies</p>
+                        <span class="trending-badge">Popular</span>
+                    </div>
+                    
+                    <div id="minecraft" class="trending-card">
+                        <div class="trending-icon">🎯</div>
+                        <h3>Minecraft Updates</h3>
+                        <p>New biomes, mobs, and features in the latest Minecraft versions</p>
+                        <span class="trending-badge">New</span>
+                    </div>
+                    
+                    <div id="amongus" class="trending-card">
+                        <div class="trending-icon">🌟</div>
+                        <h3>Among Us 2</h3>
+                        <p>Sequel rumors, new features, and community updates</p>
+                        <span class="trending-badge">Rumored</span>
+                    </div>
+                    
+                    <div id="valorant" class="trending-card">
+                        <div class="trending-icon">💎</div>
+                        <h3>Valorant Agents</h3>
+                        <p>New agent releases, abilities, and competitive meta analysis</p>
+                        <span class="trending-badge">Esports</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Sections -->
+        <section class="trending-details">
+            <div class="container">
+                <!-- GTA 6 Section -->
+                <div id="gta6-details" class="trending-detail-section">
+                    <div class="section-header">
+                        <h2 class="section-title">🎮 GTA 6 Release Date & Updates</h2>
+                        <p class="section-subtitle">Everything you need to know about Grand Theft Auto 6</p>
+                    </div>
+                    
+                    <div class="trending-content">
+                        <div class="trending-info">
+                            <h3>Latest Release Information</h3>
+                            <p>Rockstar Games has officially announced that GTA 6 is set to release in 2025. The game will feature a modern-day Vice City setting with enhanced graphics and gameplay mechanics.</p>
+                            
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Modern Vice City setting with enhanced graphics</li>
+                                <li>Dual protagonist system with Lucia and Jason</li>
+                                <li>Enhanced AI and NPC interactions</li>
+                                <li>Expanded multiplayer features</li>
+                                <li>Next-gen console optimization</li>
+                            </ul>
+                            
+                            <h4>Expected Release Timeline:</h4>
+                            <ul>
+                                <li>Q1 2025: PlayStation 5 and Xbox Series X/S</li>
+                                <li>Q2 2025: PC release</li>
+                                <li>Ongoing: Development updates and trailers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fortnite Section -->
+                <div id="fortnite-details" class="trending-detail-section">
+                    <div class="section-header">
+                        <h2 class="section-title">⚡ Fortnite Chapter 5</h2>
+                        <p class="section-subtitle">Latest updates and battle pass information</p>
+                    </div>
+                    
+                    <div class="trending-content">
+                        <div class="trending-info">
+                            <h3>Chapter 5 Season Updates</h3>
+                            <p>Fortnite Chapter 5 continues to evolve with new seasons, collaborations, and gameplay mechanics that keep the battle royale genre fresh and exciting.</p>
+                            
+                            <h4>Current Season Features:</h4>
+                            <ul>
+                                <li>New map locations and POIs</li>
+                                <li>Updated weapon meta and loot pool</li>
+                                <li>Collaboration events with major franchises</li>
+                                <li>Enhanced building and combat mechanics</li>
+                                <li>New battle pass rewards and cosmetics</li>
+                            </ul>
+                            
+                            <h4>Upcoming Events:</h4>
+                            <ul>
+                                <li>Season finale tournaments</li>
+                                <li>Collaboration events</li>
+                                <li>Community challenges</li>
+                                <li>New battle pass releases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call of Duty Warzone Section -->
+                <div id="warzone-details" class="trending-detail-section">
+                    <div class="section-header">
+                        <h2 class="section-title">🏆 Call of Duty Warzone</h2>
+                        <p class="section-subtitle">Meta weapons, strategies, and competitive insights</p>
+                    </div>
+                    
+                    <div class="trending-content">
+                        <div class="trending-info">
+                            <h3>Current Meta Analysis</h3>
+                            <p>Warzone continues to dominate the battle royale scene with regular updates, new maps, and evolving weapon metas that keep players engaged.</p>
+                            
+                            <h4>Top Meta Weapons:</h4>
+                            <ul>
+                                <li>Assault Rifles: M4A1, Kilo 141, Grau 5.56</li>
+                                <li>SMGs: MP5, MP7, P90</li>
+                                <li>Sniper Rifles: HDR, AX-50, Kar98k</li>
+                                <li>Shotguns: R9-0, Origin 12</li>
+                            </ul>
+                            
+                            <h4>Strategy Tips:</h4>
+                            <ul>
+                                <li>Land at high-loot locations early</li>
+                                <li>Use UAVs and heartbeat sensors</li>
+                                <li>Master the buy station system</li>
+                                <li>Practice movement and positioning</li>
+                                <li>Stay updated with patch notes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minecraft Section -->
+                <div id="minecraft-details" class="trending-detail-section">
+                    <div class="section-header">
+                        <h2 class="section-title">🎯 Minecraft Updates</h2>
+                        <p class="section-subtitle">Latest features, biomes, and community content</p>
+                    </div>
+                    
+                    <div class="trending-content">
+                        <div class="trending-info">
+                            <h3>Recent Updates & Features</h3>
+                            <p>Minecraft continues to receive major updates that add new content, improve gameplay, and expand the creative possibilities for players.</p>
+                            
+                            <h4>Latest Version Features:</h4>
+                            <ul>
+                                <li>New biomes: Deep Dark, Mangrove Swamp</li>
+                                <li>New mobs: Warden, Allay, Frog</li>
+                                <li>Enhanced redstone mechanics</li>
+                                <li>Improved world generation</li>
+                                <li>New building blocks and materials</li>
+                            </ul>
+                            
+                            <h4>Community Highlights:</h4>
+                            <ul>
+                                <li>Popular modpacks and mods</li>
+                                <li>Server communities and events</li>
+                                <li>Creative building showcases</li>
+                                <li>Speedrunning records</li>
+                                <li>Educational applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Among Us 2 Section -->
+                <div id="amongus-details" class="trending-detail-section">
+                    <div class="section-header">
+                        <h2 class="section-title">🌟 Among Us 2</h2>
+                        <p class="section-subtitle">Sequel rumors and community speculation</p>
+                    </div>
+                    
+                    <div class="trending-content">
+                        <div class="trending-info">
+                            <h3>Sequel Development Status</h3>
+                            <p>While Among Us 2 was initially announced, the developers later decided to focus on expanding the original game with new features and content.</p>
+                            
+                            <h4>Current Development Focus:</h4>
+                            <ul>
+                                <li>Enhanced graphics and animations</li>
+                                <li>New maps and game modes</li>
+                                <li>Improved social features</li>
+                                <li>Cross-platform compatibility</li>
+                                <li>Regular content updates</li>
+                            </ul>
+                            
+                            <h4>Community Features:</h4>
+                            <ul>
+                                <li>Custom game modes</li>
+                                <li>Role-based gameplay</li>
+                                <li>Enhanced communication tools</li>
+                                <li>Tournament support</li>
+                                <li>Mobile optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valorant Section -->
+                <div id="valorant-details" class="trending-detail-section">
+                    <div class="section-header">
+                        <h2 class="section-title">💎 Valorant Agents</h2>
+                        <p class="section-subtitle">New agents, abilities, and competitive meta</p>
+                    </div>
+                    
+                    <div class="trending-content">
+                        <div class="trending-info">
+                            <h3>Agent Meta & Strategy</h3>
+                            <p>Valorant's tactical shooter gameplay continues to evolve with new agents, map updates, and competitive meta shifts that keep the esports scene dynamic.</p>
+                            
+                            <h4>Recent Agent Additions:</h4>
+                            <ul>
+                                <li>New agent abilities and mechanics</li>
+                                <li>Meta shifts and balance changes</li>
+                                <li>Map-specific strategies</li>
+                                <li>Team composition optimization</li>
+                                <li>Professional play insights</li>
+                            </ul>
+                            
+                            <h4>Competitive Scene:</h4>
+                            <ul>
+                                <li>VCT tournament updates</li>
+                                <li>Professional team strategies</li>
+                                <li>Meta analysis and predictions</li>
+                                <li>Community tournaments</li>
+                                <li>Ranked play improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/RCNEWLOLGO.png" alt="ReversCodes Footer Logo" class="footer-logo-img" loading="lazy">
+                        <span class="footer-logo-text">ReversCodes</span>
+                    </div>
+                    <p class="footer-description">
+                        Your trusted source for Roblox gaming news, codes, and trending topics. 
+                        Stay connected to the latest updates and gaming information.
+                    </p>
+                    <div class="contact-info">
+                        <p class="contact-email">
+                            <strong>Contact:</strong> 
+                            <a href="mailto:reverscodes@gmail.com">reverscodes@gmail.com</a>
+                        </p>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:reverscodes@gmail.com" class="social-link" aria-label="Email">
+                            <span class="social-icon">📧</span>
+                        </a>
+                        <a href="https://youtube.com/@reverscodes" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
+                            <span class="social-icon">📺</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#news">News</a></li>
+                        <li><a href="index.html#games">Game Codes</a></li>
+
+                        <li><a href="index.html#giveaway">🎁 Giveaway</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 reverscodes.com - All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
+                <p>Designed by <strong>ReversCodes</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <script>
+        // Function to refresh page (for logo click)
+        function refreshPage() {
+            window.location.href = 'index.html';
+        }
+
+        // Function to scroll to section (for navigation)
+        function scrollToSection(sectionId) {
+            window.location.href = 'index.html#' + sectionId;
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add click handlers for trending cards to scroll to details
+        document.querySelectorAll('.trending-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const id = this.id;
+                const detailsSection = document.getElementById(id + '-details');
+                if (detailsSection) {
+                    detailsSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

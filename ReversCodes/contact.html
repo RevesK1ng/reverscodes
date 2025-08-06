@@ -1,223 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - ReversCodes Hub</title>
-    <meta name="description" content="Contact ReversCodes Hub - Get in touch with us for support, feedback, or questions.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MNVC6EFFH"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-9MNVC6EFFH');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9MNVC6EFFH');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ReversCodes</title>
+    <meta name="description" content="Get in touch with ReversCodes. Contact us for support, suggestions, or any questions about Roblox game codes.">
+    <meta name="keywords" content="contact, support, help, ReversCodes, Roblox codes">
+    <meta name="author" content="ReversCodes">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reverscodes.com/contact.html">
+    <meta property="og:title" content="Contact Us - ReversCodes">
+    <meta property="og:description" content="Get in touch with ReversCodes. Contact us for support, suggestions, or any questions about Roblox game codes.">
+    <meta property="og:image" content="https://reverscodes.com/images/rclogobanner.png">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://reverscodes.com/contact.html">
+    <meta name="twitter:title" content="Contact Us - ReversCodes">
+    <meta name="twitter:description" content="Get in touch with ReversCodes. Contact us for support, suggestions, or any questions about Roblox game codes.">
+    <meta name="twitter:image" content="https://reverscodes.com/images/rclogobanner.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://reverscodes.com/contact.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Us - ReversCodes",
+        "description": "Get in touch with ReversCodes for support and questions about Roblox game codes",
+        "url": "https://reverscodes.com/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "ReversCodes",
+            "email": "reverscodes@gmail.com",
+            "url": "https://reverscodes.com"
+        }
+    }
     </script>
 </head>
-<body class="light-theme">
+<body>
     <!-- Header -->
-    <header class="header" id="header">
-        <div class="header-container">
-            <div class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
-                <img src="images/RCNEWLOLGO.png" alt="ReversCodes" class="logo-img">
-                <span class="logo-text">ReversCodes</span>
-            </div>
-            
-            <nav class="nav">
-                <a href="index.html" class="nav-link">Back to Hub</a>
-            </nav>
-
-            <div class="header-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <span class="theme-icon">🌙</span>
-                </button>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/RCNEWLOLGO.png" alt="ReversCodes Logo" class="logo-img">
+                        <span class="logo-text">ReversCodes</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="game-gallery.html" class="nav-link">Roblox Codes Gallery</a>
+                    <a href="trending.html" class="nav-link">Trending</a>
+                    <a href="guides.html" class="nav-link">Guides</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Contact Us</h1>
+                <p class="hero-subtitle">Get in touch with the ReversCodes team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
         <div class="container">
             <div class="contact-content">
-                <h1>Contact Us</h1>
-                <p class="contact-subtitle">Get in touch with the ReversCodes team</p>
-
-                <div class="contact-grid">
-                    <div class="contact-form-container">
-                        <h2>Send us a Message</h2>
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <label for="contactName">Name *</label>
-                                <input type="text" id="contactName" name="name" required>
+                <div class="contact-info">
+                    <h2>How to Reach Us</h2>
+                    <p>We'd love to hear from you! Here are the best ways to get in touch:</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>For support, suggestions, or any questions about our Roblox codes:</p>
+                                <a href="mailto:reverscodes@gmail.com" class="email-link">reverscodes@gmail.com</a>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="contactEmail">Email *</label>
-                                <input type="email" id="contactEmail" name="email" required>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">📺</div>
+                            <div class="contact-details">
+                                <h3>YouTube Channel</h3>
+                                <p>Check out our latest content and updates:</p>
+                                <a href="https://www.youtube.com/@reverscodes" target="_blank" rel="noopener" class="youtube-link">@reverscodes</a>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="contactSubject">Subject *</label>
-                                <select id="contactSubject" name="subject" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="support">Technical Support</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="partnership">Partnership</option>
-                                    <option value="legal">Legal Matter</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="contactMessage">Message *</label>
-                                <textarea id="contactMessage" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
+                        </div>
                     </div>
-
-                    <div class="contact-info">
-                        <h2>Get in Touch</h2>
-                        <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, we're here to help.</p>
-                        
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <div class="contact-icon">📧</div>
-                                <div class="contact-details">
-                                    <h3>Email</h3>
-                                    <p>contact: reverscodes@gmail.com</p>
-                                    <p>We typically respond within 48 hours</p>
-                                </div>
-                            </div>
-                            
-                            
-                            
-                            <div class="contact-method">
-                                <div class="contact-icon">📺</div>
-                                <div class="contact-details">
-                                    <h3>YouTube</h3>
-                                    <p>Watch our content</p>
-                                    <a href="https://youtube.com/@reverscodes" target="_blank" rel="noopener" class="contact-link">@reverscodes</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-faq">
-                            <h3>Frequently Asked Questions</h3>
-                            <div class="faq-item">
-                                <h4>How do I report a broken link?</h4>
-                                <p>Use the contact form above and select "Technical Support" as the subject. Include the specific link and we'll fix it as soon as possible.</p>
-                            </div>
-                            
-                            <div class="faq-item">
-                                <h4>Can I suggest a new game to add?</h4>
-                                <p>Absolutely! Use the contact form and select "Feedback" as the subject. We're always looking to expand our game coverage.</p>
-                            </div>
-                            
-                            <div class="faq-item">
-                                <h4>How do I remove my comment?</h4>
-                                <p>You can delete your own comments directly from the community section, or contact us if you need assistance.</p>
-                            </div>
-                        </div>
+                    
+                    <div class="contact-note">
+                        <h3>Important Note</h3>
+                        <p>Please use email to contact us directly. We do not have a contact form on this website, so all messages should be sent to our email address above.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-faq">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>How often do you update codes?</h3>
+                        <p>We update our codes regularly as new ones become available. Check back frequently for the latest codes!</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I request specific game codes?</h3>
+                        <p>Absolutely! Send us an email with your request and we'll do our best to add the codes you're looking for.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Are all codes tested?</h3>
+                        <p>We strive to test all codes before posting, but some may expire quickly. If you find an expired code, let us know!</p>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/RCNEWLOLGO.png" alt="ReversCodes Logo" class="footer-logo-img">
+                        <span class="footer-logo-text">ReversCodes</span>
+                    </div>
+                    <p class="footer-description">Your ultimate destination for Roblox game codes, guides, and gaming content.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="game-gallery.html">Roblox Codes Gallery</a></li>
+                        <li><a href="trending.html">Trending</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:reverscodes@gmail.com">Email Us</a></li>
+                        <li><a href="https://www.youtube.com/@reverscodes" target="_blank" rel="noopener">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 ReversCodes. All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
-                <p>Designed by <strong>ReversCodes</strong></p>
+                <p class="footer-copyright">
+                    © 2025 ReversCodes. All rights reserved. | Last updated: August 6th, 2024
+                </p>
+                <p class="footer-disclaimer">
+                    This website is not affiliated with Roblox Corporation. All game codes are provided for educational purposes only.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Notification -->
-    <div class="notification" id="notification">
-        <span class="notification-text"></span>
-        <button class="notification-close" aria-label="Close notification">&times;</button>
-    </div>
-
     <!-- Scripts -->
-    <script>
-        // Theme management
-        let currentTheme = localStorage.getItem('theme') || 'light';
-        
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            currentTheme = theme;
-            localStorage.setItem('theme', theme);
-            
-            const themeIcon = document.querySelector('.theme-icon');
-            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-        }
-        
-        function toggleTheme() {
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-        }
-        
-        // Contact form handling
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
-            
-            // Store submission in localStorage (for demo purposes)
-            const submissions = JSON.parse(localStorage.getItem('helpSubmissions') || '[]');
-            const submission = {
-                id: Date.now(),
-                name: data.name,
-                email: data.email,
-                subject: data.subject,
-                message: data.message,
-                date: new Date().toISOString()
-            };
-            
-            submissions.push(submission);
-            localStorage.setItem('helpSubmissions', JSON.stringify(submissions));
-            
-            // Show success message
-            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            e.target.reset();
-        }
-        
-        // Notification system
-        function showNotification(message, type = 'info') {
-            const notification = document.getElementById('notification');
-            const notificationText = notification.querySelector('.notification-text');
-            
-            notificationText.textContent = message;
-            notification.className = `notification show ${type}`;
-            
-            setTimeout(() => {
-                hideNotification();
-            }, 5000);
-        }
-        
-        function hideNotification() {
-            const notification = document.getElementById('notification');
-            notification.classList.remove('show');
-        }
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            setTheme(currentTheme);
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-            document.getElementById('contactForm').addEventListener('submit', handleContactSubmit);
-            document.querySelector('.notification-close').addEventListener('click', hideNotification);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html> 

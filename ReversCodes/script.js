@@ -4,6 +4,59 @@
 const requestIdleCallback = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 const cancelIdleCallback = window.cancelIdleCallback || ((id) => clearTimeout(id));
 
+// Intersection Observer for lazy loading
+const lazyLoadObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                img.classList.add('loaded');
+                lazyLoadObserver.unobserve(img);
+            }
+        }
+    });
+}, {
+    rootMargin: '50px 0px',
+    threshold: 0.1
+});
+
+// Performance monitoring
+const performanceObserver = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+        if (entry.entryType === 'largest-contentful-paint') {
+            console.log('LCP:', entry.startTime);
+        }
+        if (entry.entryType === 'first-input') {
+            console.log('FID:', entry.processingStart - entry.startTime);
+        }
+        if (entry.entryType === 'layout-shift') {
+            console.log('CLS:', entry.value);
+        }
+    }
+});
+
+performanceObserver.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+// Resource hints for better performance
+const preloadCriticalResources = () => {
+    const criticalImages = [
+        'images/RCNEWLOLGO.png',
+        'images/favicon.png',
+        'images/astdxlogo.png',
+        'images/bloxfruits.png'
+    ];
+    
+    criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+    });
+};
+
 // Debounce function for performance
 function debounce(func, wait) {
     let timeout;
@@ -47,13 +100,13 @@ let adBlockerModalShown = false;
 // DOM Elements
 const loadingScreen = document.getElementById('loadingScreen');
 const themeToggle = document.getElementById('themeToggle');
-const themeIcon = themeToggle.querySelector('.theme-icon');
+const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const nav = document.querySelector('.nav');
 const backToTop = document.getElementById('backToTop');
 const notification = document.getElementById('notification');
-const notificationText = notification.querySelector('.notification-text');
-const notificationClose = notification.querySelector('.notification-close');
+const notificationText = notification ? notification.querySelector('.notification-text') : null;
+const notificationClose = notification ? notification.querySelector('.notification-close') : null;
 const commentForm = document.getElementById('commentForm');
 const commentsList = document.getElementById('commentsList');
 // submissionsList is only used in admin modal, so we'll get it when needed
@@ -561,7 +614,7 @@ function showAdBlockerBlockingMessage() {
     document.body.appendChild(blockingOverlay);
 }
 
-// === GAME GALLERY DATA & LOGIC ===
+// === ROBLOX GAME CODES DATA & LOGIC ===
 
 // Game data array
 const gamesData = [
@@ -730,7 +783,7 @@ function toggleBookmark(gameId) {
   renderGameGallery();
 }
 
-// Render the Game Gallery
+// Render the Roblox Game Codes
 function renderGameGallery() {
   const gallery = document.getElementById('gamesGallery');
   if (!gallery) return;
@@ -827,7 +880,7 @@ if (document.getElementById('gamesGallery')) {
   renderGameGallery();
 }
 
-// --- Main Page Game Gallery Logic ---
+// --- Main Page Roblox Game Codes Logic ---
 const mainGalleryGames = [
   {
     id: 'bloxfruits-page',
@@ -1058,7 +1111,26 @@ if (document.getElementById('mainGamesGallery')) {
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('ReversCodes Hub: Initializing...');
+    
+    // Preload critical resources
+    preloadCriticalResources();
+    
+    // Initialize all components
     initializeApp();
+    
+    // Performance monitoring
+    if ('performance' in window) {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart);
+                console.log('DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart);
+            }, 0);
+        });
+    }
+    
+    console.log('ReversCodes Hub: Initialization complete!');
 });
 
 // Main initialization function
@@ -1069,9 +1141,13 @@ function initializeApp() {
     // Initialize event listeners
     initializeEventListeners();
     
-    // Load data
-    loadComments();
-    loadSubmissions();
+    // Load data only if elements exist
+    if (commentsList) {
+        loadComments();
+    }
+    if (document.getElementById('submissionsList')) {
+        loadSubmissions();
+    }
     
     // Initialize scroll effects
     initializeScrollEffects();
@@ -1079,10 +1155,12 @@ function initializeApp() {
     // Initialize lazy loading
     initializeLazyLoading();
     
-    // Show welcome notification after loading screen is hidden
-    setTimeout(() => {
-        showNotification('Welcome to ReversCodes Hub! 🎮', 'success');
-    }, 3000);
+    // Show welcome notification after loading screen is hidden (only if notification exists)
+    if (notification) {
+        setTimeout(() => {
+            showNotification('Welcome to ReversCodes Hub! 🎮', 'success');
+        }, 3000);
+    }
     
     // Detect AdBlocker with multiple attempts and longer delays
     setTimeout(() => {
@@ -1107,21 +1185,29 @@ function initializeApp() {
 // Initialize all event listeners
 function initializeEventListeners() {
     // Theme toggle
-    themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
     
     // Mobile menu toggle
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
     
     // Back to top button
-    backToTop.addEventListener('click', scrollToTop);
+    if (backToTop) {
+        backToTop.addEventListener('click', scrollToTop);
+    }
     
     // Notification close
-    notificationClose.addEventListener('click', hideNotification);
+    if (notificationClose) {
+        notificationClose.addEventListener('click', hideNotification);
+    }
     
     // Comment form submission
-    commentForm.addEventListener('submit', handleCommentSubmit);
-    
-
+    if (commentForm) {
+        commentForm.addEventListener('submit', handleCommentSubmit);
+    }
     
     // Contact form submission (if exists)
     const contactForm = document.getElementById('contactForm');
@@ -1145,11 +1231,20 @@ function initializeEventListeners() {
     
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        if (nav && mobileMenuToggle && !nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            nav.classList.remove('active');
+        }
+    });
+    
+    // Escape key to close modals and menus
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && nav) {
             nav.classList.remove('active');
         }
     });
 }
+
+
 
 // Theme management
 function setTheme(theme) {
@@ -1158,10 +1253,14 @@ function setTheme(theme) {
     localStorage.setItem('theme', theme);
     
     // Update theme icon
-    themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    if (themeIcon) {
+        themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
     
     // Update theme icon tooltip
-    themeToggle.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} theme`);
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} theme`);
+    }
 }
 
 function toggleTheme() {
@@ -1194,20 +1293,26 @@ function initializeScrollEffects() {
     const handleScroll = throttle(() => {
         requestAnimationFrame(() => {
             // Back to top button visibility
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
+            if (backToTop) {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
             }
             
             // Header background on scroll
             const header = document.getElementById('header');
-            if (window.pageYOffset > 50) {
-                header.style.background = 'var(--bg-header)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'transparent';
-                header.style.backdropFilter = 'none';
+            if (header) {
+                if (window.pageYOffset > 50) {
+                    header.style.background = 'var(--bg-header)';
+                    header.style.backdropFilter = 'blur(10px)';
+                    header.classList.add('scrolled');
+                } else {
+                    header.style.background = 'transparent';
+                    header.style.backdropFilter = 'none';
+                    header.classList.remove('scrolled');
+                }
             }
             
             // Active navigation link highlighting
@@ -1585,6 +1690,11 @@ function clearData() {
 
 // Notification system
 function showNotification(message, type = 'info') {
+    if (!notification || !notificationText) {
+        console.log(`Notification: ${message}`);
+        return;
+    }
+    
     notificationText.textContent = message;
     notification.style.display = 'flex';
     notification.className = `notification show ${type}`;
@@ -1596,6 +1706,8 @@ function showNotification(message, type = 'info') {
 }
 
 function hideNotification() {
+    if (!notification) return;
+    
     notification.classList.remove('show');
     notification.classList.add('hide');
     
@@ -1636,7 +1748,7 @@ document.addEventListener('keydown', function(e) {
     }
     
     // Escape to close mobile menu
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && nav) {
         nav.classList.remove('active');
     }
     
@@ -2149,4 +2261,1413 @@ window.showHub = showHub;
   var formatted = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
   el.textContent = formatted;
 })();
+
+// === DROPDOWN FUNCTIONALITY ===
+
+// Toggle trending card details
+function toggleTrendingDetails(card) {
+    const details = card.querySelector('.trending-details');
+    const isVisible = details.style.display !== 'none';
+    
+    // Close all other trending details first
+    document.querySelectorAll('.trending-details').forEach(detail => {
+        detail.style.display = 'none';
+    });
+    
+    // Toggle current details
+    if (!isVisible) {
+        details.style.display = 'block';
+        card.style.transform = 'translateY(-5px) scale(1.02)';
+        card.style.boxShadow = '0 15px 35px rgba(139, 92, 246, 0.3)';
+    } else {
+        details.style.display = 'none';
+        card.style.transform = '';
+        card.style.boxShadow = '';
+    }
+}
+
+// Toggle guide card details
+function toggleGuideDetails(card) {
+    const details = card.querySelector('.guide-details');
+    const isVisible = details.style.display !== 'none';
+    
+    // Close all other guide details first
+    document.querySelectorAll('.guide-details').forEach(detail => {
+        detail.style.display = 'none';
+    });
+    
+    // Toggle current details
+    if (!isVisible) {
+        details.style.display = 'block';
+        card.style.transform = 'translateY(-5px) scale(1.02)';
+        card.style.boxShadow = '0 15px 35px rgba(139, 92, 246, 0.3)';
+    } else {
+        details.style.display = 'none';
+        card.style.transform = '';
+        card.style.boxShadow = '';
+    }
+}
+
+// === COMMUNITY FEATURES ===
+
+// Motivational quotes array (50 quotes for daily rotation)
+const motivationalQuotes = [
+    { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+    { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+    { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+    { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+    { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+    { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+    { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+    { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+    { text: "The harder you work for something, the greater you'll feel when you achieve it.", author: "Unknown" },
+    { text: "Dream big and dare to fail.", author: "Norman Vaughan" },
+    { text: "What you get by achieving your goals is not as important as what you become by achieving your goals.", author: "Zig Ziglar" },
+    { text: "The only person you are destined to become is the person you decide to be.", author: "Ralph Waldo Emerson" },
+    { text: "Go confidently in the direction of your dreams. Live the life you have imagined.", author: "Henry David Thoreau" },
+    { text: "When one door of happiness closes, another opens.", author: "Helen Keller" },
+    { text: "Always do your best. What you plant now, you will harvest later.", author: "Ralph Waldo Emerson" },
+    { text: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+    { text: "Don't let yesterday take up too much of today.", author: "Will Rogers" },
+    { text: "You learn more from failure than from success. Don't let it stop you. Failure builds character.", author: "Unknown" },
+    { text: "It's going to be hard, but hard does not mean impossible.", author: "Unknown" },
+    { text: "The only way to achieve the impossible is to believe it is possible.", author: "Charles Kingsleigh" },
+    { text: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs" },
+    { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+    { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+    { text: "The future depends on what you do today.", author: "Mahatma Gandhi" },
+    { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+    { text: "The best revenge is massive success.", author: "Frank Sinatra" },
+    { text: "I find that the harder I work, the more luck I seem to have.", author: "Thomas Jefferson" },
+    { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill" },
+    { text: "The difference between ordinary and extraordinary is that little extra.", author: "Jimmy Johnson" },
+    { text: "The only place where success comes before work is in the dictionary.", author: "Vidal Sassoon" },
+    { text: "Don't be afraid to give up the good to go for the great.", author: "John D. Rockefeller" },
+    { text: "I am not a product of my circumstances. I am a product of my decisions.", author: "Stephen Covey" },
+    { text: "The more you praise and celebrate your life, the more there is in life to celebrate.", author: "Oprah Winfrey" },
+    { text: "You can't use up creativity. The more you use, the more you have.", author: "Maya Angelou" },
+    { text: "The journey of a thousand miles begins with one step.", author: "Lao Tzu" },
+    { text: "What you do today can improve all your tomorrows.", author: "Ralph Marston" },
+    { text: "The only bad workout is the one that didn't happen.", author: "Unknown" },
+    { text: "Make each day your masterpiece.", author: "John Wooden" },
+    { text: "The best time to plant a tree was 20 years ago. The second best time is now.", author: "Chinese Proverb" },
+    { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair" },
+    { text: "The only person you should try to be better than is the person you were yesterday.", author: "Unknown" },
+    { text: "Don't limit your challenges. Challenge your limits.", author: "Unknown" },
+    { text: "The difference between try and triumph is just a little umph!", author: "Marvin Phillips" },
+    { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+    { text: "The road to success and the road to failure are almost exactly the same.", author: "Colin R. Davis" },
+    { text: "What seems to us as bitter trials are often blessings in disguise.", author: "Oscar Wilde" },
+    { text: "The man who has no imagination has no wings.", author: "Muhammad Ali" },
+    { text: "Don't count the days, make the days count.", author: "Muhammad Ali" },
+    { text: "The only way to achieve the impossible is to believe it is possible.", author: "Charles Kingsleigh" },
+    { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+    { text: "Every expert was once a beginner.", author: "Robert T. Kiyosaki" },
+    { text: "The only person you are destined to become is the person you decide to be.", author: "Ralph Waldo Emerson" },
+    { text: "Success is not about being the best. It's about being better than you were yesterday.", author: "Unknown" },
+    { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { text: "Your attitude determines your direction.", author: "Unknown" },
+    { text: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+    { text: "The best revenge is massive success.", author: "Frank Sinatra" },
+    { text: "The only person you are destined to become is the person you decide to be.", author: "Ralph Waldo Emerson" },
+    { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" }
+];
+
+// Quiz questions array (50 questions for daily rotation)
+const quizQuestions = [
+    {
+        question: "What year was Roblox officially released?",
+        options: ["2004", "2006", "2008", "2010"],
+        correct: 1
+    },
+    {
+        question: "What is the name of Roblox's virtual currency?",
+        options: ["Robux", "Roblox Coins", "R-Cash", "Virtual Money"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a popular Roblox game genre?",
+        options: ["Tycoon", "Adopt Me", "FPS", "Racing"],
+        correct: 1
+    },
+    {
+        question: "What does 'RTHRO' stand for in Roblox?",
+        options: ["Roblox Themed Humanoid", "Realistic Humanoid", "Roblox Humanoid", "Realistic Themed Humanoid"],
+        correct: 0
+    },
+    {
+        question: "Which company owns Roblox?",
+        options: ["Microsoft", "Roblox Corporation", "Epic Games", "Activision"],
+        correct: 1
+    },
+    {
+        question: "What is the most popular Roblox game of all time?",
+        options: ["Adopt Me!", "Blox Fruits", "Tower of Hell", "Murder Mystery 2"],
+        correct: 0
+    },
+    {
+        question: "What programming language does Roblox use?",
+        options: ["Lua", "Python", "JavaScript", "C++"],
+        correct: 0
+    },
+    {
+        question: "What is the name of Roblox's mascot?",
+        options: ["Robloxian", "Roblox Guy", "Rthro", "Blocky"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox YouTuber?",
+        options: ["PewDiePie", "DanTDM", "Preston", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the maximum number of players in a Roblox game?",
+        options: ["50", "100", "200", "Unlimited"],
+        correct: 1
+    },
+    {
+        question: "What is the name of Roblox's mobile app?",
+        options: ["Roblox Mobile", "Roblox Go", "Roblox", "Roblox Play"],
+        correct: 2
+    },
+    {
+        question: "Which of these is NOT a Roblox game type?",
+        options: ["Tycoon", "Simulator", "Adventure", "Battle Royale"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's premium subscription?",
+        options: ["Roblox Plus", "Roblox Premium", "Roblox Pro", "Roblox Gold"],
+        correct: 1
+    },
+    {
+        question: "What is the name of Roblox's development tool?",
+        options: ["Roblox Studio", "Roblox Creator", "Roblox Builder", "Roblox Maker"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox event?",
+        options: ["Egg Hunt", "Advent Calendar", "Birthday Event", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is NOT a Roblox avatar type?",
+        options: ["R6", "R15", "Rthro", "R20"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's marketplace?",
+        options: ["Roblox Store", "Roblox Market", "Roblox Shop", "Roblox Mall"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game developer?",
+        options: ["Roblox Corporation", "Epic Games", "Mojang", "Valve"],
+        correct: 0
+    },
+    {
+        question: "What is the name of Roblox's social feature?",
+        options: ["Roblox Friends", "Roblox Social", "Roblox Connect", "Roblox Network"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox game category?",
+        options: ["All Ages", "Teen", "Mature", "Adult"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual currency exchange?",
+        options: ["Robux Exchange", "Roblox Exchange", "Currency Exchange", "Virtual Exchange"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game genre?",
+        options: ["RPG", "MMO", "Simulation", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world platform?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is NOT a Roblox game feature?",
+        options: ["Chat", "Trading", "Building", "Cooking"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual currency?",
+        options: ["Robux", "Roblox Coins", "R-Cash", "Virtual Money"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game type?",
+        options: ["Tycoon", "Simulator", "Adventure", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's development platform?",
+        options: ["Roblox Studio", "Roblox Creator", "Roblox Builder", "Roblox Maker"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox game category?",
+        options: ["All Ages", "Teen", "Mature", "Adult"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is a popular Roblox game feature?",
+        options: ["Chat", "Trading", "Building", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual currency exchange?",
+        options: ["Robux Exchange", "Roblox Exchange", "Currency Exchange", "Virtual Exchange"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox game type?",
+        options: ["Tycoon", "Simulator", "Adventure", "Cooking"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's social feature?",
+        options: ["Roblox Friends", "Roblox Social", "Roblox Connect", "Roblox Network"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game developer?",
+        options: ["Roblox Corporation", "Epic Games", "Mojang", "Valve"],
+        correct: 0
+    },
+    {
+        question: "What is the name of Roblox's marketplace?",
+        options: ["Roblox Store", "Roblox Market", "Roblox Shop", "Roblox Mall"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox avatar type?",
+        options: ["R6", "R15", "Rthro", "R20"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world platform?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is a popular Roblox game genre?",
+        options: ["RPG", "MMO", "Simulation", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual currency?",
+        options: ["Robux", "Roblox Coins", "R-Cash", "Virtual Money"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game type?",
+        options: ["Tycoon", "Simulator", "Adventure", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's development platform?",
+        options: ["Roblox Studio", "Roblox Creator", "Roblox Builder", "Roblox Maker"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox game category?",
+        options: ["All Ages", "Teen", "Mature", "Adult"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is a popular Roblox game feature?",
+        options: ["Chat", "Trading", "Building", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual currency exchange?",
+        options: ["Robux Exchange", "Roblox Exchange", "Currency Exchange", "Virtual Exchange"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox game type?",
+        options: ["Tycoon", "Simulator", "Adventure", "Cooking"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's social feature?",
+        options: ["Roblox Friends", "Roblox Social", "Roblox Connect", "Roblox Network"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game developer?",
+        options: ["Roblox Corporation", "Epic Games", "Mojang", "Valve"],
+        correct: 0
+    },
+    {
+        question: "What is the name of Roblox's marketplace?",
+        options: ["Roblox Store", "Roblox Market", "Roblox Shop", "Roblox Mall"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox avatar type?",
+        options: ["R6", "R15", "Rthro", "R20"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world platform?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is a popular Roblox game genre?",
+        options: ["RPG", "MMO", "Simulation", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual currency?",
+        options: ["Robux", "Roblox Coins", "R-Cash", "Virtual Money"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game type?",
+        options: ["Tycoon", "Simulator", "Adventure", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's development platform?",
+        options: ["Roblox Studio", "Roblox Creator", "Roblox Builder", "Roblox Maker"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox game category?",
+        options: ["All Ages", "Teen", "Mature", "Adult"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is a popular Roblox game feature?",
+        options: ["Chat", "Trading", "Building", "All of the above"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual currency exchange?",
+        options: ["Robux Exchange", "Roblox Exchange", "Currency Exchange", "Virtual Exchange"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox game type?",
+        options: ["Tycoon", "Simulator", "Adventure", "Cooking"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's social feature?",
+        options: ["Roblox Friends", "Roblox Social", "Roblox Connect", "Roblox Network"],
+        correct: 0
+    },
+    {
+        question: "Which of these is a popular Roblox game developer?",
+        options: ["Roblox Corporation", "Epic Games", "Mojang", "Valve"],
+        correct: 0
+    },
+    {
+        question: "What is the name of Roblox's marketplace?",
+        options: ["Roblox Store", "Roblox Market", "Roblox Shop", "Roblox Mall"],
+        correct: 0
+    },
+    {
+        question: "Which of these is NOT a Roblox avatar type?",
+        options: ["R6", "R15", "Rthro", "R20"],
+        correct: 3
+    },
+    {
+        question: "What is the name of Roblox's virtual world platform?",
+        options: ["Roblox World", "Roblox Universe", "Roblox Metaverse", "Roblox Space"],
+        correct: 2
+    },
+    {
+        question: "Which of these is a popular Roblox game genre?",
+        options: ["RPG", "MMO", "Simulation", "All of the above"],
+        correct: 3
+    }
+];
+
+// Poll questions array (50 polls for daily rotation)
+const pollQuestions = [
+    {
+        question: "What's your favorite Roblox game genre?",
+        options: ["Adventure", "Simulator", "Tycoon", "Fighting"]
+    },
+    {
+        question: "How many hours do you play Roblox per week?",
+        options: ["0-5 hours", "6-15 hours", "16-30 hours", "30+ hours"]
+    },
+    {
+        question: "What's your favorite type of Roblox content?",
+        options: ["Gaming", "Building", "Social", "Trading"]
+    },
+    {
+        question: "Which platform do you use to play Roblox?",
+        options: ["PC", "Mobile", "Tablet", "Console"]
+    },
+    {
+        question: "What's your favorite Roblox event?",
+        options: ["Egg Hunts", "Advent Calendars", "Birthday Events", "Seasonal Events"]
+    },
+    {
+        question: "What's your favorite Roblox game?",
+        options: ["Adopt Me!", "Blox Fruits", "Tower of Hell", "Murder Mystery 2"]
+    },
+    {
+        question: "How do you prefer to play Roblox?",
+        options: ["Solo", "With Friends", "Public Servers", "Private Servers"]
+    },
+    {
+        question: "What's your favorite Roblox avatar style?",
+        options: ["R6", "R15", "Rthro", "Custom"]
+    },
+    {
+        question: "How often do you redeem codes?",
+        options: ["Daily", "Weekly", "Monthly", "Never"]
+    },
+    {
+        question: "What's your favorite Roblox game type?",
+        options: ["RPG", "MMO", "Simulation", "Puzzle"]
+    },
+    {
+        question: "How do you discover new Roblox games?",
+        options: ["Popular Page", "Friends", "YouTube", "Social Media"]
+    },
+    {
+        question: "What's your favorite Roblox feature?",
+        options: ["Chat", "Trading", "Building", "Customization"]
+    },
+    {
+        question: "How long have you been playing Roblox?",
+        options: ["Less than 1 year", "1-3 years", "3-5 years", "5+ years"]
+    },
+    {
+        question: "What's your favorite Roblox game category?",
+        options: ["All Ages", "Teen", "Mature", "Family"]
+    },
+    {
+        question: "How do you prefer to communicate in Roblox?",
+        options: ["Text Chat", "Voice Chat", "Emotes", "Private Messages"]
+    },
+    {
+        question: "What's your favorite Roblox game mode?",
+        options: ["Single Player", "Multiplayer", "Co-op", "Competitive"]
+    },
+    {
+        question: "How often do you buy Robux?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game theme?",
+        options: ["Fantasy", "Sci-Fi", "Modern", "Historical"]
+    },
+    {
+        question: "How do you prefer to play Roblox games?",
+        options: ["Casual", "Competitive", "Creative", "Social"]
+    },
+    {
+        question: "What's your favorite Roblox game mechanic?",
+        options: ["Trading", "Building", "Combat", "Exploration"]
+    },
+    {
+        question: "How often do you visit the Roblox marketplace?",
+        options: ["Daily", "Weekly", "Monthly", "Never"]
+    },
+    {
+        question: "What's your favorite Roblox game setting?",
+        options: ["Urban", "Rural", "Fantasy", "Space"]
+    },
+    {
+        question: "How do you prefer to spend your Robux?",
+        options: ["Avatar Items", "Game Passes", "Developer Products", "Gifts"]
+    },
+    {
+        question: "What's your favorite Roblox game style?",
+        options: ["Realistic", "Cartoon", "Anime", "Pixel Art"]
+    },
+    {
+        question: "How often do you create content in Roblox?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game genre?",
+        options: ["Action", "Adventure", "Simulation", "Strategy"]
+    },
+    {
+        question: "How do you prefer to play with others?",
+        options: ["Random Players", "Friends Only", "Guild/Clan", "Solo"]
+    },
+    {
+        question: "What's your favorite Roblox game feature?",
+        options: ["Customization", "Trading", "Building", "Social"]
+    },
+    {
+        question: "How often do you participate in Roblox events?",
+        options: ["Never", "Rarely", "Sometimes", "Always"]
+    },
+    {
+        question: "What's your favorite Roblox game type?",
+        options: ["Tycoon", "Simulator", "RPG", "FPS"]
+    },
+    {
+        question: "How do you prefer to learn about Roblox updates?",
+        options: ["Official Blog", "Social Media", "YouTube", "Friends"]
+    },
+    {
+        question: "What's your favorite Roblox game category?",
+        options: ["Popular", "Featured", "Recommended", "New"]
+    },
+    {
+        question: "How often do you play Roblox?",
+        options: ["Daily", "Weekly", "Monthly", "Rarely"]
+    },
+    {
+        question: "What's your favorite Roblox game mode?",
+        options: ["Story Mode", "Sandbox", "Competitive", "Co-op"]
+    },
+    {
+        question: "How do you prefer to customize your avatar?",
+        options: ["Free Items", "Premium Items", "Custom Designs", "Mix of All"]
+    },
+    {
+        question: "What's your favorite Roblox game theme?",
+        options: ["Medieval", "Modern", "Futuristic", "Fantasy"]
+    },
+    {
+        question: "How often do you trade items in Roblox?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game feature?",
+        options: ["Chat System", "Trading System", "Building Tools", "Avatar Customization"]
+    },
+    {
+        question: "How do you prefer to play Roblox games?",
+        options: ["Quick Sessions", "Long Sessions", "Mixed", "Depends on Game"]
+    },
+    {
+        question: "What's your favorite Roblox game category?",
+        options: ["Action", "Adventure", "Simulation", "Strategy"]
+    },
+    {
+        question: "How often do you visit Roblox forums/communities?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game type?",
+        options: ["Tycoon", "Simulator", "RPG", "FPS"]
+    },
+    {
+        question: "How do you prefer to spend time in Roblox?",
+        options: ["Playing Games", "Socializing", "Building", "Trading"]
+    },
+    {
+        question: "What's your favorite Roblox game feature?",
+        options: ["Customization", "Trading", "Building", "Social"]
+    },
+    {
+        question: "How often do you participate in Roblox events?",
+        options: ["Never", "Rarely", "Sometimes", "Always"]
+    },
+    {
+        question: "What's your favorite Roblox game type?",
+        options: ["Tycoon", "Simulator", "RPG", "FPS"]
+    },
+    {
+        question: "How do you prefer to learn about Roblox updates?",
+        options: ["Official Blog", "Social Media", "YouTube", "Friends"]
+    },
+    {
+        question: "What's your favorite Roblox game category?",
+        options: ["Popular", "Featured", "Recommended", "New"]
+    },
+    {
+        question: "How often do you play Roblox?",
+        options: ["Daily", "Weekly", "Monthly", "Rarely"]
+    },
+    {
+        question: "What's your favorite Roblox game mode?",
+        options: ["Story Mode", "Sandbox", "Competitive", "Co-op"]
+    },
+    {
+        question: "How do you prefer to customize your avatar?",
+        options: ["Free Items", "Premium Items", "Custom Designs", "Mix of All"]
+    },
+    {
+        question: "What's your favorite Roblox game theme?",
+        options: ["Medieval", "Modern", "Futuristic", "Fantasy"]
+    },
+    {
+        question: "How often do you trade items in Roblox?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game feature?",
+        options: ["Chat System", "Trading System", "Building Tools", "Avatar Customization"]
+    },
+    {
+        question: "How do you prefer to play Roblox games?",
+        options: ["Quick Sessions", "Long Sessions", "Mixed", "Depends on Game"]
+    },
+    {
+        question: "What's your favorite Roblox game category?",
+        options: ["Action", "Adventure", "Simulation", "Strategy"]
+    },
+    {
+        question: "How often do you visit Roblox forums/communities?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game type?",
+        options: ["Tycoon", "Simulator", "RPG", "FPS"]
+    },
+    {
+        question: "How do you prefer to spend time in Roblox?",
+        options: ["Playing Games", "Socializing", "Building", "Trading"]
+    },
+    {
+        question: "What's your favorite Roblox game feature?",
+        options: ["Customization", "Trading", "Building", "Social"]
+    },
+    {
+        question: "How often do you participate in Roblox events?",
+        options: ["Never", "Rarely", "Sometimes", "Always"]
+    },
+    {
+        question: "What's your favorite Roblox game type?",
+        options: ["Tycoon", "Simulator", "RPG", "FPS"]
+    },
+    {
+        question: "How do you prefer to learn about Roblox updates?",
+        options: ["Official Blog", "Social Media", "YouTube", "Friends"]
+    },
+    {
+        question: "What's your favorite Roblox game category?",
+        options: ["Popular", "Featured", "Recommended", "New"]
+    },
+    {
+        question: "How often do you play Roblox?",
+        options: ["Daily", "Weekly", "Monthly", "Rarely"]
+    },
+    {
+        question: "What's your favorite Roblox game mode?",
+        options: ["Story Mode", "Sandbox", "Competitive", "Co-op"]
+    },
+    {
+        question: "How do you prefer to customize your avatar?",
+        options: ["Free Items", "Premium Items", "Custom Designs", "Mix of All"]
+    },
+    {
+        question: "What's your favorite Roblox game theme?",
+        options: ["Medieval", "Modern", "Futuristic", "Fantasy"]
+    },
+    {
+        question: "How often do you trade items in Roblox?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game feature?",
+        options: ["Chat System", "Trading System", "Building Tools", "Avatar Customization"]
+    },
+    {
+        question: "How do you prefer to play Roblox games?",
+        options: ["Quick Sessions", "Long Sessions", "Mixed", "Depends on Game"]
+    },
+    {
+        question: "What's your favorite Roblox game category?",
+        options: ["Action", "Adventure", "Simulation", "Strategy"]
+    },
+    {
+        question: "How often do you visit Roblox forums/communities?",
+        options: ["Never", "Rarely", "Sometimes", "Often"]
+    },
+    {
+        question: "What's your favorite Roblox game type?",
+        options: ["Tycoon", "Simulator", "RPG", "FPS"]
+    },
+    {
+        question: "How do you prefer to spend time in Roblox?",
+        options: ["Playing Games", "Socializing", "Building", "Trading"]
+    }
+];
+
+// Community state variables
+let currentUserNickname = localStorage.getItem('userNickname') || '';
+let currentQuoteIndex = 0;
+let currentPollIndex = 0;
+let currentQuizIndex = 0;
+let quizScore = 0;
+let pollVotes = JSON.parse(localStorage.getItem('pollVotes')) || {};
+
+// Initialize community features
+function initializeCommunityFeatures() {
+    if (currentUserNickname) {
+        showCommunityFeatures();
+    } else {
+        // Add lock functionality to community cards
+        addLockToCommunityCards();
+    }
+    loadDailyQuote();
+    startPollTimer();
+}
+
+// Add lock functionality to community cards
+function addLockToCommunityCards() {
+    const communityCards = document.querySelectorAll('.community-card');
+    
+    communityCards.forEach(card => {
+        // Add lock overlay
+        const lockOverlay = document.createElement('div');
+        lockOverlay.className = 'card-lock-overlay';
+        lockOverlay.innerHTML = `
+            <div class="lock-content">
+                <div class="lock-icon">🔒</div>
+                <p>Enter a nickname first</p>
+            </div>
+        `;
+        
+        // Add click handler
+        lockOverlay.addEventListener('click', function() {
+            showNotification('Please enter a nickname to unlock community features!', 'error');
+            // Scroll to nickname setup
+            const nicknameSetup = document.getElementById('nicknameSetup');
+            if (nicknameSetup) {
+                nicknameSetup.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        card.appendChild(lockOverlay);
+        
+        // Disable all interactive elements
+        const interactiveElements = card.querySelectorAll('button, input, a');
+        interactiveElements.forEach(element => {
+            element.style.pointerEvents = 'none';
+            element.style.opacity = '0.5';
+        });
+    });
+}
+
+// Set user nickname
+function setNickname() {
+    const nicknameInput = document.getElementById('userNickname');
+    const nickname = nicknameInput.value.trim();
+    
+    if (nickname.length < 2) {
+        showNotification('Please enter a nickname (at least 2 characters)', 'error');
+        return;
+    }
+    
+    currentUserNickname = nickname;
+    localStorage.setItem('userNickname', nickname);
+    showCommunityFeatures();
+    showNotification(`Welcome, ${nickname}! Community features unlocked! 🎉`, 'success');
+    
+    // Clear input
+    nicknameInput.value = '';
+}
+
+// Show community features after nickname is set
+function showCommunityFeatures() {
+    const nicknameSetup = document.getElementById('nicknameSetup');
+    const communityFeatures = document.getElementById('communityFeatures');
+    const userNicknameDisplay = document.getElementById('userNicknameDisplay');
+    
+    if (nicknameSetup && communityFeatures) {
+        nicknameSetup.style.display = 'none';
+        communityFeatures.style.display = 'block';
+        
+        // Update welcome message
+        if (userNicknameDisplay) {
+            userNicknameDisplay.textContent = currentUserNickname;
+        }
+        
+        // Remove lock overlays
+        removeLockOverlays();
+        
+        // Initialize all community features
+        loadDailyQuote();
+        loadCurrentPoll();
+        loadCurrentQuiz();
+        updateStats();
+        initializeGameAssistant();
+    }
+}
+
+// Remove lock overlays from community cards
+function removeLockOverlays() {
+    const lockOverlays = document.querySelectorAll('.card-lock-overlay');
+    lockOverlays.forEach(overlay => {
+        overlay.remove();
+    });
+    
+    // Re-enable all interactive elements
+    const interactiveElements = document.querySelectorAll('.community-card button, .community-card input, .community-card a');
+    interactiveElements.forEach(element => {
+        element.style.pointerEvents = 'auto';
+        element.style.opacity = '1';
+    });
+}
+
+// Load and display daily quote
+function loadDailyQuote() {
+    const quoteElement = document.getElementById('dailyQuote');
+    const authorElement = document.getElementById('quoteAuthor');
+    const quoteDateElement = document.getElementById('quoteDate');
+    
+    if (!quoteElement || !authorElement) return;
+    
+    // Get current time in US Central Time
+    const now = new Date();
+    const centralTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Chicago"}));
+    
+    // Calculate days since epoch in Central Time (changes at 12 AM Central)
+    const centralEpoch = new Date(centralTime.getFullYear(), 0, 0);
+    const dayOfYear = Math.floor((centralTime - centralEpoch) / (1000 * 60 * 60 * 24));
+    
+    // Use day of year to determine quote index
+    currentQuoteIndex = dayOfYear % motivationalQuotes.length;
+    
+    const quote = motivationalQuotes[currentQuoteIndex];
+    quoteElement.textContent = quote.text;
+    authorElement.textContent = `- ${quote.author}`;
+    
+    // Update date display with Central Time
+    if (quoteDateElement) {
+        const dateOptions = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            timeZone: 'America/Chicago'
+        };
+        quoteDateElement.textContent = `Quote for ${centralTime.toLocaleDateString('en-US', dateOptions)} (Central Time)`;
+    }
+    
+    // Schedule next quote update at 12 AM Central Time
+    scheduleNextQuoteUpdate();
+}
+
+// Schedule next quote update at 12 AM Central Time
+function scheduleNextQuoteUpdate() {
+    const now = new Date();
+    const centralTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Chicago"}));
+    
+    // Calculate time until next 12 AM Central
+    const nextMidnight = new Date(centralTime);
+    nextMidnight.setHours(24, 0, 0, 0); // Next day at 12 AM
+    
+    const timeUntilMidnight = nextMidnight.getTime() - centralTime.getTime();
+    
+    // Schedule the update
+    setTimeout(() => {
+        loadDailyQuote();
+        // Schedule the next update (24 hours later)
+        setInterval(loadDailyQuote, 24 * 60 * 60 * 1000);
+    }, timeUntilMidnight);
+    
+    // Also set up a fallback check every hour to ensure the quote is current
+    setInterval(() => {
+        const currentCentralTime = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Chicago"}));
+        const currentDayOfYear = Math.floor((currentCentralTime - new Date(currentCentralTime.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+        const expectedQuoteIndex = currentDayOfYear % motivationalQuotes.length;
+        
+        if (currentQuoteIndex !== expectedQuoteIndex) {
+            loadDailyQuote();
+        }
+    }, 60 * 60 * 1000); // Check every hour
+}
+
+// Refresh quote (for manual refresh)
+function refreshQuote() {
+    currentQuoteIndex = (currentQuoteIndex + 1) % motivationalQuotes.length;
+    const quote = motivationalQuotes[currentQuoteIndex];
+    
+    const quoteElement = document.getElementById('dailyQuote');
+    const authorElement = document.getElementById('quoteAuthor');
+    
+    if (quoteElement && authorElement) {
+        quoteElement.textContent = quote.text;
+        authorElement.textContent = `- ${quote.author}`;
+    }
+    
+    showNotification('Quote refreshed!', 'success');
+}
+
+// Start poll timer
+function startPollTimer() {
+    const pollTimer = document.getElementById('pollTimer');
+    const pollCountdown = document.getElementById('pollCountdown');
+    
+    if (!pollTimer || !pollCountdown) return;
+    
+    // Get last poll change time from localStorage
+    const lastPollChange = localStorage.getItem('lastPollChange') || Date.now();
+    const pollDuration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    const nextPollTime = parseInt(lastPollChange) + pollDuration;
+    
+    function updateTimer() {
+        const now = Date.now();
+        const timeLeft = nextPollTime - now;
+        
+        if (timeLeft <= 0) {
+            // Time to change poll
+            changePoll();
+            return;
+        }
+        
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        pollCountdown.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+
+// Change poll question
+function changePoll() {
+    currentPollIndex = (currentPollIndex + 1) % pollQuestions.length;
+    localStorage.setItem('lastPollChange', Date.now());
+    localStorage.setItem('currentPollIndex', currentPollIndex);
+    loadCurrentPoll();
+    showNotification('New poll is live!', 'info');
+}
+
+// Load current poll
+function loadCurrentPoll() {
+    const pollQuestion = document.getElementById('pollQuestion');
+    const pollOptions = document.getElementById('pollOptions');
+    const pollResults = document.getElementById('pollResults');
+    const pollDateElement = document.getElementById('pollDate');
+    
+    if (!pollQuestion || !pollOptions) return;
+    
+    // Get poll based on current date for consistency (changes at midnight)
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+    currentPollIndex = dayOfYear % pollQuestions.length;
+    
+    const poll = pollQuestions[currentPollIndex];
+    pollQuestion.textContent = poll.question;
+    
+    // Clear previous options
+    pollOptions.innerHTML = '';
+    
+    // Add new options
+    poll.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.className = 'poll-option';
+        button.textContent = option;
+        button.onclick = () => votePoll(index);
+        pollOptions.appendChild(button);
+    });
+    
+    // Hide results initially
+    if (pollResults) {
+        pollResults.style.display = 'none';
+    }
+    
+    // Update date display
+    if (pollDateElement) {
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        pollDateElement.textContent = `Poll for ${today.toLocaleDateString('en-US', dateOptions)}`;
+    }
+}
+
+// Vote in poll
+function votePoll(optionIndex) {
+    const pollKey = `poll_${currentPollIndex}`;
+    
+    // Check if user already voted
+    if (pollVotes[pollKey]) {
+        showNotification('You have already voted in this poll!', 'error');
+        return;
+    }
+    
+    // Record vote
+    pollVotes[pollKey] = optionIndex;
+    localStorage.setItem('pollVotes', JSON.stringify(pollVotes));
+    
+    // Show results
+    showPollResults();
+    showNotification('Vote recorded!', 'success');
+}
+
+// Show poll results
+function showPollResults() {
+    const pollOptions = document.getElementById('pollOptions');
+    const pollResults = document.getElementById('pollResults');
+    
+    if (!pollOptions || !pollResults) return;
+    
+    // Hide options, show results
+    pollOptions.style.display = 'none';
+    pollResults.style.display = 'block';
+    
+    // Calculate results
+    const poll = pollQuestions[currentPollIndex];
+    const totalVotes = poll.options.length; // Simplified for demo
+    const votes = {};
+    
+    // Count votes (simplified - in real app this would come from server)
+    poll.options.forEach((_, index) => {
+        votes[index] = Math.floor(Math.random() * 20) + 5; // Random votes for demo
+    });
+    
+    // Update result bars
+    const resultBars = pollResults.querySelectorAll('.result-bar');
+    resultBars.forEach((bar, index) => {
+        const voteCount = votes[index] || 0;
+        const percentage = totalVotes > 0 ? (voteCount / totalVotes) * 100 : 0;
+        
+        const progressFill = bar.querySelector('.progress-fill');
+        const voteCountElement = bar.querySelector('.vote-count');
+        
+        if (progressFill) progressFill.style.width = `${percentage}%`;
+        if (voteCountElement) voteCountElement.textContent = voteCount;
+    });
+}
+
+// Start quiz
+function startQuiz() {
+    currentQuizIndex = 0;
+    quizScore = 0;
+    loadQuizQuestion();
+    
+    const startBtn = document.getElementById('startQuizBtn');
+    const nextBtn = document.getElementById('nextQuizBtn');
+    
+    if (startBtn) startBtn.style.display = 'none';
+    if (nextBtn) nextBtn.style.display = 'none';
+}
+
+// Load quiz question
+function loadQuizQuestion() {
+    const currentQuestion = document.getElementById('currentQuestion');
+    const quizOptions = document.getElementById('quizOptions');
+    const quizScore = document.getElementById('quizScore');
+    
+    if (!currentQuestion || !quizOptions || currentQuizIndex >= quizQuestions.length) {
+        endQuiz();
+        return;
+    }
+    
+    const question = quizQuestions[currentQuizIndex];
+    currentQuestion.textContent = question.question;
+    
+    // Clear previous options
+    quizOptions.innerHTML = '';
+    
+    // Add new options
+    question.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.className = 'quiz-option';
+        button.textContent = option;
+        button.onclick = () => answerQuiz(index);
+        quizOptions.appendChild(button);
+    });
+    
+    // Update score display
+    if (quizScore) {
+        quizScore.textContent = `Score: ${quizScore}/${quizQuestions.length}`;
+    }
+}
+
+// Answer quiz question
+function answerQuiz(selectedIndex) {
+    const question = quizQuestions[currentQuizIndex];
+    const quizOptions = document.getElementById('quizOptions');
+    const nextBtn = document.getElementById('nextQuizBtn');
+    
+    if (!quizOptions) return;
+    
+    // Disable all options
+    const options = quizOptions.querySelectorAll('.quiz-option');
+    options.forEach((option, index) => {
+        option.disabled = true;
+        if (index === question.correct) {
+            option.classList.add('correct');
+        } else if (index === selectedIndex && index !== question.correct) {
+            option.classList.add('incorrect');
+        }
+    });
+    
+    // Check if answer is correct
+    if (selectedIndex === question.correct) {
+        quizScore++;
+        showNotification('Correct!', 'success');
+    } else {
+        showNotification('Incorrect!', 'error');
+    }
+    
+    // Show next button
+    if (nextBtn) nextBtn.style.display = 'block';
+}
+
+// Next quiz question
+function nextQuizQuestion() {
+    currentQuizIndex++;
+    loadQuizQuestion();
+    
+    const nextBtn = document.getElementById('nextQuizBtn');
+    if (nextBtn) nextBtn.style.display = 'none';
+}
+
+// End quiz
+function endQuiz() {
+    const currentQuestion = document.getElementById('currentQuestion');
+    const quizOptions = document.getElementById('quizOptions');
+    const startBtn = document.getElementById('startQuizBtn');
+    const nextBtn = document.getElementById('nextQuizBtn');
+    
+    if (currentQuestion) currentQuestion.textContent = `Quiz completed! Your score: ${quizScore}/${quizQuestions.length}`;
+    if (quizOptions) quizOptions.innerHTML = '';
+    if (startBtn) startBtn.style.display = 'block';
+    if (nextBtn) nextBtn.style.display = 'none';
+    
+    const percentage = (quizScore / quizQuestions.length) * 100;
+    let message = '';
+    
+    if (percentage >= 80) {
+        message = 'Excellent! You\'re a Roblox expert!';
+    } else if (percentage >= 60) {
+        message = 'Good job! You know your Roblox!';
+    } else {
+        message = 'Keep learning! You\'ll get better!';
+    }
+    
+    showNotification(message, 'success');
+}
+
+// Load current quiz (daily rotation)
+function loadCurrentQuiz() {
+    const quizDateElement = document.getElementById('quizDate');
+    
+    if (quizDateElement) {
+        const today = new Date();
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        quizDateElement.textContent = `Quiz for ${today.toLocaleDateString('en-US', dateOptions)}`;
+    }
+}
+
+// Update community stats
+function updateStats() {
+    const totalUsersElement = document.getElementById('totalUsers');
+    const totalVotesElement = document.getElementById('totalVotes');
+    const totalQuizzesElement = document.getElementById('totalQuizzes');
+    const avgScoreElement = document.getElementById('avgScore');
+    
+    if (totalUsersElement) {
+        // Simulate live stats with some randomness
+        const baseUsers = 1247;
+        const randomChange = Math.floor(Math.random() * 50) - 25;
+        totalUsersElement.textContent = (baseUsers + randomChange).toLocaleString();
+    }
+    
+    if (totalVotesElement) {
+        const baseVotes = 8934;
+        const randomChange = Math.floor(Math.random() * 200) - 100;
+        totalVotesElement.textContent = (baseVotes + randomChange).toLocaleString();
+    }
+    
+    if (totalQuizzesElement) {
+        const baseQuizzes = 2156;
+        const randomChange = Math.floor(Math.random() * 100) - 50;
+        totalQuizzesElement.textContent = (baseQuizzes + randomChange).toLocaleString();
+    }
+    
+    if (avgScoreElement) {
+        const baseScore = 78;
+        const randomChange = Math.floor(Math.random() * 10) - 5;
+        avgScoreElement.textContent = `${Math.max(0, Math.min(100, baseScore + randomChange))}%`;
+    }
+}
+
+// Refresh stats
+function refreshStats() {
+    updateStats();
+    showNotification('Stats refreshed!', 'success');
+}
+
+// Initialize Game Assistant
+function initializeGameAssistant() {
+    const assistantMessages = document.getElementById('assistantMessages');
+    if (!assistantMessages) return;
+    
+    // Add initial welcome message
+    const initialMessage = { type: 'system', text: 'Hello! I\'m your Game Assistant. Ask me about Roblox codes, gameplay tips, or giveaways!' };
+    addAssistantMessage(initialMessage.text, initialMessage.type);
+}
+
+// Add assistant message
+function addAssistantMessage(text, type = 'assistant') {
+    const assistantMessages = document.getElementById('assistantMessages');
+    if (!assistantMessages) return;
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `assistant-message ${type}`;
+    
+    const messageText = document.createElement('span');
+    messageText.className = 'message-text';
+    messageText.textContent = text;
+    
+    messageDiv.appendChild(messageText);
+    assistantMessages.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    assistantMessages.scrollTop = assistantMessages.scrollHeight;
+}
+
+// Game Assistant FAQ database
+const gameAssistantFAQs = {
+    'how do i get robux': 'You can get Robux by purchasing them from the Roblox website, earning them through Premium payouts, or trading items. You can also earn small amounts through various games and activities.',
+    'what are the best roblox games right now': 'Popular games include Blox Fruits, ASTDX, Goalbound, Rivals, Fruit Battlegrounds, and many more! Check our game gallery for the latest trending games and their codes.',
+    'how do i redeem codes': 'To redeem codes, go to the game\'s official website or social media, find the codes section, and enter them in the game. Most games have a codes button in the main menu.',
+    'what\'s the latest update in astdx': 'ASTDX regularly updates with new features, balance changes, and bug fixes. Check the official ASTDX Discord or social media for the most recent update information.',
+    'how do i join a private server': 'To join a private server, you need a private server link from the server owner. Click the link or enter the server code in the game\'s private server section.',
+    'what\'s the best way to level up fast': 'Focus on completing quests, participating in events, and using XP boosters when available. Different games have different strategies, so check our guides for specific tips!',
+    'how do i enter the giveaway': 'To enter our giveaway, scroll down to the giveaway section and follow the entry instructions. Usually involves subscribing to our social media and leaving a comment.',
+    'is reverscodes safe': 'Yes! ReversCodes is completely safe. We only provide legitimate game codes and information. We never ask for personal information or passwords.',
+    'how often are codes updated': 'We update codes as soon as new ones are released by the games. Popular games like Blox Fruits and ASTDX get new codes regularly, so check back often!',
+    'roblox codes': 'We have codes for many popular Roblox games! Check our game gallery for the latest codes for games like Blox Fruits, ASTDX, Goalbound, and more.',
+    'gameplay tips': 'For gameplay tips, check our guides section! We have detailed guides for popular games with strategies, tips, and tricks to help you improve.',
+    'giveaway': 'We regularly host giveaways for Robux and other prizes! Check the giveaway section on our homepage for current opportunities.',
+    'private server': 'Private servers allow you to play with friends in a controlled environment. You need a private server link or code to join one.',
+    'xp boost': 'XP boosts help you level up faster in games. They\'re usually available through codes, events, or in-game purchases.',
+    'roblox premium': 'Roblox Premium gives you monthly Robux, trading abilities, and other exclusive features. It\'s available through the Roblox website.',
+    'game updates': 'Games regularly update with new content, features, and bug fixes. Follow the official game social media for the latest news.',
+    'trading': 'Trading allows you to exchange items with other players. You need Premium to trade in most games.',
+    'events': 'Games host special events with exclusive rewards. Keep an eye on game announcements and our site for event information.',
+    'codes not working': 'If codes aren\'t working, they might be expired or you might have already used them. Try checking the game\'s official social media for the latest codes.',
+    'best games': 'Popular games include Blox Fruits, ASTDX, Goalbound, Rivals, Fruit Battlegrounds, and many more! Each has unique gameplay and features.'
+};
+
+// Send assistant message
+function sendAssistantMessage() {
+    const assistantInput = document.getElementById('assistantInput');
+    if (!assistantInput || !assistantInput.value.trim()) return;
+    
+    const message = assistantInput.value.trim();
+    addAssistantMessage(message, 'user');
+    
+    // Clear input
+    assistantInput.value = '';
+    
+    // Process the message and find a response
+    setTimeout(() => {
+        const response = processAssistantMessage(message);
+        addAssistantMessage(response, 'assistant');
+    }, 500 + Math.random() * 1000);
+}
+
+// Process assistant message and return appropriate response
+function processAssistantMessage(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    // Check for exact matches first
+    for (const [key, value] of Object.entries(gameAssistantFAQs)) {
+        if (lowerMessage.includes(key)) {
+            return value;
+        }
+    }
+    
+    // Check for partial matches
+    if (lowerMessage.includes('robux') || lowerMessage.includes('money')) {
+        return gameAssistantFAQs['how do i get robux'];
+    }
+    if (lowerMessage.includes('best') && lowerMessage.includes('game')) {
+        return gameAssistantFAQs['what are the best roblox games right now'];
+    }
+    if (lowerMessage.includes('redeem') || lowerMessage.includes('code')) {
+        return gameAssistantFAQs['how do i redeem codes'];
+    }
+    if (lowerMessage.includes('update') || lowerMessage.includes('new')) {
+        return gameAssistantFAQs['game updates'];
+    }
+    if (lowerMessage.includes('level') || lowerMessage.includes('xp')) {
+        return gameAssistantFAQs['what\'s the best way to level up fast'];
+    }
+    if (lowerMessage.includes('giveaway') || lowerMessage.includes('win')) {
+        return gameAssistantFAQs['how do i enter the giveaway'];
+    }
+    if (lowerMessage.includes('safe') || lowerMessage.includes('trust')) {
+        return gameAssistantFAQs['is reverscodes safe'];
+    }
+    
+    // Default response for unrecognized questions
+    return 'Sorry, I don\'t recognize that question yet. Try asking about Roblox codes, gameplay tips, or giveaways! You can also ask about getting Robux, game updates, private servers, or trading.';
+}
+
+// Initialize community features when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeCommunityFeatures();
+    
+    // Add event listener for assistant input (Enter key)
+    const assistantInput = document.getElementById('assistantInput');
+    if (assistantInput) {
+        assistantInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendAssistantMessage();
+            }
+        });
+    }
+    
+    // Add card click animations
+    addCardClickAnimations();
+    
+    // Update stats periodically
+    setInterval(updateStats, 30000); // Update every 30 seconds
+});
+
+// Add click animations to community cards
+function addCardClickAnimations() {
+    const communityCards = document.querySelectorAll('.community-card');
+    
+    communityCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Don't trigger if clicking on interactive elements
+            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT' || e.target.tagName === 'A') {
+                return;
+            }
+            
+            // Add click animation
+            card.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                card.style.transform = '';
+            }, 150);
+        });
+    });
+}
+
+
+
+
 

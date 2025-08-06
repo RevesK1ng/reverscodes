@@ -1,9 +1,11 @@
 // ===== REVERSCODES HUB - SERVICE WORKER =====
 // Provides offline functionality and caching for the ultimate Roblox code portal
 
-const CACHE_NAME = 'reverscodes-hub-v1.0.0';
-const STATIC_CACHE = 'reverscodes-static-v1.0.0';
-const DYNAMIC_CACHE = 'reverscodes-dynamic-v1.0.0';
+const CACHE_NAME = 'reverscodes-hub-v1.1.0';
+const STATIC_CACHE = 'reverscodes-static-v1.1.0';
+const DYNAMIC_CACHE = 'reverscodes-dynamic-v1.1.0';
+const IMAGE_CACHE = 'reverscodes-images-v1.1.0';
+const API_CACHE = 'reverscodes-api-v1.1.0';
 
 // Files to cache immediately
 const STATIC_FILES = [
@@ -12,20 +14,76 @@ const STATIC_FILES = [
     '/style.css',
     '/script.js',
     '/site.webmanifest',
-    '/images/logo.png',
-    '/images/favicon-32x32.png',
-    '/images/favicon-16x16.png',
-    '/images/apple-touch-icon.png',
-    '/images/hero-gaming.png',
-    '/images/astdx-thumbnail.jpg',
-    '/images/bloxfruits-thumbnail.jpg',
-    '/images/shindolife-thumbnail.jpg',
-    '/images/animeadventures-thumbnail.jpg',
-    '/images/news-roblox-update.jpg',
-    '/images/news-astdx-update.jpg',
-    '/images/news-bloxfruits-event.jpg',
-    '/images/about-image.jpg',
-    'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap'
+    '/images/RCNEWLOLGO.png',
+    '/images/favicon.png',
+    '/images/astdxlogo.png',
+    '/images/bloxfruits.png',
+    '/images/goalbound.png',
+    '/images/rivals.png',
+    '/images/animeadventures.png',
+    '/images/dresstoimpress.png',
+    '/images/fruitbattlegrounds.png',
+    '/images/shindolife.png',
+    '/images/projectslayers.png',
+    '/images/kinglegacy.png',
+    '/images/animelaststand.png',
+    '/images/AnimeRangersX.png',
+    '/images/murdermystery2.png',
+    '/images/bladeball.png',
+    '/images/volleyballlegends.png',
+    '/images/combatwarriors.png',
+    '/images/jujutsushenanigans.png',
+    '/images/projectegoist.png',
+    '/images/basketballzero.png',
+    '/images/bluelockrivals.png',
+    '/images/99nights.png',
+    '/images/chatgptbanner.png',
+    '/images/fruitwarriors.png',
+    '/images/growagarden.png',
+    '/images/inkgame.png',
+    '/images/sakurastand.png',
+    '/images/spongebobtowerdefense.png',
+    '/images/stealabrainrot.png',
+    '/images/TheHatch.png',
+    '/images/towerdefensesimulator.png',
+    '/images/robloxupdates.png',
+    '/images/rclogobanner.png',
+    '/images/Robloxlogo.png',
+    '/images/Othergames.png',
+    '/images/how2redeem.png',
+    '/images/successinredeeming.png',
+    '/images/towerofhell.png',
+    '/images/doors.png',
+    '/images/bloxburg.png',
+    '/images/murdermystery.png',
+    '/images/animevanguards.png',
+    '/images/AriseCrossover.png',
+    '/images/Adopt me.png',
+    '/images/AnimeRangersXPic.png',
+    '/images/astdxlogo.png',
+    '/images/favicon.svg.svg',
+    '/images/favicon.png',
+    '/images/goalbound.png',
+    '/images/RCNEWLOLGO.png',
+    '/images/rivals.png',
+    '/images/successinredeeming.png',
+    '/images/towerofhell.png',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap'
+];
+
+// Critical images for immediate loading
+const CRITICAL_IMAGES = [
+    '/images/RCNEWLOLGO.png',
+    '/images/favicon.png',
+    '/images/astdxlogo.png',
+    '/images/bloxfruits.png'
+];
+
+// API endpoints to cache
+const API_ENDPOINTS = [
+    '/api/codes',
+    '/api/games',
+    '/api/news'
 ];
 
 // Install event - cache static files
