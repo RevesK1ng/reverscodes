@@ -1311,6 +1311,16 @@ function initializeEventListeners() {
             nav.classList.remove('active');
         }
     });
+    
+    // Close mobile menu when clicking on navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            }
+        });
+    });
 }
 
 
@@ -1355,6 +1365,15 @@ function toggleMobileMenu() {
             span.style.opacity = '1';
         }
     });
+    
+    // Focus management for accessibility
+    if (nav.classList.contains('active')) {
+        // Focus the first navigation link when menu opens
+        const firstNavLink = nav.querySelector('.nav-link');
+        if (firstNavLink) {
+            setTimeout(() => firstNavLink.focus(), 100);
+        }
+    }
 }
 
 // Scroll effects with performance optimizations

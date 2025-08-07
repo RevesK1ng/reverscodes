@@ -269,18 +269,32 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-menu-toggle span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: var(--text-primary);
     border-radius: 2px;
     transition: var(--transition);
 }
 
 .mobile-menu-toggle:hover span {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--primary-color);
+}
+
+[data-theme="dark"] .mobile-menu-toggle span {
+    background: var(--text-inverse);
+}
+
+[data-theme="dark"] .mobile-menu-toggle:hover span {
+    background: var(--primary-color);
 }
 
 .search-bar {
@@ -1043,11 +1057,13 @@ body {
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-20px);
+        max-height: 0;
     }
     to {
         opacity: 1;
         transform: translateY(0);
+        max-height: 500px;
     }
 }
 
@@ -2129,17 +2145,69 @@ body {
         flex-wrap: wrap;
         gap: 0.75rem;
         justify-content: center;
+        width: 100%;
+        background: var(--bg-header);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius-md);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        box-shadow: var(--shadow-medium);
+        border: 1px solid var(--border-color);
+    }
+    
+    .nav.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+        z-index: 1000;
+        position: relative;
     }
     
     .nav-link {
         font-size: 0.85rem;
-        padding: 0.3rem 0.6rem;
+        padding: 0.5rem 0.75rem;
+        width: 100%;
+        text-align: center;
+        border-radius: var(--radius-sm);
+        transition: var(--transition);
     }
     
-
+    .nav-link:hover {
+        background: var(--primary-color);
+        color: var(--text-inverse);
+        transform: translateY(-1px);
+    }
+    
+    /* Dark theme support for mobile nav */
+    [data-theme="dark"] .nav {
+        background: var(--bg-header);
+        border-color: var(--border-color);
+    }
+    
+    [data-theme="dark"] .nav-link:hover {
+        background: var(--primary-color);
+        color: var(--text-inverse);
+    }
     
     .mobile-menu-toggle {
         display: flex;
+        padding: 0.75rem;
+        min-height: 44px;
+        min-width: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improve touch targets for mobile */
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Add some spacing between nav items */
+    .nav {
+        gap: 0.5rem;
     }
     
     .hero-container {
@@ -2218,6 +2286,38 @@ body {
     
     .news-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet and smaller desktop screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .header-container {
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Mobile and tablet navigation */
+@media (max-width: 1024px) {
+    /* Ensure mobile menu works on tablets too */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .nav.active {
+        display: flex;
     }
 }
 
@@ -5563,3 +5663,4 @@ body.dark-theme .nav-game-gallery-btn:hover, body.dark-theme .nav-game-gallery-b
     opacity: 1;
     visibility: visible;
 }
+
