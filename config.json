@@ -1,0 +1,90 @@
+{
+  "website": {
+    "html_file_path": "ReversCodes/index.html",
+    "update_title_timestamp": true
+  },
+  "scraping": {
+    "timeout": 10,
+    "delay_between_requests": [1, 3],
+    "max_codes_per_source": 5,
+    "max_news_per_source": 3
+  },
+  "sources": {
+    "roblox_codes": [
+      {
+        "url": "https://progameguides.com/roblox/roblox-game-codes/",
+        "name": "Pro Game Guides",
+        "enabled": true
+      },
+      {
+        "url": "https://www.videogamer.com/guides/roblox-codes-pages/",
+        "name": "VideoGamer",
+        "enabled": true
+      },
+      {
+        "url": "https://stealthygaming.com/category/roblox/roblox-codes/",
+        "name": "Stealthy Gaming",
+        "enabled": true
+      }
+    ],
+    "gta6_news": [
+      {
+        "url": "https://www.newsnow.com/us/Entertainment/Gaming/GTA+6",
+        "name": "NewsNow",
+        "enabled": true
+      },
+      {
+        "url": "https://techwiser.com/gta-6-could-become-a-creator-platform-rockstar-meets-with-fortnite-and-roblox-communities/",
+        "name": "Techwiser",
+        "enabled": true
+      },
+      {
+        "url": "https://www.gamingbible.com/news/gta-6-online-sounds-like-fortnite-605633-20250218",
+        "name": "GamingBible",
+        "enabled": true
+      },
+      {
+        "url": "https://www.uniladtech.com/gaming/new-gta-6-rumor-leaves-everyone-worrying-about-the-future-of-fortnite-068335-20250218",
+        "name": "Unilad Tech",
+        "enabled": true
+      }
+    ],
+    "fortnite_news": [
+      {
+        "url": "https://www.epicgames.com/fortnite/en-US/news",
+        "name": "Epic Games Official",
+        "enabled": true
+      }
+    ],
+    "cod_news": [
+      {
+        "url": "https://www.callofduty.com/news",
+        "name": "Call of Duty Official",
+        "enabled": true
+      }
+    ]
+  },
+  "html_templates": {
+    "roblox_codes_section": {
+      "title": "🎁 Latest Roblox Codes",
+      "subtitle": "Fresh codes updated daily"
+    },
+    "gta6_news_section": {
+      "title": "🎮 GTA 6 Latest News",
+      "subtitle": "Stay updated with the latest GTA 6 developments"
+    },
+    "fortnite_news_section": {
+      "title": "⚡ Fortnite Latest News",
+      "subtitle": "Latest updates from the battle royale"
+    },
+    "cod_news_section": {
+      "title": "🏆 Call of Duty Latest News",
+      "subtitle": "Latest updates from the COD universe"
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "log_file": "update.log",
+    "summary_file": "update_summary.json"
+  }
+}

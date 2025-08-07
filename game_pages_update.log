@@ -1,0 +1,97 @@
+2025-08-07 08:04:07,478 - INFO - Starting game pages update...
+2025-08-07 08:04:07,478 - INFO - Removing dynamic sections from homepage...
+2025-08-07 08:04:07,483 - INFO - Successfully removed dynamic sections from homepage
+2025-08-07 08:04:07,484 - INFO - Updating ASTDX page...
+2025-08-07 08:04:07,484 - INFO - Scraping ASTDX codes from Pro Game Guides
+2025-08-07 08:04:09,569 - INFO - Scraping ASTDX codes from VideoGamer
+2025-08-07 08:04:12,717 - INFO - Successfully updated ReversCodes/astdx.html
+2025-08-07 08:04:12,717 - INFO - ASTDX update: Success
+2025-08-07 08:04:12,717 - INFO - Updating Blox Fruits page...
+2025-08-07 08:04:12,717 - INFO - Scraping Blox Fruits codes from Pro Game Guides
+2025-08-07 08:04:14,760 - INFO - Scraping Blox Fruits codes from VideoGamer
+2025-08-07 08:04:17,772 - INFO - Successfully updated ReversCodes/blox-fruits.html
+2025-08-07 08:04:17,772 - INFO - Blox Fruits update: Success
+2025-08-07 08:04:17,772 - INFO - Updating Goalbound page...
+2025-08-07 08:04:17,772 - INFO - Scraping Goalbound codes from Pro Game Guides
+2025-08-07 08:04:20,888 - INFO - Successfully updated ReversCodes/goalbound.html
+2025-08-07 08:04:20,888 - INFO - Goalbound update: Success
+2025-08-07 08:04:20,890 - INFO - Game pages update completed successfully!
+2025-08-07 08:05:55,361 - INFO - Starting game pages update...
+2025-08-07 08:05:55,361 - INFO - Removing dynamic sections from homepage...
+2025-08-07 08:05:55,364 - INFO - Successfully removed dynamic sections from homepage
+2025-08-07 08:05:55,365 - INFO - Updating ASTDX page...
+2025-08-07 08:05:55,365 - INFO - Scraping ASTDX codes from Pro Game Guides
+2025-08-07 08:05:57,184 - INFO - Scraping ASTDX codes from VideoGamer
+2025-08-07 08:05:59,753 - INFO - Successfully updated ReversCodes/astdx.html
+2025-08-07 08:05:59,754 - INFO - ASTDX update: Success
+2025-08-07 08:05:59,754 - INFO - Updating Blox Fruits page...
+2025-08-07 08:05:59,754 - INFO - Scraping Blox Fruits codes from Pro Game Guides
+2025-08-07 08:06:02,433 - INFO - Scraping Blox Fruits codes from VideoGamer
+2025-08-07 08:06:04,446 - INFO - Successfully updated ReversCodes/blox-fruits.html
+2025-08-07 08:06:04,446 - INFO - Blox Fruits update: Success
+2025-08-07 08:06:04,446 - INFO - Updating Goalbound page...
+2025-08-07 08:06:04,446 - INFO - Scraping Goalbound codes from Pro Game Guides
+2025-08-07 08:06:06,818 - INFO - Successfully updated ReversCodes/goalbound.html
+2025-08-07 08:06:06,819 - INFO - Goalbound update: Success
+2025-08-07 08:06:06,819 - INFO - Game pages update completed successfully!
+2025-08-07 08:08:14,457 - INFO - Starting game pages update...
+2025-08-07 08:08:14,457 - INFO - Removing dynamic sections from homepage...
+2025-08-07 08:08:14,460 - INFO - Successfully removed dynamic sections from homepage
+2025-08-07 08:08:14,460 - INFO - Updating ASTDX page...
+2025-08-07 08:08:14,460 - INFO - Scraping ASTDX codes from Pro Game Guides
+2025-08-07 08:08:17,152 - INFO - Scraping ASTDX codes from VideoGamer
+2025-08-07 08:08:19,775 - INFO - Successfully updated ReversCodes/astdx.html
+2025-08-07 08:08:19,776 - INFO - ASTDX update: Success
+2025-08-07 08:08:19,776 - INFO - Updating Blox Fruits page...
+2025-08-07 08:08:19,776 - INFO - Scraping Blox Fruits codes from Pro Game Guides
+2025-08-07 08:08:22,897 - INFO - Scraping Blox Fruits codes from VideoGamer
+2025-08-07 08:08:26,011 - INFO - Successfully updated ReversCodes/blox-fruits.html
+2025-08-07 08:08:26,011 - INFO - Blox Fruits update: Success
+2025-08-07 08:08:26,011 - INFO - Updating Goalbound page...
+2025-08-07 08:08:26,011 - INFO - Scraping Goalbound codes from Pro Game Guides
+2025-08-07 08:08:28,369 - INFO - Successfully updated ReversCodes/goalbound.html
+2025-08-07 08:08:28,369 - INFO - Goalbound update: Success
+2025-08-07 08:08:28,372 - INFO - Game pages update completed successfully!
+2025-08-07 08:23:49,392 - INFO - Starting comprehensive game pages update...
+2025-08-07 08:23:49,393 - INFO - Removing dynamic sections from homepage...
+2025-08-07 08:23:49,396 - INFO - Successfully removed dynamic sections from homepage
+2025-08-07 08:23:49,396 - INFO - Scraping codes for all games...
+2025-08-07 08:23:49,396 - INFO - Scraping ASTDX codes from Pro Game Guides
+2025-08-07 08:23:51,994 - INFO - Scraping ASTDX codes from VideoGamer
+2025-08-07 08:23:53,836 - INFO - Scraping Blox Fruits codes from Pro Game Guides
+2025-08-07 08:23:55,979 - INFO - Scraping Blox Fruits codes from VideoGamer
+2025-08-07 08:23:57,442 - INFO - Scraping Goalbound codes from Pro Game Guides
+2025-08-07 08:23:59,966 - INFO - Scraping Anime Adventures codes from Pro Game Guides
+2025-08-07 08:24:02,855 - INFO - Scraping Dress to Impress codes from Pro Game Guides
+2025-08-07 08:24:05,868 - INFO - Scraping Fruit Battlegrounds codes from Pro Game Guides
+2025-08-07 08:24:09,566 - INFO - Scraping Rivals codes from Pro Game Guides
+2025-08-07 08:24:12,995 - INFO - Updating individual game pages...
+2025-08-07 08:24:12,998 - INFO - Successfully updated ReversCodes/astdx.html
+2025-08-07 08:24:12,999 - INFO - Successfully updated ReversCodes/blox-fruits.html
+2025-08-07 08:24:13,000 - INFO - Successfully updated ReversCodes/goalbound.html
+2025-08-07 08:24:13,001 - INFO - Successfully updated ReversCodes/animeadventures.html
+2025-08-07 08:24:13,002 - INFO - Successfully updated ReversCodes/dresstoimpress.html
+2025-08-07 08:24:13,003 - INFO - Successfully updated ReversCodes/fruitbattlegrounds.html
+2025-08-07 08:24:13,003 - INFO - Successfully updated ReversCodes/bloxfruits-page.html
+2025-08-07 08:24:13,004 - INFO - Updating subdirectory pages...
+2025-08-07 08:24:13,005 - INFO - Successfully updated ReversCodes/astdx/index.html
+2025-08-07 08:24:13,006 - INFO - Successfully updated ReversCodes/goalbound/index.html
+2025-08-07 08:24:13,007 - INFO - Successfully updated ReversCodes/rivals/index.html
+2025-08-07 08:24:13,007 - INFO - Updating homepage game sections...
+2025-08-07 08:24:13,011 - INFO - Successfully updated homepage game sections
+2025-08-07 08:24:13,011 - INFO - Updating gaming content pages...
+2025-08-07 08:24:13,012 - INFO - Successfully updated trending.html
+2025-08-07 08:24:13,013 - INFO - Successfully updated guides.html
+2025-08-07 08:24:13,013 - INFO - Updating other pages with dates...
+2025-08-07 08:24:13,014 - INFO - Successfully updated contact.html
+2025-08-07 08:24:13,015 - INFO - Successfully updated related-content.html
+2025-08-07 08:24:13,017 - INFO - Successfully updated privacy.html
+2025-08-07 08:24:13,018 - INFO - Successfully updated terms.html
+2025-08-07 08:24:13,019 - INFO - Successfully updated disclaimer.html
+2025-08-07 08:24:13,020 - INFO - Successfully updated astdx/privacy.html
+2025-08-07 08:24:13,021 - INFO - Successfully updated astdx/terms.html
+2025-08-07 08:24:13,022 - INFO - Successfully updated goalbound/privacy.html
+2025-08-07 08:24:13,022 - INFO - Successfully updated goalbound/terms.html
+2025-08-07 08:24:13,023 - INFO - Successfully updated rivals/privacy.html
+2025-08-07 08:24:13,024 - INFO - Successfully updated rivals/terms.html
+2025-08-07 08:24:13,025 - INFO - Comprehensive game pages update completed successfully!

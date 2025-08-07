@@ -1,0 +1,44 @@
+2025-08-07 07:51:11,346 - INFO - Starting website content update...
+2025-08-07 07:51:11,346 - INFO - Scraping Roblox codes...
+2025-08-07 07:51:11,346 - INFO - Scraping Roblox codes from Pro Game Guides
+2025-08-07 07:51:15,287 - INFO - Scraping Roblox codes from VideoGamer
+2025-08-07 07:51:19,916 - INFO - Scraping Roblox codes from Stealthy Gaming
+2025-08-07 07:51:23,826 - INFO - Found 0 Roblox codes
+2025-08-07 07:51:23,827 - INFO - Scraping GTA 6 news...
+2025-08-07 07:51:23,827 - INFO - Scraping GTA 6 news from NewsNow
+2025-08-07 07:51:27,908 - INFO - Scraping GTA 6 news from Techwiser
+2025-08-07 07:51:30,813 - INFO - Scraping GTA 6 news from GamingBible
+2025-08-07 07:51:36,231 - INFO - Scraping GTA 6 news from Unilad Tech
+2025-08-07 07:51:41,074 - INFO - Found 5 GTA 6 news items
+2025-08-07 07:51:41,075 - INFO - Scraping Fortnite news...
+2025-08-07 07:51:41,075 - INFO - Scraping Fortnite news from Epic Games Official
+2025-08-07 07:51:41,880 - ERROR - Failed to scrape Fortnite news from Epic Games Official: 403 Client Error: Forbidden for url: https://www.epicgames.com/fortnite/en-US/news
+2025-08-07 07:51:41,881 - INFO - Found 0 Fortnite news items
+2025-08-07 07:51:41,881 - INFO - Scraping Call of Duty news...
+2025-08-07 07:51:41,881 - INFO - Scraping Call of Duty news from Call of Duty Official
+2025-08-07 07:51:42,998 - ERROR - Failed to scrape Call of Duty news from Call of Duty Official: 404 Client Error: Not Found for url: https://www.callofduty.com/news
+2025-08-07 07:51:42,998 - INFO - Found 0 Call of Duty news items
+2025-08-07 07:51:43,003 - INFO - Successfully updated ReversCodes/index.html
+2025-08-07 07:51:43,003 - INFO - Website update completed successfully!
+2025-08-07 07:54:58,884 - INFO - Starting website content update...
+2025-08-07 07:54:58,885 - INFO - Scraping Roblox codes...
+2025-08-07 07:54:58,885 - INFO - Scraping Roblox codes from Pro Game Guides
+2025-08-07 07:55:02,987 - INFO - Scraping Roblox codes from VideoGamer
+2025-08-07 07:55:04,670 - INFO - Scraping Roblox codes from Stealthy Gaming
+2025-08-07 07:55:07,126 - INFO - Found 0 Roblox codes
+2025-08-07 07:55:07,126 - INFO - Scraping GTA 6 news...
+2025-08-07 07:55:07,126 - INFO - Scraping GTA 6 news from NewsNow
+2025-08-07 07:55:11,678 - INFO - Scraping GTA 6 news from Techwiser
+2025-08-07 07:55:14,272 - INFO - Scraping GTA 6 news from GamingBible
+2025-08-07 07:55:16,173 - INFO - Scraping GTA 6 news from Unilad Tech
+2025-08-07 07:55:17,975 - INFO - Found 5 GTA 6 news items
+2025-08-07 07:55:17,975 - INFO - Scraping Fortnite news...
+2025-08-07 07:55:17,975 - INFO - Scraping Fortnite news from Epic Games Official
+2025-08-07 07:55:19,416 - ERROR - Failed to scrape Fortnite news from Epic Games Official: 403 Client Error: Forbidden for url: https://www.epicgames.com/fortnite/en-US/news
+2025-08-07 07:55:19,417 - INFO - Found 0 Fortnite news items
+2025-08-07 07:55:19,417 - INFO - Scraping Call of Duty news...
+2025-08-07 07:55:19,417 - INFO - Scraping Call of Duty news from Call of Duty Official
+2025-08-07 07:55:21,593 - ERROR - Failed to scrape Call of Duty news from Call of Duty Official: 404 Client Error: Not Found for url: https://www.callofduty.com/news
+2025-08-07 07:55:21,593 - INFO - Found 0 Call of Duty news items
+2025-08-07 07:55:21,598 - INFO - Successfully updated ReversCodes/index.html
+2025-08-07 07:55:21,598 - INFO - Website update completed successfully!
