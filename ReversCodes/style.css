@@ -290,7 +290,7 @@ body {
 }
 
 [data-theme="dark"] .mobile-menu-toggle span {
-    background: var(--text-inverse);
+    background: var(--primary-color);
 }
 
 [data-theme="dark"] .mobile-menu-toggle:hover span {
