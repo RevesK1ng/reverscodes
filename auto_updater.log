@@ -1,0 +1,94 @@
+2025-08-08 08:02:12,628 - INFO - Fetching Reddit posts from r/minecraft
+2025-08-08 08:02:42,621 - INFO - Starting full update cycle
+2025-08-08 08:02:42,621 - INFO - Starting game information update
+2025-08-08 08:02:42,622 - INFO - Updating astdx
+2025-08-08 08:02:42,622 - INFO - Fetching Roblox info for astdx
+2025-08-08 08:02:42,961 - WARNING - Failed to fetch Roblox data for astdx
+2025-08-08 08:02:42,961 - INFO - Fetching Twitter updates for @astdxgame
+2025-08-08 08:02:43,670 - INFO - Fetching Reddit posts from r/astdx
+2025-08-08 08:02:44,419 - INFO - Successfully updated astdx
+2025-08-08 08:02:44,419 - INFO - Updating bloxfruits
+2025-08-08 08:02:44,419 - INFO - Fetching Roblox info for bloxfruits
+2025-08-08 08:02:44,545 - WARNING - Failed to fetch Roblox data for bloxfruits
+2025-08-08 08:02:44,545 - INFO - Fetching Twitter updates for @BloxFruits
+2025-08-08 08:02:44,731 - INFO - Fetching Reddit posts from r/bloxfruits
+2025-08-08 08:02:45,188 - INFO - Successfully updated bloxfruits
+2025-08-08 08:02:45,188 - INFO - Updating goalbound
+2025-08-08 08:02:45,188 - INFO - Fetching Roblox info for goalbound
+2025-08-08 08:02:45,244 - WARNING - Failed to fetch Roblox data for goalbound
+2025-08-08 08:02:45,245 - INFO - Fetching Twitter updates for @goalboundgame
+2025-08-08 08:02:45,445 - INFO - Fetching Reddit posts from r/goalbound
+2025-08-08 08:02:45,585 - INFO - Successfully updated goalbound
+2025-08-08 08:02:45,585 - INFO - Updating rivals
+2025-08-08 08:02:45,585 - INFO - Fetching Roblox info for rivals
+2025-08-08 08:02:45,641 - WARNING - Failed to fetch Roblox data for rivals
+2025-08-08 08:02:45,641 - INFO - Fetching Twitter updates for @rivalsgame
+2025-08-08 08:02:45,827 - INFO - Fetching Reddit posts from r/rivals
+2025-08-08 08:02:46,626 - INFO - Successfully updated rivals
+2025-08-08 08:02:46,626 - INFO - Updating shindolife
+2025-08-08 08:02:46,626 - INFO - Fetching Roblox info for shindolife
+2025-08-08 08:02:46,689 - WARNING - Failed to fetch Roblox data for shindolife
+2025-08-08 08:02:46,689 - INFO - Fetching Twitter updates for @shindolife
+2025-08-08 08:02:46,888 - INFO - Fetching Reddit posts from r/shindolife
+2025-08-08 08:02:46,998 - WARNING - Failed to fetch Reddit data for r/shindolife
+2025-08-08 08:02:46,998 - INFO - Successfully updated shindolife
+2025-08-08 08:02:46,998 - INFO - Updating animeadventures
+2025-08-08 08:02:46,998 - INFO - Fetching Roblox info for animeadventures
+2025-08-08 08:02:47,055 - WARNING - Failed to fetch Roblox data for animeadventures
+2025-08-08 08:02:47,056 - INFO - Fetching Twitter updates for @GomuDev
+2025-08-08 08:02:47,244 - INFO - Fetching Reddit posts from r/animeadventures
+2025-08-08 08:02:47,390 - INFO - Successfully updated animeadventures
+2025-08-08 08:02:47,391 - INFO - Updating fruitbattlegrounds
+2025-08-08 08:02:47,391 - INFO - Fetching Roblox info for fruitbattlegrounds
+2025-08-08 08:02:47,497 - WARNING - Failed to fetch Roblox data for fruitbattlegrounds
+2025-08-08 08:02:47,497 - INFO - Fetching Twitter updates for @fruitbattlegrounds
+2025-08-08 08:02:47,708 - INFO - Fetching Reddit posts from r/fruitbattlegrounds
+2025-08-08 08:02:47,836 - INFO - Successfully updated fruitbattlegrounds
+2025-08-08 08:02:47,836 - INFO - Updating dresstoimpress
+2025-08-08 08:02:47,836 - INFO - Fetching Roblox info for dresstoimpress
+2025-08-08 08:02:47,940 - WARNING - Failed to fetch Roblox data for dresstoimpress
+2025-08-08 08:02:47,940 - INFO - Fetching Twitter updates for @dresstoimpress
+2025-08-08 08:02:48,135 - INFO - Fetching Reddit posts from r/dresstoimpress
+2025-08-08 08:02:48,799 - INFO - Successfully updated dresstoimpress
+2025-08-08 08:02:48,799 - INFO - Updating jujutsuinfinite
+2025-08-08 08:02:48,799 - INFO - Fetching Roblox info for jujutsuinfinite
+2025-08-08 08:02:48,860 - WARNING - Failed to fetch Roblox data for jujutsuinfinite
+2025-08-08 08:02:48,860 - INFO - Fetching Twitter updates for @jujutsuinfinite
+2025-08-08 08:02:49,063 - INFO - Fetching Reddit posts from r/jujutsuinfinite
+2025-08-08 08:02:49,483 - INFO - Successfully updated jujutsuinfinite
+2025-08-08 08:02:49,483 - INFO - Starting trending topics update
+2025-08-08 08:02:49,483 - INFO - Updating trending topic gta6
+2025-08-08 08:02:49,484 - INFO - Fetching news articles
+2025-08-08 08:02:50,462 - INFO - Fetching Reddit posts from r/GTA6
+2025-08-08 08:02:51,146 - INFO - Fetching Twitter updates for @RockstarGames
+2025-08-08 08:02:51,333 - INFO - Successfully updated trending topic gta6
+2025-08-08 08:02:51,333 - INFO - Updating trending topic fortnite
+2025-08-08 08:02:51,333 - INFO - Fetching news articles
+2025-08-08 08:02:52,945 - INFO - Fetching Reddit posts from r/FortNiteBR
+2025-08-08 08:02:53,472 - INFO - Fetching Twitter updates for @FortniteGame
+2025-08-08 08:02:53,643 - INFO - Successfully updated trending topic fortnite
+2025-08-08 08:02:53,643 - INFO - Updating trending topic warzone
+2025-08-08 08:02:53,643 - INFO - Fetching news articles
+2025-08-08 08:02:55,286 - INFO - Fetching Reddit posts from r/CODWarzone
+2025-08-08 08:02:55,720 - INFO - Fetching Twitter updates for @CallofDuty
+2025-08-08 08:02:55,939 - INFO - Successfully updated trending topic warzone
+2025-08-08 08:02:55,939 - INFO - Updating trending topic minecraft
+2025-08-08 08:02:55,939 - INFO - Fetching news articles
+2025-08-08 08:02:57,644 - INFO - Fetching Reddit posts from r/Minecraft
+2025-08-08 08:02:58,149 - INFO - Fetching Twitter updates for @Minecraft
+2025-08-08 08:02:58,411 - INFO - Successfully updated trending topic minecraft
+2025-08-08 08:02:58,411 - INFO - Updating trending topic amongus
+2025-08-08 08:02:58,412 - INFO - Fetching news articles
+2025-08-08 08:02:59,871 - INFO - Fetching Reddit posts from r/AmongUs
+2025-08-08 08:03:00,339 - INFO - Fetching Twitter updates for @AmongUsGame
+2025-08-08 08:03:00,544 - INFO - Successfully updated trending topic amongus
+2025-08-08 08:03:00,544 - INFO - Updating trending topic valorant
+2025-08-08 08:03:00,544 - INFO - Fetching news articles
+2025-08-08 08:03:01,907 - INFO - Fetching Reddit posts from r/Valorant
+2025-08-08 08:03:02,257 - INFO - Fetching Twitter updates for @PlayVALORANT
+2025-08-08 08:03:02,443 - INFO - Successfully updated trending topic valorant
+2025-08-08 08:03:02,443 - INFO - Generating website updates
+2025-08-08 08:03:02,443 - ERROR - Error during full update cycle: 'NoneType' object has no attribute 'get'
+2025-08-08 08:03:02,446 - INFO - Data saved successfully
+2025-08-08 08:05:34,578 - INFO - Generating website updates
+2025-08-08 08:05:34,580 - INFO - Website updates generated successfully

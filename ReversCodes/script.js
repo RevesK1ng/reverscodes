@@ -1249,6 +1249,8 @@ function initializeApp() {
             detectAdBlocker();
         }
     }, 10000);
+    
+
 }
 
 // Initialize all event listeners
@@ -3770,6 +3772,10 @@ function addCardClickAnimations() {
         });
     });
 }
+
+// (Client-side auto-updating system removed; updates are now handled server-side by Python)
+
+
 
 
 

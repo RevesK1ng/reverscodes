@@ -927,12 +927,14 @@ body {
 .trending-card {
     background: var(--bg-card);
     border-radius: var(--radius-lg);
-    padding: 2rem;
     box-shadow: var(--shadow-medium);
     border: 1px solid var(--border-color);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .trending-card::before {
@@ -943,6 +945,7 @@ body {
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    z-index: 3;
 }
 
 .trending-card:hover {
@@ -951,10 +954,16 @@ body {
     border-color: var(--primary-color);
 }
 
-.trending-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
+.trending-content {
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-card);
 }
 
 .trending-card h3 {
@@ -5262,6 +5271,85 @@ body.dark-theme .nav-game-gallery-btn:hover, body.dark-theme .nav-game-gallery-b
     }
 }
 
+/* === TRENDING PAGE SPECIFIC STYLES === */
+
+/* Signature Backgrounds for Trending Sections */
+#gta6-details {
+    background: linear-gradient(135deg, rgba(253, 186, 116, 0.1), rgba(250, 204, 21, 0.1));
+    border-left: 4px solid #FBBF24;
+}
+
+#fortnite-details {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(99, 102, 241, 0.1));
+    border-left: 4px solid #8B5CF6;
+}
+
+#warzone-details {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(59, 130, 246, 0.1));
+    border-left: 4px solid #3B82F6;
+}
+
+#minecraft-details {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(34, 197, 94, 0.1));
+    border-left: 4px solid #22C55E;
+}
+
+#amongus-details {
+    background: linear-gradient(135deg, rgba(248, 113, 113, 0.1), rgba(239, 68, 68, 0.1));
+    border-left: 4px solid #EF4444;
+}
+
+#valorant-details {
+    background: linear-gradient(135deg, rgba(251, 113, 133, 0.1), rgba(244, 63, 94, 0.1));
+    border-left: 4px solid #F43F5E;
+}
+
+.trending-detail-section {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-medium);
+    transition: all 0.3s ease;
+}
+
+.trending-detail-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-secondary);
+}
+
 /* Ad Blocker Modal Specific Styles */
 #adBlockerModal {
     position: fixed;
@@ -5662,5 +5750,96 @@ body.dark-theme .nav-game-gallery-btn:hover, body.dark-theme .nav-game-gallery-b
 .modal.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* Auto-Update System Styles */
+/* Auto-update UI removed (server-side updater now handles updates) */
+
+.latest-news {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.latest-news h4 {
+    color: #8b5cf6;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.latest-news p {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+}
+
+.latest-news small {
+    color: rgba(139, 92, 246, 0.7);
+    font-size: 0.75rem;
+}
+
+/* Trending Page Image Styles */
+.trending-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.trending-card:hover .trending-card-image {
+    transform: scale(1.05);
+}
+
+.trending-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.8) 0%, rgba(99, 102, 241, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.trending-card:hover .trending-card-overlay {
+    opacity: 1;
+}
+
+.trending-card-overlay-icon {
+    font-size: 3rem;
+    color: white;
+}
+
+/* Mobile Responsive for Auto-Update */
+@media (max-width: 768px) {
+    .auto-update-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.8rem;
+        margin-left: 0.25rem;
+    }
+    
+    .auto-update-status {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .latest-news {
+        padding: 0.75rem;
+    }
+    
+    .trending-card-image {
+        height: 150px;
+    }
 }
 
