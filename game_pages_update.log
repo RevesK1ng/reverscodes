@@ -1618,3 +1618,194 @@
 2025-08-09 11:23:37,125 - INFO - Successfully updated ReversCodes/roblox-codes/bloxfruits-page.html
 2025-08-09 11:23:37,126 - INFO - Comprehensive game pages update completed successfully!
 2025-08-09 11:23:37,127 - INFO - Processed 30 games, 30 successful updates, 331 total codes found
+2025-08-09 13:04:55,152 - INFO - Starting comprehensive game pages update...
+2025-08-09 13:04:55,153 - INFO - Removing dynamic sections from homepage...
+2025-08-09 13:04:55,155 - INFO - Successfully removed dynamic sections from homepage
+2025-08-09 13:04:55,156 - INFO - Scraping and updating codes for all games...
+2025-08-09 13:04:55,156 - INFO - Processing driving_empire...
+2025-08-09 13:04:55,156 - INFO - Scraping driving_empire codes from Beebom Driving Empire Codes
+2025-08-09 13:04:59,435 - INFO - Scraping driving_empire codes from Pocket Tactics Driving Empire Codes
+2025-08-09 13:05:03,533 - INFO - Successfully updated ReversCodes/roblox-codes/driving-empire.html
+2025-08-09 13:05:03,534 - INFO - Completed driving_empire: 15 codes from Unknown
+2025-08-09 13:05:03,534 - INFO - Processing all_star_tower_defense_x...
+2025-08-09 13:05:03,534 - INFO - Scraping all_star_tower_defense_x codes from Beebom ASTD X Codes
+2025-08-09 13:05:06,078 - INFO - Scraping all_star_tower_defense_x codes from Destructoid ASTD X Codes
+2025-08-09 13:05:08,834 - INFO - Successfully updated ReversCodes/roblox-codes/all-star-tower-defense-x.html
+2025-08-09 13:05:08,834 - INFO - Completed all_star_tower_defense_x: 14 codes from Unknown
+2025-08-09 13:05:08,835 - INFO - Processing blox_fruits...
+2025-08-09 13:05:08,835 - INFO - Scraping blox_fruits codes from Beebom Blox Fruits Codes
+2025-08-09 13:05:11,821 - INFO - Scraping blox_fruits codes from Pro Game Guides Blox Fruits Codes
+2025-08-09 13:05:15,011 - INFO - Successfully updated ReversCodes/roblox-codes/blox-fruits.html
+2025-08-09 13:05:15,011 - INFO - Completed blox_fruits: 15 codes from Unknown
+2025-08-09 13:05:15,011 - INFO - Processing goalbound...
+2025-08-09 13:05:15,011 - INFO - Scraping goalbound codes from Beebom Goalbound Codes
+2025-08-09 13:05:17,341 - INFO - Scraping goalbound codes from Pocket Gamer Goalbound Codes
+2025-08-09 13:05:21,732 - INFO - Successfully updated ReversCodes/roblox-codes/goalbound.html
+2025-08-09 13:05:21,733 - INFO - Completed goalbound: 12 codes from Unknown
+2025-08-09 13:05:21,733 - INFO - Processing prospecting...
+2025-08-09 13:05:21,733 - INFO - Scraping prospecting codes from Pro Game Guides Prospecting Codes
+2025-08-09 13:05:25,155 - INFO - Scraping prospecting codes from Beebom Prospecting Codes
+2025-08-09 13:05:28,629 - INFO - Successfully updated ReversCodes/roblox-codes/prospecting.html
+2025-08-09 13:05:28,629 - INFO - Completed prospecting: 0 codes from Unknown
+2025-08-09 13:05:28,629 - INFO - Processing type_soul...
+2025-08-09 13:05:28,629 - INFO - Scraping type_soul codes from Pro Game Guides Type Soul Codes
+2025-08-09 13:05:32,870 - INFO - Scraping type_soul codes from Beebom Type Soul Codes
+2025-08-09 13:05:35,258 - INFO - Successfully updated ReversCodes/roblox-codes/type-soul.html
+2025-08-09 13:05:35,259 - INFO - Completed type_soul: 15 codes from Unknown
+2025-08-09 13:05:35,259 - INFO - Processing rivals...
+2025-08-09 13:05:35,259 - INFO - Scraping rivals codes from VideoGamer Rivals Codes
+2025-08-09 13:05:36,598 - ERROR - Failed to scrape rivals codes from VideoGamer Rivals Codes: 404 Client Error: Not Found for url: https://www.videogamer.com/roblox/rivals-codes/
+2025-08-09 13:05:36,598 - INFO - Scraping rivals codes from Beebom Rivals Codes
+2025-08-09 13:05:38,858 - INFO - Successfully updated ReversCodes/roblox-codes/rivals.html
+2025-08-09 13:05:38,858 - INFO - Completed rivals: 15 codes from Unknown
+2025-08-09 13:05:38,858 - INFO - Processing fruit_battlegrounds...
+2025-08-09 13:05:38,859 - INFO - Scraping fruit_battlegrounds codes from Pro Game Guides Fruit Battlegrounds Codes
+2025-08-09 13:05:42,034 - INFO - Scraping fruit_battlegrounds codes from Beebom Fruit Battlegrounds Codes
+2025-08-09 13:05:44,940 - INFO - Successfully updated ReversCodes/roblox-codes/fruitbattlegrounds.html
+2025-08-09 13:05:44,940 - INFO - Completed fruit_battlegrounds: 15 codes from Unknown
+2025-08-09 13:05:44,941 - INFO - Processing anime_adventures...
+2025-08-09 13:05:44,941 - INFO - Scraping anime_adventures codes from Beebom Anime Adventures Codes
+2025-08-09 13:05:45,411 - ERROR - Failed to scrape anime_adventures codes from Beebom Anime Adventures Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-anime-adventures-codes/
+2025-08-09 13:05:45,411 - INFO - Scraping anime_adventures codes from Pro Game Guides Anime Adventures Codes
+2025-08-09 13:05:49,031 - INFO - Successfully updated ReversCodes/roblox-codes/animeadventures.html
+2025-08-09 13:05:49,031 - INFO - Completed anime_adventures: 15 codes from Unknown
+2025-08-09 13:05:49,031 - INFO - Processing dress_to_impress...
+2025-08-09 13:05:49,032 - INFO - Scraping dress_to_impress codes from IGN Dress to Impress Codes
+2025-08-09 13:05:49,620 - ERROR - Failed to scrape dress_to_impress codes from IGN Dress to Impress Codes: 404 Client Error: Not Found for url: https://www.ign.com/dress-to-impress-codes
+2025-08-09 13:05:49,620 - INFO - Scraping dress_to_impress codes from Beebom Dress to Impress Codes
+2025-08-09 13:05:53,662 - INFO - Successfully updated ReversCodes/roblox-codes/dress-to-impress.html
+2025-08-09 13:05:53,662 - INFO - Completed dress_to_impress: 15 codes from Unknown
+2025-08-09 13:05:53,662 - INFO - Processing jujutsu_infinite...
+2025-08-09 13:05:53,662 - INFO - Scraping jujutsu_infinite codes from MrGuider Jujutsu Infinite Codes
+2025-08-09 13:05:58,587 - INFO - Scraping jujutsu_infinite codes from Beebom Jujutsu Infinite Codes
+2025-08-09 13:05:59,047 - ERROR - Failed to scrape jujutsu_infinite codes from Beebom Jujutsu Infinite Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-jujutsu-infinite-codes/
+2025-08-09 13:05:59,049 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-infinite.html
+2025-08-09 13:05:59,049 - INFO - Completed jujutsu_infinite: 1 codes from Unknown
+2025-08-09 13:05:59,049 - INFO - Processing shindo_life...
+2025-08-09 13:05:59,049 - INFO - Scraping shindo_life codes from Pro Game Guides Shindo Life Codes
+2025-08-09 13:06:02,689 - INFO - Scraping shindo_life codes from Beebom Shindo Life Codes
+2025-08-09 13:06:04,974 - INFO - Successfully updated ReversCodes/roblox-codes/shindo-life.html
+2025-08-09 13:06:04,974 - INFO - Completed shindo_life: 15 codes from Unknown
+2025-08-09 13:06:04,974 - INFO - Processing project_slayers...
+2025-08-09 13:06:04,974 - INFO - Scraping project_slayers codes from Beebom Project Slayers Codes
+2025-08-09 13:06:05,422 - ERROR - Failed to scrape project_slayers codes from Beebom Project Slayers Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-project-slayers-codes/
+2025-08-09 13:06:05,423 - INFO - Scraping project_slayers codes from Pro Game Guides Project Slayers Codes
+2025-08-09 13:06:07,776 - INFO - Successfully updated ReversCodes/roblox-codes/project-slayers.html
+2025-08-09 13:06:07,777 - INFO - Completed project_slayers: 15 codes from Unknown
+2025-08-09 13:06:07,777 - INFO - Processing king_legacy...
+2025-08-09 13:06:07,777 - INFO - Scraping king_legacy codes from Dexerto King Legacy Codes
+2025-08-09 13:06:08,291 - ERROR - Failed to scrape king_legacy codes from Dexerto King Legacy Codes: 404 Client Error: Not Found for url: https://www.dexerto.com/roblox/king-legacy-codes/
+2025-08-09 13:06:08,292 - INFO - Scraping king_legacy codes from Beebom King Legacy Codes
+2025-08-09 13:06:12,000 - INFO - Successfully updated ReversCodes/roblox-codes/king-legacy.html
+2025-08-09 13:06:12,000 - INFO - Completed king_legacy: 15 codes from Unknown
+2025-08-09 13:06:12,000 - INFO - Processing anime_last_stand...
+2025-08-09 13:06:12,001 - INFO - Scraping anime_last_stand codes from Pro Game Guides Anime Last Stand Codes
+2025-08-09 13:06:15,511 - INFO - Scraping anime_last_stand codes from Beebom Anime Last Stand Codes
+2025-08-09 13:06:16,206 - ERROR - Failed to scrape anime_last_stand codes from Beebom Anime Last Stand Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-anime-last-stand-codes/
+2025-08-09 13:06:16,208 - INFO - Successfully updated ReversCodes/roblox-codes/anime-last-stand.html
+2025-08-09 13:06:16,208 - INFO - Completed anime_last_stand: 15 codes from Unknown
+2025-08-09 13:06:16,208 - INFO - Processing sakura_stand...
+2025-08-09 13:06:16,208 - INFO - Scraping sakura_stand codes from Bluestacks Sakura Stand Codes
+2025-08-09 13:06:17,417 - ERROR - Failed to scrape sakura_stand codes from Bluestacks Sakura Stand Codes: 404 Client Error: Not Found for url: https://www.bluestacks.com/sakura-stand-codes/
+2025-08-09 13:06:17,417 - INFO - Scraping sakura_stand codes from Beebom Sakura Stand Codes
+2025-08-09 13:06:20,735 - INFO - Successfully updated ReversCodes/roblox-codes/sakura-stand.html
+2025-08-09 13:06:20,735 - INFO - Completed sakura_stand: 10 codes from Unknown
+2025-08-09 13:06:20,735 - INFO - Processing blade_ball...
+2025-08-09 13:06:20,736 - INFO - Scraping blade_ball codes from Beebom Blade Ball Codes
+2025-08-09 13:06:23,019 - INFO - Scraping blade_ball codes from Pro Game Guides Blade Ball Codes
+2025-08-09 13:06:26,466 - INFO - Successfully updated ReversCodes/roblox-codes/blade-ball.html
+2025-08-09 13:06:26,466 - INFO - Completed blade_ball: 15 codes from Unknown
+2025-08-09 13:06:26,466 - INFO - Processing fruit_warriors...
+2025-08-09 13:06:26,466 - INFO - Scraping fruit_warriors codes from Pro Game Guides Fruit Warriors Codes
+2025-08-09 13:06:30,848 - INFO - Scraping fruit_warriors codes from Beebom Fruit Warriors Codes
+2025-08-09 13:06:31,591 - ERROR - Failed to scrape fruit_warriors codes from Beebom Fruit Warriors Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-fruit-warriors-codes/
+2025-08-09 13:06:31,593 - INFO - Successfully updated ReversCodes/roblox-codes/fruit-warriors.html
+2025-08-09 13:06:31,593 - INFO - Completed fruit_warriors: 10 codes from Unknown
+2025-08-09 13:06:31,593 - INFO - Processing grow_a_garden...
+2025-08-09 13:06:31,593 - INFO - Scraping grow_a_garden codes from PCGamesN Grow a Garden Codes
+2025-08-09 13:06:36,368 - INFO - Scraping grow_a_garden codes from Beebom Grow a Garden Codes
+2025-08-09 13:06:39,690 - INFO - Successfully updated ReversCodes/roblox-codes/grow-a-garden.html
+2025-08-09 13:06:39,690 - INFO - Completed grow_a_garden: 9 codes from Unknown
+2025-08-09 13:06:39,691 - INFO - Processing anime_vanguards...
+2025-08-09 13:06:39,691 - INFO - Scraping anime_vanguards codes from Beebom Anime Vanguards Codes
+2025-08-09 13:06:40,152 - ERROR - Failed to scrape anime_vanguards codes from Beebom Anime Vanguards Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-anime-vanguards-codes/
+2025-08-09 13:06:40,152 - INFO - Scraping anime_vanguards codes from Pro Game Guides Anime Vanguards Codes
+2025-08-09 13:06:44,348 - INFO - Successfully updated ReversCodes/roblox-codes/anime-vanguards.html
+2025-08-09 13:06:44,349 - INFO - Completed anime_vanguards: 15 codes from Unknown
+2025-08-09 13:06:44,349 - INFO - Processing tower_defense_simulator...
+2025-08-09 13:06:44,349 - INFO - Scraping tower_defense_simulator codes from Pro Game Guides TDS Codes
+2025-08-09 13:06:47,492 - INFO - Scraping tower_defense_simulator codes from Beebom TDS Codes
+2025-08-09 13:06:47,965 - ERROR - Failed to scrape tower_defense_simulator codes from Beebom TDS Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-tower-defense-simulator-codes/
+2025-08-09 13:06:47,967 - INFO - Successfully updated ReversCodes/roblox-codes/tower-defense-simulator.html
+2025-08-09 13:06:47,967 - INFO - Completed tower_defense_simulator: 15 codes from Unknown
+2025-08-09 13:06:47,967 - INFO - Processing spongebob_tower_defense...
+2025-08-09 13:06:47,967 - INFO - Scraping spongebob_tower_defense codes from Beebom SpongeBob TD Codes
+2025-08-09 13:06:48,467 - ERROR - Failed to scrape spongebob_tower_defense codes from Beebom SpongeBob TD Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-spongebob-tower-defense-codes/
+2025-08-09 13:06:48,468 - INFO - Scraping spongebob_tower_defense codes from Pro Game Guides SpongeBob TD Codes
+2025-08-09 13:06:52,638 - INFO - Successfully updated ReversCodes/roblox-codes/spongebob-tower-defense.html
+2025-08-09 13:06:52,638 - INFO - Completed spongebob_tower_defense: 15 codes from Unknown
+2025-08-09 13:06:52,638 - INFO - Processing project_egoist...
+2025-08-09 13:06:52,638 - INFO - Scraping project_egoist codes from Beebom Project Egoist Codes
+2025-08-09 13:06:53,088 - ERROR - Failed to scrape project_egoist codes from Beebom Project Egoist Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-project-egoist-codes/
+2025-08-09 13:06:53,088 - INFO - Scraping project_egoist codes from Pro Game Guides Project Egoist Codes
+2025-08-09 13:06:56,109 - INFO - Successfully updated ReversCodes/roblox-codes/project-egoist.html
+2025-08-09 13:06:56,109 - INFO - Completed project_egoist: 6 codes from Unknown
+2025-08-09 13:06:56,109 - INFO - Processing blue_lock_rivals...
+2025-08-09 13:06:56,110 - INFO - Scraping blue_lock_rivals codes from Beebom Blue Lock Rivals Codes
+2025-08-09 13:06:56,579 - ERROR - Failed to scrape blue_lock_rivals codes from Beebom Blue Lock Rivals Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-blue-lock-rivals-codes/
+2025-08-09 13:06:56,579 - INFO - Scraping blue_lock_rivals codes from Pro Game Guides Blue Lock Rivals Codes
+2025-08-09 13:06:59,605 - INFO - Successfully updated ReversCodes/roblox-codes/blue-lock-rivals.html
+2025-08-09 13:06:59,606 - INFO - Completed blue_lock_rivals: 15 codes from Unknown
+2025-08-09 13:06:59,606 - INFO - Processing jujutsu_shenanigans...
+2025-08-09 13:06:59,606 - INFO - Scraping jujutsu_shenanigans codes from MrGuider Jujutsu Shenanigans Codes
+2025-08-09 13:07:02,980 - INFO - Scraping jujutsu_shenanigans codes from Beebom Jujutsu Shenanigans Codes
+2025-08-09 13:07:03,595 - ERROR - Failed to scrape jujutsu_shenanigans codes from Beebom Jujutsu Shenanigans Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-jujutsu-shenanigans-codes/
+2025-08-09 13:07:03,596 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-shenanigans.html
+2025-08-09 13:07:03,597 - INFO - Completed jujutsu_shenanigans: 1 codes from Unknown
+2025-08-09 13:07:03,597 - INFO - Processing combat_warriors...
+2025-08-09 13:07:03,597 - INFO - Scraping combat_warriors codes from Twinfinite Combat Warriors Codes
+2025-08-09 13:07:06,251 - INFO - Scraping combat_warriors codes from Beebom Combat Warriors Codes
+2025-08-09 13:07:06,680 - ERROR - Failed to scrape combat_warriors codes from Beebom Combat Warriors Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-combat-warriors-codes/
+2025-08-09 13:07:06,681 - INFO - Successfully updated ReversCodes/roblox-codes/combat-warriors.html
+2025-08-09 13:07:06,681 - INFO - Completed combat_warriors: 15 codes from Unknown
+2025-08-09 13:07:06,682 - INFO - Processing anime_rangers_x...
+2025-08-09 13:07:06,682 - INFO - Scraping anime_rangers_x codes from VideoGamer Anime Rangers X Codes
+2025-08-09 13:07:07,311 - ERROR - Failed to scrape anime_rangers_x codes from VideoGamer Anime Rangers X Codes: 404 Client Error: Not Found for url: https://www.videogamer.com/roblox/anime-rangers-x-codes/
+2025-08-09 13:07:07,311 - INFO - Scraping anime_rangers_x codes from Beebom Anime Rangers X Codes
+2025-08-09 13:07:07,739 - ERROR - Failed to scrape anime_rangers_x codes from Beebom Anime Rangers X Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-anime-rangers-x-codes/
+2025-08-09 13:07:07,741 - INFO - Successfully updated ReversCodes/roblox-codes/anime-rangers-x.html
+2025-08-09 13:07:07,741 - INFO - Completed anime_rangers_x: 0 codes from Unknown
+2025-08-09 13:07:07,741 - INFO - Processing basketball_zero...
+2025-08-09 13:07:07,741 - INFO - Scraping basketball_zero codes from Khel Now Basketball Zero Codes
+2025-08-09 13:07:10,020 - ERROR - Failed to scrape basketball_zero codes from Khel Now Basketball Zero Codes: 404 Client Error: Not Found for url: https://khelnow.com/roblox/basketball-zero-codes
+2025-08-09 13:07:10,020 - INFO - Scraping basketball_zero codes from Beebom Basketball Zero Codes
+2025-08-09 13:07:10,490 - ERROR - Failed to scrape basketball_zero codes from Beebom Basketball Zero Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-basketball-zero-codes/
+2025-08-09 13:07:10,491 - INFO - Successfully updated ReversCodes/roblox-codes/basketball-zero.html
+2025-08-09 13:07:10,491 - INFO - Completed basketball_zero: 0 codes from Unknown
+2025-08-09 13:07:10,491 - INFO - Processing volleyball_legends...
+2025-08-09 13:07:10,492 - INFO - Scraping volleyball_legends codes from Pro Game Guides Volleyball Legends Codes
+2025-08-09 13:07:13,754 - INFO - Scraping volleyball_legends codes from Beebom Volleyball Legends Codes
+2025-08-09 13:07:14,249 - ERROR - Failed to scrape volleyball_legends codes from Beebom Volleyball Legends Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-volleyball-legends-codes/
+2025-08-09 13:07:14,251 - INFO - Successfully updated ReversCodes/roblox-codes/volleyball-legends.html
+2025-08-09 13:07:14,251 - INFO - Completed volleyball_legends: 10 codes from Unknown
+2025-08-09 13:07:14,251 - INFO - Processing arise_crossover...
+2025-08-09 13:07:14,251 - INFO - Scraping arise_crossover codes from Beebom Arise Crossover Codes
+2025-08-09 13:07:14,743 - ERROR - Failed to scrape arise_crossover codes from Beebom Arise Crossover Codes: 404 Client Error: Not Found for url: https://beebom.com/roblox-arise-crossover-codes/
+2025-08-09 13:07:14,743 - INFO - Scraping arise_crossover codes from Pro Game Guides Arise Crossover Codes
+2025-08-09 13:07:18,405 - INFO - Successfully updated ReversCodes/roblox-codes/arise-crossover.html
+2025-08-09 13:07:18,405 - INFO - Completed arise_crossover: 3 codes from Unknown
+2025-08-09 13:07:18,405 - INFO - Updating homepage game sections...
+2025-08-09 13:07:18,410 - INFO - Successfully updated homepage game sections
+2025-08-09 13:07:18,410 - INFO - Updating gaming content pages...
+2025-08-09 13:07:18,412 - INFO - Successfully updated trending.html
+2025-08-09 13:07:18,413 - INFO - Successfully updated guides.html
+2025-08-09 13:07:18,413 - INFO - Updating other pages with dates...
+2025-08-09 13:07:18,414 - INFO - Successfully updated contact.html
+2025-08-09 13:07:18,416 - INFO - Successfully updated related-content.html
+2025-08-09 13:07:18,417 - INFO - Successfully updated privacy.html
+2025-08-09 13:07:18,418 - INFO - Successfully updated terms.html
+2025-08-09 13:07:18,419 - INFO - Successfully updated disclaimer.html
+2025-08-09 13:07:18,419 - INFO - Updating bloxfruits-page.html...
+2025-08-09 13:07:18,420 - INFO - Successfully updated ReversCodes/roblox-codes/bloxfruits-page.html
+2025-08-09 13:07:18,421 - INFO - Comprehensive game pages update completed successfully!
+2025-08-09 13:07:18,421 - INFO - Processed 30 games, 30 successful updates, 331 total codes found
