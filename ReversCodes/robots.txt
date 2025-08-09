@@ -41,17 +41,17 @@ Allow: /related-content.html
 Allow: /game-gallery.html
 
 # Allow game-specific pages
-Allow: /astdx.html
-Allow: /blox-fruits.html
-Allow: /goalbound.html
-Allow: /animeadventures.html
+Allow: /roblox-codes/all-star-tower-defense-x.html
+Allow: /games/blox-fruits/
+Allow: /games/goalbound/
+Allow: /games/animeadventures/
 Allow: /dresstoimpress.html
-Allow: /fruitbattlegrounds.html
+Allow: /roblox-codes/fruitbattlegrounds.html
 
 # Allow subdirectories
-Allow: /astdx/
-Allow: /goalbound/
-Allow: /rivals/
+
+
+Allow: /roblox-codes/rivals.html
 Allow: /jujutsu/
 
 # Allow assets

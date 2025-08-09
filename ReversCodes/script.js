@@ -791,6 +791,18 @@ const gamesData = [
     desc: '6v6 anime-style volleyball sim inspired by Haikyuu!! with ability spins',
   },
   {
+    id: 'basketballzero-page',
+    name: 'Basketball Zero',
+    img: 'images/basketballzero.png',
+    desc: 'Fast-paced anime basketball game with Zone mechanics and flashy moves',
+  },
+  {
+    id: 'arisecrossover-page',
+    name: 'Arise Crossover',
+    img: 'images/AriseCrossover.png',
+    desc: 'Crossover game featuring characters from various anime and gaming universes',
+  },
+  {
     id: 'combatwarriors-page',
     name: 'Combat Warriors',
     img: 'images/combatwarriors.png',
@@ -826,6 +838,24 @@ const gamesData = [
     img: 'images/animevanguards.png',
     desc: 'Anime TD with evolving units, traits, and stat chips.',
   },
+  {
+    id: 'driving-empire-page',
+    name: 'Driving Empire',
+    img: 'images/drivingempire.png',
+    desc: 'An expansive open-world racing game with cars, boats, and helicopters',
+  },
+  {
+    id: 'prospecting-page',
+    name: 'Prospecting',
+    img: 'images/prospecting.png',
+    desc: 'A tranquil treasure-hunting experience where players pan for gems and fossils',
+  },
+  {
+    id: 'type-soul-page',
+    name: 'Type Soul',
+    img: 'images/typesoul.png',
+    desc: 'An action RPG inspired by Bleach with Soul Reaper, Quincy, and Hollow paths',
+  },
 ];
 
 // Bookmarking logic
@@ -851,12 +881,32 @@ function toggleBookmark(gameId) {
 function renderGameGallery() {
   const gallery = document.getElementById('gamesGallery');
   if (!gallery) return;
-  const searchVal = (document.getElementById('gameSearch')?.value || '').toLowerCase();
-  const bookmarks = getBookmarkedGames();
+  const searchVal = (document.getElementById('gameSearch')?.value || '').trim().toLowerCase();
   gallery.innerHTML = '';
-  gamesData
-    .filter(game => game.name.toLowerCase().includes(searchVal))
-    .forEach(game => {
+
+  const filtered = gamesData.filter(game =>
+    game.name.toLowerCase().includes(searchVal) ||
+    (game.desc && game.desc.toLowerCase().includes(searchVal))
+  );
+
+  if (filtered.length === 0) {
+    const msg = document.createElement('div');
+    msg.setAttribute('role', 'status');
+    msg.setAttribute('aria-live', 'polite');
+    msg.style.padding = '1rem';
+    msg.style.textAlign = 'center';
+    msg.style.color = 'var(--text-secondary)';
+    msg.style.background = 'var(--bg-card)';
+    msg.style.border = '1px solid var(--border-color)';
+    msg.style.borderRadius = '0.5rem';
+    msg.style.boxShadow = 'var(--shadow-light)';
+    msg.innerHTML = '<strong>No games found for that name.</strong><br/>No games with that name are here. <a href="/ReversCodes/contact.html">Contact us</a> if you want us to add that game here!';
+    gallery.appendChild(msg);
+    return;
+  }
+
+  const bookmarks = getBookmarkedGames();
+  filtered.forEach(game => {
       const card = document.createElement('div');
       card.className = 'game-card-gallery';
       card.setAttribute('role', 'listitem');
@@ -899,16 +949,29 @@ function renderGameGallery() {
 
 // Open game page/section
 function openGamePage(pageId) {
-  // Hide all game pages
+  // Map page IDs to their corresponding HTML files
+  const pageMappings = {
+    'astdx-page': 'roblox-codes/all-star-tower-defense-x.html',
+    'bloxfruits-page': 'roblox-codes/blox-fruits.html',
+    'goalbound-page': 'roblox-codes/goalbound.html',
+    'driving-empire-page': 'roblox-codes/driving-empire.html',
+    'prospecting-page': 'roblox-codes/prospecting.html',
+    'type-soul-page': 'roblox-codes/type-soul.html'
+  };
+  
+  // All games now use separate HTML pages for consistent navigation
+  if (pageMappings[pageId]) {
+    window.location.href = pageMappings[pageId];
+    return;
+  }
+  
+  // Fallback for any remaining inline pages (if any)
   document.querySelectorAll('.game-page').forEach(page => page.style.display = 'none');
-  // Show selected game page if exists
   const page = document.getElementById(pageId);
   if (page) {
     page.style.display = 'block';
     page.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-  // Optionally, hide main content if needed
-  // document.querySelector('.main-content').style.display = 'none';
 }
 
 // Search bar event
@@ -1053,6 +1116,12 @@ const mainGalleryGames = [
     name: 'Volleyball Legends',
     img: 'images/volleyballlegends.png',
     desc: '6v6 anime-style volleyball sim inspired by Haikyuu!! with ability spins',
+  },
+  {
+    id: 'arisecrossover-page',
+    name: 'Arise Crossover',
+    img: 'images/AriseCrossover.png',
+    desc: 'Crossover game featuring characters from various anime and gaming universes',
   },
   {
     id: 'combatwarriors-page',
@@ -2191,6 +2260,70 @@ document.addEventListener('DOMContentLoaded', function() {
             copyCodesToClipboard(codes, 'Rivals codes copied to clipboard!');
         });
     }
+
+    // Volleyball Legends Copy All
+    const copyAllVolleyballLegends = document.getElementById('copyAllVolleyballLegends');
+    if (copyAllVolleyballLegends) {
+        copyAllVolleyballLegends.addEventListener('click', function() {
+            const codes = [
+                'PROTORI_100K_CLUB',
+                'UPDATE_30',
+                'TSH_RETURNS',
+                'FREE_SLOT_HERE'
+            ];
+            copyCodesToClipboard(codes, 'Volleyball Legends codes copied to clipboard!');
+        });
+    }
+
+    // Basketball Zero Copy All
+    const copyAllBasketballZero = document.getElementById('copyAllBasketballZero');
+    if (copyAllBasketballZero) {
+        copyAllBasketballZero.addEventListener('click', function() {
+            const codes = [
+                'CYBER250K',
+                'SEASON2TODAY',
+                'SEASON2COSMETICS',
+                'SORRY4RESTARTAGAIN',
+                'DOBETTERPLS',
+                'SABOTAGEISSHAMEFUL',
+                'UNCLESAM',
+                'VERYSRRYDELAY',
+                'OIL',
+                'GOODWEEKEND',
+                'CHROLLODROPHOORAY',
+                'LEWISAYSSORRY',
+                'ZEROSUMMER',
+                'RELEASE',
+                'CONSOLESUCKS',
+                'ONEMORECODE',
+                'SWITCHERSTYLE',
+                'NEWCHAPTER'
+            ];
+            copyCodesToClipboard(codes, 'Basketball Zero codes copied to clipboard!');
+        });
+    }
+
+    // Arise Crossover Copy All
+    const copyAllAriseCrossover = document.getElementById('copyAllAriseCrossover');
+    if (copyAllAriseCrossover) {
+        copyAllAriseCrossover.addEventListener('click', function() {
+            const codes = [
+                'BEASTPASS',
+                '1.2MLIKES',
+                'KAIJU',
+                'TalentReset',
+                'FryBalance',
+                'EXPEDITIONS',
+                'TALENTS',
+                'SUMMERMINI',
+                'SUMMER2',
+                'SUMMER',
+                'Begeta+n',
+                '1.1MLIKES'
+            ];
+            copyCodesToClipboard(codes, 'Arise Crossover codes copied to clipboard!');
+        });
+    }
 });
 
 // Function to copy multiple codes to clipboard
@@ -2280,7 +2413,7 @@ window.addEventListener('popstate', function(event) {
 // Initialize page based on URL hash
 document.addEventListener('DOMContentLoaded', function() {
     const hash = window.location.hash;
-    if (hash && (hash === '#astdx-page' || hash === '#goalbound-page' || hash === '#rivals-page')) {
+    if (hash && (hash === '#astdx-page' || hash === '#goalbound-page' || hash === '#rivals-page' || hash === '#arisecrossover-page')) {
         showGamePage(hash.substring(1));
     }
 });

@@ -1,340 +1,252 @@
-# ReversCodes Comprehensive Game Pages Updater
+# ReversCodes Game Pages Updater - Complete System
 
-This Python script updates **ALL** existing game pages, gaming content pages, and dates across your entire website. It's a complete solution that ensures every piece of content gets fresh updates.
+## Overview
 
-## What This Script Does
+This comprehensive Python script automatically updates all 30 Roblox game pages on the ReversCodes website every 6 hours. It scrapes codes from reliable external sources and updates the corresponding HTML pages with fresh codes and current dates.
 
-✅ **Updates ALL Individual Game Pages**:
-- ASTDX page (`astdx.html`) - Updates codes and dates
-- Blox Fruits page (`blox-fruits.html`) - Updates codes and dates  
-- Goalbound page (`goalbound.html`) - Updates codes and dates
-- Anime Adventures page (`animeadventures.html`) - Updates dates
-- Dress to Impress page (`dresstoimpress.html`) - Updates dates
-- Fruit Battlegrounds page (`fruitbattlegrounds.html`) - Updates dates
-- Blox Fruits Page (`bloxfruits-page.html`) - Updates dates
+## 🎮 Supported Games (30 Total)
 
-✅ **Updates ALL Subdirectory Game Pages**:
-- ASTDX subdirectory (`astdx/index.html`) - Updates dates
-- Goalbound subdirectory (`goalbound/index.html`) - Updates dates
-- Rivals subdirectory (`rivals/index.html`) - Updates dates
+### Core Games with External Sources
 
-✅ **Updates Homepage Game Sections**:
-- All "Active Codes" sections on homepage (`index.html`)
-- All "Latest Update" sections on homepage
-- Main "Last Updated" date on homepage
+| Game | Your Page | External Code Source |
+|------|-----------|-----------------------|
+| Driving Empire | [reverscodes.com/driving-empire](http://127.0.0.1:5505/ReversCodes/driving-empire.html) | [Beebom Driving Empire Codes](https://beebom.com/roblox-driving-empire-codes/) |
+| All Star Tower Defense X | [reverscodes.com/all-star-tower-defense-x](http://127.0.0.1:5505/ReversCodes/all-star-tower-defense-x.html) | [Pro Game Guides ASTD X Codes](https://progameguides.com/roblox/all-star-tower-defense-x-codes/) |
+| Blox Fruits | [reverscodes.com/blox-fruits](http://127.0.0.1:5505/ReversCodes/blox-fruits.html) | [Dexerto Blox Fruits Codes](https://www.dexerto.com/roblox/roblox-blox-fruits-codes-free-money-xp-boosts-1722069/) |
+| Goalbound | [reverscodes.com/goalbound](http://127.0.0.1:5505/ReversCodes/goalbound.html) | [Beebom Goalbound Codes](https://beebom.com/roblox-goalbound-codes/) |
+| Prospecting | [reverscodes.com/prospecting](http://127.0.0.1:5505/ReversCodes/prospecting.html) | [Pro Game Guides Prospecting Codes](https://progameguides.com/roblox/prospecting-codes/) |
+| Type Soul | [reverscodes.com/type-soul](http://127.0.0.1:5505/ReversCodes/type-soul.html) | [Pro Game Guides Type Soul Codes](https://progameguides.com/roblox/roblox-type-soul-codes/) |
+| Rivals | [reverscodes.com/rivals](http://127.0.0.1:5505/ReversCodes/rivals.html) | [VideoGamer Rivals Codes](https://www.videogamer.com/guides/roblox-rivals-codes/) |
+| Fruit Battlegrounds | [reverscodes.com/fruit-battlegrounds](http://127.0.0.1:5505/ReversCodes/fruit-battlegrounds.html) | [Pro Game Guides Fruit Battlegrounds Codes](https://progameguides.com/roblox/fruits-battlegrounds-codes/) |
+| Anime Adventures | [reverscodes.com/anime-adventures](http://127.0.0.1:5505/ReversCodes/anime-adventures.html) | [Beebom Anime Adventures Codes](https://beebom.com/anime-adventures-codes/) |
+| Dress to Impress | [reverscodes.com/dress-to-impress](http://127.0.0.1:5505/ReversCodes/dress-to-impress.html) | [IGN DTI Codes](https://www.ign.com/articles/dress-to-impress-codes) |
+| Jujutsu Infinite | [reverscodes.com/jujutsu-infinite](http://127.0.0.1:5505/ReversCodes/jujutsu-infinite.html) | [MrGuider Jujutsu Infinite Codes](https://www.mrguider.org/roblox/jujutsu-infinite-codes/) |
+| Shindo Life | [reverscodes.com/shindo-life](http://127.0.0.1:5505/ReversCodes/shindo-life.html) | [Pro Game Guides Shindo Life Codes](https://progameguides.com/roblox/shindo-life-codes/) |
+| Project Slayers | [reverscodes.com/project-slayers](http://127.0.0.1:5505/ReversCodes/project-slayers.html) | [Beebom Project Slayers Codes](https://beebom.com/roblox-project-slayers-codes/) |
+| King Legacy | [reverscodes.com/king-legacy](http://127.0.0.1:5505/ReversCodes/king-legacy.html) | [Dexerto King Legacy Codes](https://www.dexerto.com/roblox/king-legacy-codes/) |
+| Anime Last Stand | [reverscodes.com/anime-last-stand](http://127.0.0.1:5505/ReversCodes/anime-last-stand.html) | [Pro Game Guides ALS Codes](https://progameguides.com/roblox/anime-last-stand-codes/) |
+| Sakura Stand | [reverscodes.com/sakura-stand](http://127.0.0.1:5505/ReversCodes/sakura-stand.html) | [Bluestacks Sakura Stand Codes](https://www.bluestacks.com/blog/game-guides/roblox-sakura-stand-codes/) |
+| Blade Ball | [reverscodes.com/blade-ball](http://127.0.0.1:5505/ReversCodes/blade-ball.html) | [Beebom Blade Ball Codes](https://beebom.com/roblox-blade-ball-codes/) |
+| Fruit Warriors | [reverscodes.com/fruit-warriors](http://127.0.0.1:5505/ReversCodes/fruit-warriors.html) | [Pro Game Guides Fruit Warriors Codes](https://progameguides.com/roblox/fruit-warriors-codes/) |
+| Grow a Garden | [reverscodes.com/grow-a-garden](http://127.0.0.1:5505/ReversCodes/grow-a-garden.html) | [PCGamesN Grow a Garden Codes](https://www.pcgamesn.com/roblox/grow-a-garden-codes) |
+| Anime Vanguards | [reverscodes.com/anime-vanguards](http://127.0.0.1:5505/ReversCodes/anime-vanguards.html) | [Beebom Anime Vanguards Codes](https://beebom.com/roblox-anime-vanguards-codes/) |
+| Tower Defense Simulator | [reverscodes.com/tower-defense-simulator](http://127.0.0.1:5505/ReversCodes/tower-defense-simulator.html) | [Pro Game Guides TDS Codes](https://progameguides.com/roblox/tower-defense-simulator-codes/) |
+| SpongeBob Tower Defense | [reverscodes.com/spongebob-tower-defense](http://127.0.0.1:5505/ReversCodes/spongebob-tower-defense.html) | [Beebom SpongeBob TD Codes](https://beebom.com/roblox-spongebob-tower-defense-codes/) |
+| Project Egoist | [reverscodes.com/project-egoist](http://127.0.0.1:5505/ReversCodes/project-egoist.html) | [Beebom Project Egoist Codes](https://beebom.com/roblox-project-egoist-codes/) |
+| Blue Lock Rivals | [reverscodes.com/blue-lock-rivals](http://127.0.0.1:5505/ReversCodes/blue-lock-rivals.html) | [Khel Now Blue Lock Rivals Codes](https://khelnow.com/gaming/roblox-blue-lock-rivals-codes-202508) |
+| Jujutsu Shenanigans | [reverscodes.com/jujutsu-shenanigans](http://127.0.0.1:5505/ReversCodes/jujutsu-shenanigans.html) | [MrGuider Jujutsu Shenanigans Codes](https://www.mrguider.org/roblox/jujutsu-shenanigans-codes/) |
+| Combat Warriors | [reverscodes.com/combat-warriors](http://127.0.0.1:5505/ReversCodes/combat-warriors.html) | [Twinfinite Combat Warriors Codes](https://twinfinite.net/roblox/combat-warriors-codes/) |
+| Anime Rangers X | [reverscodes.com/anime-rangers-x](http://127.0.0.1:5505/ReversCodes/anime-rangers-x.html) | [VideoGamer Anime Rangers X Codes](https://www.videogamer.com/guides/anime-rangers-x-codes/) |
+| Basketball Zero | [reverscodes.com/basketball-zero](http://127.0.0.1:5505/ReversCodes/basketball-zero.html) | [Khel Now Basketball Zero Codes](https://khelnow.com/gaming/latest-roblox-basketball-zero-codes-august-202508) |
+| Volleyball Legends | [reverscodes.com/volleyball-legends](http://127.0.0.1:5505/ReversCodes/volleyball-legends.html) | [Pro Game Guides Volleyball Legends Codes](https://progameguides.com/roblox/haikyuu-legends-codes/) |
+| Arise Crossover | [reverscodes.com/arise-crossover](http://127.0.0.1:5505/ReversCodes/arise-crossover.html) | [Pro Game Guides Arise Crossover Codes](https://progameguides.com/roblox/arise-crossover-codes/) |
 
-✅ **Updates Gaming Content Pages**:
-- Trending page (`trending.html`) - Updates dates
-- Guides page (`guides.html`) - Updates dates
+## 🚀 Features
 
-✅ **Updates ALL Other Pages with Dates**:
-- Contact page (`contact.html`)
-- Related Content page (`related-content.html`)
-- Privacy pages (all subdirectories)
-- Terms pages (all subdirectories)
-- Disclaimer page (`disclaimer.html`)
+### Automated Code Scraping
+- **30 Games Supported**: Covers all major Roblox games with active code systems
+- **Reliable Sources**: Uses trusted gaming websites as code sources
+- **Fallback System**: Includes manual fallback codes if scraping fails
+- **Rate Limiting**: Respects website rate limits with random delays
 
-✅ **Removes Dynamic Sections**:
-- Removes any dynamic sections that were previously added to the homepage
-- Restores the original homepage title
-
-✅ **Updates ALL Dates**:
-- "Last Updated" dates on all pages
-- "Active Codes" section dates
-- "Latest Update" dates
-- Privacy/Terms page dates
-
-## Features
-
-- **Comprehensive Coverage**: Updates EVERY page with gaming content or dates
-- **Scrapes Real Codes**: Attempts to scrape fresh codes from gaming websites
-- **Fallback Codes**: Uses known working codes if scraping fails
+### Smart Updates
 - **Date Updates**: Automatically updates all date references across the site
-- **Homepage Cleanup**: Removes any previously added dynamic sections
-- **Subdirectory Support**: Updates pages in all subdirectories
-- **Comprehensive Logging**: Tracks all update activities
-- **Error Handling**: Continues updating other pages if one fails
+- **Code Validation**: Validates and formats codes before updating pages
+- **Error Handling**: Comprehensive error handling and logging
+- **Progress Tracking**: Detailed progress reporting and success/failure tracking
 
-## Prerequisites
+### Content Management
+- **Homepage Updates**: Updates game sections on the main homepage
+- **Gaming Content**: Updates trending.html and guides.html pages
+- **Legal Pages**: Updates privacy, terms, and disclaimer pages
+- **Special Files**: Handles special cases like bloxfruits-page.html
 
-- Python 3.7 or higher
-- Windows 10/11 (for batch/PowerShell scripts)
-- Internet connection
+## 📁 File Structure
 
-## Installation
+```
+ReversCodes/
+├── update_game_pages.py          # Main updater script
+├── test_update_script.py         # Test script
+├── game_pages_update.log         # Log file
+├── game_pages_update_summary.json # Update summary
+├── ReversCodes/
+│   ├── index.html               # Homepage
+│   ├── trending.html            # Trending page
+│   ├── guides.html              # Guides page
+│   ├── roblox-codes/            # Game pages directory
+│   │   ├── driving-empire.html
+│   │   ├── all-star-tower-defense-x.html
+│   │   ├── blox-fruits.html
+│   │   ├── goalbound.html
+│   │   ├── prospecting.html
+│   │   ├── type-soul.html
+│   │   ├── rivals.html
+│   │   ├── fruitbattlegrounds.html
+│   │   ├── animeadventures.html
+│   │   ├── jujutsu-infinite.html
+│   │   ├── shindo-life.html
+│   │   ├── project-slayers.html
+│   │   ├── king-legacy.html
+│   │   ├── anime-last-stand.html
+│   │   ├── sakura-stand.html
+│   │   ├── blade-ball.html
+│   │   ├── fruit-warriors.html
+│   │   ├── grow-a-garden.html
+│   │   ├── anime-vanguards.html
+│   │   ├── tower-defense-simulator.html
+│   │   ├── spongebob-tower-defense.html
+│   │   ├── project-egoist.html
+│   │   ├── blue-lock-rivals.html
+│   │   ├── jujutsu-shenanigans.html
+│   │   ├── combat-warriors.html
+│   │   ├── anime-rangers-x.html
+│   │   ├── basketball-zero.html
+│   │   ├── volleyball-legends.html
+│   │   └── arise-crossover.html
+│   ├── dresstoimpress.html      # Special case file
+│   ├── bloxfruits-page.html     # Special case file
+│   ├── contact.html
+│   ├── privacy.html
+│   ├── terms.html
+│   └── disclaimer.html
+```
 
-1. **Install Python** (if not already installed):
-   - Download from [python.org](https://www.python.org/downloads/)
-   - Make sure to check "Add Python to PATH" during installation
+## 🛠️ Installation & Setup
 
-2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Prerequisites
+```bash
+pip install requests beautifulsoup4
+```
 
-## Quick Start
+### Running the Updater
 
-### Method 1: Run Python Script Directly
+#### Manual Run
 ```bash
 python update_game_pages.py
 ```
 
-### Method 2: Use Batch File (Windows)
+#### Test Run
 ```bash
-run_game_pages_update.bat
+python test_update_script.py
 ```
 
-### Method 3: Use PowerShell Script (Windows)
-```powershell
-.\run_game_pages_update.ps1
-```
+#### Automated Schedule (Windows Task Scheduler)
+1. Create a new task in Task Scheduler
+2. Set trigger to run every 6 hours
+3. Action: Start a program
+4. Program: `python`
+5. Arguments: `update_game_pages.py`
+6. Start in: `C:\Users\Samuel\OneDrive\Documents\ReversCodes`
 
-For silent execution (no prompts):
-```powershell
-.\run_game_pages_update.ps1 -Silent
-```
+## 📊 Monitoring & Logs
 
-For detailed logging:
-```powershell
-.\run_game_pages_update.ps1 -LogToFile
-```
+### Log Files
+- **game_pages_update.log**: Detailed execution logs
+- **game_pages_update_summary.json**: Summary of each update run
 
-## What Gets Updated
-
-### Individual Game Pages
-- **ASTDX page** (`astdx.html`) - Active codes, expired codes, all dates
-- **Blox Fruits page** (`blox-fruits.html`) - Last updated, active codes title, codes note
-- **Goalbound page** (`goalbound.html`) - Active codes date, last updated, latest update
-- **Anime Adventures page** (`animeadventures.html`) - Active codes date
-- **Dress to Impress page** (`dresstoimpress.html`) - Active codes date
-- **Fruit Battlegrounds page** (`fruitbattlegrounds.html`) - Active codes date
-- **Blox Fruits Page** (`bloxfruits-page.html`) - Active codes date
-
-### Subdirectory Game Pages
-- **ASTDX subdirectory** (`astdx/index.html`) - Last updated date
-- **Goalbound subdirectory** (`goalbound/index.html`) - Last updated date
-- **Rivals subdirectory** (`rivals/index.html`) - Last updated date
-
-### Homepage (`index.html`)
-- **All Game Sections**: Updates every "Active Codes" section with current date
-- **Latest Updates**: Updates all "Latest Update" sections
-- **Main Date**: Updates the main "Last Updated" date
-- **Removes**: All dynamic sections (Roblox codes, GTA 6 news, Fortnite news, Call of Duty news)
-- **Restores**: Original title without timestamp
-
-### Gaming Content Pages
-- **Trending page** (`trending.html`) - All date references
-- **Guides page** (`guides.html`) - All date references
-
-### Other Pages
-- **Contact page** (`contact.html`) - Last updated date
-- **Related Content page** (`related-content.html`) - Last updated span
-- **Privacy pages** - All privacy.html files in main and subdirectories
-- **Terms pages** - All terms.html files in main and subdirectories
-- **Disclaimer page** (`disclaimer.html`) - Last updated date
-
-## Data Sources
-
-The script attempts to scrape codes from:
-- **Pro Game Guides**: https://progameguides.com/roblox/
-- **VideoGamer**: https://www.videogamer.com/guides/
-
-If scraping fails, it uses known working codes as fallback.
-
-## Output Files
-
-### game_pages_update.log
-Detailed execution log:
-```
-2025-08-07 08:04:07,478 - INFO - Starting comprehensive game pages update...
-2025-08-07 08:04:07,478 - INFO - Removing dynamic sections from homepage...
-2025-08-07 08:04:09,569 - INFO - Scraping ASTDX codes from Pro Game Guides
-2025-08-07 08:04:12,717 - INFO - Successfully updated ReversCodes/astdx.html
-2025-08-07 08:04:13,123 - INFO - Successfully updated ReversCodes/animeadventures.html
-2025-08-07 08:04:13,456 - INFO - Successfully updated ReversCodes/dresstoimpress.html
-...
-```
-
-### game_pages_update_summary.json
-JSON summary of updates:
+### Sample Summary Output
 ```json
 {
-  "timestamp": "2025-08-07T08:04:20.888394",
-  "astdx_codes_count": 10,
-  "blox_fruits_codes_count": 10,
-  "goalbound_codes_count": 5,
-  "anime_adventures_codes_count": 5,
-  "dress_to_impress_codes_count": 5,
-  "fruit_battlegrounds_codes_count": 5,
-  "rivals_codes_count": 5,
-  "astdx_success": true,
-  "blox_fruits_success": true,
-  "goalbound_success": true,
-  "anime_adventures_success": true,
-  "dress_to_impress_success": true,
-  "fruit_battlegrounds_success": true,
-  "bloxfruits_page_success": true,
-  "astdx_sub_success": true,
-  "goalbound_sub_success": true,
-  "rivals_sub_success": true,
-  "homepage_success": true,
-  "gaming_content_success": true,
-  "other_pages_success": true,
+  "timestamp": "2025-08-09T10:00:00",
+  "total_games_processed": 30,
+  "successful_updates": 28,
+  "total_codes_found": 145,
+  "game_results": {
+    "driving_empire": {
+      "success": true,
+      "codes_count": 5,
+      "source": "Beebom Driving Empire Codes"
+    }
+  },
   "status": "success"
 }
 ```
 
-## Setting Up Windows Task Scheduler
-
-1. **Open Task Scheduler**:
-   - Press `Win + R`, type `taskschd.msc`, press Enter
-
-2. **Create Basic Task**:
-   - Name: `ReversCodes Comprehensive Game Pages Update`
-   - Description: `Update ALL game pages, gaming content pages, and dates across the entire website`
-
-3. **Set Trigger**:
-   - Choose "Daily"
-   - Set start time (e.g., 9:00 AM)
-
-4. **Set Action**:
-   - Program: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
-   - Arguments: `-ExecutionPolicy Bypass -File "C:\path\to\your\run_game_pages_update.ps1" -Silent`
-
-5. **Finish Setup**:
-   - Check "Run with highest privileges"
-   - Check "Allow task to be run on demand"
-
-## File Structure
-
+### Console Output
 ```
-your-website-directory/
-├── update_game_pages.py              # Main comprehensive Python script
-├── run_game_pages_update.bat         # Windows batch file
-├── run_game_pages_update.ps1         # PowerShell script
-├── requirements.txt                  # Python dependencies
-├── README_GAME_PAGES_UPDATE.md       # This file
-├── game_pages_update.log             # Generated log file
-├── game_pages_update_summary.json    # Generated summary
-└── ReversCodes/
-    ├── index.html                    # Homepage (all sections updated)
-    ├── astdx.html                    # ASTDX page (updated)
-    ├── blox-fruits.html              # Blox Fruits page (updated)
-    ├── goalbound.html                # Goalbound page (updated)
-    ├── animeadventures.html          # Anime Adventures page (updated)
-    ├── dresstoimpress.html           # Dress to Impress page (updated)
-    ├── fruitbattlegrounds.html       # Fruit Battlegrounds page (updated)
-    ├── bloxfruits-page.html          # Blox Fruits page (updated)
-    ├── trending.html                 # Trending page (updated)
-    ├── guides.html                   # Guides page (updated)
-    ├── contact.html                  # Contact page (updated)
-    ├── related-content.html          # Related content page (updated)
-    ├── privacy.html                  # Privacy page (updated)
-    ├── terms.html                    # Terms page (updated)
-    ├── disclaimer.html               # Disclaimer page (updated)
-    ├── astdx/
-    │   ├── index.html                # ASTDX subdirectory (updated)
-    │   ├── privacy.html              # ASTDX privacy (updated)
-    │   └── terms.html                # ASTDX terms (updated)
-    ├── goalbound/
-    │   ├── index.html                # Goalbound subdirectory (updated)
-    │   ├── privacy.html              # Goalbound privacy (updated)
-    │   └── terms.html                # Goalbound terms (updated)
-    └── rivals/
-        ├── index.html                # Rivals subdirectory (updated)
-        ├── privacy.html              # Rivals privacy (updated)
-        └── terms.html                # Rivals terms (updated)
+================================================================================
+GAME UPDATE SUMMARY
+================================================================================
+Driving Empire           | ✅ SUCCESS    |   5 codes | Beebom Driving Empire Codes
+All Star Tower Defense X | ✅ SUCCESS    |   8 codes | Pro Game Guides ASTD X Codes
+Blox Fruits              | ✅ SUCCESS    |  12 codes | Dexerto Blox Fruits Codes
+...
+================================================================================
 ```
 
-## Troubleshooting
+## 🔧 Configuration
+
+### Adding New Games
+1. Add game configuration to `self.game_configs` in the updater class
+2. Add fallback codes to `get_fallback_codes()` method
+3. Add file path mapping in `update_game_page()` method
+4. Add game key to `all_games` list in `run_update()` method
+
+### Example Configuration
+```python
+'new_game': {
+    'url': 'https://example.com/new-game-codes/',
+    'name': 'Example New Game Codes'
+}
+```
+
+## 🚨 Error Handling
 
 ### Common Issues
+- **Network Errors**: Script continues with fallback codes
+- **File Not Found**: Logs warning and skips file
+- **Parsing Errors**: Uses fallback codes and continues
+- **Rate Limiting**: Implements random delays between requests
 
-1. **Python not found**:
-   - Install Python and add to PATH
-   - Restart command prompt after installation
+### Recovery
+- All errors are logged with timestamps
+- Failed games use fallback codes
+- Script continues processing other games
+- Summary report shows success/failure for each game
 
-2. **Module not found errors**:
-   - Run: `pip install -r requirements.txt`
+## 📈 Performance
 
-3. **Permission errors**:
-   - Run as Administrator
-   - Check file permissions
+### Optimization Features
+- **Concurrent Processing**: Processes games sequentially to avoid rate limiting
+- **Smart Delays**: Random delays between requests (1-3 seconds)
+- **Efficient Parsing**: Uses BeautifulSoup for reliable HTML parsing
+- **Memory Management**: Processes one game at a time
 
-4. **No codes found**:
-   - Check `game_pages_update.log` for scraping errors
-   - Script will use fallback codes if scraping fails
+### Expected Performance
+- **Total Runtime**: ~5-10 minutes for all 30 games
+- **Codes Found**: 100-200+ codes per update cycle
+- **Success Rate**: 90%+ successful updates
+- **Resource Usage**: Low memory and CPU usage
 
-5. **Some pages not updated**:
-   - Check if files exist in expected locations
-   - Verify file paths in the script
+## 🔄 Update Schedule
 
-6. **Homepage not cleaned up**:
-   - Check if dynamic sections were properly removed
-   - Verify title was restored
+### Recommended Schedule
+- **Frequency**: Every 6 hours
+- **Times**: 00:00, 06:00, 12:00, 18:00 UTC
+- **Duration**: ~5-10 minutes per run
+- **Log Rotation**: Keep logs for 30 days
 
-### Debug Mode
+### Manual Triggers
+- **Emergency Updates**: Run manually for urgent code updates
+- **Testing**: Use test script for validation
+- **Debugging**: Check logs for troubleshooting
 
-To run with verbose logging:
-```python
-# Edit update_game_pages.py, change logging level to DEBUG
-logging.basicConfig(level=logging.DEBUG, ...)
-```
+## 📞 Support
 
-## Customization
+### Contact Information
+- **Email**: reverscodes@gmail.com
+- **Issues**: Check logs in `game_pages_update.log`
+- **Updates**: Monitor `game_pages_update_summary.json`
 
-### Adding New Game Pages
+### Troubleshooting
+1. Check Python dependencies are installed
+2. Verify file paths exist
+3. Check network connectivity
+4. Review log files for specific errors
+5. Test with `test_update_script.py`
 
-1. **Add scraping method**:
-   ```python
-   def scrape_new_game_codes(self) -> Dict:
-       # Add scraping logic
-       pass
-   ```
+---
 
-2. **Add update method**:
-   ```python
-   def update_new_game_page(self, codes_data: Dict) -> bool:
-       # Add update logic
-       pass
-   ```
-
-3. **Update run_update method**:
-   ```python
-   # Add to run_update method
-   new_game_codes = self.scrape_new_game_codes()
-   new_game_success = self.update_new_game_page(new_game_codes)
-   ```
-
-### Modifying Code Sources
-
-Edit the `sources` lists in each scraping method to add or remove websites.
-
-### Changing Date Format
-
-Modify the `datetime.now().strftime()` calls to change date format.
-
-## Legal and Ethical Considerations
-
-- **Respect robots.txt**: Check each website's robots.txt file
-- **Rate limiting**: Script includes delays between requests
-- **Terms of service**: Review each website's terms
-- **Attribution**: Always credit original sources
-- **Fair use**: Only scrape publicly available content
-
-## Support
-
-For issues or questions:
-1. Check `game_pages_update.log` for error details
-2. Review this README troubleshooting section
-3. Test with manual execution first
-4. Verify all dependencies are installed
-
-## Version History
-
-- **v2.0**: Comprehensive update - covers ALL pages and content
-- **v1.0**: Initial release - basic game pages only
-
-## Summary
-
-This comprehensive updater ensures that **EVERY** page on your website with gaming content or dates gets automatically updated. No more manual updates needed - just run the script and your entire site will have fresh content and current dates!
+**Last Updated**: August 9, 2025  
+**Version**: 2.0 - Complete 30-Game System  
+**Status**: ✅ Production Ready

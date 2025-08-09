@@ -3,7 +3,7 @@
 ## Quick Start: Creating a New Game Page
 
 ### Step 1: Copy the Template
-1. Copy either `astdx.html` or `blox-fruits.html`
+1. Copy either the `games/astdx/` or the `games/blox-fruits/` directory
 2. Rename it to your game (e.g., `shindo-life.html`, `adopt-me.html`)
 
 ### Step 2: Update the Head Section
@@ -141,8 +141,8 @@ Change the poll to feature your game:
 ## 🎯 URL Structure Examples
 
 ```
-reverscodes.com/astdx              # All Star Tower Defense X
-reverscodes.com/blox-fruits        # Blox Fruits
+reverscodes.com/games/astdx          # All Star Tower Defense X
+reverscodes.com/games/blox-fruits  # Blox Fruits
 reverscodes.com/shindo-life        # Shindo Life
 reverscodes.com/adopt-me           # Adopt Me
 reverscodes.com/bloxburg           # Bloxburg

@@ -1,24 +1,163 @@
 {
-  "timestamp": "2025-08-07T08:24:13.024762",
-  "astdx_codes_count": 10,
-  "blox_fruits_codes_count": 10,
-  "goalbound_codes_count": 5,
-  "anime_adventures_codes_count": 5,
-  "dress_to_impress_codes_count": 5,
-  "fruit_battlegrounds_codes_count": 5,
-  "rivals_codes_count": 5,
-  "astdx_success": true,
-  "blox_fruits_success": true,
-  "goalbound_success": true,
-  "anime_adventures_success": true,
-  "dress_to_impress_success": true,
-  "fruit_battlegrounds_success": true,
-  "bloxfruits_page_success": true,
-  "astdx_sub_success": true,
-  "goalbound_sub_success": true,
-  "rivals_sub_success": true,
+  "timestamp": "2025-08-09T11:23:37.125938",
+  "total_games_processed": 30,
+  "successful_updates": 30,
+  "total_codes_found": 331,
+  "game_results": {
+    "driving_empire": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "all_star_tower_defense_x": {
+      "success": true,
+      "codes_count": 14,
+      "source": "Unknown"
+    },
+    "blox_fruits": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "goalbound": {
+      "success": true,
+      "codes_count": 12,
+      "source": "Unknown"
+    },
+    "prospecting": {
+      "success": true,
+      "codes_count": 0,
+      "source": "Unknown"
+    },
+    "type_soul": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "rivals": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "fruit_battlegrounds": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "anime_adventures": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "dress_to_impress": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "jujutsu_infinite": {
+      "success": true,
+      "codes_count": 1,
+      "source": "Unknown"
+    },
+    "shindo_life": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "project_slayers": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "king_legacy": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "anime_last_stand": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "sakura_stand": {
+      "success": true,
+      "codes_count": 10,
+      "source": "Unknown"
+    },
+    "blade_ball": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "fruit_warriors": {
+      "success": true,
+      "codes_count": 10,
+      "source": "Unknown"
+    },
+    "grow_a_garden": {
+      "success": true,
+      "codes_count": 9,
+      "source": "Unknown"
+    },
+    "anime_vanguards": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "tower_defense_simulator": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "spongebob_tower_defense": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "project_egoist": {
+      "success": true,
+      "codes_count": 6,
+      "source": "Unknown"
+    },
+    "blue_lock_rivals": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "jujutsu_shenanigans": {
+      "success": true,
+      "codes_count": 1,
+      "source": "Unknown"
+    },
+    "combat_warriors": {
+      "success": true,
+      "codes_count": 15,
+      "source": "Unknown"
+    },
+    "anime_rangers_x": {
+      "success": true,
+      "codes_count": 0,
+      "source": "Unknown"
+    },
+    "basketball_zero": {
+      "success": true,
+      "codes_count": 0,
+      "source": "Unknown"
+    },
+    "volleyball_legends": {
+      "success": true,
+      "codes_count": 10,
+      "source": "Unknown"
+    },
+    "arise_crossover": {
+      "success": true,
+      "codes_count": 3,
+      "source": "Unknown"
+    }
+  },
   "homepage_success": true,
   "gaming_content_success": true,
   "other_pages_success": true,
+  "bloxfruits_page_success": true,
   "status": "success"
 }

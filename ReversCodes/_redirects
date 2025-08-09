@@ -1,12 +1,16 @@
-# Redirects for ReversCodes subpages
-/astdx/* /astdx/index.html 200
-/goalbound/* /goalbound/index.html 200
-/rivals/* /rivals/index.html 200
+# Redirects from old html pages
+/blox-fruits.html /games/blox-fruits/ 301
+/astdx.html /roblox-codes/all-star-tower-defense-x.html 301
+/games/astdx/ /roblox-codes/all-star-tower-defense-x.html 301
+/goalbound.html /games/goalbound/ 301
+/animeadventures.html /roblox-codes/animeadventures.html 301
+/games/animeadventures/ /roblox-codes/animeadventures.html 301
+/fruitbattlegrounds.html /roblox-codes/fruitbattlegrounds.html 301
+/bloxfruits-page.html /roblox-codes/bloxfruits-page.html 301
+/rivals/ /roblox-codes/rivals.html 301
+/rivals/* /roblox-codes/rivals.html 200
 
 # Handle trailing slashes
-/astdx /astdx/ 301
-/goalbound /goalbound/ 301
-/rivals /rivals/ 301
 
 # Fallback for SPA routing (if needed)
 /* /index.html 200 
