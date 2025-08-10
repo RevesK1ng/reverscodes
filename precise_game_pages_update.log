@@ -1,0 +1,659 @@
+2025-08-09 18:15:51,695 - INFO - Starting precise game pages update with section anchor detection...
+2025-08-09 18:15:51,695 - INFO - Scraping and updating codes for all games with precise extraction...
+2025-08-09 18:15:51,695 - INFO - Processing driving_empire with precise extraction...
+2025-08-09 18:15:51,695 - INFO - Scraping Beebom Driving Empire Codes for driving_empire
+2025-08-09 18:15:52,040 - INFO - Successfully scraped 27 codes from Beebom Driving Empire Codes
+2025-08-09 18:15:53,965 - INFO - Scraping Pocket Tactics Driving Empire Codes for driving_empire
+2025-08-09 18:15:54,293 - INFO - Successfully scraped 40 codes from Pocket Tactics Driving Empire Codes
+2025-08-09 18:15:55,298 - INFO - Scraping summary for driving_empire:
+2025-08-09 18:15:55,300 - INFO -   - Total codes found: 48
+2025-08-09 18:15:55,300 - INFO -   - Successful sources: 2/2
+2025-08-09 18:15:55,300 - INFO -   - Scraped at: 2025-08-09T18:15:55.298281
+2025-08-09 18:15:55,302 - INFO - Successfully updated ReversCodes/roblox-codes/driving-empire.html with 0 validated codes
+2025-08-09 18:15:55,302 - INFO - Completed driving_empire: 0 precise codes (quality: 1.00) from Beebom Driving Empire Codes
+2025-08-09 18:15:55,303 - INFO - Processing blox_fruits with precise extraction...
+2025-08-09 18:15:55,303 - INFO - Scraping PCGamesN Blox Fruits Codes for blox_fruits
+2025-08-09 18:15:55,638 - INFO - Successfully scraped 44 codes from PCGamesN Blox Fruits Codes
+2025-08-09 18:15:56,858 - INFO - Scraping PC Gamer Blox Fruits Codes for blox_fruits
+2025-08-09 18:15:57,301 - INFO - Successfully scraped 31 codes from PC Gamer Blox Fruits Codes
+2025-08-09 18:15:58,390 - INFO - Scraping summary for blox_fruits:
+2025-08-09 18:15:58,390 - INFO -   - Total codes found: 64
+2025-08-09 18:15:58,390 - INFO -   - Successful sources: 2/2
+2025-08-09 18:15:58,390 - INFO -   - Scraped at: 2025-08-09T18:15:58.390184
+2025-08-09 18:15:58,392 - INFO - Successfully updated ReversCodes/roblox-codes/blox-fruits.html with 0 validated codes
+2025-08-09 18:15:58,392 - INFO - Completed blox_fruits: 0 precise codes (quality: 1.00) from PCGamesN Blox Fruits Codes
+2025-08-09 18:15:58,392 - INFO - Processing goalbound with precise extraction...
+2025-08-09 18:15:58,392 - INFO - Scraping Pocket Tactics Goalbound Codes for goalbound
+2025-08-09 18:15:58,452 - INFO - Successfully scraped 13 codes from Pocket Tactics Goalbound Codes
+2025-08-09 18:15:59,764 - INFO - Scraping PCGamesN Goalbound Codes for goalbound
+2025-08-09 18:15:59,820 - INFO - Successfully scraped 16 codes from PCGamesN Goalbound Codes
+2025-08-09 18:16:02,424 - INFO - Scraping summary for goalbound:
+2025-08-09 18:16:02,424 - INFO -   - Total codes found: 20
+2025-08-09 18:16:02,424 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:02,425 - INFO -   - Scraped at: 2025-08-09T18:16:02.424358
+2025-08-09 18:16:02,426 - INFO - Successfully updated ReversCodes/roblox-codes/goalbound.html with 0 validated codes
+2025-08-09 18:16:02,426 - INFO - Completed goalbound: 0 precise codes (quality: 1.00) from Pocket Tactics Goalbound Codes
+2025-08-09 18:16:02,426 - INFO - Processing prospecting with precise extraction...
+2025-08-09 18:16:02,426 - INFO - Scraping Pocket Tactics Prospecting Codes for prospecting
+2025-08-09 18:16:02,498 - INFO - Successfully scraped 5 codes from Pocket Tactics Prospecting Codes
+2025-08-09 18:16:05,053 - INFO - Scraping Beebom Prospecting Codes for prospecting
+2025-08-09 18:16:05,097 - INFO - Successfully scraped 7 codes from Beebom Prospecting Codes
+2025-08-09 18:16:06,107 - INFO - Scraping summary for prospecting:
+2025-08-09 18:16:06,107 - INFO -   - Total codes found: 11
+2025-08-09 18:16:06,107 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:06,108 - INFO -   - Scraped at: 2025-08-09T18:16:06.107408
+2025-08-09 18:16:06,109 - INFO - Successfully updated ReversCodes/roblox-codes/prospecting.html with 0 validated codes
+2025-08-09 18:16:06,109 - INFO - Completed prospecting: 0 precise codes (quality: 1.00) from Pocket Tactics Prospecting Codes
+2025-08-09 18:16:06,109 - INFO - Processing type_soul with precise extraction...
+2025-08-09 18:16:06,110 - INFO - Scraping Pocket Tactics Type Soul Codes for type_soul
+2025-08-09 18:16:06,166 - INFO - Successfully scraped 38 codes from Pocket Tactics Type Soul Codes
+2025-08-09 18:16:09,080 - INFO - Scraping Beebom Type Soul Codes for type_soul
+2025-08-09 18:16:09,127 - INFO - Successfully scraped 33 codes from Beebom Type Soul Codes
+2025-08-09 18:16:10,408 - INFO - Scraping summary for type_soul:
+2025-08-09 18:16:10,408 - INFO -   - Total codes found: 52
+2025-08-09 18:16:10,409 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:10,409 - INFO -   - Scraped at: 2025-08-09T18:16:10.408564
+2025-08-09 18:16:10,411 - INFO - Successfully updated ReversCodes/roblox-codes/type-soul.html with 0 validated codes
+2025-08-09 18:16:10,411 - INFO - Completed type_soul: 0 precise codes (quality: 1.00) from Pocket Tactics Type Soul Codes
+2025-08-09 18:16:10,411 - INFO - Processing rivals with precise extraction...
+2025-08-09 18:16:10,411 - INFO - Scraping PCGamesN Rivals Codes for rivals
+2025-08-09 18:16:10,465 - INFO - Successfully scraped 20 codes from PCGamesN Rivals Codes
+2025-08-09 18:16:12,055 - INFO - Scraping Beebom Rivals Codes for rivals
+2025-08-09 18:16:12,097 - INFO - Successfully scraped 26 codes from Beebom Rivals Codes
+2025-08-09 18:16:14,462 - INFO - Scraping summary for rivals:
+2025-08-09 18:16:14,462 - INFO -   - Total codes found: 28
+2025-08-09 18:16:14,463 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:14,463 - INFO -   - Scraped at: 2025-08-09T18:16:14.462538
+2025-08-09 18:16:14,464 - INFO - Successfully updated ReversCodes/roblox-codes/rivals.html with 0 validated codes
+2025-08-09 18:16:14,464 - INFO - Completed rivals: 0 precise codes (quality: 1.00) from PCGamesN Rivals Codes
+2025-08-09 18:16:14,465 - INFO - Processing fruit_battlegrounds with precise extraction...
+2025-08-09 18:16:14,465 - INFO - Scraping PC Gamer Fruit Battlegrounds Codes for fruit_battlegrounds
+2025-08-09 18:16:14,534 - INFO - Successfully scraped 32 codes from PC Gamer Fruit Battlegrounds Codes
+2025-08-09 18:16:17,408 - INFO - Scraping Pocket Tactics Fruit Battlegrounds Codes for fruit_battlegrounds
+2025-08-09 18:16:17,502 - INFO - Successfully scraped 146 codes from Pocket Tactics Fruit Battlegrounds Codes
+2025-08-09 18:16:19,124 - INFO - Scraping summary for fruit_battlegrounds:
+2025-08-09 18:16:19,125 - INFO -   - Total codes found: 174
+2025-08-09 18:16:19,125 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:19,125 - INFO -   - Scraped at: 2025-08-09T18:16:19.124791
+2025-08-09 18:16:19,127 - INFO - Successfully updated ReversCodes/roblox-codes/fruitbattlegrounds.html with 0 validated codes
+2025-08-09 18:16:19,127 - INFO - Completed fruit_battlegrounds: 0 precise codes (quality: 1.00) from PC Gamer Fruit Battlegrounds Codes
+2025-08-09 18:16:19,127 - INFO - Processing anime_adventures with precise extraction...
+2025-08-09 18:16:19,127 - INFO - Scraping Pocket Tactics Anime Adventures Codes for anime_adventures
+2025-08-09 18:16:19,189 - INFO - Successfully scraped 22 codes from Pocket Tactics Anime Adventures Codes
+2025-08-09 18:16:20,310 - INFO - Scraping Pro Game Guides Anime Adventures Codes for anime_adventures
+2025-08-09 18:16:20,739 - INFO - Successfully scraped 22 codes from Pro Game Guides Anime Adventures Codes
+2025-08-09 18:16:22,286 - INFO - Scraping summary for anime_adventures:
+2025-08-09 18:16:22,286 - INFO -   - Total codes found: 25
+2025-08-09 18:16:22,287 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:22,287 - INFO -   - Scraped at: 2025-08-09T18:16:22.286558
+2025-08-09 18:16:22,288 - INFO - Successfully updated ReversCodes/roblox-codes/animeadventures.html with 0 validated codes
+2025-08-09 18:16:22,289 - INFO - Completed anime_adventures: 0 precise codes (quality: 1.00) from Pocket Tactics Anime Adventures Codes
+2025-08-09 18:16:22,289 - INFO - Processing dress_to_impress with precise extraction...
+2025-08-09 18:16:22,289 - INFO - Scraping PC Gamer Dress to Impress Codes for dress_to_impress
+2025-08-09 18:16:22,498 - INFO - Successfully scraped 30 codes from PC Gamer Dress to Impress Codes
+2025-08-09 18:16:24,841 - INFO - Scraping Beebom Dress to Impress Codes for dress_to_impress
+2025-08-09 18:16:24,888 - INFO - Successfully scraped 23 codes from Beebom Dress to Impress Codes
+2025-08-09 18:16:26,490 - INFO - Scraping summary for dress_to_impress:
+2025-08-09 18:16:26,490 - INFO -   - Total codes found: 51
+2025-08-09 18:16:26,490 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:26,490 - INFO -   - Scraped at: 2025-08-09T18:16:26.490199
+2025-08-09 18:16:26,492 - INFO - Successfully updated ReversCodes/roblox-codes/dress-to-impress.html with 0 validated codes
+2025-08-09 18:16:26,492 - INFO - Completed dress_to_impress: 0 precise codes (quality: 1.00) from PC Gamer Dress to Impress Codes
+2025-08-09 18:16:26,492 - INFO - Processing jujutsu_infinite with precise extraction...
+2025-08-09 18:16:26,492 - INFO - Scraping PC Gamer Jujutsu Infinite Codes for jujutsu_infinite
+2025-08-09 18:16:26,565 - INFO - Successfully scraped 22 codes from PC Gamer Jujutsu Infinite Codes
+2025-08-09 18:16:29,169 - INFO - Scraping Pocket Gamer Jujutsu Infinite Codes for jujutsu_infinite
+2025-08-09 18:16:29,503 - INFO - Successfully scraped 61 codes from Pocket Gamer Jujutsu Infinite Codes
+2025-08-09 18:16:30,918 - INFO - Scraping summary for jujutsu_infinite:
+2025-08-09 18:16:30,918 - INFO -   - Total codes found: 82
+2025-08-09 18:16:30,918 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:30,919 - INFO -   - Scraped at: 2025-08-09T18:16:30.918424
+2025-08-09 18:16:30,920 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-infinite.html with 0 validated codes
+2025-08-09 18:16:30,920 - INFO - Completed jujutsu_infinite: 0 precise codes (quality: 1.00) from PC Gamer Jujutsu Infinite Codes
+2025-08-09 18:16:30,921 - INFO - Processing shindo_life with precise extraction...
+2025-08-09 18:16:30,921 - INFO - Scraping Pocket Tactics Shindo Life Codes for shindo_life
+2025-08-09 18:16:30,992 - INFO - Successfully scraped 109 codes from Pocket Tactics Shindo Life Codes
+2025-08-09 18:16:33,271 - INFO - Scraping Beebom Shindo Life Codes for shindo_life
+2025-08-09 18:16:33,318 - INFO - Successfully scraped 43 codes from Beebom Shindo Life Codes
+2025-08-09 18:16:34,759 - INFO - Scraping summary for shindo_life:
+2025-08-09 18:16:34,759 - INFO -   - Total codes found: 112
+2025-08-09 18:16:34,759 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:34,759 - INFO -   - Scraped at: 2025-08-09T18:16:34.759115
+2025-08-09 18:16:34,761 - INFO - Successfully updated ReversCodes/roblox-codes/shindo-life.html with 0 validated codes
+2025-08-09 18:16:34,761 - INFO - Completed shindo_life: 0 precise codes (quality: 1.00) from Pocket Tactics Shindo Life Codes
+2025-08-09 18:16:34,761 - INFO - Processing project_slayers with precise extraction...
+2025-08-09 18:16:34,761 - INFO - Scraping Beebom Project Slayers Codes for project_slayers
+2025-08-09 18:16:34,807 - INFO - Successfully scraped 16 codes from Beebom Project Slayers Codes
+2025-08-09 18:16:36,362 - INFO - Scraping Pro Game Guides Project Slayers Codes for project_slayers
+2025-08-09 18:16:36,485 - INFO - Successfully scraped 53 codes from Pro Game Guides Project Slayers Codes
+2025-08-09 18:16:39,435 - INFO - Scraping summary for project_slayers:
+2025-08-09 18:16:39,435 - INFO -   - Total codes found: 58
+2025-08-09 18:16:39,435 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:39,435 - INFO -   - Scraped at: 2025-08-09T18:16:39.435000
+2025-08-09 18:16:39,437 - INFO - Successfully updated ReversCodes/roblox-codes/project-slayers.html with 0 validated codes
+2025-08-09 18:16:39,438 - INFO - Completed project_slayers: 0 precise codes (quality: 1.00) from Beebom Project Slayers Codes
+2025-08-09 18:16:39,438 - INFO - Processing king_legacy with precise extraction...
+2025-08-09 18:16:39,439 - INFO - Scraping Pro Game Guides King Legacy Codes for king_legacy
+2025-08-09 18:16:39,558 - INFO - Successfully scraped 64 codes from Pro Game Guides King Legacy Codes
+2025-08-09 18:16:41,597 - INFO - Scraping Beebom King Legacy Codes for king_legacy
+2025-08-09 18:16:41,642 - INFO - Successfully scraped 45 codes from Beebom King Legacy Codes
+2025-08-09 18:16:42,643 - INFO - Scraping summary for king_legacy:
+2025-08-09 18:16:42,644 - INFO -   - Total codes found: 70
+2025-08-09 18:16:42,644 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:42,644 - INFO -   - Scraped at: 2025-08-09T18:16:42.643766
+2025-08-09 18:16:42,646 - INFO - Successfully updated ReversCodes/roblox-codes/king-legacy.html with 0 validated codes
+2025-08-09 18:16:42,646 - INFO - Completed king_legacy: 0 precise codes (quality: 1.00) from Pro Game Guides King Legacy Codes
+2025-08-09 18:16:42,646 - INFO - Processing anime_last_stand with precise extraction...
+2025-08-09 18:16:42,647 - INFO - Scraping Beebom Anime Last Stand Codes for anime_last_stand
+2025-08-09 18:16:42,705 - INFO - Successfully scraped 82 codes from Beebom Anime Last Stand Codes
+2025-08-09 18:16:43,825 - INFO - Scraping PCGamesN Anime Last Stand Codes for anime_last_stand
+2025-08-09 18:16:43,876 - INFO - Successfully scraped 6 codes from PCGamesN Anime Last Stand Codes
+2025-08-09 18:16:46,613 - INFO - Scraping summary for anime_last_stand:
+2025-08-09 18:16:46,613 - INFO -   - Total codes found: 85
+2025-08-09 18:16:46,614 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:46,614 - INFO -   - Scraped at: 2025-08-09T18:16:46.613567
+2025-08-09 18:16:46,616 - INFO - Successfully updated ReversCodes/roblox-codes/anime-last-stand.html with 0 validated codes
+2025-08-09 18:16:46,616 - INFO - Completed anime_last_stand: 0 precise codes (quality: 1.00) from Beebom Anime Last Stand Codes
+2025-08-09 18:16:46,616 - INFO - Processing sakura_stand with precise extraction...
+2025-08-09 18:16:46,616 - INFO - Scraping Pocket Tactics Sakura Stand Codes for sakura_stand
+2025-08-09 18:16:46,673 - INFO - Successfully scraped 19 codes from Pocket Tactics Sakura Stand Codes
+2025-08-09 18:16:47,710 - INFO - Scraping Beebom Sakura Stand Codes for sakura_stand
+2025-08-09 18:16:47,762 - INFO - Successfully scraped 12 codes from Beebom Sakura Stand Codes
+2025-08-09 18:16:50,017 - INFO - Scraping summary for sakura_stand:
+2025-08-09 18:16:50,017 - INFO -   - Total codes found: 23
+2025-08-09 18:16:50,018 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:50,018 - INFO -   - Scraped at: 2025-08-09T18:16:50.017206
+2025-08-09 18:16:50,020 - INFO - Successfully updated ReversCodes/roblox-codes/sakura-stand.html with 0 validated codes
+2025-08-09 18:16:50,020 - INFO - Completed sakura_stand: 0 precise codes (quality: 1.00) from Pocket Tactics Sakura Stand Codes
+2025-08-09 18:16:50,020 - INFO - Processing blade_ball with precise extraction...
+2025-08-09 18:16:50,020 - INFO - Scraping Pocket Tactics Blade Ball Codes for blade_ball
+2025-08-09 18:16:50,068 - INFO - Successfully scraped 27 codes from Pocket Tactics Blade Ball Codes
+2025-08-09 18:16:52,535 - INFO - Scraping PCGamesN Blade Ball Codes for blade_ball
+2025-08-09 18:16:52,657 - INFO - Successfully scraped 22 codes from PCGamesN Blade Ball Codes
+2025-08-09 18:16:55,162 - INFO - Scraping summary for blade_ball:
+2025-08-09 18:16:55,163 - INFO -   - Total codes found: 31
+2025-08-09 18:16:55,163 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:55,163 - INFO -   - Scraped at: 2025-08-09T18:16:55.161995
+2025-08-09 18:16:55,165 - INFO - Successfully updated ReversCodes/roblox-codes/blade-ball.html with 0 validated codes
+2025-08-09 18:16:55,165 - INFO - Completed blade_ball: 0 precise codes (quality: 1.00) from Pocket Tactics Blade Ball Codes
+2025-08-09 18:16:55,165 - INFO - Processing fruit_warriors with precise extraction...
+2025-08-09 18:16:55,165 - INFO - Scraping Pro Game Guides Fruit Warriors Codes for fruit_warriors
+2025-08-09 18:16:55,289 - INFO - Successfully scraped 13 codes from Pro Game Guides Fruit Warriors Codes
+2025-08-09 18:16:57,469 - INFO - Scraping Hold to Reset Fruit Warriors Codes for fruit_warriors
+2025-08-09 18:16:58,335 - INFO - Successfully scraped 6 codes from Hold to Reset Fruit Warriors Codes
+2025-08-09 18:16:59,491 - INFO - Scraping summary for fruit_warriors:
+2025-08-09 18:16:59,492 - INFO -   - Total codes found: 16
+2025-08-09 18:16:59,492 - INFO -   - Successful sources: 2/2
+2025-08-09 18:16:59,492 - INFO -   - Scraped at: 2025-08-09T18:16:59.491848
+2025-08-09 18:16:59,494 - INFO - Successfully updated ReversCodes/roblox-codes/fruit-warriors.html with 0 validated codes
+2025-08-09 18:16:59,494 - INFO - Completed fruit_warriors: 0 precise codes (quality: 1.00) from Pro Game Guides Fruit Warriors Codes
+2025-08-09 18:16:59,494 - INFO - Processing grow_a_garden with precise extraction...
+2025-08-09 18:16:59,494 - INFO - Scraping Beebom Grow a Garden Codes for grow_a_garden
+2025-08-09 18:16:59,538 - INFO - Successfully scraped 5 codes from Beebom Grow a Garden Codes
+2025-08-09 18:17:01,506 - INFO - Scraping PCGamesN Grow a Garden Codes for grow_a_garden
+2025-08-09 18:17:02,406 - INFO - Successfully scraped 4 codes from PCGamesN Grow a Garden Codes
+2025-08-09 18:17:04,896 - INFO - Scraping summary for grow_a_garden:
+2025-08-09 18:17:04,896 - INFO -   - Total codes found: 8
+2025-08-09 18:17:04,896 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:04,896 - INFO -   - Scraped at: 2025-08-09T18:17:04.896105
+2025-08-09 18:17:04,898 - INFO - Successfully updated ReversCodes/roblox-codes/grow-a-garden.html with 0 validated codes
+2025-08-09 18:17:04,898 - INFO - Completed grow_a_garden: 0 precise codes (quality: 0.90) from Beebom Grow a Garden Codes
+2025-08-09 18:17:04,898 - INFO - Processing anime_vanguards with precise extraction...
+2025-08-09 18:17:04,898 - INFO - Scraping Beebom Anime Vanguards Codes for anime_vanguards
+2025-08-09 18:17:04,943 - INFO - Successfully scraped 31 codes from Beebom Anime Vanguards Codes
+2025-08-09 18:17:07,297 - INFO - Scraping Pocket Tactics Anime Vanguards Codes for anime_vanguards
+2025-08-09 18:17:07,358 - INFO - Successfully scraped 32 codes from Pocket Tactics Anime Vanguards Codes
+2025-08-09 18:17:09,133 - INFO - Scraping summary for anime_vanguards:
+2025-08-09 18:17:09,134 - INFO -   - Total codes found: 34
+2025-08-09 18:17:09,134 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:09,134 - INFO -   - Scraped at: 2025-08-09T18:17:09.133375
+2025-08-09 18:17:09,136 - INFO - Successfully updated ReversCodes/roblox-codes/anime-vanguards.html with 0 validated codes
+2025-08-09 18:17:09,136 - INFO - Completed anime_vanguards: 0 precise codes (quality: 1.00) from Beebom Anime Vanguards Codes
+2025-08-09 18:17:09,136 - INFO - Processing tower_defense_simulator with precise extraction...
+2025-08-09 18:17:09,136 - INFO - Scraping Pro Game Guides Tower Defense Simulator Codes for tower_defense_simulator
+2025-08-09 18:17:09,263 - INFO - Successfully scraped 29 codes from Pro Game Guides Tower Defense Simulator Codes
+2025-08-09 18:17:11,545 - INFO - Scraping Beebom Tower Defense Simulator Codes for tower_defense_simulator
+2025-08-09 18:17:11,588 - INFO - Successfully scraped 30 codes from Beebom Tower Defense Simulator Codes
+2025-08-09 18:17:12,718 - INFO - Scraping summary for tower_defense_simulator:
+2025-08-09 18:17:12,718 - INFO -   - Total codes found: 36
+2025-08-09 18:17:12,719 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:12,719 - INFO -   - Scraped at: 2025-08-09T18:17:12.718477
+2025-08-09 18:17:12,720 - INFO - Successfully updated ReversCodes/roblox-codes/tower-defense-simulator.html with 0 validated codes
+2025-08-09 18:17:12,720 - INFO - Completed tower_defense_simulator: 0 precise codes (quality: 1.00) from Pro Game Guides Tower Defense Simulator Codes
+2025-08-09 18:17:12,720 - INFO - Processing spongebob_tower_defense with precise extraction...
+2025-08-09 18:17:12,721 - INFO - Scraping Pocket Tactics SpongeBob Tower Defense Codes for spongebob_tower_defense
+2025-08-09 18:17:12,768 - INFO - Successfully scraped 23 codes from Pocket Tactics SpongeBob Tower Defense Codes
+2025-08-09 18:17:14,824 - INFO - Scraping Pro Game Guides SpongeBob Tower Defense Codes for spongebob_tower_defense
+2025-08-09 18:17:14,941 - INFO - Successfully scraped 38 codes from Pro Game Guides SpongeBob Tower Defense Codes
+2025-08-09 18:17:17,863 - INFO - Scraping summary for spongebob_tower_defense:
+2025-08-09 18:17:17,863 - INFO -   - Total codes found: 43
+2025-08-09 18:17:17,864 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:17,864 - INFO -   - Scraped at: 2025-08-09T18:17:17.863498
+2025-08-09 18:17:17,865 - INFO - Successfully updated ReversCodes/roblox-codes/spongebob-tower-defense.html with 0 validated codes
+2025-08-09 18:17:17,866 - INFO - Completed spongebob_tower_defense: 0 precise codes (quality: 1.00) from Pocket Tactics SpongeBob Tower Defense Codes
+2025-08-09 18:17:17,866 - INFO - Processing project_egoist with precise extraction...
+2025-08-09 18:17:17,866 - INFO - Scraping Pocket Tactics Project Egoist Codes for project_egoist
+2025-08-09 18:17:17,921 - INFO - Successfully scraped 12 codes from Pocket Tactics Project Egoist Codes
+2025-08-09 18:17:20,918 - INFO - Scraping Beebom Project Egoist Codes for project_egoist
+2025-08-09 18:17:20,981 - INFO - Successfully scraped 11 codes from Beebom Project Egoist Codes
+2025-08-09 18:17:22,870 - INFO - Scraping summary for project_egoist:
+2025-08-09 18:17:22,870 - INFO -   - Total codes found: 15
+2025-08-09 18:17:22,870 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:22,870 - INFO -   - Scraped at: 2025-08-09T18:17:22.869994
+2025-08-09 18:17:22,872 - INFO - Successfully updated ReversCodes/roblox-codes/project-egoist.html with 0 validated codes
+2025-08-09 18:17:22,872 - INFO - Completed project_egoist: 0 precise codes (quality: 1.00) from Pocket Tactics Project Egoist Codes
+2025-08-09 18:17:22,872 - INFO - Processing blue_lock_rivals with precise extraction...
+2025-08-09 18:17:22,872 - INFO - Scraping Pocket Tactics Blue Lock Rivals Codes for blue_lock_rivals
+2025-08-09 18:17:22,924 - INFO - Successfully scraped 56 codes from Pocket Tactics Blue Lock Rivals Codes
+2025-08-09 18:17:24,202 - INFO - Scraping Beebom Blue Lock Rivals Codes for blue_lock_rivals
+2025-08-09 18:17:24,248 - INFO - Successfully scraped 71 codes from Beebom Blue Lock Rivals Codes
+2025-08-09 18:17:25,887 - INFO - Scraping summary for blue_lock_rivals:
+2025-08-09 18:17:25,887 - INFO -   - Total codes found: 77
+2025-08-09 18:17:25,887 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:25,888 - INFO -   - Scraped at: 2025-08-09T18:17:25.887388
+2025-08-09 18:17:25,889 - INFO - Successfully updated ReversCodes/roblox-codes/blue-lock-rivals.html with 0 validated codes
+2025-08-09 18:17:25,890 - INFO - Completed blue_lock_rivals: 0 precise codes (quality: 1.00) from Pocket Tactics Blue Lock Rivals Codes
+2025-08-09 18:17:25,890 - INFO - Processing jujutsu_shenanigans with precise extraction...
+2025-08-09 18:17:25,890 - INFO - Scraping Pocket Tactics Jujutsu Shenanigans Codes for jujutsu_shenanigans
+2025-08-09 18:17:25,945 - INFO - Successfully scraped 10 codes from Pocket Tactics Jujutsu Shenanigans Codes
+2025-08-09 18:17:28,643 - INFO - Scraping PCGamesN Jujutsu Shenanigans Codes for jujutsu_shenanigans
+2025-08-09 18:17:30,308 - INFO - Successfully scraped 7 codes from PCGamesN Jujutsu Shenanigans Codes
+2025-08-09 18:17:31,316 - INFO - Scraping summary for jujutsu_shenanigans:
+2025-08-09 18:17:31,316 - INFO -   - Total codes found: 13
+2025-08-09 18:17:31,317 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:31,317 - INFO -   - Scraped at: 2025-08-09T18:17:31.316549
+2025-08-09 18:17:31,319 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-shenanigans.html with 0 validated codes
+2025-08-09 18:17:31,319 - INFO - Completed jujutsu_shenanigans: 0 precise codes (quality: 1.00) from Pocket Tactics Jujutsu Shenanigans Codes
+2025-08-09 18:17:31,319 - INFO - Processing combat_warriors with precise extraction...
+2025-08-09 18:17:31,320 - INFO - Scraping Pocket Tactics Combat Warriors Codes for combat_warriors
+2025-08-09 18:17:31,381 - INFO - Successfully scraped 22 codes from Pocket Tactics Combat Warriors Codes
+2025-08-09 18:17:32,431 - INFO - Scraping Twinfinite Combat Warriors Codes for combat_warriors
+2025-08-09 18:17:32,907 - INFO - Successfully scraped 23 codes from Twinfinite Combat Warriors Codes
+2025-08-09 18:17:34,287 - INFO - Scraping summary for combat_warriors:
+2025-08-09 18:17:34,287 - INFO -   - Total codes found: 26
+2025-08-09 18:17:34,287 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:34,287 - INFO -   - Scraped at: 2025-08-09T18:17:34.287175
+2025-08-09 18:17:34,289 - INFO - Successfully updated ReversCodes/roblox-codes/combat-warriors.html with 0 validated codes
+2025-08-09 18:17:34,289 - INFO - Completed combat_warriors: 0 precise codes (quality: 1.00) from Pocket Tactics Combat Warriors Codes
+2025-08-09 18:17:34,289 - INFO - Processing anime_rangers_x with precise extraction...
+2025-08-09 18:17:34,289 - INFO - Scraping VideoGamer Anime Rangers X Codes for anime_rangers_x
+2025-08-09 18:17:34,679 - INFO - Successfully scraped 50 codes from VideoGamer Anime Rangers X Codes
+2025-08-09 18:17:36,087 - INFO - Scraping Pocket Tactics Anime Rangers X Codes for anime_rangers_x
+2025-08-09 18:17:36,152 - INFO - Successfully scraped 22 codes from Pocket Tactics Anime Rangers X Codes
+2025-08-09 18:17:38,059 - INFO - Scraping summary for anime_rangers_x:
+2025-08-09 18:17:38,059 - INFO -   - Total codes found: 70
+2025-08-09 18:17:38,059 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:38,059 - INFO -   - Scraped at: 2025-08-09T18:17:38.059263
+2025-08-09 18:17:38,061 - INFO - Successfully updated ReversCodes/roblox-codes/anime-rangers-x.html with 0 validated codes
+2025-08-09 18:17:38,061 - INFO - Completed anime_rangers_x: 0 precise codes (quality: 1.00) from VideoGamer Anime Rangers X Codes
+2025-08-09 18:17:38,061 - INFO - Processing basketball_zero with precise extraction...
+2025-08-09 18:17:38,062 - INFO - Scraping KhelNow Basketball Zero Codes for basketball_zero
+2025-08-09 18:17:39,481 - INFO - Successfully scraped 46 codes from KhelNow Basketball Zero Codes
+2025-08-09 18:17:40,907 - INFO - Scraping Pocket Tactics Basketball Zero Codes for basketball_zero
+2025-08-09 18:17:40,970 - INFO - Successfully scraped 38 codes from Pocket Tactics Basketball Zero Codes
+2025-08-09 18:17:43,447 - INFO - Scraping summary for basketball_zero:
+2025-08-09 18:17:43,447 - INFO -   - Total codes found: 52
+2025-08-09 18:17:43,448 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:43,448 - INFO -   - Scraped at: 2025-08-09T18:17:43.447371
+2025-08-09 18:17:43,449 - INFO - Successfully updated ReversCodes/roblox-codes/basketball-zero.html with 0 validated codes
+2025-08-09 18:17:43,450 - INFO - Completed basketball_zero: 0 precise codes (quality: 1.00) from KhelNow Basketball Zero Codes
+2025-08-09 18:17:43,450 - INFO - Processing volleyball_legends with precise extraction...
+2025-08-09 18:17:43,450 - INFO - Scraping Pocket Tactics Volleyball Legends Codes for volleyball_legends
+2025-08-09 18:17:43,594 - INFO - Successfully scraped 124 codes from Pocket Tactics Volleyball Legends Codes
+2025-08-09 18:17:44,658 - INFO - Scraping Pro Game Guides Volleyball Legends Codes for volleyball_legends
+2025-08-09 18:17:44,790 - INFO - Successfully scraped 104 codes from Pro Game Guides Volleyball Legends Codes
+2025-08-09 18:17:45,853 - INFO - Scraping summary for volleyball_legends:
+2025-08-09 18:17:45,853 - INFO -   - Total codes found: 140
+2025-08-09 18:17:45,853 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:45,854 - INFO -   - Scraped at: 2025-08-09T18:17:45.853255
+2025-08-09 18:17:45,855 - INFO - Successfully updated ReversCodes/roblox-codes/volleyball-legends.html with 0 validated codes
+2025-08-09 18:17:45,855 - INFO - Completed volleyball_legends: 0 precise codes (quality: 1.00) from Pocket Tactics Volleyball Legends Codes
+2025-08-09 18:17:45,856 - INFO - Processing arise_crossover with precise extraction...
+2025-08-09 18:17:45,856 - INFO - Scraping Pocket Tactics Arise Crossover Codes for arise_crossover
+2025-08-09 18:17:45,909 - INFO - Successfully scraped 12 codes from Pocket Tactics Arise Crossover Codes
+2025-08-09 18:17:48,499 - INFO - Scraping Beebom Arise Crossover Codes for arise_crossover
+2025-08-09 18:17:48,542 - INFO - Successfully scraped 14 codes from Beebom Arise Crossover Codes
+2025-08-09 18:17:51,461 - INFO - Scraping summary for arise_crossover:
+2025-08-09 18:17:51,461 - INFO -   - Total codes found: 18
+2025-08-09 18:17:51,461 - INFO -   - Successful sources: 2/2
+2025-08-09 18:17:51,462 - INFO -   - Scraped at: 2025-08-09T18:17:51.461144
+2025-08-09 18:17:51,463 - INFO - Successfully updated ReversCodes/roblox-codes/arise-crossover.html with 0 validated codes
+2025-08-09 18:17:51,463 - INFO - Completed arise_crossover: 0 precise codes (quality: 1.00) from Pocket Tactics Arise Crossover Codes
+2025-08-09 18:17:51,465 - INFO - Precise game pages update completed successfully!
+2025-08-09 18:17:51,465 - INFO - Processed 29 games, 29 successful updates
+2025-08-09 18:17:51,465 - INFO - Total codes: 0, Active found: 0, Filtered: 0
+2025-08-09 18:17:51,465 - INFO - Average quality score: 1.00, High confidence: 0, Medium confidence: 0
+2025-08-09 18:30:31,032 - INFO - Scraping PCGamesN Blox Fruits Codes for blox_fruits
+2025-08-09 18:30:31,411 - INFO - Successfully scraped 44 codes from PCGamesN Blox Fruits Codes
+2025-08-09 18:30:32,610 - INFO - Scraping PC Gamer Blox Fruits Codes for blox_fruits
+2025-08-09 18:30:33,012 - INFO - Successfully scraped 31 codes from PC Gamer Blox Fruits Codes
+2025-08-09 18:30:34,024 - INFO - Scraping summary for blox_fruits:
+2025-08-09 18:30:34,024 - INFO -   - Total codes found: 64
+2025-08-09 18:30:34,025 - INFO -   - Successful sources: 2/2
+2025-08-09 18:30:34,025 - INFO -   - Scraped at: 2025-08-09T18:30:34.024494
+2025-08-09 18:30:34,028 - INFO - Successfully updated ReversCodes/roblox-codes/blox-fruits.html with 64 validated codes
+2025-08-09 18:36:50,990 - INFO - Starting precise game pages update with section anchor detection...
+2025-08-09 18:36:50,990 - INFO - Scraping and updating codes for all games with precise extraction...
+2025-08-09 18:36:50,990 - INFO - Processing driving_empire with precise extraction...
+2025-08-09 18:36:50,990 - INFO - Scraping Beebom Driving Empire Codes for driving_empire
+2025-08-09 18:36:51,355 - INFO - Successfully scraped 27 codes from Beebom Driving Empire Codes
+2025-08-09 18:36:53,795 - INFO - Scraping Pocket Tactics Driving Empire Codes for driving_empire
+2025-08-09 18:36:54,221 - INFO - Successfully scraped 40 codes from Pocket Tactics Driving Empire Codes
+2025-08-09 18:36:55,892 - INFO - Scraping summary for driving_empire:
+2025-08-09 18:36:55,893 - INFO -   - Total codes found: 48
+2025-08-09 18:36:55,893 - INFO -   - Successful sources: 2/2
+2025-08-09 18:36:55,893 - INFO -   - Scraped at: 2025-08-09T18:36:55.892810
+2025-08-09 18:36:55,945 - INFO - Successfully updated ReversCodes/roblox-codes/driving-empire.html with 48 validated codes
+2025-08-09 18:36:55,945 - INFO - Completed driving_empire: 48 precise codes (quality: 1.00) from Beebom Driving Empire Codes
+2025-08-09 18:36:55,946 - INFO - Processing blox_fruits with precise extraction...
+2025-08-09 18:36:55,946 - INFO - Scraping PCGamesN Blox Fruits Codes for blox_fruits
+2025-08-09 18:36:56,378 - INFO - Successfully scraped 44 codes from PCGamesN Blox Fruits Codes
+2025-08-09 18:36:58,574 - INFO - Scraping PC Gamer Blox Fruits Codes for blox_fruits
+2025-08-09 18:36:59,114 - INFO - Successfully scraped 31 codes from PC Gamer Blox Fruits Codes
+2025-08-09 18:37:01,996 - INFO - Scraping summary for blox_fruits:
+2025-08-09 18:37:01,997 - INFO -   - Total codes found: 64
+2025-08-09 18:37:01,997 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:01,997 - INFO -   - Scraped at: 2025-08-09T18:37:01.996712
+2025-08-09 18:37:02,046 - INFO - Successfully updated ReversCodes/roblox-codes/blox-fruits.html with 64 validated codes
+2025-08-09 18:37:02,047 - INFO - Completed blox_fruits: 64 precise codes (quality: 1.00) from PCGamesN Blox Fruits Codes
+2025-08-09 18:37:02,047 - INFO - Processing goalbound with precise extraction...
+2025-08-09 18:37:02,047 - INFO - Scraping Pocket Tactics Goalbound Codes for goalbound
+2025-08-09 18:37:02,095 - INFO - Successfully scraped 13 codes from Pocket Tactics Goalbound Codes
+2025-08-09 18:37:03,336 - INFO - Scraping PCGamesN Goalbound Codes for goalbound
+2025-08-09 18:37:03,384 - INFO - Successfully scraped 16 codes from PCGamesN Goalbound Codes
+2025-08-09 18:37:05,133 - INFO - Scraping summary for goalbound:
+2025-08-09 18:37:05,133 - INFO -   - Total codes found: 20
+2025-08-09 18:37:05,133 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:05,133 - INFO -   - Scraped at: 2025-08-09T18:37:05.133079
+2025-08-09 18:37:05,181 - INFO - Successfully updated ReversCodes/roblox-codes/goalbound.html with 20 validated codes
+2025-08-09 18:37:05,181 - INFO - Completed goalbound: 20 precise codes (quality: 1.00) from Pocket Tactics Goalbound Codes
+2025-08-09 18:37:05,182 - INFO - Processing prospecting with precise extraction...
+2025-08-09 18:37:05,182 - INFO - Scraping Pocket Tactics Prospecting Codes for prospecting
+2025-08-09 18:37:05,229 - INFO - Successfully scraped 5 codes from Pocket Tactics Prospecting Codes
+2025-08-09 18:37:06,540 - INFO - Scraping Beebom Prospecting Codes for prospecting
+2025-08-09 18:37:06,603 - INFO - Successfully scraped 7 codes from Beebom Prospecting Codes
+2025-08-09 18:37:09,514 - INFO - Scraping summary for prospecting:
+2025-08-09 18:37:09,515 - INFO -   - Total codes found: 11
+2025-08-09 18:37:09,515 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:09,515 - INFO -   - Scraped at: 2025-08-09T18:37:09.514790
+2025-08-09 18:37:09,562 - INFO - Successfully updated ReversCodes/roblox-codes/prospecting.html with 10 validated codes
+2025-08-09 18:37:09,563 - INFO - Completed prospecting: 10 precise codes (quality: 1.00) from Pocket Tactics Prospecting Codes
+2025-08-09 18:37:09,563 - INFO - Processing type_soul with precise extraction...
+2025-08-09 18:37:09,563 - INFO - Scraping Pocket Tactics Type Soul Codes for type_soul
+2025-08-09 18:37:09,619 - INFO - Successfully scraped 38 codes from Pocket Tactics Type Soul Codes
+2025-08-09 18:37:11,362 - INFO - Scraping Beebom Type Soul Codes for type_soul
+2025-08-09 18:37:11,449 - INFO - Successfully scraped 33 codes from Beebom Type Soul Codes
+2025-08-09 18:37:14,409 - INFO - Scraping summary for type_soul:
+2025-08-09 18:37:14,409 - INFO -   - Total codes found: 52
+2025-08-09 18:37:14,409 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:14,409 - INFO -   - Scraped at: 2025-08-09T18:37:14.409274
+2025-08-09 18:37:14,458 - INFO - Successfully updated ReversCodes/roblox-codes/type-soul.html with 52 validated codes
+2025-08-09 18:37:14,458 - INFO - Completed type_soul: 52 precise codes (quality: 1.00) from Pocket Tactics Type Soul Codes
+2025-08-09 18:37:14,458 - INFO - Processing rivals with precise extraction...
+2025-08-09 18:37:14,459 - INFO - Scraping PCGamesN Rivals Codes for rivals
+2025-08-09 18:37:14,540 - INFO - Successfully scraped 20 codes from PCGamesN Rivals Codes
+2025-08-09 18:37:17,167 - INFO - Scraping Beebom Rivals Codes for rivals
+2025-08-09 18:37:17,233 - INFO - Successfully scraped 26 codes from Beebom Rivals Codes
+2025-08-09 18:37:18,897 - INFO - Scraping summary for rivals:
+2025-08-09 18:37:18,897 - INFO -   - Total codes found: 28
+2025-08-09 18:37:18,897 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:18,897 - INFO -   - Scraped at: 2025-08-09T18:37:18.896953
+2025-08-09 18:37:18,941 - INFO - Successfully updated ReversCodes/roblox-codes/rivals.html with 28 validated codes
+2025-08-09 18:37:18,941 - INFO - Completed rivals: 28 precise codes (quality: 1.00) from PCGamesN Rivals Codes
+2025-08-09 18:37:18,942 - INFO - Processing fruit_battlegrounds with precise extraction...
+2025-08-09 18:37:18,942 - INFO - Scraping PC Gamer Fruit Battlegrounds Codes for fruit_battlegrounds
+2025-08-09 18:37:19,041 - INFO - Successfully scraped 32 codes from PC Gamer Fruit Battlegrounds Codes
+2025-08-09 18:37:20,713 - INFO - Scraping Pocket Tactics Fruit Battlegrounds Codes for fruit_battlegrounds
+2025-08-09 18:37:20,844 - INFO - Successfully scraped 146 codes from Pocket Tactics Fruit Battlegrounds Codes
+2025-08-09 18:37:23,709 - INFO - Scraping summary for fruit_battlegrounds:
+2025-08-09 18:37:23,709 - INFO -   - Total codes found: 174
+2025-08-09 18:37:23,709 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:23,709 - INFO -   - Scraped at: 2025-08-09T18:37:23.709234
+2025-08-09 18:37:23,756 - INFO - Successfully updated ReversCodes/roblox-codes/fruitbattlegrounds.html with 174 validated codes
+2025-08-09 18:37:23,756 - INFO - Completed fruit_battlegrounds: 174 precise codes (quality: 1.00) from PC Gamer Fruit Battlegrounds Codes
+2025-08-09 18:37:23,756 - INFO - Processing anime_adventures with precise extraction...
+2025-08-09 18:37:23,756 - INFO - Scraping Pocket Tactics Anime Adventures Codes for anime_adventures
+2025-08-09 18:37:23,800 - INFO - Successfully scraped 22 codes from Pocket Tactics Anime Adventures Codes
+2025-08-09 18:37:26,267 - INFO - Scraping Pro Game Guides Anime Adventures Codes for anime_adventures
+2025-08-09 18:37:26,855 - INFO - Successfully scraped 22 codes from Pro Game Guides Anime Adventures Codes
+2025-08-09 18:37:29,440 - INFO - Scraping summary for anime_adventures:
+2025-08-09 18:37:29,441 - INFO -   - Total codes found: 25
+2025-08-09 18:37:29,441 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:29,441 - INFO -   - Scraped at: 2025-08-09T18:37:29.440814
+2025-08-09 18:37:29,489 - INFO - Successfully updated ReversCodes/roblox-codes/animeadventures.html with 25 validated codes
+2025-08-09 18:37:29,489 - INFO - Completed anime_adventures: 25 precise codes (quality: 1.00) from Pocket Tactics Anime Adventures Codes
+2025-08-09 18:37:29,489 - INFO - Processing dress_to_impress with precise extraction...
+2025-08-09 18:37:29,490 - INFO - Scraping PC Gamer Dress to Impress Codes for dress_to_impress
+2025-08-09 18:37:29,740 - INFO - Successfully scraped 30 codes from PC Gamer Dress to Impress Codes
+2025-08-09 18:37:31,485 - INFO - Scraping Beebom Dress to Impress Codes for dress_to_impress
+2025-08-09 18:37:31,544 - INFO - Successfully scraped 23 codes from Beebom Dress to Impress Codes
+2025-08-09 18:37:34,131 - INFO - Scraping summary for dress_to_impress:
+2025-08-09 18:37:34,131 - INFO -   - Total codes found: 51
+2025-08-09 18:37:34,131 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:34,131 - INFO -   - Scraped at: 2025-08-09T18:37:34.131060
+2025-08-09 18:37:34,180 - INFO - Successfully updated ReversCodes/roblox-codes/dress-to-impress.html with 50 validated codes
+2025-08-09 18:37:34,181 - INFO - Completed dress_to_impress: 50 precise codes (quality: 1.00) from PC Gamer Dress to Impress Codes
+2025-08-09 18:37:34,181 - INFO - Processing jujutsu_infinite with precise extraction...
+2025-08-09 18:37:34,181 - INFO - Scraping PC Gamer Jujutsu Infinite Codes for jujutsu_infinite
+2025-08-09 18:37:34,271 - INFO - Successfully scraped 22 codes from PC Gamer Jujutsu Infinite Codes
+2025-08-09 18:37:36,173 - INFO - Scraping Pocket Gamer Jujutsu Infinite Codes for jujutsu_infinite
+2025-08-09 18:37:36,595 - INFO - Successfully scraped 61 codes from Pocket Gamer Jujutsu Infinite Codes
+2025-08-09 18:37:37,812 - INFO - Scraping summary for jujutsu_infinite:
+2025-08-09 18:37:37,812 - INFO -   - Total codes found: 82
+2025-08-09 18:37:37,812 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:37,812 - INFO -   - Scraped at: 2025-08-09T18:37:37.811995
+2025-08-09 18:37:37,861 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-infinite.html with 82 validated codes
+2025-08-09 18:37:37,861 - INFO - Completed jujutsu_infinite: 82 precise codes (quality: 1.00) from PC Gamer Jujutsu Infinite Codes
+2025-08-09 18:37:37,861 - INFO - Processing shindo_life with precise extraction...
+2025-08-09 18:37:37,862 - INFO - Scraping Pocket Tactics Shindo Life Codes for shindo_life
+2025-08-09 18:37:37,918 - INFO - Successfully scraped 109 codes from Pocket Tactics Shindo Life Codes
+2025-08-09 18:37:39,554 - INFO - Scraping Beebom Shindo Life Codes for shindo_life
+2025-08-09 18:37:39,616 - INFO - Successfully scraped 43 codes from Beebom Shindo Life Codes
+2025-08-09 18:37:41,203 - INFO - Scraping summary for shindo_life:
+2025-08-09 18:37:41,203 - INFO -   - Total codes found: 112
+2025-08-09 18:37:41,203 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:41,203 - INFO -   - Scraped at: 2025-08-09T18:37:41.203246
+2025-08-09 18:37:41,252 - INFO - Successfully updated ReversCodes/roblox-codes/shindo-life.html with 111 validated codes
+2025-08-09 18:37:41,252 - INFO - Completed shindo_life: 111 precise codes (quality: 1.00) from Pocket Tactics Shindo Life Codes
+2025-08-09 18:37:41,252 - INFO - Processing project_slayers with precise extraction...
+2025-08-09 18:37:41,252 - INFO - Scraping Beebom Project Slayers Codes for project_slayers
+2025-08-09 18:37:41,312 - INFO - Successfully scraped 16 codes from Beebom Project Slayers Codes
+2025-08-09 18:37:43,384 - INFO - Scraping Pro Game Guides Project Slayers Codes for project_slayers
+2025-08-09 18:37:43,533 - INFO - Successfully scraped 53 codes from Pro Game Guides Project Slayers Codes
+2025-08-09 18:37:45,688 - INFO - Scraping summary for project_slayers:
+2025-08-09 18:37:45,689 - INFO -   - Total codes found: 58
+2025-08-09 18:37:45,689 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:45,689 - INFO -   - Scraped at: 2025-08-09T18:37:45.688799
+2025-08-09 18:37:45,738 - INFO - Successfully updated ReversCodes/roblox-codes/project-slayers.html with 58 validated codes
+2025-08-09 18:37:45,738 - INFO - Completed project_slayers: 58 precise codes (quality: 1.00) from Beebom Project Slayers Codes
+2025-08-09 18:37:45,738 - INFO - Processing king_legacy with precise extraction...
+2025-08-09 18:37:45,738 - INFO - Scraping Pro Game Guides King Legacy Codes for king_legacy
+2025-08-09 18:37:45,868 - INFO - Successfully scraped 64 codes from Pro Game Guides King Legacy Codes
+2025-08-09 18:37:47,387 - INFO - Scraping Beebom King Legacy Codes for king_legacy
+2025-08-09 18:37:47,450 - INFO - Successfully scraped 45 codes from Beebom King Legacy Codes
+2025-08-09 18:37:50,440 - INFO - Scraping summary for king_legacy:
+2025-08-09 18:37:50,440 - INFO -   - Total codes found: 70
+2025-08-09 18:37:50,440 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:50,441 - INFO -   - Scraped at: 2025-08-09T18:37:50.440477
+2025-08-09 18:37:50,486 - INFO - Successfully updated ReversCodes/roblox-codes/king-legacy.html with 70 validated codes
+2025-08-09 18:37:50,486 - INFO - Completed king_legacy: 70 precise codes (quality: 1.00) from Pro Game Guides King Legacy Codes
+2025-08-09 18:37:50,486 - INFO - Processing anime_last_stand with precise extraction...
+2025-08-09 18:37:50,486 - INFO - Scraping Beebom Anime Last Stand Codes for anime_last_stand
+2025-08-09 18:37:50,565 - INFO - Successfully scraped 82 codes from Beebom Anime Last Stand Codes
+2025-08-09 18:37:51,804 - INFO - Scraping PCGamesN Anime Last Stand Codes for anime_last_stand
+2025-08-09 18:37:51,850 - INFO - Successfully scraped 6 codes from PCGamesN Anime Last Stand Codes
+2025-08-09 18:37:52,923 - INFO - Scraping summary for anime_last_stand:
+2025-08-09 18:37:52,923 - INFO -   - Total codes found: 85
+2025-08-09 18:37:52,923 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:52,924 - INFO -   - Scraped at: 2025-08-09T18:37:52.923476
+2025-08-09 18:37:52,972 - INFO - Successfully updated ReversCodes/roblox-codes/anime-last-stand.html with 85 validated codes
+2025-08-09 18:37:52,972 - INFO - Completed anime_last_stand: 85 precise codes (quality: 1.00) from Beebom Anime Last Stand Codes
+2025-08-09 18:37:52,973 - INFO - Processing sakura_stand with precise extraction...
+2025-08-09 18:37:52,973 - INFO - Scraping Pocket Tactics Sakura Stand Codes for sakura_stand
+2025-08-09 18:37:53,022 - INFO - Successfully scraped 19 codes from Pocket Tactics Sakura Stand Codes
+2025-08-09 18:37:54,890 - INFO - Scraping Beebom Sakura Stand Codes for sakura_stand
+2025-08-09 18:37:54,945 - INFO - Successfully scraped 12 codes from Beebom Sakura Stand Codes
+2025-08-09 18:37:56,330 - INFO - Scraping summary for sakura_stand:
+2025-08-09 18:37:56,330 - INFO -   - Total codes found: 23
+2025-08-09 18:37:56,330 - INFO -   - Successful sources: 2/2
+2025-08-09 18:37:56,330 - INFO -   - Scraped at: 2025-08-09T18:37:56.330066
+2025-08-09 18:37:56,378 - INFO - Successfully updated ReversCodes/roblox-codes/sakura-stand.html with 23 validated codes
+2025-08-09 18:37:56,378 - INFO - Completed sakura_stand: 23 precise codes (quality: 1.00) from Pocket Tactics Sakura Stand Codes
+2025-08-09 18:37:56,378 - INFO - Processing blade_ball with precise extraction...
+2025-08-09 18:37:56,379 - INFO - Scraping Pocket Tactics Blade Ball Codes for blade_ball
+2025-08-09 18:37:56,445 - INFO - Successfully scraped 27 codes from Pocket Tactics Blade Ball Codes
+2025-08-09 18:37:59,132 - INFO - Scraping PCGamesN Blade Ball Codes for blade_ball
+2025-08-09 18:37:59,244 - INFO - Successfully scraped 22 codes from PCGamesN Blade Ball Codes
+2025-08-09 18:38:00,907 - INFO - Scraping summary for blade_ball:
+2025-08-09 18:38:00,908 - INFO -   - Total codes found: 31
+2025-08-09 18:38:00,908 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:00,908 - INFO -   - Scraped at: 2025-08-09T18:38:00.907815
+2025-08-09 18:38:00,953 - INFO - Successfully updated ReversCodes/roblox-codes/blade-ball.html with 31 validated codes
+2025-08-09 18:38:00,953 - INFO - Completed blade_ball: 31 precise codes (quality: 1.00) from Pocket Tactics Blade Ball Codes
+2025-08-09 18:38:00,953 - INFO - Processing fruit_warriors with precise extraction...
+2025-08-09 18:38:00,953 - INFO - Scraping Pro Game Guides Fruit Warriors Codes for fruit_warriors
+2025-08-09 18:38:01,226 - INFO - Successfully scraped 13 codes from Pro Game Guides Fruit Warriors Codes
+2025-08-09 18:38:02,782 - INFO - Scraping Hold to Reset Fruit Warriors Codes for fruit_warriors
+2025-08-09 18:38:03,816 - INFO - Successfully scraped 6 codes from Hold to Reset Fruit Warriors Codes
+2025-08-09 18:38:05,102 - INFO - Scraping summary for fruit_warriors:
+2025-08-09 18:38:05,102 - INFO -   - Total codes found: 16
+2025-08-09 18:38:05,102 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:05,102 - INFO -   - Scraped at: 2025-08-09T18:38:05.102047
+2025-08-09 18:38:05,149 - INFO - Successfully updated ReversCodes/roblox-codes/fruit-warriors.html with 16 validated codes
+2025-08-09 18:38:05,150 - INFO - Completed fruit_warriors: 16 precise codes (quality: 1.00) from Pro Game Guides Fruit Warriors Codes
+2025-08-09 18:38:05,150 - INFO - Processing grow_a_garden with precise extraction...
+2025-08-09 18:38:05,150 - INFO - Scraping Beebom Grow a Garden Codes for grow_a_garden
+2025-08-09 18:38:05,201 - INFO - Successfully scraped 5 codes from Beebom Grow a Garden Codes
+2025-08-09 18:38:08,102 - INFO - Scraping PCGamesN Grow a Garden Codes for grow_a_garden
+2025-08-09 18:38:08,232 - INFO - Successfully scraped 4 codes from PCGamesN Grow a Garden Codes
+2025-08-09 18:38:10,611 - INFO - Scraping summary for grow_a_garden:
+2025-08-09 18:38:10,611 - INFO -   - Total codes found: 8
+2025-08-09 18:38:10,611 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:10,611 - INFO -   - Scraped at: 2025-08-09T18:38:10.611070
+2025-08-09 18:38:10,655 - INFO - Successfully updated ReversCodes/roblox-codes/grow-a-garden.html with 8 validated codes
+2025-08-09 18:38:10,655 - INFO - Completed grow_a_garden: 8 precise codes (quality: 0.90) from Beebom Grow a Garden Codes
+2025-08-09 18:38:10,655 - INFO - Processing anime_vanguards with precise extraction...
+2025-08-09 18:38:10,655 - INFO - Scraping Beebom Anime Vanguards Codes for anime_vanguards
+2025-08-09 18:38:10,712 - INFO - Successfully scraped 31 codes from Beebom Anime Vanguards Codes
+2025-08-09 18:38:12,567 - INFO - Scraping Pocket Tactics Anime Vanguards Codes for anime_vanguards
+2025-08-09 18:38:12,617 - INFO - Successfully scraped 32 codes from Pocket Tactics Anime Vanguards Codes
+2025-08-09 18:38:15,408 - INFO - Scraping summary for anime_vanguards:
+2025-08-09 18:38:15,408 - INFO -   - Total codes found: 34
+2025-08-09 18:38:15,408 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:15,408 - INFO -   - Scraped at: 2025-08-09T18:38:15.408425
+2025-08-09 18:38:15,455 - INFO - Successfully updated ReversCodes/roblox-codes/anime-vanguards.html with 34 validated codes
+2025-08-09 18:38:15,456 - INFO - Completed anime_vanguards: 34 precise codes (quality: 1.00) from Beebom Anime Vanguards Codes
+2025-08-09 18:38:15,456 - INFO - Processing tower_defense_simulator with precise extraction...
+2025-08-09 18:38:15,456 - INFO - Scraping Pro Game Guides Tower Defense Simulator Codes for tower_defense_simulator
+2025-08-09 18:38:15,605 - INFO - Successfully scraped 29 codes from Pro Game Guides Tower Defense Simulator Codes
+2025-08-09 18:38:18,334 - INFO - Scraping Beebom Tower Defense Simulator Codes for tower_defense_simulator
+2025-08-09 18:38:18,389 - INFO - Successfully scraped 30 codes from Beebom Tower Defense Simulator Codes
+2025-08-09 18:38:20,313 - INFO - Scraping summary for tower_defense_simulator:
+2025-08-09 18:38:20,313 - INFO -   - Total codes found: 36
+2025-08-09 18:38:20,313 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:20,314 - INFO -   - Scraped at: 2025-08-09T18:38:20.313546
+2025-08-09 18:38:20,363 - INFO - Successfully updated ReversCodes/roblox-codes/tower-defense-simulator.html with 35 validated codes
+2025-08-09 18:38:20,363 - INFO - Completed tower_defense_simulator: 35 precise codes (quality: 1.00) from Pro Game Guides Tower Defense Simulator Codes
+2025-08-09 18:38:20,363 - INFO - Processing spongebob_tower_defense with precise extraction...
+2025-08-09 18:38:20,363 - INFO - Scraping Pocket Tactics SpongeBob Tower Defense Codes for spongebob_tower_defense
+2025-08-09 18:38:20,412 - INFO - Successfully scraped 23 codes from Pocket Tactics SpongeBob Tower Defense Codes
+2025-08-09 18:38:22,115 - INFO - Scraping Pro Game Guides SpongeBob Tower Defense Codes for spongebob_tower_defense
+2025-08-09 18:38:22,248 - INFO - Successfully scraped 38 codes from Pro Game Guides SpongeBob Tower Defense Codes
+2025-08-09 18:38:24,444 - INFO - Scraping summary for spongebob_tower_defense:
+2025-08-09 18:38:24,444 - INFO -   - Total codes found: 43
+2025-08-09 18:38:24,445 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:24,445 - INFO -   - Scraped at: 2025-08-09T18:38:24.444585
+2025-08-09 18:38:24,492 - INFO - Successfully updated ReversCodes/roblox-codes/spongebob-tower-defense.html with 42 validated codes
+2025-08-09 18:38:24,492 - INFO - Completed spongebob_tower_defense: 42 precise codes (quality: 1.00) from Pocket Tactics SpongeBob Tower Defense Codes
+2025-08-09 18:38:24,492 - INFO - Processing project_egoist with precise extraction...
+2025-08-09 18:38:24,492 - INFO - Scraping Pocket Tactics Project Egoist Codes for project_egoist
+2025-08-09 18:38:24,566 - INFO - Successfully scraped 12 codes from Pocket Tactics Project Egoist Codes
+2025-08-09 18:38:27,079 - INFO - Scraping Beebom Project Egoist Codes for project_egoist
+2025-08-09 18:38:27,156 - INFO - Successfully scraped 11 codes from Beebom Project Egoist Codes
+2025-08-09 18:38:28,474 - INFO - Scraping summary for project_egoist:
+2025-08-09 18:38:28,475 - INFO -   - Total codes found: 15
+2025-08-09 18:38:28,475 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:28,475 - INFO -   - Scraped at: 2025-08-09T18:38:28.474886
+2025-08-09 18:38:28,523 - INFO - Successfully updated ReversCodes/roblox-codes/project-egoist.html with 14 validated codes
+2025-08-09 18:38:28,524 - INFO - Completed project_egoist: 14 precise codes (quality: 1.00) from Pocket Tactics Project Egoist Codes
+2025-08-09 18:38:28,524 - INFO - Processing blue_lock_rivals with precise extraction...
+2025-08-09 18:38:28,524 - INFO - Scraping Pocket Tactics Blue Lock Rivals Codes for blue_lock_rivals
+2025-08-09 18:38:28,720 - INFO - Successfully scraped 56 codes from Pocket Tactics Blue Lock Rivals Codes
+2025-08-09 18:38:30,713 - INFO - Scraping Beebom Blue Lock Rivals Codes for blue_lock_rivals
+2025-08-09 18:38:30,775 - INFO - Successfully scraped 71 codes from Beebom Blue Lock Rivals Codes
+2025-08-09 18:38:33,065 - INFO - Scraping summary for blue_lock_rivals:
+2025-08-09 18:38:33,065 - INFO -   - Total codes found: 77
+2025-08-09 18:38:33,066 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:33,066 - INFO -   - Scraped at: 2025-08-09T18:38:33.065506
+2025-08-09 18:38:33,119 - INFO - Successfully updated ReversCodes/roblox-codes/blue-lock-rivals.html with 77 validated codes
+2025-08-09 18:38:33,119 - INFO - Completed blue_lock_rivals: 77 precise codes (quality: 1.00) from Pocket Tactics Blue Lock Rivals Codes
+2025-08-09 18:38:33,119 - INFO - Processing jujutsu_shenanigans with precise extraction...
+2025-08-09 18:38:33,119 - INFO - Scraping Pocket Tactics Jujutsu Shenanigans Codes for jujutsu_shenanigans
+2025-08-09 18:38:33,164 - INFO - Successfully scraped 10 codes from Pocket Tactics Jujutsu Shenanigans Codes
+2025-08-09 18:38:35,580 - INFO - Scraping PCGamesN Jujutsu Shenanigans Codes for jujutsu_shenanigans
+2025-08-09 18:38:35,634 - INFO - Successfully scraped 7 codes from PCGamesN Jujutsu Shenanigans Codes
+2025-08-09 18:38:38,017 - INFO - Scraping summary for jujutsu_shenanigans:
+2025-08-09 18:38:38,017 - INFO -   - Total codes found: 13
+2025-08-09 18:38:38,017 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:38,017 - INFO -   - Scraped at: 2025-08-09T18:38:38.017351
+2025-08-09 18:38:38,065 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-shenanigans.html with 13 validated codes
+2025-08-09 18:38:38,065 - INFO - Completed jujutsu_shenanigans: 13 precise codes (quality: 1.00) from Pocket Tactics Jujutsu Shenanigans Codes
+2025-08-09 18:38:38,066 - INFO - Processing combat_warriors with precise extraction...
+2025-08-09 18:38:38,066 - INFO - Scraping Pocket Tactics Combat Warriors Codes for combat_warriors
+2025-08-09 18:38:38,111 - INFO - Successfully scraped 22 codes from Pocket Tactics Combat Warriors Codes
+2025-08-09 18:38:39,825 - INFO - Scraping Twinfinite Combat Warriors Codes for combat_warriors
+2025-08-09 18:38:40,436 - INFO - Successfully scraped 23 codes from Twinfinite Combat Warriors Codes
+2025-08-09 18:38:42,796 - INFO - Scraping summary for combat_warriors:
+2025-08-09 18:38:42,796 - INFO -   - Total codes found: 26
+2025-08-09 18:38:42,796 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:42,796 - INFO -   - Scraped at: 2025-08-09T18:38:42.796050
+2025-08-09 18:38:42,845 - INFO - Successfully updated ReversCodes/roblox-codes/combat-warriors.html with 26 validated codes
+2025-08-09 18:38:42,845 - INFO - Completed combat_warriors: 26 precise codes (quality: 1.00) from Pocket Tactics Combat Warriors Codes
+2025-08-09 18:38:42,845 - INFO - Processing anime_rangers_x with precise extraction...
+2025-08-09 18:38:42,845 - INFO - Scraping VideoGamer Anime Rangers X Codes for anime_rangers_x
+2025-08-09 18:38:43,328 - INFO - Successfully scraped 50 codes from VideoGamer Anime Rangers X Codes
+2025-08-09 18:38:46,149 - INFO - Scraping Pocket Tactics Anime Rangers X Codes for anime_rangers_x
+2025-08-09 18:38:46,197 - INFO - Successfully scraped 22 codes from Pocket Tactics Anime Rangers X Codes
+2025-08-09 18:38:48,288 - INFO - Scraping summary for anime_rangers_x:
+2025-08-09 18:38:48,288 - INFO -   - Total codes found: 70
+2025-08-09 18:38:48,289 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:48,289 - INFO -   - Scraped at: 2025-08-09T18:38:48.288651
+2025-08-09 18:38:48,350 - INFO - Successfully updated ReversCodes/roblox-codes/anime-rangers-x.html with 70 validated codes
+2025-08-09 18:38:48,350 - INFO - Completed anime_rangers_x: 70 precise codes (quality: 1.00) from VideoGamer Anime Rangers X Codes
+2025-08-09 18:38:48,350 - INFO - Processing basketball_zero with precise extraction...
+2025-08-09 18:38:48,350 - INFO - Scraping KhelNow Basketball Zero Codes for basketball_zero
+2025-08-09 18:38:50,016 - INFO - Successfully scraped 46 codes from KhelNow Basketball Zero Codes
+2025-08-09 18:38:52,729 - INFO - Scraping Pocket Tactics Basketball Zero Codes for basketball_zero
+2025-08-09 18:38:52,776 - INFO - Successfully scraped 38 codes from Pocket Tactics Basketball Zero Codes
+2025-08-09 18:38:53,817 - INFO - Scraping summary for basketball_zero:
+2025-08-09 18:38:53,817 - INFO -   - Total codes found: 52
+2025-08-09 18:38:53,817 - INFO -   - Successful sources: 2/2
+2025-08-09 18:38:53,817 - INFO -   - Scraped at: 2025-08-09T18:38:53.817223
+2025-08-09 18:38:53,872 - INFO - Successfully updated ReversCodes/roblox-codes/basketball-zero.html with 51 validated codes
+2025-08-09 18:38:53,872 - INFO - Completed basketball_zero: 51 precise codes (quality: 1.00) from KhelNow Basketball Zero Codes
+2025-08-09 18:38:53,872 - INFO - Processing volleyball_legends with precise extraction...
+2025-08-09 18:38:53,872 - INFO - Scraping Pocket Tactics Volleyball Legends Codes for volleyball_legends
+2025-08-09 18:38:54,437 - INFO - Successfully scraped 124 codes from Pocket Tactics Volleyball Legends Codes
+2025-08-09 18:38:57,332 - INFO - Scraping Pro Game Guides Volleyball Legends Codes for volleyball_legends
+2025-08-09 18:38:57,456 - INFO - Successfully scraped 104 codes from Pro Game Guides Volleyball Legends Codes
+2025-08-09 18:39:00,369 - INFO - Scraping summary for volleyball_legends:
+2025-08-09 18:39:00,369 - INFO -   - Total codes found: 140
+2025-08-09 18:39:00,369 - INFO -   - Successful sources: 2/2
+2025-08-09 18:39:00,369 - INFO -   - Scraped at: 2025-08-09T18:39:00.369227
+2025-08-09 18:39:00,416 - INFO - Successfully updated ReversCodes/roblox-codes/volleyball-legends.html with 140 validated codes
+2025-08-09 18:39:00,417 - INFO - Completed volleyball_legends: 140 precise codes (quality: 1.00) from Pocket Tactics Volleyball Legends Codes
+2025-08-09 18:39:00,417 - INFO - Processing arise_crossover with precise extraction...
+2025-08-09 18:39:00,417 - INFO - Scraping Pocket Tactics Arise Crossover Codes for arise_crossover
+2025-08-09 18:39:00,602 - INFO - Successfully scraped 12 codes from Pocket Tactics Arise Crossover Codes
+2025-08-09 18:39:02,132 - INFO - Scraping Beebom Arise Crossover Codes for arise_crossover
+2025-08-09 18:39:02,189 - INFO - Successfully scraped 14 codes from Beebom Arise Crossover Codes
+2025-08-09 18:39:03,430 - INFO - Scraping summary for arise_crossover:
+2025-08-09 18:39:03,430 - INFO -   - Total codes found: 18
+2025-08-09 18:39:03,430 - INFO -   - Successful sources: 2/2
+2025-08-09 18:39:03,430 - INFO -   - Scraped at: 2025-08-09T18:39:03.430244
+2025-08-09 18:39:03,479 - INFO - Successfully updated ReversCodes/roblox-codes/arise-crossover.html with 18 validated codes
+2025-08-09 18:39:03,479 - INFO - Completed arise_crossover: 18 precise codes (quality: 1.00) from Pocket Tactics Arise Crossover Codes
+2025-08-09 18:39:03,481 - INFO - Precise game pages update completed successfully!
+2025-08-09 18:39:03,481 - INFO - Processed 29 games, 29 successful updates
+2025-08-09 18:39:03,481 - INFO - Total codes: 1475, Active found: 1475, Filtered: 1475
+2025-08-09 18:39:03,481 - INFO - Average quality score: 1.00, High confidence: 0, Medium confidence: 0

@@ -1,0 +1,1613 @@
+2025-08-09 17:03:41,607 - INFO - Starting Precise Code Extraction Tests
+2025-08-09 17:03:41,607 - INFO - ==================================================
+2025-08-09 17:03:41,607 - INFO - Testing precise code extraction with sample HTML...
+2025-08-09 17:03:41,646 - INFO - Found section anchor: 'Expired Codes' (type: expired_codes)
+2025-08-09 17:03:41,646 - INFO - Found 5 list items near anchor
+2025-08-09 17:03:41,647 - INFO - Found 2 list items near anchor
+2025-08-09 17:03:41,647 - INFO - === Code Extraction Results ===
+2025-08-09 17:03:41,647 - INFO - active_codes: 5 codes found
+2025-08-09 17:03:41,647 - INFO -   - UPDATE20 (confidence: HIGH, reward: 2x EXP for 20 minutes)
+2025-08-09 17:03:41,647 - INFO -   - RELEASE2024 (confidence: HIGH, reward: Free Spins)
+2025-08-09 17:03:41,647 - INFO -   - THANKYOU (confidence: MEDIUM, reward: 500 Gems)
+2025-08-09 17:03:41,648 - INFO -   - COMMUNITY (confidence: MEDIUM, reward: 3x EXP Boost)
+2025-08-09 17:03:41,648 - INFO -   - NEWYEAR2024 (confidence: HIGH, reward: Special Rewards)
+2025-08-09 17:03:41,648 - INFO - expired_codes: 2 codes found
+2025-08-09 17:03:41,648 - INFO -   - OLDCODE (confidence: MEDIUM, reward: Expired)
+2025-08-09 17:03:41,648 - INFO -   - TEST123 (confidence: MEDIUM, reward: No longer valid)
+2025-08-09 17:03:41,648 - INFO - unknown_codes: 0 codes found
+2025-08-09 17:03:41,648 - INFO - ========================================
+2025-08-09 17:03:41,648 - INFO - 
+=== Detailed Analysis ===
+2025-08-09 17:03:41,648 - INFO - 
+ACTIVE_CODES SECTION:
+2025-08-09 17:03:41,648 - INFO -   Code: UPDATE20
+2025-08-09 17:03:41,649 - INFO -   Reward: 2x EXP for 20 minutes
+2025-08-09 17:03:41,649 - INFO -   Confidence: HIGH
+2025-08-09 17:03:41,649 - INFO -   Context: UPDATE20 - 2x EXP for 20 minutes
+2025-08-09 17:03:41,649 - INFO -   ---
+2025-08-09 17:03:41,649 - INFO -   Code: RELEASE2024
+2025-08-09 17:03:41,649 - INFO -   Reward: Free Spins
+2025-08-09 17:03:41,649 - INFO -   Confidence: HIGH
+2025-08-09 17:03:41,649 - INFO -   Context: RELEASE2024 - Free Spins
+2025-08-09 17:03:41,649 - INFO -   ---
+2025-08-09 17:03:41,650 - INFO -   Code: THANKYOU
+2025-08-09 17:03:41,650 - INFO -   Reward: 500 Gems
+2025-08-09 17:03:41,650 - INFO -   Confidence: MEDIUM
+2025-08-09 17:03:41,650 - INFO -   Context: THANKYOU - 500 Gems
+2025-08-09 17:03:41,650 - INFO -   ---
+2025-08-09 17:03:41,650 - INFO -   Code: COMMUNITY
+2025-08-09 17:03:41,650 - INFO -   Reward: 3x EXP Boost
+2025-08-09 17:03:41,650 - INFO -   Confidence: MEDIUM
+2025-08-09 17:03:41,650 - INFO -   Context: COMMUNITY - 3x EXP Boost
+2025-08-09 17:03:41,650 - INFO -   ---
+2025-08-09 17:03:41,650 - INFO -   Code: NEWYEAR2024
+2025-08-09 17:03:41,651 - INFO -   Reward: Special Rewards
+2025-08-09 17:03:41,651 - INFO -   Confidence: HIGH
+2025-08-09 17:03:41,651 - INFO -   Context: NEWYEAR2024 - Special Rewards
+2025-08-09 17:03:41,651 - INFO -   ---
+2025-08-09 17:03:41,651 - INFO - 
+EXPIRED_CODES SECTION:
+2025-08-09 17:03:41,651 - INFO -   Code: OLDCODE
+2025-08-09 17:03:41,651 - INFO -   Reward: Expired
+2025-08-09 17:03:41,651 - INFO -   Confidence: MEDIUM
+2025-08-09 17:03:41,651 - INFO -   Context: OLDCODE - Expired
+2025-08-09 17:03:41,651 - INFO -   ---
+2025-08-09 17:03:41,651 - INFO -   Code: TEST123
+2025-08-09 17:03:41,652 - INFO -   Reward: No longer valid
+2025-08-09 17:03:41,652 - INFO -   Confidence: MEDIUM
+2025-08-09 17:03:41,652 - INFO -   Context: TEST123 - No longer valid
+2025-08-09 17:03:41,652 - INFO -   ---
+2025-08-09 17:03:41,652 - INFO - 
+UNKNOWN_CODES SECTION:
+2025-08-09 17:03:41,652 - INFO - 
+=== Testing Marketing Phrase Filtering ===
+2025-08-09 17:03:41,652 - INFO - 
+Text: 'UPDATE20 - 2x EXP for 20 minutes'
+2025-08-09 17:03:41,652 - INFO - Potential codes found: ['UPDATE20', 'MINUTES']
+2025-08-09 17:03:41,652 - INFO -   'UPDATE20': Valid=True, Confidence=HIGH (0.75)
+2025-08-09 17:03:41,653 - INFO -   'MINUTES': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,653 - INFO - 
+Text: '30-DAY day money back guarantee'
+2025-08-09 17:03:41,653 - INFO - Potential codes found: ['30-DAY', 'MONEY', 'BACK', 'GUARANTEE']
+2025-08-09 17:03:41,653 - INFO -   '30-DAY': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:03:41,653 - INFO -   'MONEY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,653 - INFO -   'BACK': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:03:41,653 - INFO -   'GUARANTEE': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:03:41,653 - INFO - 
+Text: 'Click here for more codes'
+2025-08-09 17:03:41,654 - INFO - Potential codes found: ['CLICK', 'HERE', 'MORE', 'CODES']
+2025-08-09 17:03:41,654 - INFO -   'CLICK': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:03:41,654 - INFO -   'HERE': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:03:41,654 - INFO -   'MORE': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:03:41,654 - INFO -   'CODES': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:03:41,654 - INFO - 
+Text: 'Follow us on social media'
+2025-08-09 17:03:41,654 - INFO - Potential codes found: ['FOLLOW', 'SOCIAL', 'MEDIA']
+2025-08-09 17:03:41,654 - INFO -   'FOLLOW': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,655 - INFO -   'SOCIAL': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,655 - INFO -   'MEDIA': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,655 - INFO - 
+Text: 'Subscribe to our newsletter'
+2025-08-09 17:03:41,655 - INFO - Potential codes found: ['SUBSCRIBE', 'NEWSLETTER']
+2025-08-09 17:03:41,655 - INFO -   'SUBSCRIBE': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:03:41,655 - INFO -   'NEWSLETTER': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:03:41,655 - INFO - 
+Text: 'Limited time offer'
+2025-08-09 17:03:41,655 - INFO - Potential codes found: ['LIMITED', 'TIME', 'OFFER']
+2025-08-09 17:03:41,655 - INFO -   'LIMITED': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,656 - INFO -   'TIME': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:03:41,656 - INFO -   'OFFER': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,656 - INFO - 
+Text: 'Terms apply'
+2025-08-09 17:03:41,656 - INFO - Potential codes found: ['TERMS', 'APPLY']
+2025-08-09 17:03:41,656 - INFO -   'TERMS': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,656 - INFO -   'APPLY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,656 - INFO - 
+Text: 'Last updated: January 2024'
+2025-08-09 17:03:41,656 - INFO - Potential codes found: ['LAST', 'UPDATED', 'JANUARY', '2024']
+2025-08-09 17:03:41,656 - INFO -   'LAST': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:03:41,657 - INFO -   'UPDATED': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,657 - INFO -   'JANUARY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:03:41,657 - INFO -   '2024': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:03:41,657 - INFO - 
+=== Testing Confidence Scoring ===
+2025-08-09 17:03:41,657 - INFO - Code: 'UPDATE20'
+2025-08-09 17:03:41,657 - INFO -   Valid: True
+2025-08-09 17:03:41,657 - INFO -   Confidence Score: 0.75
+2025-08-09 17:03:41,657 - INFO -   Confidence Level: HIGH
+2025-08-09 17:03:41,657 - INFO -   Context: 'UPDATE20 - 2x EXP for 20 minutes'
+2025-08-09 17:03:41,657 - INFO -   ---
+2025-08-09 17:03:41,658 - INFO - Code: 'RELEASE2024'
+2025-08-09 17:03:41,658 - INFO -   Valid: True
+2025-08-09 17:03:41,658 - INFO -   Confidence Score: 0.75
+2025-08-09 17:03:41,658 - INFO -   Confidence Level: HIGH
+2025-08-09 17:03:41,658 - INFO -   Context: 'RELEASE2024 - Free Spins'
+2025-08-09 17:03:41,658 - INFO -   ---
+2025-08-09 17:03:41,658 - INFO - Code: 'THANKYOU'
+2025-08-09 17:03:41,658 - INFO -   Valid: True
+2025-08-09 17:03:41,658 - INFO -   Confidence Score: 0.60
+2025-08-09 17:03:41,658 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:03:41,659 - INFO -   Context: 'THANKYOU - 500 Gems'
+2025-08-09 17:03:41,659 - INFO -   ---
+2025-08-09 17:03:41,659 - INFO - Code: 'ABC'
+2025-08-09 17:03:41,659 - INFO -   Valid: False
+2025-08-09 17:03:41,659 - INFO -   Confidence Score: 0.00
+2025-08-09 17:03:41,659 - INFO -   Confidence Level: LOW
+2025-08-09 17:03:41,659 - INFO -   Context: 'ABC - Some reward'
+2025-08-09 17:03:41,660 - INFO -   ---
+2025-08-09 17:03:41,660 - INFO - Code: 'VERYLONGCODENAMETHATEXCEEDSTWENTYFIVE'
+2025-08-09 17:03:41,660 - INFO -   Valid: False
+2025-08-09 17:03:41,660 - INFO -   Confidence Score: 0.00
+2025-08-09 17:03:41,660 - INFO -   Confidence Level: LOW
+2025-08-09 17:03:41,660 - INFO -   Context: 'Very long code'
+2025-08-09 17:03:41,660 - INFO -   ---
+2025-08-09 17:03:41,661 - INFO - Code: 'UPDATE'
+2025-08-09 17:03:41,661 - INFO -   Valid: True
+2025-08-09 17:03:41,661 - INFO -   Confidence Score: 0.50
+2025-08-09 17:03:41,661 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:03:41,661 - INFO -   Context: 'UPDATE - Generic reward'
+2025-08-09 17:03:41,661 - INFO -   ---
+2025-08-09 17:03:41,661 - INFO - Code: '12345'
+2025-08-09 17:03:41,661 - INFO -   Valid: True
+2025-08-09 17:03:41,662 - INFO -   Confidence Score: 0.65
+2025-08-09 17:03:41,662 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:03:41,662 - INFO -   Context: '12345 - Numbers only'
+2025-08-09 17:03:41,662 - INFO -   ---
+2025-08-09 17:03:41,662 - INFO - Code: 'TEST_CODE'
+2025-08-09 17:03:41,662 - INFO -   Valid: True
+2025-08-09 17:03:41,662 - INFO -   Confidence Score: 0.70
+2025-08-09 17:03:41,662 - INFO -   Confidence Level: HIGH
+2025-08-09 17:03:41,662 - INFO -   Context: 'TEST_CODE - With underscore'
+2025-08-09 17:03:41,663 - INFO -   ---
+2025-08-09 17:03:41,663 - INFO - 
+=== Testing Section Anchor Detection ===
+2025-08-09 17:03:41,665 - INFO - Found section anchor: 'Active Code' (type: active_codes)
+2025-08-09 17:03:41,665 - INFO - Found section anchor: 'Codes' (type: active_codes)
+2025-08-09 17:03:41,665 - INFO - Found section anchor: 'Redeemable Codes' (type: active_codes)
+2025-08-09 17:03:41,665 - INFO - Found section anchor: 'Expired Codes' (type: expired_codes)
+2025-08-09 17:03:41,665 - INFO - Found 5 section anchors:
+2025-08-09 17:03:41,666 - INFO -   - 'Active Code' (type: active_codes)
+2025-08-09 17:03:41,667 - INFO -   - 'Codes' (type: active_codes)
+2025-08-09 17:03:41,667 - INFO -   - 'Redeemable Codes' (type: active_codes)
+2025-08-09 17:03:41,667 - INFO -   - 'Expired Codes' (type: expired_codes)
+2025-08-09 17:03:41,669 - INFO - Found section anchor: 'Active Code' (type: active_codes)
+2025-08-09 17:03:41,669 - INFO - Found section anchor: 'Codes' (type: active_codes)
+2025-08-09 17:03:41,669 - INFO - Found section anchor: 'Redeemable Codes' (type: active_codes)
+2025-08-09 17:03:41,669 - INFO - Found section anchor: 'Expired Codes' (type: expired_codes)
+2025-08-09 17:03:41,670 - INFO - Found 1 list items near anchor
+2025-08-09 17:03:41,670 - INFO - Found 1 list items near anchor
+2025-08-09 17:03:41,670 - INFO - Found 1 list items near anchor
+2025-08-09 17:03:41,670 - INFO - Found 1 list items near anchor
+2025-08-09 17:03:41,671 - INFO - Found 1 list items near anchor
+2025-08-09 17:03:41,671 - INFO - === Code Extraction Results ===
+2025-08-09 17:03:41,671 - INFO - active_codes: 4 codes found
+2025-08-09 17:03:41,671 - INFO -   - CODE1 (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 17:03:41,671 - INFO -   - CODE2 (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 17:03:41,671 - INFO -   - CODE3 (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 17:03:41,671 - INFO -   - CODE4 (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 17:03:41,672 - INFO - expired_codes: 1 codes found
+2025-08-09 17:03:41,672 - INFO -   - CODE5 (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 17:03:41,672 - INFO - unknown_codes: 0 codes found
+2025-08-09 17:03:41,672 - INFO - ========================================
+2025-08-09 17:03:41,672 - INFO - 
+All tests completed!
+2025-08-09 17:03:41,672 - INFO - ==================================================
+2025-08-09 17:09:01,813 - INFO - Starting Precise Code Extraction Tests
+2025-08-09 17:09:01,814 - INFO - ==================================================
+2025-08-09 17:09:01,814 - INFO - Testing precise code extraction with sample HTML...
+2025-08-09 17:09:01,815 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 17:09:01,816 - INFO - === Code Extraction Results ===
+2025-08-09 17:09:01,816 - INFO - active_codes: 0 codes found
+2025-08-09 17:09:01,816 - INFO - expired_codes: 0 codes found
+2025-08-09 17:09:01,816 - INFO - unknown_codes: 7 codes found
+2025-08-09 17:09:01,817 - INFO -   - UPDATE20 (confidence: HIGH, reward: 2x EXP for 20 minutes)
+2025-08-09 17:09:01,817 - INFO -   - RELEASE2024 (confidence: HIGH, reward: Free Spins)
+2025-08-09 17:09:01,817 - INFO -   - THANKYOU (confidence: MEDIUM, reward: 500 Gems)
+2025-08-09 17:09:01,817 - INFO -   - COMMUNITY (confidence: MEDIUM, reward: 3x EXP Boost)
+2025-08-09 17:09:01,817 - INFO -   - NEWYEAR2024 (confidence: HIGH, reward: Special Rewards)
+2025-08-09 17:09:01,817 - INFO - ========================================
+2025-08-09 17:09:01,817 - INFO - 
+=== Detailed Analysis ===
+2025-08-09 17:09:01,817 - INFO - 
+ACTIVE_CODES SECTION:
+2025-08-09 17:09:01,818 - INFO - 
+EXPIRED_CODES SECTION:
+2025-08-09 17:09:01,818 - INFO - 
+UNKNOWN_CODES SECTION:
+2025-08-09 17:09:01,818 - INFO -   Code: UPDATE20
+2025-08-09 17:09:01,818 - INFO -   Reward: 2x EXP for 20 minutes
+2025-08-09 17:09:01,818 - INFO -   Confidence: HIGH
+2025-08-09 17:09:01,818 - INFO -   Context: UPDATE20 - 2x EXP for 20 minutes
+2025-08-09 17:09:01,818 - INFO -   ---
+2025-08-09 17:09:01,818 - INFO -   Code: RELEASE2024
+2025-08-09 17:09:01,818 - INFO -   Reward: Free Spins
+2025-08-09 17:09:01,819 - INFO -   Confidence: HIGH
+2025-08-09 17:09:01,819 - INFO -   Context: RELEASE2024 - Free Spins
+2025-08-09 17:09:01,819 - INFO -   ---
+2025-08-09 17:09:01,819 - INFO -   Code: THANKYOU
+2025-08-09 17:09:01,819 - INFO -   Reward: 500 Gems
+2025-08-09 17:09:01,819 - INFO -   Confidence: MEDIUM
+2025-08-09 17:09:01,819 - INFO -   Context: THANKYOU - 500 Gems
+2025-08-09 17:09:01,819 - INFO -   ---
+2025-08-09 17:09:01,819 - INFO -   Code: COMMUNITY
+2025-08-09 17:09:01,819 - INFO -   Reward: 3x EXP Boost
+2025-08-09 17:09:01,820 - INFO -   Confidence: MEDIUM
+2025-08-09 17:09:01,820 - INFO -   Context: COMMUNITY - 3x EXP Boost
+2025-08-09 17:09:01,820 - INFO -   ---
+2025-08-09 17:09:01,820 - INFO -   Code: NEWYEAR2024
+2025-08-09 17:09:01,820 - INFO -   Reward: Special Rewards
+2025-08-09 17:09:01,820 - INFO -   Confidence: HIGH
+2025-08-09 17:09:01,820 - INFO -   Context: NEWYEAR2024 - Special Rewards
+2025-08-09 17:09:01,820 - INFO -   ---
+2025-08-09 17:09:01,820 - INFO -   Code: OLDCODE
+2025-08-09 17:09:01,820 - INFO -   Reward: Expired
+2025-08-09 17:09:01,820 - INFO -   Confidence: MEDIUM
+2025-08-09 17:09:01,821 - INFO -   Context: OLDCODE - Expired
+2025-08-09 17:09:01,821 - INFO -   ---
+2025-08-09 17:09:01,821 - INFO -   Code: TEST123
+2025-08-09 17:09:01,821 - INFO -   Reward: No longer valid
+2025-08-09 17:09:01,821 - INFO -   Confidence: MEDIUM
+2025-08-09 17:09:01,821 - INFO -   Context: TEST123 - No longer valid
+2025-08-09 17:09:01,821 - INFO -   ---
+2025-08-09 17:09:01,821 - INFO - 
+=== Testing Marketing Phrase Filtering ===
+2025-08-09 17:09:01,822 - INFO - 
+Text: 'UPDATE20 - 2x EXP for 20 minutes'
+2025-08-09 17:09:01,822 - INFO - Potential codes found: ['UPDATE20', 'MINUTES']
+2025-08-09 17:09:01,822 - INFO -   'UPDATE20': Valid=True, Confidence=HIGH (0.75)
+2025-08-09 17:09:01,822 - INFO -   'MINUTES': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,822 - INFO - 
+Text: '30-DAY day money back guarantee'
+2025-08-09 17:09:01,822 - INFO - Potential codes found: ['30-DAY', 'MONEY', 'BACK', 'GUARANTEE']
+2025-08-09 17:09:01,822 - INFO -   '30-DAY': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:09:01,822 - INFO -   'MONEY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,823 - INFO -   'BACK': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:09:01,823 - INFO -   'GUARANTEE': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:09:01,823 - INFO - 
+Text: 'Click here for more codes'
+2025-08-09 17:09:01,823 - INFO - Potential codes found: ['CLICK', 'HERE', 'MORE', 'CODES']
+2025-08-09 17:09:01,823 - INFO -   'CLICK': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:09:01,823 - INFO -   'HERE': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:09:01,824 - INFO -   'MORE': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:09:01,824 - INFO -   'CODES': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:09:01,824 - INFO - 
+Text: 'Follow us on social media'
+2025-08-09 17:09:01,824 - INFO - Potential codes found: ['FOLLOW', 'SOCIAL', 'MEDIA']
+2025-08-09 17:09:01,824 - INFO -   'FOLLOW': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,824 - INFO -   'SOCIAL': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,824 - INFO -   'MEDIA': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,824 - INFO - 
+Text: 'Subscribe to our newsletter'
+2025-08-09 17:09:01,825 - INFO - Potential codes found: ['SUBSCRIBE', 'NEWSLETTER']
+2025-08-09 17:09:01,825 - INFO -   'SUBSCRIBE': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:09:01,825 - INFO -   'NEWSLETTER': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:09:01,825 - INFO - 
+Text: 'Limited time offer'
+2025-08-09 17:09:01,825 - INFO - Potential codes found: ['LIMITED', 'TIME', 'OFFER']
+2025-08-09 17:09:01,825 - INFO -   'LIMITED': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,825 - INFO -   'TIME': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:09:01,825 - INFO -   'OFFER': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,825 - INFO - 
+Text: 'Terms apply'
+2025-08-09 17:09:01,826 - INFO - Potential codes found: ['TERMS', 'APPLY']
+2025-08-09 17:09:01,826 - INFO -   'TERMS': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,826 - INFO -   'APPLY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,826 - INFO - 
+Text: 'Last updated: January 2024'
+2025-08-09 17:09:01,826 - INFO - Potential codes found: ['LAST', 'UPDATED', 'JANUARY', '2024']
+2025-08-09 17:09:01,826 - INFO -   'LAST': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:09:01,826 - INFO -   'UPDATED': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,826 - INFO -   'JANUARY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:09:01,827 - INFO -   '2024': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:09:01,827 - INFO - 
+=== Testing Confidence Scoring ===
+2025-08-09 17:09:01,827 - INFO - Code: 'UPDATE20'
+2025-08-09 17:09:01,827 - INFO -   Valid: True
+2025-08-09 17:09:01,827 - INFO -   Confidence Score: 0.75
+2025-08-09 17:09:01,827 - INFO -   Confidence Level: HIGH
+2025-08-09 17:09:01,827 - INFO -   Context: 'UPDATE20 - 2x EXP for 20 minutes'
+2025-08-09 17:09:01,827 - INFO -   ---
+2025-08-09 17:09:01,827 - INFO - Code: 'RELEASE2024'
+2025-08-09 17:09:01,827 - INFO -   Valid: True
+2025-08-09 17:09:01,828 - INFO -   Confidence Score: 0.75
+2025-08-09 17:09:01,828 - INFO -   Confidence Level: HIGH
+2025-08-09 17:09:01,828 - INFO -   Context: 'RELEASE2024 - Free Spins'
+2025-08-09 17:09:01,828 - INFO -   ---
+2025-08-09 17:09:01,828 - INFO - Code: 'THANKYOU'
+2025-08-09 17:09:01,828 - INFO -   Valid: True
+2025-08-09 17:09:01,828 - INFO -   Confidence Score: 0.60
+2025-08-09 17:09:01,828 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:09:01,828 - INFO -   Context: 'THANKYOU - 500 Gems'
+2025-08-09 17:09:01,828 - INFO -   ---
+2025-08-09 17:09:01,829 - INFO - Code: 'ABC'
+2025-08-09 17:09:01,829 - INFO -   Valid: False
+2025-08-09 17:09:01,829 - INFO -   Confidence Score: 0.00
+2025-08-09 17:09:01,829 - INFO -   Confidence Level: LOW
+2025-08-09 17:09:01,829 - INFO -   Context: 'ABC - Some reward'
+2025-08-09 17:09:01,829 - INFO -   ---
+2025-08-09 17:09:01,829 - INFO - Code: 'VERYLONGCODENAMETHATEXCEEDSTWENTYFIVE'
+2025-08-09 17:09:01,829 - INFO -   Valid: False
+2025-08-09 17:09:01,829 - INFO -   Confidence Score: 0.00
+2025-08-09 17:09:01,830 - INFO -   Confidence Level: LOW
+2025-08-09 17:09:01,830 - INFO -   Context: 'Very long code'
+2025-08-09 17:09:01,830 - INFO -   ---
+2025-08-09 17:09:01,830 - INFO - Code: 'UPDATE'
+2025-08-09 17:09:01,830 - INFO -   Valid: True
+2025-08-09 17:09:01,830 - INFO -   Confidence Score: 0.50
+2025-08-09 17:09:01,830 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:09:01,830 - INFO -   Context: 'UPDATE - Generic reward'
+2025-08-09 17:09:01,830 - INFO -   ---
+2025-08-09 17:09:01,831 - INFO - Code: '12345'
+2025-08-09 17:09:01,831 - INFO -   Valid: True
+2025-08-09 17:09:01,831 - INFO -   Confidence Score: 0.65
+2025-08-09 17:09:01,831 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:09:01,831 - INFO -   Context: '12345 - Numbers only'
+2025-08-09 17:09:01,831 - INFO -   ---
+2025-08-09 17:09:01,831 - INFO - Code: 'TEST_CODE'
+2025-08-09 17:09:01,831 - INFO -   Valid: True
+2025-08-09 17:09:01,832 - INFO -   Confidence Score: 0.70
+2025-08-09 17:09:01,832 - INFO -   Confidence Level: HIGH
+2025-08-09 17:09:01,832 - INFO -   Context: 'TEST_CODE - With underscore'
+2025-08-09 17:09:01,832 - INFO -   ---
+2025-08-09 17:09:01,832 - INFO - 
+=== Testing Section Anchor Detection ===
+2025-08-09 17:09:01,833 - INFO - Found 0 section anchors:
+2025-08-09 17:09:01,834 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 17:09:01,834 - INFO - === Code Extraction Results ===
+2025-08-09 17:09:01,834 - INFO - active_codes: 0 codes found
+2025-08-09 17:09:01,834 - INFO - expired_codes: 0 codes found
+2025-08-09 17:09:01,834 - INFO - unknown_codes: 0 codes found
+2025-08-09 17:09:01,835 - INFO - ========================================
+2025-08-09 17:09:01,835 - INFO - 
+All tests completed!
+2025-08-09 17:09:01,835 - INFO - ==================================================
+2025-08-09 17:57:32,628 - INFO - Starting Precise Code Extraction Tests
+2025-08-09 17:57:32,628 - INFO - ==================================================
+2025-08-09 17:57:32,629 - INFO - Testing precise code extraction with sample HTML...
+2025-08-09 17:57:32,631 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 17:57:32,631 - INFO - === Code Extraction Results ===
+2025-08-09 17:57:32,631 - INFO - active_codes: 0 codes found
+2025-08-09 17:57:32,631 - INFO - expired_codes: 0 codes found
+2025-08-09 17:57:32,632 - INFO - unknown_codes: 7 codes found
+2025-08-09 17:57:32,632 - INFO -   - UPDATE20 (confidence: HIGH, reward: 2x EXP for 20 minutes)
+2025-08-09 17:57:32,632 - INFO -   - RELEASE2024 (confidence: HIGH, reward: Free Spins)
+2025-08-09 17:57:32,632 - INFO -   - THANKYOU (confidence: MEDIUM, reward: 500 Gems)
+2025-08-09 17:57:32,632 - INFO -   - COMMUNITY (confidence: MEDIUM, reward: 3x EXP Boost)
+2025-08-09 17:57:32,632 - INFO -   - NEWYEAR2024 (confidence: HIGH, reward: Special Rewards)
+2025-08-09 17:57:32,632 - INFO - ========================================
+2025-08-09 17:57:32,632 - INFO - 
+=== Detailed Analysis ===
+2025-08-09 17:57:32,633 - INFO - 
+ACTIVE_CODES SECTION:
+2025-08-09 17:57:32,633 - INFO - 
+EXPIRED_CODES SECTION:
+2025-08-09 17:57:32,633 - INFO - 
+UNKNOWN_CODES SECTION:
+2025-08-09 17:57:32,633 - INFO -   Code: UPDATE20
+2025-08-09 17:57:32,633 - INFO -   Reward: 2x EXP for 20 minutes
+2025-08-09 17:57:32,633 - INFO -   Confidence: HIGH
+2025-08-09 17:57:32,634 - INFO -   Context: UPDATE20 - 2x EXP for 20 minutes
+2025-08-09 17:57:32,634 - INFO -   ---
+2025-08-09 17:57:32,634 - INFO -   Code: RELEASE2024
+2025-08-09 17:57:32,634 - INFO -   Reward: Free Spins
+2025-08-09 17:57:32,634 - INFO -   Confidence: HIGH
+2025-08-09 17:57:32,634 - INFO -   Context: RELEASE2024 - Free Spins
+2025-08-09 17:57:32,634 - INFO -   ---
+2025-08-09 17:57:32,634 - INFO -   Code: THANKYOU
+2025-08-09 17:57:32,635 - INFO -   Reward: 500 Gems
+2025-08-09 17:57:32,635 - INFO -   Confidence: MEDIUM
+2025-08-09 17:57:32,635 - INFO -   Context: THANKYOU - 500 Gems
+2025-08-09 17:57:32,635 - INFO -   ---
+2025-08-09 17:57:32,635 - INFO -   Code: COMMUNITY
+2025-08-09 17:57:32,635 - INFO -   Reward: 3x EXP Boost
+2025-08-09 17:57:32,635 - INFO -   Confidence: MEDIUM
+2025-08-09 17:57:32,635 - INFO -   Context: COMMUNITY - 3x EXP Boost
+2025-08-09 17:57:32,635 - INFO -   ---
+2025-08-09 17:57:32,635 - INFO -   Code: NEWYEAR2024
+2025-08-09 17:57:32,636 - INFO -   Reward: Special Rewards
+2025-08-09 17:57:32,636 - INFO -   Confidence: HIGH
+2025-08-09 17:57:32,636 - INFO -   Context: NEWYEAR2024 - Special Rewards
+2025-08-09 17:57:32,636 - INFO -   ---
+2025-08-09 17:57:32,636 - INFO -   Code: OLDCODE
+2025-08-09 17:57:32,636 - INFO -   Reward: Expired
+2025-08-09 17:57:32,636 - INFO -   Confidence: MEDIUM
+2025-08-09 17:57:32,636 - INFO -   Context: OLDCODE - Expired
+2025-08-09 17:57:32,636 - INFO -   ---
+2025-08-09 17:57:32,637 - INFO -   Code: TEST123
+2025-08-09 17:57:32,637 - INFO -   Reward: No longer valid
+2025-08-09 17:57:32,637 - INFO -   Confidence: MEDIUM
+2025-08-09 17:57:32,637 - INFO -   Context: TEST123 - No longer valid
+2025-08-09 17:57:32,637 - INFO -   ---
+2025-08-09 17:57:32,637 - INFO - 
+=== Testing Marketing Phrase Filtering ===
+2025-08-09 17:57:32,637 - INFO - 
+Text: 'UPDATE20 - 2x EXP for 20 minutes'
+2025-08-09 17:57:32,637 - INFO - Potential codes found: ['UPDATE20', 'MINUTES']
+2025-08-09 17:57:32,638 - INFO -   'UPDATE20': Valid=True, Confidence=HIGH (0.75)
+2025-08-09 17:57:32,638 - INFO -   'MINUTES': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,638 - INFO - 
+Text: '30-DAY day money back guarantee'
+2025-08-09 17:57:32,638 - INFO - Potential codes found: ['30-DAY', 'MONEY', 'BACK', 'GUARANTEE']
+2025-08-09 17:57:32,638 - INFO -   '30-DAY': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:57:32,638 - INFO -   'MONEY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,638 - INFO -   'BACK': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:57:32,638 - INFO -   'GUARANTEE': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:57:32,638 - INFO - 
+Text: 'Click here for more codes'
+2025-08-09 17:57:32,639 - INFO - Potential codes found: ['CLICK', 'HERE', 'MORE', 'CODES']
+2025-08-09 17:57:32,639 - INFO -   'CLICK': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:57:32,639 - INFO -   'HERE': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:57:32,639 - INFO -   'MORE': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:57:32,639 - INFO -   'CODES': Valid=True, Confidence=MEDIUM (0.65)
+2025-08-09 17:57:32,639 - INFO - 
+Text: 'Follow us on social media'
+2025-08-09 17:57:32,639 - INFO - Potential codes found: ['FOLLOW', 'SOCIAL', 'MEDIA']
+2025-08-09 17:57:32,639 - INFO -   'FOLLOW': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,639 - INFO -   'SOCIAL': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,640 - INFO -   'MEDIA': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,640 - INFO - 
+Text: 'Subscribe to our newsletter'
+2025-08-09 17:57:32,640 - INFO - Potential codes found: ['SUBSCRIBE', 'NEWSLETTER']
+2025-08-09 17:57:32,640 - INFO -   'SUBSCRIBE': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:57:32,640 - INFO -   'NEWSLETTER': Valid=True, Confidence=MEDIUM (0.60)
+2025-08-09 17:57:32,640 - INFO - 
+Text: 'Limited time offer'
+2025-08-09 17:57:32,640 - INFO - Potential codes found: ['LIMITED', 'TIME', 'OFFER']
+2025-08-09 17:57:32,640 - INFO -   'LIMITED': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,640 - INFO -   'TIME': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:57:32,641 - INFO -   'OFFER': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,641 - INFO - 
+Text: 'Terms apply'
+2025-08-09 17:57:32,641 - INFO - Potential codes found: ['TERMS', 'APPLY']
+2025-08-09 17:57:32,641 - INFO -   'TERMS': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,641 - INFO -   'APPLY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,641 - INFO - 
+Text: 'Last updated: January 2024'
+2025-08-09 17:57:32,641 - INFO - Potential codes found: ['LAST', 'UPDATED', 'JANUARY', '2024']
+2025-08-09 17:57:32,641 - INFO -   'LAST': Valid=True, Confidence=LOW (0.00)
+2025-08-09 17:57:32,641 - INFO -   'UPDATED': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,641 - INFO -   'JANUARY': Valid=True, Confidence=MEDIUM (0.50)
+2025-08-09 17:57:32,642 - INFO -   '2024': Valid=True, Confidence=LOW (0.15)
+2025-08-09 17:57:32,642 - INFO - 
+=== Testing Confidence Scoring ===
+2025-08-09 17:57:32,642 - INFO - Code: 'UPDATE20'
+2025-08-09 17:57:32,642 - INFO -   Valid: True
+2025-08-09 17:57:32,642 - INFO -   Confidence Score: 0.75
+2025-08-09 17:57:32,642 - INFO -   Confidence Level: HIGH
+2025-08-09 17:57:32,642 - INFO -   Context: 'UPDATE20 - 2x EXP for 20 minutes'
+2025-08-09 17:57:32,642 - INFO -   ---
+2025-08-09 17:57:32,642 - INFO - Code: 'RELEASE2024'
+2025-08-09 17:57:32,642 - INFO -   Valid: True
+2025-08-09 17:57:32,642 - INFO -   Confidence Score: 0.75
+2025-08-09 17:57:32,642 - INFO -   Confidence Level: HIGH
+2025-08-09 17:57:32,643 - INFO -   Context: 'RELEASE2024 - Free Spins'
+2025-08-09 17:57:32,643 - INFO -   ---
+2025-08-09 17:57:32,643 - INFO - Code: 'THANKYOU'
+2025-08-09 17:57:32,643 - INFO -   Valid: True
+2025-08-09 17:57:32,643 - INFO -   Confidence Score: 0.60
+2025-08-09 17:57:32,643 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:57:32,643 - INFO -   Context: 'THANKYOU - 500 Gems'
+2025-08-09 17:57:32,643 - INFO -   ---
+2025-08-09 17:57:32,643 - INFO - Code: 'ABC'
+2025-08-09 17:57:32,643 - INFO -   Valid: False
+2025-08-09 17:57:32,643 - INFO -   Confidence Score: 0.00
+2025-08-09 17:57:32,643 - INFO -   Confidence Level: LOW
+2025-08-09 17:57:32,644 - INFO -   Context: 'ABC - Some reward'
+2025-08-09 17:57:32,644 - INFO -   ---
+2025-08-09 17:57:32,644 - INFO - Code: 'VERYLONGCODENAMETHATEXCEEDSTWENTYFIVE'
+2025-08-09 17:57:32,644 - INFO -   Valid: False
+2025-08-09 17:57:32,644 - INFO -   Confidence Score: 0.00
+2025-08-09 17:57:32,644 - INFO -   Confidence Level: LOW
+2025-08-09 17:57:32,644 - INFO -   Context: 'Very long code'
+2025-08-09 17:57:32,644 - INFO -   ---
+2025-08-09 17:57:32,644 - INFO - Code: 'UPDATE'
+2025-08-09 17:57:32,644 - INFO -   Valid: True
+2025-08-09 17:57:32,645 - INFO -   Confidence Score: 0.50
+2025-08-09 17:57:32,645 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:57:32,645 - INFO -   Context: 'UPDATE - Generic reward'
+2025-08-09 17:57:32,645 - INFO -   ---
+2025-08-09 17:57:32,645 - INFO - Code: '12345'
+2025-08-09 17:57:32,645 - INFO -   Valid: True
+2025-08-09 17:57:32,645 - INFO -   Confidence Score: 0.65
+2025-08-09 17:57:32,645 - INFO -   Confidence Level: MEDIUM
+2025-08-09 17:57:32,645 - INFO -   Context: '12345 - Numbers only'
+2025-08-09 17:57:32,645 - INFO -   ---
+2025-08-09 17:57:32,646 - INFO - Code: 'TEST_CODE'
+2025-08-09 17:57:32,646 - INFO -   Valid: True
+2025-08-09 17:57:32,646 - INFO -   Confidence Score: 0.70
+2025-08-09 17:57:32,646 - INFO -   Confidence Level: HIGH
+2025-08-09 17:57:32,646 - INFO -   Context: 'TEST_CODE - With underscore'
+2025-08-09 17:57:32,646 - INFO -   ---
+2025-08-09 17:57:32,646 - INFO - 
+=== Testing Section Anchor Detection ===
+2025-08-09 17:57:32,647 - INFO - Found 0 section anchors:
+2025-08-09 17:57:32,648 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 17:57:32,648 - INFO - === Code Extraction Results ===
+2025-08-09 17:57:32,648 - INFO - active_codes: 0 codes found
+2025-08-09 17:57:32,648 - INFO - expired_codes: 0 codes found
+2025-08-09 17:57:32,649 - INFO - unknown_codes: 0 codes found
+2025-08-09 17:57:32,649 - INFO - ========================================
+2025-08-09 17:57:32,649 - INFO - 
+All tests completed!
+2025-08-09 17:57:32,649 - INFO - ==================================================
+2025-08-09 18:02:33,887 - INFO - Starting precise game pages update with section anchor detection...
+2025-08-09 18:02:33,887 - INFO - Scraping and updating codes for all games with precise extraction...
+2025-08-09 18:02:33,887 - INFO - Processing driving_empire with precise extraction...
+2025-08-09 18:02:33,887 - INFO - Scraping driving_empire codes from Beebom Driving Empire Codes
+2025-08-09 18:02:33,888 - INFO - Fetching https://beebom.com/roblox-driving-empire-codes/ (attempt 1)
+2025-08-09 18:02:34,190 - INFO - Extracting codes from Beebom Driving Empire Codes using precise extractor
+2025-08-09 18:02:34,218 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:34,221 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:34,221 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:34,221 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:34,222 - INFO - unknown_codes: 7 codes found
+2025-08-09 18:02:34,222 - INFO -   - 2MLIKES (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:02:34,222 - INFO -   - NASCAR100M (confidence: HIGH, reward: Redeem for 200 Trophies)
+2025-08-09 18:02:34,222 - INFO -   - CUSTOMIZATION2025 (confidence: MEDIUM, reward: Redeem for 10 Tuning Kits)
+2025-08-09 18:02:34,222 - INFO -   - 1MILCASH (confidence: HIGH, reward: Redeem for 1 Cash)
+2025-08-09 18:02:34,223 - INFO -   - 200KMEMBERS (confidence: HIGH, reward: Redeem for 50,000 Cash)
+2025-08-09 18:02:34,223 - INFO - ========================================
+2025-08-09 18:02:37,123 - INFO - Scraping driving_empire codes from Pocket Tactics Driving Empire Codes
+2025-08-09 18:02:37,124 - INFO - Fetching https://www.pockettactics.com/driving-empire/codes (attempt 1)
+2025-08-09 18:02:37,583 - INFO - Extracting codes from Pocket Tactics Driving Empire Codes using precise extractor
+2025-08-09 18:02:37,594 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:37,595 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:37,595 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:37,596 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:37,596 - INFO - unknown_codes: 8 codes found
+2025-08-09 18:02:37,596 - INFO -   - BADGUYS2 (confidence: HIGH, reward: new!)
+2025-08-09 18:02:37,596 - INFO -   - NASCAR100M (confidence: HIGH, reward: 200 trophies)
+2025-08-09 18:02:37,596 - INFO -   - CUSTOMIZATION2025 (confidence: MEDIUM, reward: ten tuning kits)
+2025-08-09 18:02:37,596 - INFO -   - 1MILCASH (confidence: HIGH, reward: cash)
+2025-08-09 18:02:37,596 - INFO -   - ZOOM (confidence: LOW, reward: fairway zoomer car)
+2025-08-09 18:02:37,596 - INFO - ========================================
+2025-08-09 18:02:40,046 - INFO - === Scraping Summary for driving_empire ===
+2025-08-09 18:02:40,047 - INFO - Active codes: 0
+2025-08-09 18:02:40,047 - INFO - Expired codes: 0
+2025-08-09 18:02:40,047 - INFO - Unknown codes: 13
+2025-08-09 18:02:40,047 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:02:40,047 - INFO - Quality score: 0.00
+2025-08-09 18:02:40,047 - WARNING - Recommendations:
+2025-08-09 18:02:40,047 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:02:40,047 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:02:40,048 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:02:40,048 - INFO - ==================================================
+2025-08-09 18:02:40,050 - INFO - Successfully updated ReversCodes/roblox-codes/driving-empire.html with 0 validated codes
+2025-08-09 18:02:40,050 - INFO - Completed driving_empire: 0 precise codes (quality: 0.00) from Beebom Driving Empire Codes
+2025-08-09 18:02:40,050 - INFO - Processing blox_fruits with precise extraction...
+2025-08-09 18:02:40,050 - INFO - Scraping blox_fruits codes from PCGamesN Blox Fruits Codes
+2025-08-09 18:02:40,051 - INFO - Fetching https://www.pcgamesn.com/blox-fruits/codes (attempt 1)
+2025-08-09 18:02:40,486 - INFO - Extracting codes from PCGamesN Blox Fruits Codes using precise extractor
+2025-08-09 18:02:40,499 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:40,501 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:40,501 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:40,502 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:40,502 - INFO - unknown_codes: 6 codes found
+2025-08-09 18:02:40,502 - INFO -   - 1LOSTADMIN (confidence: HIGH, reward: 20 minutes of 2x exp)
+2025-08-09 18:02:40,502 - INFO -   - ADMINFIGHT (confidence: MEDIUM, reward: 20 minutes of 2x exp)
+2025-08-09 18:02:40,502 - INFO -   - GIFTING_HOURS (confidence: HIGH, reward: 20 minutes of 2x exp)
+2025-08-09 18:02:40,502 - INFO -   - KITT_RESET (confidence: HIGH, reward: reset stats)
+2025-08-09 18:02:40,502 - INFO -   - JCWK (confidence: LOW, reward: 2x exp)
+2025-08-09 18:02:40,502 - INFO - ========================================
+2025-08-09 18:02:42,583 - INFO - Scraping blox_fruits codes from PC Gamer Blox Fruits Codes
+2025-08-09 18:02:42,583 - INFO - Fetching https://www.pcgamer.com/games/roblox/blox-fruits-codes/ (attempt 1)
+2025-08-09 18:02:43,048 - INFO - Extracting codes from PC Gamer Blox Fruits Codes using precise extractor
+2025-08-09 18:02:43,100 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:43,104 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:43,104 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:43,104 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:43,104 - INFO - unknown_codes: 4 codes found
+2025-08-09 18:02:43,105 - INFO -   - SUB2GAMERROBOT_RESET1 (confidence: LOW, reward: Free Stat Reset)
+2025-08-09 18:02:43,105 - INFO -   - JCWK (confidence: LOW, reward: 20 Minutes)
+2025-08-09 18:02:43,105 - INFO -   - KITT_RESET (confidence: HIGH, reward: Free Stat Refund Code)
+2025-08-09 18:02:43,105 - INFO -   - SUB2GAMERROBOT_EXP1 (confidence: HIGH, reward: 30 Minutes)
+2025-08-09 18:02:43,105 - INFO - ========================================
+2025-08-09 18:02:46,459 - INFO - === Scraping Summary for blox_fruits ===
+2025-08-09 18:02:46,459 - INFO - Active codes: 0
+2025-08-09 18:02:46,459 - INFO - Expired codes: 0
+2025-08-09 18:02:46,459 - INFO - Unknown codes: 7
+2025-08-09 18:02:46,459 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:02:46,459 - INFO - Quality score: 0.00
+2025-08-09 18:02:46,459 - WARNING - Recommendations:
+2025-08-09 18:02:46,460 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:02:46,460 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:02:46,460 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:02:46,460 - INFO - ==================================================
+2025-08-09 18:02:46,462 - INFO - Successfully updated ReversCodes/roblox-codes/blox-fruits.html with 0 validated codes
+2025-08-09 18:02:46,462 - INFO - Completed blox_fruits: 0 precise codes (quality: 0.00) from PCGamesN Blox Fruits Codes
+2025-08-09 18:02:46,462 - INFO - Processing goalbound with precise extraction...
+2025-08-09 18:02:46,463 - INFO - Scraping goalbound codes from Pocket Tactics Goalbound Codes
+2025-08-09 18:02:46,463 - INFO - Fetching https://www.pockettactics.com/goalbound-codes (attempt 1)
+2025-08-09 18:02:46,496 - INFO - Extracting codes from Pocket Tactics Goalbound Codes using precise extractor
+2025-08-09 18:02:46,507 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:46,509 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:46,509 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:46,509 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:46,509 - INFO - unknown_codes: 27 codes found
+2025-08-09 18:02:46,509 - INFO -   - SRYFORAIKUDELAY (confidence: MEDIUM, reward: new!)
+2025-08-09 18:02:46,510 - INFO -   - AIKU (confidence: LOW, reward: new!)
+2025-08-09 18:02:46,510 - INFO -   - VIPERSJAW (confidence: MEDIUM, reward: new!)
+2025-08-09 18:02:46,510 - INFO -   - HOTFIX (confidence: MEDIUM, reward: lucky spins)
+2025-08-09 18:02:46,510 - INFO -   - SRYFORUPD2DELAY (confidence: HIGH, reward: lucky spins)
+2025-08-09 18:02:46,510 - INFO - ========================================
+2025-08-09 18:02:50,473 - INFO - Scraping goalbound codes from PCGamesN Goalbound Codes
+2025-08-09 18:02:50,473 - INFO - Fetching https://www.pcgamesn.com/goalbound/codes (attempt 1)
+2025-08-09 18:02:50,512 - INFO - Extracting codes from PCGamesN Goalbound Codes using precise extractor
+2025-08-09 18:02:50,523 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:50,525 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:50,525 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:50,525 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:50,525 - INFO - unknown_codes: 19 codes found
+2025-08-09 18:02:50,525 - INFO -   - SRYFORAIKUDELAY (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:02:50,525 - INFO -   - AIKU (confidence: LOW, reward: NEW)
+2025-08-09 18:02:50,525 - INFO -   - VIPERSJAW (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:02:50,525 - INFO -   - UPD3SRY (confidence: MEDIUM, reward: UPD 3 rewards)
+2025-08-09 18:02:50,526 - INFO -   - UPD3 (confidence: LOW, reward: UPD 3 rewards)
+2025-08-09 18:02:50,526 - INFO - ========================================
+2025-08-09 18:02:52,990 - INFO - === Scraping Summary for goalbound ===
+2025-08-09 18:02:52,990 - INFO - Active codes: 0
+2025-08-09 18:02:52,991 - INFO - Expired codes: 0
+2025-08-09 18:02:52,991 - INFO - Unknown codes: 40
+2025-08-09 18:02:52,991 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:02:52,991 - INFO - Quality score: 0.00
+2025-08-09 18:02:52,991 - WARNING - Recommendations:
+2025-08-09 18:02:52,991 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:02:52,991 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:02:52,991 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:02:52,992 - INFO - ==================================================
+2025-08-09 18:02:52,994 - INFO - Successfully updated ReversCodes/roblox-codes/goalbound.html with 0 validated codes
+2025-08-09 18:02:52,994 - INFO - Completed goalbound: 0 precise codes (quality: 0.00) from Pocket Tactics Goalbound Codes
+2025-08-09 18:02:52,994 - INFO - Processing prospecting with precise extraction...
+2025-08-09 18:02:52,994 - INFO - Scraping prospecting codes from Pocket Tactics Prospecting Codes
+2025-08-09 18:02:52,994 - INFO - Fetching https://www.pockettactics.com/prospecting-codes (attempt 1)
+2025-08-09 18:02:53,029 - INFO - Extracting codes from Pocket Tactics Prospecting Codes using precise extractor
+2025-08-09 18:02:53,041 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:53,043 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:53,043 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:53,043 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:53,043 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:02:53,043 - INFO - ========================================
+2025-08-09 18:02:55,932 - INFO - Scraping prospecting codes from Beebom Prospecting Codes
+2025-08-09 18:02:55,932 - INFO - Fetching https://beebom.com/roblox-prospecting-codes/ (attempt 1)
+2025-08-09 18:02:55,949 - INFO - Extracting codes from Beebom Prospecting Codes using precise extractor
+2025-08-09 18:02:55,986 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:55,989 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:55,990 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:55,990 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:55,990 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:02:55,990 - INFO - ========================================
+2025-08-09 18:02:58,362 - INFO - === Scraping Summary for prospecting ===
+2025-08-09 18:02:58,362 - INFO - Active codes: 0
+2025-08-09 18:02:58,362 - INFO - Expired codes: 0
+2025-08-09 18:02:58,363 - INFO - Unknown codes: 0
+2025-08-09 18:02:58,363 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:02:58,363 - INFO - Quality score: 0.00
+2025-08-09 18:02:58,363 - WARNING - Recommendations:
+2025-08-09 18:02:58,363 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:02:58,363 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:02:58,363 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:02:58,363 - INFO - ==================================================
+2025-08-09 18:02:58,365 - INFO - Successfully updated ReversCodes/roblox-codes/prospecting.html with 0 validated codes
+2025-08-09 18:02:58,366 - INFO - Completed prospecting: 0 precise codes (quality: 0.00) from Pocket Tactics Prospecting Codes
+2025-08-09 18:02:58,366 - INFO - Processing type_soul with precise extraction...
+2025-08-09 18:02:58,366 - INFO - Scraping type_soul codes from Pocket Tactics Type Soul Codes
+2025-08-09 18:02:58,366 - INFO - Fetching https://www.pockettactics.com/type-soul/codes (attempt 1)
+2025-08-09 18:02:58,404 - INFO - Extracting codes from Pocket Tactics Type Soul Codes using precise extractor
+2025-08-09 18:02:58,421 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:02:58,423 - INFO - === Code Extraction Results ===
+2025-08-09 18:02:58,423 - INFO - active_codes: 0 codes found
+2025-08-09 18:02:58,423 - INFO - expired_codes: 0 codes found
+2025-08-09 18:02:58,423 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:02:58,424 - INFO - ========================================
+2025-08-09 18:03:02,093 - INFO - Scraping type_soul codes from Beebom Type Soul Codes
+2025-08-09 18:03:02,093 - INFO - Fetching https://beebom.com/roblox-type-soul-codes/ (attempt 1)
+2025-08-09 18:03:02,113 - INFO - Extracting codes from Beebom Type Soul Codes using precise extractor
+2025-08-09 18:03:02,158 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:02,163 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:02,163 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:02,164 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:02,164 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:03:02,164 - INFO - ========================================
+2025-08-09 18:03:05,749 - INFO - === Scraping Summary for type_soul ===
+2025-08-09 18:03:05,749 - INFO - Active codes: 0
+2025-08-09 18:03:05,749 - INFO - Expired codes: 0
+2025-08-09 18:03:05,749 - INFO - Unknown codes: 0
+2025-08-09 18:03:05,749 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:05,750 - INFO - Quality score: 0.00
+2025-08-09 18:03:05,750 - WARNING - Recommendations:
+2025-08-09 18:03:05,750 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:05,750 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:05,750 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:05,750 - INFO - ==================================================
+2025-08-09 18:03:05,752 - INFO - Successfully updated ReversCodes/roblox-codes/type-soul.html with 0 validated codes
+2025-08-09 18:03:05,752 - INFO - Completed type_soul: 0 precise codes (quality: 0.00) from Pocket Tactics Type Soul Codes
+2025-08-09 18:03:05,753 - INFO - Processing rivals with precise extraction...
+2025-08-09 18:03:05,753 - INFO - Scraping rivals codes from PCGamesN Rivals Codes
+2025-08-09 18:03:05,753 - INFO - Fetching https://www.pcgamesn.com/rivals/codes (attempt 1)
+2025-08-09 18:03:05,792 - INFO - Extracting codes from PCGamesN Rivals Codes using precise extractor
+2025-08-09 18:03:05,804 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:05,805 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:05,805 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:05,805 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:05,805 - INFO - unknown_codes: 15 codes found
+2025-08-09 18:03:05,806 - INFO -   - COMMUNITY15 (confidence: HIGH, reward: x1 Community Wrap for a random weapon)
+2025-08-09 18:03:05,806 - INFO -   - COMMUNITY14 (confidence: HIGH, reward: x1 Community Wrap for a random weapon)
+2025-08-09 18:03:05,806 - INFO -   - 5B_VISITS_WHATTTTTT (confidence: HIGH, reward: 5B visits finisher for all weapons)
+2025-08-09 18:03:05,806 - INFO -   - COMMUNITY13 (confidence: HIGH, reward: x1 Community Wrap)
+2025-08-09 18:03:05,806 - INFO -   - COMMUNITY12 (confidence: HIGH, reward: Random community wrap)
+2025-08-09 18:03:05,806 - INFO - ========================================
+2025-08-09 18:03:07,910 - INFO - Scraping rivals codes from Beebom Rivals Codes
+2025-08-09 18:03:07,910 - INFO - Fetching https://beebom.com/roblox-rivals-codes/ (attempt 1)
+2025-08-09 18:03:07,927 - INFO - Extracting codes from Beebom Rivals Codes using precise extractor
+2025-08-09 18:03:07,965 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:07,968 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:07,968 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:07,968 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:07,968 - INFO - unknown_codes: 2 codes found
+2025-08-09 18:03:07,968 - INFO -   - FREE100 (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:03:07,968 - INFO -   - COMMUNITY15 (confidence: HIGH, reward: 1 Community Wrap)
+2025-08-09 18:03:07,968 - INFO - ========================================
+2025-08-09 18:03:10,475 - INFO - === Scraping Summary for rivals ===
+2025-08-09 18:03:10,475 - INFO - Active codes: 0
+2025-08-09 18:03:10,475 - INFO - Expired codes: 0
+2025-08-09 18:03:10,476 - INFO - Unknown codes: 17
+2025-08-09 18:03:10,476 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:10,476 - INFO - Quality score: 0.00
+2025-08-09 18:03:10,476 - WARNING - Recommendations:
+2025-08-09 18:03:10,476 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:10,476 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:10,476 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:10,476 - INFO - ==================================================
+2025-08-09 18:03:10,478 - INFO - Successfully updated ReversCodes/roblox-codes/rivals.html with 0 validated codes
+2025-08-09 18:03:10,478 - INFO - Completed rivals: 0 precise codes (quality: 0.00) from PCGamesN Rivals Codes
+2025-08-09 18:03:10,479 - INFO - Processing fruit_battlegrounds with precise extraction...
+2025-08-09 18:03:10,479 - INFO - Scraping fruit_battlegrounds codes from PC Gamer Fruit Battlegrounds Codes
+2025-08-09 18:03:10,479 - INFO - Fetching https://www.pcgamer.com/games/sim/roblox-fruit-battlegrounds-codes/ (attempt 1)
+2025-08-09 18:03:10,523 - INFO - Extracting codes from PC Gamer Fruit Battlegrounds Codes using precise extractor
+2025-08-09 18:03:10,574 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:10,576 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:10,577 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:10,577 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:10,577 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:03:10,577 - INFO - ========================================
+2025-08-09 18:03:14,164 - INFO - Scraping fruit_battlegrounds codes from Pocket Tactics Fruit Battlegrounds Codes
+2025-08-09 18:03:14,165 - INFO - Fetching https://www.pockettactics.com/fruit-battlegrounds/codes/ (attempt 1)
+2025-08-09 18:03:14,567 - INFO - Extracting codes from Pocket Tactics Fruit Battlegrounds Codes using precise extractor
+2025-08-09 18:03:14,584 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:14,586 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:14,586 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:14,586 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:14,586 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:03:14,586 - INFO -   - THEMARINEHERO (confidence: MEDIUM, reward: new!)
+2025-08-09 18:03:14,587 - INFO -   - UPDATE21! (confidence: HIGH, reward: new!)
+2025-08-09 18:03:14,587 - INFO -   - CRASHL4NDING (confidence: HIGH, reward: new!)
+2025-08-09 18:03:14,587 - INFO - ========================================
+2025-08-09 18:03:16,654 - INFO - === Scraping Summary for fruit_battlegrounds ===
+2025-08-09 18:03:16,654 - INFO - Active codes: 0
+2025-08-09 18:03:16,655 - INFO - Expired codes: 0
+2025-08-09 18:03:16,655 - INFO - Unknown codes: 3
+2025-08-09 18:03:16,655 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:16,655 - INFO - Quality score: 0.00
+2025-08-09 18:03:16,655 - WARNING - Recommendations:
+2025-08-09 18:03:16,655 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:16,655 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:16,655 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:16,656 - INFO - ==================================================
+2025-08-09 18:03:16,658 - INFO - Successfully updated ReversCodes/roblox-codes/fruitbattlegrounds.html with 0 validated codes
+2025-08-09 18:03:16,658 - INFO - Completed fruit_battlegrounds: 0 precise codes (quality: 0.00) from PC Gamer Fruit Battlegrounds Codes
+2025-08-09 18:03:16,658 - INFO - Processing anime_adventures with precise extraction...
+2025-08-09 18:03:16,658 - INFO - Scraping anime_adventures codes from Pocket Tactics Anime Adventures Codes
+2025-08-09 18:03:16,658 - INFO - Fetching https://www.pockettactics.com/anime-adventures/codes (attempt 1)
+2025-08-09 18:03:16,695 - INFO - Extracting codes from Pocket Tactics Anime Adventures Codes using precise extractor
+2025-08-09 18:03:16,707 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:16,708 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:16,708 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:16,708 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:16,708 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:03:16,708 - INFO -   - APRILFOOLS (confidence: MEDIUM, reward: must be level 20+)
+2025-08-09 18:03:16,709 - INFO -   - UPDATESOON5189 (confidence: HIGH, reward: rewards)
+2025-08-09 18:03:16,709 - INFO -   - DUNGEONS (confidence: MEDIUM, reward: free key)
+2025-08-09 18:03:16,709 - INFO - ========================================
+2025-08-09 18:03:19,508 - INFO - Scraping anime_adventures codes from Pro Game Guides Anime Adventures Codes
+2025-08-09 18:03:19,509 - INFO - Fetching https://progameguides.com/roblox/anime-adventures-codes/ (attempt 1)
+2025-08-09 18:03:20,060 - INFO - Extracting codes from Pro Game Guides Anime Adventures Codes using precise extractor
+2025-08-09 18:03:20,089 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:20,093 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:20,093 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:20,093 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:20,093 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:03:20,093 - INFO -   - APRILFOOLS (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:03:20,094 - INFO -   - UPDATESOON5189 (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:03:20,094 - INFO -   - DUNGEONS (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:03:20,094 - INFO - ========================================
+2025-08-09 18:03:23,764 - INFO - === Scraping Summary for anime_adventures ===
+2025-08-09 18:03:23,765 - INFO - Active codes: 0
+2025-08-09 18:03:23,765 - INFO - Expired codes: 0
+2025-08-09 18:03:23,765 - INFO - Unknown codes: 6
+2025-08-09 18:03:23,765 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:23,765 - INFO - Quality score: 0.00
+2025-08-09 18:03:23,765 - WARNING - Recommendations:
+2025-08-09 18:03:23,765 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:23,765 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:23,766 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:23,766 - INFO - ==================================================
+2025-08-09 18:03:23,768 - INFO - Successfully updated ReversCodes/roblox-codes/animeadventures.html with 0 validated codes
+2025-08-09 18:03:23,768 - INFO - Completed anime_adventures: 0 precise codes (quality: 0.00) from Pocket Tactics Anime Adventures Codes
+2025-08-09 18:03:23,768 - INFO - Processing dress_to_impress with precise extraction...
+2025-08-09 18:03:23,768 - INFO - Scraping dress_to_impress codes from PC Gamer Dress to Impress Codes
+2025-08-09 18:03:23,768 - INFO - Fetching https://www.pcgamer.com/games/roblox/dress-to-impress-codes/ (attempt 1)
+2025-08-09 18:03:24,253 - INFO - Extracting codes from PC Gamer Dress to Impress Codes using precise extractor
+2025-08-09 18:03:24,295 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:24,299 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:24,299 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:24,299 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:24,299 - INFO - unknown_codes: 25 codes found
+2025-08-09 18:03:24,299 - INFO -   - VANILLAMACE (confidence: MEDIUM, reward: Headscarf)
+2025-08-09 18:03:24,299 - INFO -   - PIXIIUWU (confidence: MEDIUM, reward: Long ballgown dress)
+2025-08-09 18:03:24,299 - INFO -   - ANGELT4NKED (confidence: HIGH, reward: Helmet)
+2025-08-09 18:03:24,299 - INFO -   - ELLA (confidence: LOW, reward: Pink skirt)
+2025-08-09 18:03:24,299 - INFO -   - 1CON1CF4TMA (confidence: HIGH, reward: Pink cardigan with red bow and black skirt)
+2025-08-09 18:03:24,300 - INFO - ========================================
+2025-08-09 18:03:28,040 - INFO - Scraping dress_to_impress codes from Beebom Dress to Impress Codes
+2025-08-09 18:03:28,041 - INFO - Fetching https://beebom.com/roblox-dress-to-impress-codes/ (attempt 1)
+2025-08-09 18:03:28,062 - INFO - Extracting codes from Beebom Dress to Impress Codes using precise extractor
+2025-08-09 18:03:28,106 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:28,110 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:28,110 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:28,110 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:28,110 - INFO - unknown_codes: 25 codes found
+2025-08-09 18:03:28,110 - INFO -   - PIXIIUWU (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:03:28,110 - INFO -   - 3NCHANTEDD1ZZY (confidence: HIGH, reward: Fairy Scepter)
+2025-08-09 18:03:28,110 - INFO -   - ANGELT4NKED (confidence: HIGH, reward: Purple Cat Helmet)
+2025-08-09 18:03:28,111 - INFO -   - ELLA (confidence: LOW, reward: Pink skirt)
+2025-08-09 18:03:28,111 - INFO -   - B3APL4YS_D0L1E (confidence: HIGH, reward: with zero and not the letter O)
+2025-08-09 18:03:28,111 - INFO - ========================================
+2025-08-09 18:03:31,449 - INFO - === Scraping Summary for dress_to_impress ===
+2025-08-09 18:03:31,449 - INFO - Active codes: 0
+2025-08-09 18:03:31,449 - INFO - Expired codes: 0
+2025-08-09 18:03:31,449 - INFO - Unknown codes: 46
+2025-08-09 18:03:31,449 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:31,450 - INFO - Quality score: 0.00
+2025-08-09 18:03:31,450 - WARNING - Recommendations:
+2025-08-09 18:03:31,450 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:31,450 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:31,450 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:31,450 - INFO - ==================================================
+2025-08-09 18:03:31,452 - INFO - Successfully updated ReversCodes/roblox-codes/dress-to-impress.html with 0 validated codes
+2025-08-09 18:03:31,452 - INFO - Completed dress_to_impress: 0 precise codes (quality: 0.00) from PC Gamer Dress to Impress Codes
+2025-08-09 18:03:31,453 - INFO - Processing jujutsu_infinite with precise extraction...
+2025-08-09 18:03:31,453 - INFO - Scraping jujutsu_infinite codes from PC Gamer Jujutsu Infinite Codes
+2025-08-09 18:03:31,453 - INFO - Fetching https://www.pcgamer.com/games/action/roblox-jujutsu-infinite-codes/ (attempt 1)
+2025-08-09 18:03:31,488 - INFO - Extracting codes from PC Gamer Jujutsu Infinite Codes using precise extractor
+2025-08-09 18:03:31,535 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:31,538 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:31,538 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:31,538 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:31,538 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:03:31,539 - INFO - ========================================
+2025-08-09 18:03:34,517 - INFO - Scraping jujutsu_infinite codes from Pocket Gamer Jujutsu Infinite Codes
+2025-08-09 18:03:34,517 - INFO - Fetching https://www.pocketgamer.com/roblox/jujutsu-infinite-codes/ (attempt 1)
+2025-08-09 18:03:34,949 - INFO - Extracting codes from Pocket Gamer Jujutsu Infinite Codes using precise extractor
+2025-08-09 18:03:34,965 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:34,967 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:34,967 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:34,967 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:34,967 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:03:34,968 - INFO -   - PLANT_MANIP_20K (confidence: HIGH, reward: 100 Spins)
+2025-08-09 18:03:34,968 - INFO -   - PLANT_MANIP_OUT (confidence: HIGH, reward: 100 Spins)
+2025-08-09 18:03:34,968 - INFO -   - PLANT_SOON (confidence: HIGH, reward: 50 Spins)
+2025-08-09 18:03:34,968 - INFO - ========================================
+2025-08-09 18:03:37,281 - INFO - === Scraping Summary for jujutsu_infinite ===
+2025-08-09 18:03:37,281 - INFO - Active codes: 0
+2025-08-09 18:03:37,281 - INFO - Expired codes: 0
+2025-08-09 18:03:37,281 - INFO - Unknown codes: 3
+2025-08-09 18:03:37,281 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:37,281 - INFO - Quality score: 0.00
+2025-08-09 18:03:37,282 - WARNING - Recommendations:
+2025-08-09 18:03:37,282 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:37,282 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:37,282 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:37,282 - INFO - ==================================================
+2025-08-09 18:03:37,284 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-infinite.html with 0 validated codes
+2025-08-09 18:03:37,284 - INFO - Completed jujutsu_infinite: 0 precise codes (quality: 0.00) from PC Gamer Jujutsu Infinite Codes
+2025-08-09 18:03:37,284 - INFO - Processing shindo_life with precise extraction...
+2025-08-09 18:03:37,284 - INFO - Scraping shindo_life codes from Pocket Tactics Shindo Life Codes
+2025-08-09 18:03:37,284 - INFO - Fetching https://www.pockettactics.com/shindo-life/codes (attempt 1)
+2025-08-09 18:03:37,326 - INFO - Extracting codes from Pocket Tactics Shindo Life Codes using precise extractor
+2025-08-09 18:03:37,346 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:37,349 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:37,349 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:37,349 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:37,349 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:03:37,349 - INFO - ========================================
+2025-08-09 18:03:39,948 - INFO - Scraping shindo_life codes from Beebom Shindo Life Codes
+2025-08-09 18:03:39,948 - INFO - Fetching https://beebom.com/roblox-shindo-life-codes/ (attempt 1)
+2025-08-09 18:03:39,966 - INFO - Extracting codes from Beebom Shindo Life Codes using precise extractor
+2025-08-09 18:03:40,011 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:40,015 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:40,015 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:40,015 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:40,015 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:03:40,015 - INFO - ========================================
+2025-08-09 18:03:43,867 - INFO - === Scraping Summary for shindo_life ===
+2025-08-09 18:03:43,867 - INFO - Active codes: 0
+2025-08-09 18:03:43,867 - INFO - Expired codes: 0
+2025-08-09 18:03:43,867 - INFO - Unknown codes: 0
+2025-08-09 18:03:43,868 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:43,868 - INFO - Quality score: 0.00
+2025-08-09 18:03:43,868 - WARNING - Recommendations:
+2025-08-09 18:03:43,868 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:43,868 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:43,868 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:43,868 - INFO - ==================================================
+2025-08-09 18:03:43,870 - INFO - Successfully updated ReversCodes/roblox-codes/shindo-life.html with 0 validated codes
+2025-08-09 18:03:43,870 - INFO - Completed shindo_life: 0 precise codes (quality: 0.00) from Pocket Tactics Shindo Life Codes
+2025-08-09 18:03:43,871 - INFO - Processing project_slayers with precise extraction...
+2025-08-09 18:03:43,871 - INFO - Scraping project_slayers codes from Beebom Project Slayers Codes
+2025-08-09 18:03:43,871 - INFO - Fetching https://beebom.com/project-slayers-codes/ (attempt 1)
+2025-08-09 18:03:44,442 - INFO - Extracting codes from Beebom Project Slayers Codes using precise extractor
+2025-08-09 18:03:44,469 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:44,472 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:44,472 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:44,472 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:44,472 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:03:44,473 - INFO - ========================================
+2025-08-09 18:03:46,510 - INFO - Scraping project_slayers codes from Pro Game Guides Project Slayers Codes
+2025-08-09 18:03:46,511 - INFO - Fetching https://progameguides.com/roblox/project-slayers-codes/ (attempt 1)
+2025-08-09 18:03:46,630 - INFO - Extracting codes from Pro Game Guides Project Slayers Codes using precise extractor
+2025-08-09 18:03:46,666 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:46,672 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:46,672 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:46,672 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:46,672 - INFO - unknown_codes: 5 codes found
+2025-08-09 18:03:46,672 - INFO -   - MUGENTRAINFINALLY (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:03:46,672 - INFO -   - FINALLYRELEASETIME! (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:03:46,673 - INFO -   - CTRL (confidence: LOW, reward: Wall Climb)
+2025-08-09 18:03:46,673 - INFO -   - RRLRL (confidence: MEDIUM, reward: Special Combo)
+2025-08-09 18:03:46,673 - INFO -   - LLRLR (confidence: MEDIUM, reward: Special Combo)
+2025-08-09 18:03:46,673 - INFO - ========================================
+2025-08-09 18:03:49,939 - INFO - === Scraping Summary for project_slayers ===
+2025-08-09 18:03:49,939 - INFO - Active codes: 0
+2025-08-09 18:03:49,939 - INFO - Expired codes: 0
+2025-08-09 18:03:49,939 - INFO - Unknown codes: 4
+2025-08-09 18:03:49,939 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:49,939 - INFO - Quality score: 0.00
+2025-08-09 18:03:49,939 - WARNING - Recommendations:
+2025-08-09 18:03:49,940 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:49,940 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:49,940 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:49,940 - INFO - ==================================================
+2025-08-09 18:03:49,942 - INFO - Successfully updated ReversCodes/roblox-codes/project-slayers.html with 0 validated codes
+2025-08-09 18:03:49,942 - INFO - Completed project_slayers: 0 precise codes (quality: 0.00) from Beebom Project Slayers Codes
+2025-08-09 18:03:49,943 - INFO - Processing king_legacy with precise extraction...
+2025-08-09 18:03:49,943 - INFO - Scraping king_legacy codes from Pro Game Guides King Legacy Codes
+2025-08-09 18:03:49,943 - INFO - Fetching https://progameguides.com/roblox/roblox-king-legacy-codes/ (attempt 1)
+2025-08-09 18:03:50,088 - INFO - Extracting codes from Pro Game Guides King Legacy Codes using precise extractor
+2025-08-09 18:03:50,123 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:50,129 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:50,129 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:50,130 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:50,130 - INFO - unknown_codes: 47 codes found
+2025-08-09 18:03:50,130 - INFO -   - WELCOMETOKINGLEGACY (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:03:50,130 - INFO -   - FREESTATSRESET (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:03:50,130 - INFO -   - 2MFAV (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:03:50,130 - INFO -   - YT90KCELEBRATION (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:03:50,130 - INFO -   - YT100KLEGEND (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:03:50,130 - INFO - ========================================
+2025-08-09 18:03:53,904 - INFO - Scraping king_legacy codes from Beebom King Legacy Codes
+2025-08-09 18:03:53,905 - INFO - Fetching https://beebom.com/roblox-king-legacy-codes/ (attempt 1)
+2025-08-09 18:03:53,925 - INFO - Extracting codes from Beebom King Legacy Codes using precise extractor
+2025-08-09 18:03:53,967 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:53,971 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:53,971 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:53,971 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:53,971 - INFO - unknown_codes: 5 codes found
+2025-08-09 18:03:53,971 - INFO -   - YT90KCELEBRATION (confidence: HIGH, reward: Redeem for 5x Fortune Tales)
+2025-08-09 18:03:53,971 - INFO -   - YT100KLEGEND (confidence: HIGH, reward: Redeem for 5x Chronicles Lore)
+2025-08-09 18:03:53,971 - INFO -   - WELCOMETOKINGLEGACY (confidence: MEDIUM, reward: Redeem for 2x EXP for 30 minutes)
+2025-08-09 18:03:53,972 - INFO -   - FREESTATSRESET (confidence: MEDIUM, reward: Redeem for Free Stat Refund)
+2025-08-09 18:03:53,972 - INFO -   - 2MFAV (confidence: MEDIUM, reward: Redeem for Free Stat Refund)
+2025-08-09 18:03:53,972 - INFO - ========================================
+2025-08-09 18:03:57,421 - INFO - === Scraping Summary for king_legacy ===
+2025-08-09 18:03:57,422 - INFO - Active codes: 0
+2025-08-09 18:03:57,422 - INFO - Expired codes: 0
+2025-08-09 18:03:57,422 - INFO - Unknown codes: 50
+2025-08-09 18:03:57,422 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:03:57,422 - INFO - Quality score: 0.00
+2025-08-09 18:03:57,422 - WARNING - Recommendations:
+2025-08-09 18:03:57,422 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:03:57,422 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:03:57,423 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:03:57,423 - INFO - ==================================================
+2025-08-09 18:03:57,425 - INFO - Successfully updated ReversCodes/roblox-codes/king-legacy.html with 0 validated codes
+2025-08-09 18:03:57,425 - INFO - Completed king_legacy: 0 precise codes (quality: 0.00) from Pro Game Guides King Legacy Codes
+2025-08-09 18:03:57,425 - INFO - Processing anime_last_stand with precise extraction...
+2025-08-09 18:03:57,425 - INFO - Scraping anime_last_stand codes from Beebom Anime Last Stand Codes
+2025-08-09 18:03:57,426 - INFO - Fetching https://beebom.com/anime-last-stand-codes/ (attempt 1)
+2025-08-09 18:03:58,076 - INFO - Extracting codes from Beebom Anime Last Stand Codes using precise extractor
+2025-08-09 18:03:58,121 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:03:58,127 - INFO - === Code Extraction Results ===
+2025-08-09 18:03:58,127 - INFO - active_codes: 0 codes found
+2025-08-09 18:03:58,128 - INFO - expired_codes: 0 codes found
+2025-08-09 18:03:58,128 - INFO - unknown_codes: 2 codes found
+2025-08-09 18:03:58,128 - INFO -   - UPDATE63! (confidence: HIGH, reward: 20 Rerolls and 1 Pearl)
+2025-08-09 18:03:58,128 - INFO -   - SECRET!! (confidence: MEDIUM, reward: 15 Rerolls and 2 Pearls)
+2025-08-09 18:03:58,128 - INFO - ========================================
+2025-08-09 18:04:01,366 - INFO - Scraping anime_last_stand codes from PCGamesN Anime Last Stand Codes
+2025-08-09 18:04:01,367 - INFO - Fetching https://www.pcgamesn.com/anime-last-stand/codes (attempt 1)
+2025-08-09 18:04:01,402 - INFO - Extracting codes from PCGamesN Anime Last Stand Codes using precise extractor
+2025-08-09 18:04:01,413 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:01,414 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:01,414 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:01,415 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:01,415 - INFO - unknown_codes: 1 codes found
+2025-08-09 18:04:01,415 - INFO -   - YOUTUBEBACK!! (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:04:01,415 - INFO - ========================================
+2025-08-09 18:04:03,804 - INFO - === Scraping Summary for anime_last_stand ===
+2025-08-09 18:04:03,804 - INFO - Active codes: 0
+2025-08-09 18:04:03,804 - INFO - Expired codes: 0
+2025-08-09 18:04:03,804 - INFO - Unknown codes: 3
+2025-08-09 18:04:03,804 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:03,804 - INFO - Quality score: 0.00
+2025-08-09 18:04:03,804 - WARNING - Recommendations:
+2025-08-09 18:04:03,805 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:03,805 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:03,805 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:03,805 - INFO - ==================================================
+2025-08-09 18:04:03,807 - INFO - Successfully updated ReversCodes/roblox-codes/anime-last-stand.html with 0 validated codes
+2025-08-09 18:04:03,807 - INFO - Completed anime_last_stand: 0 precise codes (quality: 0.00) from Beebom Anime Last Stand Codes
+2025-08-09 18:04:03,807 - INFO - Processing sakura_stand with precise extraction...
+2025-08-09 18:04:03,807 - INFO - Scraping sakura_stand codes from Pocket Tactics Sakura Stand Codes
+2025-08-09 18:04:03,807 - INFO - Fetching https://www.pockettactics.com/sakura-stand/codes (attempt 1)
+2025-08-09 18:04:03,850 - INFO - Extracting codes from Pocket Tactics Sakura Stand Codes using precise extractor
+2025-08-09 18:04:03,863 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:03,865 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:03,865 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:03,865 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:03,865 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:04:03,865 - INFO - ========================================
+2025-08-09 18:04:06,984 - INFO - Scraping sakura_stand codes from Beebom Sakura Stand Codes
+2025-08-09 18:04:06,984 - INFO - Fetching https://beebom.com/roblox-sakura-stand-codes/ (attempt 1)
+2025-08-09 18:04:07,003 - INFO - Extracting codes from Beebom Sakura Stand Codes using precise extractor
+2025-08-09 18:04:07,042 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:07,046 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:07,046 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:07,046 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:07,046 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:04:07,046 - INFO - ========================================
+2025-08-09 18:04:10,372 - INFO - === Scraping Summary for sakura_stand ===
+2025-08-09 18:04:10,373 - INFO - Active codes: 0
+2025-08-09 18:04:10,373 - INFO - Expired codes: 0
+2025-08-09 18:04:10,373 - INFO - Unknown codes: 0
+2025-08-09 18:04:10,373 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:10,373 - INFO - Quality score: 0.00
+2025-08-09 18:04:10,373 - WARNING - Recommendations:
+2025-08-09 18:04:10,373 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:10,374 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:10,374 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:10,374 - INFO - ==================================================
+2025-08-09 18:04:10,376 - INFO - Successfully updated ReversCodes/roblox-codes/sakura-stand.html with 0 validated codes
+2025-08-09 18:04:10,376 - INFO - Completed sakura_stand: 0 precise codes (quality: 0.00) from Pocket Tactics Sakura Stand Codes
+2025-08-09 18:04:10,376 - INFO - Processing blade_ball with precise extraction...
+2025-08-09 18:04:10,376 - INFO - Scraping blade_ball codes from Pocket Tactics Blade Ball Codes
+2025-08-09 18:04:10,376 - INFO - Fetching https://www.pockettactics.com/blade-ball/codes (attempt 1)
+2025-08-09 18:04:10,415 - INFO - Extracting codes from Pocket Tactics Blade Ball Codes using precise extractor
+2025-08-09 18:04:10,427 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:10,429 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:10,429 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:10,430 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:10,430 - INFO - unknown_codes: 17 codes found
+2025-08-09 18:04:10,430 - INFO -   - 5BVISITS (confidence: HIGH, reward: rewards)
+2025-08-09 18:04:10,430 - INFO -   - RAMADAN (confidence: MEDIUM, reward: free spin)
+2025-08-09 18:04:10,430 - INFO -   - SPOOKYSEASON (confidence: MEDIUM, reward: free sword)
+2025-08-09 18:04:10,430 - INFO -   - 4BVISITS (confidence: HIGH, reward: private servers only)
+2025-08-09 18:04:10,430 - INFO -   - SHARKATTACK (confidence: MEDIUM, reward: free spin)
+2025-08-09 18:04:10,431 - INFO - ========================================
+2025-08-09 18:04:12,668 - INFO - Scraping blade_ball codes from Beebom Blade Ball Codes
+2025-08-09 18:04:12,668 - INFO - Fetching https://beebom.com/blade-ball-codes/ (attempt 1)
+2025-08-09 18:04:13,077 - ERROR - Request failed (attempt 1): 404 Client Error: Not Found for url: https://beebom.com/blade-ball-codes/
+2025-08-09 18:04:16,819 - INFO - Fetching https://beebom.com/blade-ball-codes/ (attempt 2)
+2025-08-09 18:04:16,836 - ERROR - Request failed (attempt 2): 404 Client Error: Not Found for url: https://beebom.com/blade-ball-codes/
+2025-08-09 18:04:20,330 - INFO - Fetching https://beebom.com/blade-ball-codes/ (attempt 3)
+2025-08-09 18:04:20,347 - ERROR - Request failed (attempt 3): 404 Client Error: Not Found for url: https://beebom.com/blade-ball-codes/
+2025-08-09 18:04:20,348 - ERROR - All attempts failed for https://beebom.com/blade-ball-codes/
+2025-08-09 18:04:23,660 - INFO - === Scraping Summary for blade_ball ===
+2025-08-09 18:04:23,660 - INFO - Active codes: 0
+2025-08-09 18:04:23,661 - INFO - Expired codes: 0
+2025-08-09 18:04:23,661 - INFO - Unknown codes: 17
+2025-08-09 18:04:23,661 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:23,661 - INFO - Quality score: 0.00
+2025-08-09 18:04:23,661 - WARNING - Recommendations:
+2025-08-09 18:04:23,661 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:23,661 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:23,661 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:23,662 - INFO - ==================================================
+2025-08-09 18:04:23,663 - INFO - Successfully updated ReversCodes/roblox-codes/blade-ball.html with 0 validated codes
+2025-08-09 18:04:23,663 - INFO - Completed blade_ball: 0 precise codes (quality: 0.00) from Pocket Tactics Blade Ball Codes
+2025-08-09 18:04:23,664 - INFO - Processing fruit_warriors with precise extraction...
+2025-08-09 18:04:23,664 - INFO - Scraping fruit_warriors codes from Pro Game Guides Fruit Warriors Codes
+2025-08-09 18:04:23,664 - INFO - Fetching https://progameguides.com/roblox/roblox-fruit-warriors-codes/ (attempt 1)
+2025-08-09 18:04:24,712 - INFO - Extracting codes from Pro Game Guides Fruit Warriors Codes using precise extractor
+2025-08-09 18:04:24,737 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:24,741 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:24,741 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:24,741 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:24,741 - INFO - unknown_codes: 12 codes found
+2025-08-09 18:04:24,742 - INFO -   - UPDATE2 (confidence: MEDIUM, reward: New)
+2025-08-09 18:04:24,742 - INFO -   - 10MVISITS! (confidence: HIGH, reward: New)
+2025-08-09 18:04:24,742 - INFO -   - RUMBLE (confidence: MEDIUM, reward: New)
+2025-08-09 18:04:24,742 - INFO -   - UPDATE1 (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:04:24,742 - INFO -   - 10KLIKES (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:04:24,742 - INFO - ========================================
+2025-08-09 18:04:28,641 - INFO - Scraping fruit_warriors codes from Hold to Reset Fruit Warriors Codes
+2025-08-09 18:04:28,641 - INFO - Fetching https://holdtoreset.com/fruit-warriors-codes/ (attempt 1)
+2025-08-09 18:04:29,564 - INFO - Extracting codes from Hold to Reset Fruit Warriors Codes using precise extractor
+2025-08-09 18:04:29,577 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:29,578 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:29,578 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:29,578 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:29,578 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:04:29,579 - INFO -   - 10MVISITS! (confidence: HIGH, reward: 25k beli and two tokens)
+2025-08-09 18:04:29,579 - INFO -   - RUMBLE (confidence: MEDIUM, reward: double XP for one hour)
+2025-08-09 18:04:29,579 - INFO -   - UPDATE2 (confidence: MEDIUM, reward: five tokens)
+2025-08-09 18:04:29,579 - INFO - ========================================
+2025-08-09 18:04:32,190 - INFO - === Scraping Summary for fruit_warriors ===
+2025-08-09 18:04:32,190 - INFO - Active codes: 0
+2025-08-09 18:04:32,190 - INFO - Expired codes: 0
+2025-08-09 18:04:32,190 - INFO - Unknown codes: 15
+2025-08-09 18:04:32,190 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:32,190 - INFO - Quality score: 0.00
+2025-08-09 18:04:32,191 - WARNING - Recommendations:
+2025-08-09 18:04:32,191 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:32,191 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:32,191 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:32,191 - INFO - ==================================================
+2025-08-09 18:04:32,193 - INFO - Successfully updated ReversCodes/roblox-codes/fruit-warriors.html with 0 validated codes
+2025-08-09 18:04:32,193 - INFO - Completed fruit_warriors: 0 precise codes (quality: 0.00) from Pro Game Guides Fruit Warriors Codes
+2025-08-09 18:04:32,193 - INFO - Processing grow_a_garden with precise extraction...
+2025-08-09 18:04:32,193 - INFO - Scraping grow_a_garden codes from Beebom Grow a Garden Codes
+2025-08-09 18:04:32,193 - INFO - Fetching https://beebom.com/roblox-grow-a-garden-codes/ (attempt 1)
+2025-08-09 18:04:32,213 - INFO - Extracting codes from Beebom Grow a Garden Codes using precise extractor
+2025-08-09 18:04:32,250 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:32,253 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:32,253 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:32,253 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:32,254 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:04:32,254 - INFO - ========================================
+2025-08-09 18:04:35,228 - INFO - Scraping grow_a_garden codes from PCGamesN Grow a Garden Codes
+2025-08-09 18:04:35,229 - INFO - Fetching https://www.pcgamesn.com/grow-a-garden (attempt 1)
+2025-08-09 18:04:36,429 - INFO - Extracting codes from PCGamesN Grow a Garden Codes using precise extractor
+2025-08-09 18:04:36,438 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:36,439 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:36,440 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:36,440 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:36,440 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:04:36,440 - INFO - ========================================
+2025-08-09 18:04:38,559 - INFO - === Scraping Summary for grow_a_garden ===
+2025-08-09 18:04:38,559 - INFO - Active codes: 0
+2025-08-09 18:04:38,559 - INFO - Expired codes: 0
+2025-08-09 18:04:38,559 - INFO - Unknown codes: 0
+2025-08-09 18:04:38,559 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:38,559 - INFO - Quality score: 0.00
+2025-08-09 18:04:38,559 - WARNING - Recommendations:
+2025-08-09 18:04:38,560 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:38,560 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:38,560 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:38,560 - INFO - ==================================================
+2025-08-09 18:04:38,562 - INFO - Successfully updated ReversCodes/roblox-codes/grow-a-garden.html with 0 validated codes
+2025-08-09 18:04:38,562 - INFO - Completed grow_a_garden: 0 precise codes (quality: 0.00) from Beebom Grow a Garden Codes
+2025-08-09 18:04:38,562 - INFO - Processing anime_vanguards with precise extraction...
+2025-08-09 18:04:38,562 - INFO - Scraping anime_vanguards codes from Beebom Anime Vanguards Codes
+2025-08-09 18:04:38,562 - INFO - Fetching https://beebom.com/anime-vanguards-codes/ (attempt 1)
+2025-08-09 18:04:39,159 - INFO - Extracting codes from Beebom Anime Vanguards Codes using precise extractor
+2025-08-09 18:04:39,191 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:39,195 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:39,195 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:39,195 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:39,195 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:04:39,195 - INFO -   - THEONE (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:04:39,195 - INFO -   - SUMMER (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:04:39,195 - INFO -   - IAMTHEONEWHODECIDES (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:04:39,195 - INFO - ========================================
+2025-08-09 18:04:41,231 - INFO - Scraping anime_vanguards codes from Pocket Tactics Anime Vanguards Codes
+2025-08-09 18:04:41,231 - INFO - Fetching https://www.pockettactics.com/anime-vanguards/codes (attempt 1)
+2025-08-09 18:04:41,269 - INFO - Extracting codes from Pocket Tactics Anime Vanguards Codes using precise extractor
+2025-08-09 18:04:41,283 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:41,285 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:41,285 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:41,285 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:41,285 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:04:41,285 - INFO -   - THEONE (confidence: MEDIUM, reward: new!)
+2025-08-09 18:04:41,285 - INFO -   - SUMMER (confidence: MEDIUM, reward: free rewards)
+2025-08-09 18:04:41,285 - INFO -   - IAMTHEONEWHODECIDES (confidence: MEDIUM, reward: free rewards)
+2025-08-09 18:04:41,286 - INFO - ========================================
+2025-08-09 18:04:43,432 - INFO - === Scraping Summary for anime_vanguards ===
+2025-08-09 18:04:43,433 - INFO - Active codes: 0
+2025-08-09 18:04:43,433 - INFO - Expired codes: 0
+2025-08-09 18:04:43,433 - INFO - Unknown codes: 6
+2025-08-09 18:04:43,433 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:43,433 - INFO - Quality score: 0.00
+2025-08-09 18:04:43,433 - WARNING - Recommendations:
+2025-08-09 18:04:43,433 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:43,433 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:43,434 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:43,434 - INFO - ==================================================
+2025-08-09 18:04:43,436 - INFO - Successfully updated ReversCodes/roblox-codes/anime-vanguards.html with 0 validated codes
+2025-08-09 18:04:43,436 - INFO - Completed anime_vanguards: 0 precise codes (quality: 0.00) from Beebom Anime Vanguards Codes
+2025-08-09 18:04:43,436 - INFO - Processing tower_defense_simulator with precise extraction...
+2025-08-09 18:04:43,436 - INFO - Scraping tower_defense_simulator codes from Pro Game Guides Tower Defense Simulator Codes
+2025-08-09 18:04:43,436 - INFO - Fetching https://progameguides.com/roblox/tower-defense-simulator-codes-list/ (attempt 1)
+2025-08-09 18:04:43,546 - INFO - Extracting codes from Pro Game Guides Tower Defense Simulator Codes using precise extractor
+2025-08-09 18:04:43,572 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:43,576 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:43,577 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:43,577 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:43,577 - INFO - unknown_codes: 4 codes found
+2025-08-09 18:04:43,577 - INFO -   - 1POINT7MIL (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:04:43,577 - INFO -   - MERRY2024 (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:04:43,577 - INFO -   - TDS5YEARS! (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:04:43,577 - INFO -   - IMCONSUMING (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:04:43,577 - INFO - ========================================
+2025-08-09 18:04:47,304 - INFO - Scraping tower_defense_simulator codes from Beebom Tower Defense Simulator Codes
+2025-08-09 18:04:47,304 - INFO - Fetching https://beebom.com/tower-defense-simulator-tds-codes/ (attempt 1)
+2025-08-09 18:04:48,019 - INFO - Extracting codes from Beebom Tower Defense Simulator Codes using precise extractor
+2025-08-09 18:04:48,047 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:48,049 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:48,050 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:48,050 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:48,050 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:04:48,050 - INFO - ========================================
+2025-08-09 18:04:50,493 - INFO - === Scraping Summary for tower_defense_simulator ===
+2025-08-09 18:04:50,493 - INFO - Active codes: 0
+2025-08-09 18:04:50,494 - INFO - Expired codes: 0
+2025-08-09 18:04:50,494 - INFO - Unknown codes: 4
+2025-08-09 18:04:50,494 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:50,494 - INFO - Quality score: 0.00
+2025-08-09 18:04:50,494 - WARNING - Recommendations:
+2025-08-09 18:04:50,494 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:50,494 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:50,494 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:50,494 - INFO - ==================================================
+2025-08-09 18:04:50,496 - INFO - Successfully updated ReversCodes/roblox-codes/tower-defense-simulator.html with 0 validated codes
+2025-08-09 18:04:50,497 - INFO - Completed tower_defense_simulator: 0 precise codes (quality: 0.00) from Pro Game Guides Tower Defense Simulator Codes
+2025-08-09 18:04:50,497 - INFO - Processing spongebob_tower_defense with precise extraction...
+2025-08-09 18:04:50,497 - INFO - Scraping spongebob_tower_defense codes from Pocket Tactics SpongeBob Tower Defense Codes
+2025-08-09 18:04:50,497 - INFO - Fetching https://www.pockettactics.com/spongebob-tower-defense/codes (attempt 1)
+2025-08-09 18:04:50,602 - INFO - Extracting codes from Pocket Tactics SpongeBob Tower Defense Codes using precise extractor
+2025-08-09 18:04:50,614 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:50,616 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:50,616 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:50,616 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:50,616 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:04:50,616 - INFO - ========================================
+2025-08-09 18:04:53,183 - INFO - Scraping spongebob_tower_defense codes from Pro Game Guides SpongeBob Tower Defense Codes
+2025-08-09 18:04:53,184 - INFO - Fetching https://progameguides.com/roblox/spongebob-tower-defense-codes/ (attempt 1)
+2025-08-09 18:04:54,372 - INFO - Extracting codes from Pro Game Guides SpongeBob Tower Defense Codes using precise extractor
+2025-08-09 18:04:54,410 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:54,415 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:54,416 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:54,416 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:54,416 - INFO - unknown_codes: 2 codes found
+2025-08-09 18:04:54,416 - INFO -   - TREASUREUNDERTHESEA (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:04:54,416 - INFO -   - ADOPTASPONGEBOB (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:04:54,416 - INFO - ========================================
+2025-08-09 18:04:57,367 - INFO - === Scraping Summary for spongebob_tower_defense ===
+2025-08-09 18:04:57,367 - INFO - Active codes: 0
+2025-08-09 18:04:57,367 - INFO - Expired codes: 0
+2025-08-09 18:04:57,367 - INFO - Unknown codes: 2
+2025-08-09 18:04:57,367 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:04:57,367 - INFO - Quality score: 0.00
+2025-08-09 18:04:57,368 - WARNING - Recommendations:
+2025-08-09 18:04:57,368 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:04:57,368 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:04:57,368 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:04:57,368 - INFO - ==================================================
+2025-08-09 18:04:57,370 - INFO - Successfully updated ReversCodes/roblox-codes/spongebob-tower-defense.html with 0 validated codes
+2025-08-09 18:04:57,370 - INFO - Completed spongebob_tower_defense: 0 precise codes (quality: 0.00) from Pocket Tactics SpongeBob Tower Defense Codes
+2025-08-09 18:04:57,370 - INFO - Processing project_egoist with precise extraction...
+2025-08-09 18:04:57,370 - INFO - Scraping project_egoist codes from Pocket Tactics Project Egoist Codes
+2025-08-09 18:04:57,371 - INFO - Fetching https://www.pockettactics.com/project-egoist-codes (attempt 1)
+2025-08-09 18:04:57,416 - INFO - Extracting codes from Pocket Tactics Project Egoist Codes using precise extractor
+2025-08-09 18:04:57,427 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:04:57,428 - INFO - === Code Extraction Results ===
+2025-08-09 18:04:57,428 - INFO - active_codes: 0 codes found
+2025-08-09 18:04:57,428 - INFO - expired_codes: 0 codes found
+2025-08-09 18:04:57,428 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:04:57,428 - INFO - ========================================
+2025-08-09 18:05:00,199 - INFO - Scraping project_egoist codes from Beebom Project Egoist Codes
+2025-08-09 18:05:00,199 - INFO - Fetching https://beebom.com/project-egoist-codes/ (attempt 1)
+2025-08-09 18:05:00,829 - INFO - Extracting codes from Beebom Project Egoist Codes using precise extractor
+2025-08-09 18:05:00,856 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:00,859 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:00,859 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:00,859 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:00,859 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:05:00,859 - INFO - ========================================
+2025-08-09 18:05:03,832 - INFO - === Scraping Summary for project_egoist ===
+2025-08-09 18:05:03,833 - INFO - Active codes: 0
+2025-08-09 18:05:03,833 - INFO - Expired codes: 0
+2025-08-09 18:05:03,833 - INFO - Unknown codes: 0
+2025-08-09 18:05:03,833 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:03,833 - INFO - Quality score: 0.00
+2025-08-09 18:05:03,833 - WARNING - Recommendations:
+2025-08-09 18:05:03,833 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:03,834 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:03,834 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:03,834 - INFO - ==================================================
+2025-08-09 18:05:03,835 - INFO - Successfully updated ReversCodes/roblox-codes/project-egoist.html with 0 validated codes
+2025-08-09 18:05:03,836 - INFO - Completed project_egoist: 0 precise codes (quality: 0.00) from Pocket Tactics Project Egoist Codes
+2025-08-09 18:05:03,836 - INFO - Processing blue_lock_rivals with precise extraction...
+2025-08-09 18:05:03,836 - INFO - Scraping blue_lock_rivals codes from Pocket Tactics Blue Lock Rivals Codes
+2025-08-09 18:05:03,836 - INFO - Fetching https://www.pockettactics.com/blue-lock-rivals/codes (attempt 1)
+2025-08-09 18:05:03,891 - INFO - Extracting codes from Pocket Tactics Blue Lock Rivals Codes using precise extractor
+2025-08-09 18:05:03,904 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:03,906 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:03,906 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:03,906 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:03,906 - INFO - unknown_codes: 2 codes found
+2025-08-09 18:05:03,906 - INFO -   - CHEMREACTW (confidence: MEDIUM, reward: new!)
+2025-08-09 18:05:03,906 - INFO -   - WTEAMWORK (confidence: MEDIUM, reward: new!)
+2025-08-09 18:05:03,906 - INFO - ========================================
+2025-08-09 18:05:07,080 - INFO - Scraping blue_lock_rivals codes from Beebom Blue Lock Rivals Codes
+2025-08-09 18:05:07,081 - INFO - Fetching https://beebom.com/blue-lock-rivals-codes/ (attempt 1)
+2025-08-09 18:05:07,098 - INFO - Extracting codes from Beebom Blue Lock Rivals Codes using precise extractor
+2025-08-09 18:05:07,140 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:07,144 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:07,144 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:07,144 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:07,144 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:05:07,144 - INFO -   - SAEXSHIDOU (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:05:07,144 - INFO -   - ISAGISHOES (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:05:07,144 - INFO -   - GOALMET (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:05:07,145 - INFO - ========================================
+2025-08-09 18:05:09,817 - INFO - === Scraping Summary for blue_lock_rivals ===
+2025-08-09 18:05:09,817 - INFO - Active codes: 0
+2025-08-09 18:05:09,817 - INFO - Expired codes: 0
+2025-08-09 18:05:09,817 - INFO - Unknown codes: 5
+2025-08-09 18:05:09,817 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:09,817 - INFO - Quality score: 0.00
+2025-08-09 18:05:09,818 - WARNING - Recommendations:
+2025-08-09 18:05:09,818 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:09,818 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:09,818 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:09,818 - INFO - ==================================================
+2025-08-09 18:05:09,820 - INFO - Successfully updated ReversCodes/roblox-codes/blue-lock-rivals.html with 0 validated codes
+2025-08-09 18:05:09,820 - INFO - Completed blue_lock_rivals: 0 precise codes (quality: 0.00) from Pocket Tactics Blue Lock Rivals Codes
+2025-08-09 18:05:09,820 - INFO - Processing jujutsu_shenanigans with precise extraction...
+2025-08-09 18:05:09,820 - INFO - Scraping jujutsu_shenanigans codes from Pocket Tactics Jujutsu Shenanigans Codes
+2025-08-09 18:05:09,821 - INFO - Fetching https://www.pockettactics.com/jujutsu-shenanigans/codes (attempt 1)
+2025-08-09 18:05:09,864 - INFO - Extracting codes from Pocket Tactics Jujutsu Shenanigans Codes using precise extractor
+2025-08-09 18:05:09,873 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:09,874 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:09,874 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:09,874 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:09,874 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:05:09,874 - INFO - ========================================
+2025-08-09 18:05:13,225 - INFO - Scraping jujutsu_shenanigans codes from Beebom Jujutsu Shenanigans Codes
+2025-08-09 18:05:13,225 - INFO - Fetching https://beebom.com/jujutsu-shenanigans-codes/ (attempt 1)
+2025-08-09 18:05:13,243 - INFO - Extracting codes from Beebom Jujutsu Shenanigans Codes using precise extractor
+2025-08-09 18:05:13,279 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:13,282 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:13,282 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:13,282 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:13,282 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:05:13,282 - INFO - ========================================
+2025-08-09 18:05:15,716 - INFO - === Scraping Summary for jujutsu_shenanigans ===
+2025-08-09 18:05:15,717 - INFO - Active codes: 0
+2025-08-09 18:05:15,717 - INFO - Expired codes: 0
+2025-08-09 18:05:15,717 - INFO - Unknown codes: 0
+2025-08-09 18:05:15,717 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:15,717 - INFO - Quality score: 0.00
+2025-08-09 18:05:15,717 - WARNING - Recommendations:
+2025-08-09 18:05:15,717 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:15,717 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:15,718 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:15,718 - INFO - ==================================================
+2025-08-09 18:05:15,719 - INFO - Successfully updated ReversCodes/roblox-codes/jujutsu-shenanigans.html with 0 validated codes
+2025-08-09 18:05:15,719 - INFO - Completed jujutsu_shenanigans: 0 precise codes (quality: 0.00) from Pocket Tactics Jujutsu Shenanigans Codes
+2025-08-09 18:05:15,720 - INFO - Processing combat_warriors with precise extraction...
+2025-08-09 18:05:15,720 - INFO - Scraping combat_warriors codes from Pocket Tactics Combat Warriors Codes
+2025-08-09 18:05:15,720 - INFO - Fetching https://www.pockettactics.com/combat-warriors/codes (attempt 1)
+2025-08-09 18:05:15,825 - INFO - Extracting codes from Pocket Tactics Combat Warriors Codes using precise extractor
+2025-08-09 18:05:15,838 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:15,839 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:15,839 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:15,839 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:15,839 - INFO - unknown_codes: 6 codes found
+2025-08-09 18:05:15,839 - INFO -   - NEPTUNEDAY2 (confidence: HIGH, reward: new!)
+2025-08-09 18:05:15,839 - INFO -   - PRESTIGECHANGES (confidence: MEDIUM, reward: 250 aether and 500 - 2.5k credits)
+2025-08-09 18:05:15,839 - INFO -   - NEPTUNE25 (confidence: HIGH, reward: 500 - 2.5k credits, and 250 aether)
+2025-08-09 18:05:15,840 - INFO -   - 2V2RANKEDUPDATE (confidence: HIGH, reward: 500 - 2.5k credits, and 250 aether)
+2025-08-09 18:05:15,840 - INFO -   - WHOKONG25 (confidence: HIGH, reward: 250 aether and 500 - 2.5k credits)
+2025-08-09 18:05:15,840 - INFO - ========================================
+2025-08-09 18:05:17,900 - INFO - Scraping combat_warriors codes from Twinfinite Combat Warriors Codes
+2025-08-09 18:05:17,900 - INFO - Fetching https://twinfinite.net/roblox/combat-warriors-codes/ (attempt 1)
+2025-08-09 18:05:18,381 - INFO - Extracting codes from Twinfinite Combat Warriors Codes using precise extractor
+2025-08-09 18:05:18,448 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:18,456 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:18,457 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:18,457 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:18,457 - INFO - unknown_codes: 7 codes found
+2025-08-09 18:05:18,457 - INFO -   - NEPTUNEDAY2 (confidence: HIGH, reward: Scales based on progression)
+2025-08-09 18:05:18,457 - INFO -   - PRESTIGECHANGES (confidence: MEDIUM, reward: Scales based on progression)
+2025-08-09 18:05:18,457 - INFO -   - NEPTUNE25 (confidence: HIGH, reward: Scales based on progression)
+2025-08-09 18:05:18,457 - INFO -   - 2V2RANKEDUPDATE (confidence: HIGH, reward: Scales based on progression)
+2025-08-09 18:05:18,457 - INFO -   - WHOKONG25 (confidence: HIGH, reward: Scales based on progression)
+2025-08-09 18:05:18,458 - INFO - ========================================
+2025-08-09 18:05:20,932 - INFO - === Scraping Summary for combat_warriors ===
+2025-08-09 18:05:20,932 - INFO - Active codes: 0
+2025-08-09 18:05:20,932 - INFO - Expired codes: 0
+2025-08-09 18:05:20,932 - INFO - Unknown codes: 13
+2025-08-09 18:05:20,933 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:20,933 - INFO - Quality score: 0.00
+2025-08-09 18:05:20,933 - WARNING - Recommendations:
+2025-08-09 18:05:20,933 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:20,933 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:20,933 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:20,933 - INFO - ==================================================
+2025-08-09 18:05:20,935 - INFO - Successfully updated ReversCodes/roblox-codes/combat-warriors.html with 0 validated codes
+2025-08-09 18:05:20,935 - INFO - Completed combat_warriors: 0 precise codes (quality: 0.00) from Pocket Tactics Combat Warriors Codes
+2025-08-09 18:05:20,935 - INFO - Processing anime_rangers_x with precise extraction...
+2025-08-09 18:05:20,936 - INFO - Scraping anime_rangers_x codes from VideoGamer Anime Rangers X Codes
+2025-08-09 18:05:20,936 - INFO - Fetching https://www.videogamer.com/guides/anime-rangers-x-codes/ (attempt 1)
+2025-08-09 18:05:21,431 - INFO - Extracting codes from VideoGamer Anime Rangers X Codes using precise extractor
+2025-08-09 18:05:21,459 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:21,465 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:21,466 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:21,466 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:21,466 - INFO - unknown_codes: 12 codes found
+2025-08-09 18:05:21,466 - INFO -   - YOUTUBEBACK!! (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:05:21,466 - INFO -   - BRANDONTHEBEST! (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:05:21,466 - INFO -   - TYBW2! (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:05:21,466 - INFO -   - QOL2! (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:05:21,466 - INFO -   - ARXBLEACH! (confidence: MEDIUM, reward: Free Rewards)
+2025-08-09 18:05:21,466 - INFO - ========================================
+2025-08-09 18:05:24,543 - INFO - Scraping anime_rangers_x codes from Pocket Tactics Anime Rangers X Codes
+2025-08-09 18:05:24,543 - INFO - Fetching https://www.pockettactics.com/anime-rangers-x-codes (attempt 1)
+2025-08-09 18:05:24,644 - INFO - Extracting codes from Pocket Tactics Anime Rangers X Codes using precise extractor
+2025-08-09 18:05:24,658 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:24,659 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:24,659 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:24,659 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:24,660 - INFO - unknown_codes: 7 codes found
+2025-08-09 18:05:24,660 - INFO -   - ARXBLEACH! (confidence: MEDIUM, reward: 150 boss rush coins)
+2025-08-09 18:05:24,660 - INFO -   - QOL2! (confidence: MEDIUM, reward: 5k gems and five luck potions)
+2025-08-09 18:05:24,660 - INFO -   - TYBW2! (confidence: MEDIUM, reward: 40 trait rerolls and five Dr. Megga Punks)
+2025-08-09 18:05:24,660 - INFO -   - BOSSTAKEOVER (confidence: MEDIUM, reward: two Dr Mega Punks and 20 rerolls)
+2025-08-09 18:05:24,660 - INFO -   - RAIDS (confidence: MEDIUM, reward: 150 blitz tokens and 25 rerolls)
+2025-08-09 18:05:24,660 - INFO - ========================================
+2025-08-09 18:05:28,652 - INFO - === Scraping Summary for anime_rangers_x ===
+2025-08-09 18:05:28,652 - INFO - Active codes: 0
+2025-08-09 18:05:28,652 - INFO - Expired codes: 0
+2025-08-09 18:05:28,652 - INFO - Unknown codes: 19
+2025-08-09 18:05:28,653 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:28,653 - INFO - Quality score: 0.00
+2025-08-09 18:05:28,653 - WARNING - Recommendations:
+2025-08-09 18:05:28,653 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:28,653 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:28,653 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:28,653 - INFO - ==================================================
+2025-08-09 18:05:28,655 - INFO - Successfully updated ReversCodes/roblox-codes/anime-rangers-x.html with 0 validated codes
+2025-08-09 18:05:28,655 - INFO - Completed anime_rangers_x: 0 precise codes (quality: 0.00) from VideoGamer Anime Rangers X Codes
+2025-08-09 18:05:28,655 - INFO - Processing basketball_zero with precise extraction...
+2025-08-09 18:05:28,655 - INFO - Scraping basketball_zero codes from KhelNow Basketball Zero Codes
+2025-08-09 18:05:28,656 - INFO - Fetching https://khelnow.com/gaming/latest-roblox-basketball-zero-codes-august-202508 (attempt 1)
+2025-08-09 18:05:30,319 - INFO - Extracting codes from KhelNow Basketball Zero Codes using precise extractor
+2025-08-09 18:05:30,336 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:30,338 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:30,339 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:30,339 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:30,339 - INFO - unknown_codes: 0 codes found
+2025-08-09 18:05:30,339 - INFO - ========================================
+2025-08-09 18:05:32,641 - INFO - Scraping basketball_zero codes from Pocket Tactics Basketball Zero Codes
+2025-08-09 18:05:32,641 - INFO - Fetching https://www.pockettactics.com/basketball-zero-codes (attempt 1)
+2025-08-09 18:05:32,681 - INFO - Extracting codes from Pocket Tactics Basketball Zero Codes using precise extractor
+2025-08-09 18:05:32,694 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:32,696 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:32,696 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:32,696 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:32,696 - INFO - unknown_codes: 3 codes found
+2025-08-09 18:05:32,696 - INFO -   - LCLANKERS (confidence: MEDIUM, reward: new!)
+2025-08-09 18:05:32,696 - INFO -   - THERETURN (confidence: MEDIUM, reward: new!)
+2025-08-09 18:05:32,696 - INFO -   - BIGEVENTNEXTWEEK (confidence: MEDIUM, reward: new!)
+2025-08-09 18:05:32,696 - INFO - ========================================
+2025-08-09 18:05:36,428 - INFO - === Scraping Summary for basketball_zero ===
+2025-08-09 18:05:36,429 - INFO - Active codes: 0
+2025-08-09 18:05:36,429 - INFO - Expired codes: 0
+2025-08-09 18:05:36,429 - INFO - Unknown codes: 3
+2025-08-09 18:05:36,429 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:36,429 - INFO - Quality score: 0.00
+2025-08-09 18:05:36,429 - WARNING - Recommendations:
+2025-08-09 18:05:36,429 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:36,430 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:36,430 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:36,430 - INFO - ==================================================
+2025-08-09 18:05:36,432 - INFO - Successfully updated ReversCodes/roblox-codes/basketball-zero.html with 0 validated codes
+2025-08-09 18:05:36,432 - INFO - Completed basketball_zero: 0 precise codes (quality: 0.00) from KhelNow Basketball Zero Codes
+2025-08-09 18:05:36,432 - INFO - Processing volleyball_legends with precise extraction...
+2025-08-09 18:05:36,432 - INFO - Scraping volleyball_legends codes from Pocket Tactics Volleyball Legends Codes
+2025-08-09 18:05:36,432 - INFO - Fetching https://www.pockettactics.com/haikyuu-legends-codes/ (attempt 1)
+2025-08-09 18:05:36,831 - INFO - Extracting codes from Pocket Tactics Volleyball Legends Codes using precise extractor
+2025-08-09 18:05:36,846 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:36,848 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:36,848 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:36,849 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:36,849 - INFO - unknown_codes: 4 codes found
+2025-08-09 18:05:36,849 - INFO -   - PROTORI_100K_CLUB (confidence: HIGH, reward: new!)
+2025-08-09 18:05:36,849 - INFO -   - UPDATE_30 (confidence: HIGH, reward: new!)
+2025-08-09 18:05:36,849 - INFO -   - TSH_RETURNS (confidence: HIGH, reward: new!)
+2025-08-09 18:05:36,849 - INFO -   - FREE_SLOT_HERE (confidence: HIGH, reward: new!)
+2025-08-09 18:05:36,849 - INFO - ========================================
+2025-08-09 18:05:39,456 - INFO - Scraping volleyball_legends codes from Pro Game Guides Volleyball Legends Codes
+2025-08-09 18:05:39,457 - INFO - Fetching https://progameguides.com/roblox/haikyuu-legends-codes/ (attempt 1)
+2025-08-09 18:05:39,575 - INFO - Extracting codes from Pro Game Guides Volleyball Legends Codes using precise extractor
+2025-08-09 18:05:39,631 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:39,636 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:39,636 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:39,637 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:39,637 - INFO - unknown_codes: 20 codes found
+2025-08-09 18:05:39,637 - INFO -   - VOTE_BLOXY (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:05:39,637 - INFO -   - UPDATE_31_W (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:05:39,637 - INFO -   - EXTRA_TOUCH (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:05:39,637 - INFO -   - BLAME_DONDRED (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:05:39,637 - INFO -   - PROTORI_100K_CLUB (confidence: HIGH, reward: Free Rewards)
+2025-08-09 18:05:39,637 - INFO - ========================================
+2025-08-09 18:05:43,189 - INFO - === Scraping Summary for volleyball_legends ===
+2025-08-09 18:05:43,189 - INFO - Active codes: 0
+2025-08-09 18:05:43,189 - INFO - Expired codes: 0
+2025-08-09 18:05:43,190 - INFO - Unknown codes: 24
+2025-08-09 18:05:43,190 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:43,190 - INFO - Quality score: 0.00
+2025-08-09 18:05:43,190 - WARNING - Recommendations:
+2025-08-09 18:05:43,190 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:43,190 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:43,190 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:43,190 - INFO - ==================================================
+2025-08-09 18:05:43,192 - INFO - Successfully updated ReversCodes/roblox-codes/volleyball-legends.html with 0 validated codes
+2025-08-09 18:05:43,192 - INFO - Completed volleyball_legends: 0 precise codes (quality: 0.00) from Pocket Tactics Volleyball Legends Codes
+2025-08-09 18:05:43,192 - INFO - Processing arise_crossover with precise extraction...
+2025-08-09 18:05:43,193 - INFO - Scraping arise_crossover codes from Pocket Tactics Arise Crossover Codes
+2025-08-09 18:05:43,193 - INFO - Fetching https://www.pockettactics.com/arise-crossover-codes (attempt 1)
+2025-08-09 18:05:43,227 - INFO - Extracting codes from Pocket Tactics Arise Crossover Codes using precise extractor
+2025-08-09 18:05:43,238 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:43,240 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:43,240 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:43,240 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:43,241 - INFO - unknown_codes: 10 codes found
+2025-08-09 18:05:43,241 - INFO -   - BEASTPASS (confidence: MEDIUM, reward: new!)
+2025-08-09 18:05:43,241 - INFO -   - KAIJU (confidence: MEDIUM, reward: new!)
+2025-08-09 18:05:43,241 - INFO -   - EXPEDITIONS (confidence: MEDIUM, reward: dust and legendary bundle)
+2025-08-09 18:05:43,241 - INFO -   - TALENTS (confidence: MEDIUM, reward: dust and legendary bundle)
+2025-08-09 18:05:43,241 - INFO -   - SUMMERMINI (confidence: MEDIUM, reward: potion bundle and 49 tickets)
+2025-08-09 18:05:43,241 - INFO - ========================================
+2025-08-09 18:05:46,804 - INFO - Scraping arise_crossover codes from Beebom Arise Crossover Codes
+2025-08-09 18:05:46,805 - INFO - Fetching https://beebom.com/arise-crossover-codes/ (attempt 1)
+2025-08-09 18:05:47,390 - INFO - Extracting codes from Beebom Arise Crossover Codes using precise extractor
+2025-08-09 18:05:47,418 - WARNING - No section anchors found, using fallback extraction
+2025-08-09 18:05:47,421 - INFO - === Code Extraction Results ===
+2025-08-09 18:05:47,421 - INFO - active_codes: 0 codes found
+2025-08-09 18:05:47,421 - INFO - expired_codes: 0 codes found
+2025-08-09 18:05:47,421 - INFO - unknown_codes: 7 codes found
+2025-08-09 18:05:47,421 - INFO -   - BEASTPASS (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:05:47,421 - INFO -   - KAIJU (confidence: MEDIUM, reward: NEW)
+2025-08-09 18:05:47,421 - INFO -   - TALENTS (confidence: MEDIUM, reward: Tickets, Dust, and more Free rewards)
+2025-08-09 18:05:47,422 - INFO -   - EXPEDITIONS (confidence: MEDIUM, reward: Tickets, Dust, and more Free rewards)
+2025-08-09 18:05:47,422 - INFO -   - SUMMERMINI (confidence: MEDIUM, reward: Tickets, Dust, and more Free rewards)
+2025-08-09 18:05:47,422 - INFO - ========================================
+2025-08-09 18:05:49,701 - INFO - === Scraping Summary for arise_crossover ===
+2025-08-09 18:05:49,701 - INFO - Active codes: 0
+2025-08-09 18:05:49,701 - INFO - Expired codes: 0
+2025-08-09 18:05:49,702 - INFO - Unknown codes: 17
+2025-08-09 18:05:49,702 - INFO - Confidence distribution: {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+2025-08-09 18:05:49,702 - INFO - Quality score: 0.00
+2025-08-09 18:05:49,702 - WARNING - Recommendations:
+2025-08-09 18:05:49,702 - WARNING -   - Low quality extraction - consider manual review
+2025-08-09 18:05:49,702 - WARNING -   - No high-confidence codes found - check source quality
+2025-08-09 18:05:49,702 - WARNING -   - Very few codes found - may need additional sources
+2025-08-09 18:05:49,702 - INFO - ==================================================
+2025-08-09 18:05:49,704 - INFO - Successfully updated ReversCodes/roblox-codes/arise-crossover.html with 0 validated codes
+2025-08-09 18:05:49,704 - INFO - Completed arise_crossover: 0 precise codes (quality: 0.00) from Pocket Tactics Arise Crossover Codes
+2025-08-09 18:05:49,706 - INFO - Precise game pages update completed successfully!
+2025-08-09 18:05:49,707 - INFO - Processed 29 games, 29 successful updates
+2025-08-09 18:05:49,707 - INFO - Total codes: 0, Active found: 0, Filtered: 0
+2025-08-09 18:05:49,707 - INFO - Average quality score: 0.00, High confidence: 0, Medium confidence: 0

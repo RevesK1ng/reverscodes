@@ -92,6 +92,22 @@ let adminAccessAttempts = 0;
 let adminPassword = '';
 let adminNumber = '';
 
+// Load the shared adblock checker on every page (handles weekly 3-deferral modal)
+(function loadSharedAdblockChecker() {
+    try {
+        const isGameCodePage = /\/roblox-codes\//.test(window.location.pathname);
+        const src = isGameCodePage ? '../adblock-check.js' : 'adblock-check.js';
+        if (!document.querySelector(`script[src$="adblock-check.js"]`)) {
+            const s = document.createElement('script');
+            s.src = src;
+            s.defer = true;
+            document.head.appendChild(s);
+        }
+    } catch (_) {
+        // no-op
+    }
+})();
+
 // AdBlocker Detection Variables
 let adBlockerStrikes = parseInt(localStorage.getItem('adBlockerStrikes')) || 3;
 let adBlockerDetected = false;
@@ -435,6 +451,73 @@ function detectAdBlockerMutationObserver() {
     }, 5000);
 }
 
+// Method 7: Network fetch-based detection (covers advanced blockers, incl. Malwarebytes)
+function detectAdBlockerFetch() {
+    const adEndpoints = [
+        'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'https://securepubads.g.doubleclick.net/tag/js/gpt.js',
+        'https://googleads.g.doubleclick.net/pagead/id',
+        'https://static.doubleclick.net/instream/ad_status.js',
+        'https://adservice.google.com/adsid/integrator.js?domain=reverscodes.com',
+        'https://adservice.google.com/adsid/google/ui' // additional path often blocked
+    ];
+
+    let failedCount = 0;
+    const total = adEndpoints.length;
+
+    function withTimeout(promise, ms) {
+        return Promise.race([
+            promise,
+            new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms))
+        ]);
+    }
+
+    adEndpoints.forEach((url) => {
+        // no-cors so we can detect hard blocking; many blockers cause fetch to reject
+        withTimeout(fetch(url, { mode: 'no-cors', cache: 'no-store' }), 3000)
+            .then(() => {
+                // In no-cors, success does not guarantee visibility, but indicates not hard-blocked
+            })
+            .catch(() => {
+                failedCount++;
+                if (failedCount >= Math.ceil(total * 0.6)) {
+                    adBlockerDetected = true;
+                    handleAdBlockerDetected();
+                }
+            });
+    });
+}
+
+// Method 8: Image beacon detection against ad domains (robust across blockers)
+function detectAdBlockerImage() {
+    const imgUrls = [
+        'https://pagead2.googlesyndication.com/pagead/images/transparent.png',
+        'https://googleads.g.doubleclick.net/pagead/blank.gif',
+        'https://tpc.googlesyndication.com/simgad/12345', // generic simgad path
+    ];
+
+    let errorCount = 0;
+    const total = imgUrls.length;
+
+    imgUrls.forEach((src) => {
+        const img = new Image();
+        img.referrerPolicy = 'no-referrer';
+        img.onload = function() {
+            // loaded -> likely not blocked for this endpoint
+        };
+        img.onerror = function() {
+            errorCount++;
+            if (errorCount >= Math.ceil(total * 0.6)) {
+                adBlockerDetected = true;
+                handleAdBlockerDetected();
+            }
+        };
+        img.src = src + (src.includes('?') ? '&' : '?') + 'rc_bait=' + Date.now();
+        // Cleanup
+        setTimeout(() => { img.onload = img.onerror = null; }, 4000);
+    });
+}
+
 // Main detection function that combines all methods
 function detectAdBlocker() {
     console.log('detectAdBlocker called, attempts:', adBlockerDetectionAttempts);
@@ -448,11 +531,13 @@ function detectAdBlocker() {
     
     // Run all detection methods with staggered timing
     setTimeout(() => detectAdBlockerDOM(), 0);
-    setTimeout(() => detectAdBlockerNetwork(), 500);
-    setTimeout(() => detectAdBlockerBehavior(), 1000);
-    setTimeout(() => detectAdBlockerCSS(), 1500);
-    setTimeout(() => detectAdBlockerMalwarebytes(), 2000);
-    setTimeout(() => detectAdBlockerMutationObserver(), 2500);
+    setTimeout(() => detectAdBlockerNetwork(), 350);
+    setTimeout(() => detectAdBlockerFetch(), 700);
+    setTimeout(() => detectAdBlockerBehavior(), 1050);
+    setTimeout(() => detectAdBlockerCSS(), 1400);
+    setTimeout(() => detectAdBlockerImage(), 1750);
+    setTimeout(() => detectAdBlockerMalwarebytes(), 2100);
+    setTimeout(() => detectAdBlockerMutationObserver(), 2450);
     
     // Fallback detection after all methods complete
     setTimeout(() => {
@@ -575,44 +660,46 @@ function disableAdBlocker() {
 
 // Function to check if ad blocker is still active after user attempts to disable it
 function checkAdBlockerStatus() {
-    // Re-run ad blocker detection
-    const isAdBlockerActive = detectAdBlocker();
-    
-    if (!isAdBlockerActive) {
-        // Ad blocker successfully disabled
-        hideAdBlockerModal();
-        showNotification('Great! Ad blocker has been successfully disabled. Thank you for supporting ReversCodes Hub!', 'success');
-        // Refresh the page to reload with ads enabled
-        location.reload();
-    } else {
-        // Ad blocker still active
-        const modal = document.getElementById('adBlockerModal');
-        const modalBody = modal.querySelector('.modal-body');
-        
-        modalBody.innerHTML = `
-            <p>We still detect an ad blocker. Please make sure you've completely disabled it and try again.</p>
+    // Reset detection state and re-run comprehensive detection
+    adBlockerDetected = false;
+    adBlockerDetectionAttempts = 0;
+    detectAdBlocker();
+
+    // Wait for detection methods (max ~6s); then decide based on flag
+    setTimeout(() => {
+        if (!adBlockerDetected) {
+            hideAdBlockerModal();
+            showNotification('Great! Ad blocker has been successfully disabled. Thank you for supporting ReversCodes Hub!', 'success');
+            location.reload();
+        } else {
+            const modal = document.getElementById('adBlockerModal');
+            const modalBody = modal.querySelector('.modal-body');
             
-            <div class="highlight">
-                <strong>Common ad blocker locations:</strong><br>
-                • Browser toolbar (look for shield or ad blocker icons)<br>
-                • Browser extensions menu<br>
-                • Browser settings > Privacy & Security<br>
-                • Make sure to refresh the page after disabling
-            </div>
+            modalBody.innerHTML = `
+                <p>We still detect an ad blocker. Please make sure you've completely disabled it and try again.</p>
+                
+                <div class="highlight">
+                    <strong>Common ad blocker locations:</strong><br>
+                    • Browser toolbar (look for shield or ad blocker icons)<br>
+                    • Browser extensions menu<br>
+                    • Browser settings > Privacy & Security<br>
+                    • Make sure to refresh the page after disabling
+                </div>
+                
+                <p>If you're still having trouble, you can continue with limited access or contact us for help.</p>
+            `;
             
-            <p>If you're still having trouble, you can continue with limited access or contact us for help.</p>
-        `;
-        
-        const modalFooter = modal.querySelector('.modal-footer');
-        modalFooter.innerHTML = `
-            <button class="btn btn-primary" onclick="checkAdBlockerStatus()">
-                🔄 Try Again
-            </button>
-            <button class="btn btn-secondary" onclick="continueWithAdBlocker()">
-                Continue with Limited Access
-            </button>
-        `;
-    }
+            const modalFooter = modal.querySelector('.modal-footer');
+            modalFooter.innerHTML = `
+                <button class="btn btn-primary" onclick="checkAdBlockerStatus()">
+                    🔄 Try Again
+                </button>
+                <button class="btn btn-secondary" onclick="continueWithAdBlocker()">
+                    Continue with Limited Access
+                </button>
+            `;
+        }
+    }, 6500);
 }
 
 // Function called when user clicks "Maybe Later"
@@ -1268,7 +1355,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Main initialization function
 function initializeApp() {
-    console.log('initializeApp called');
+    console.log('initializeApp called on page:', window.location.pathname);
+    // Legacy adblock modal disabled (handled by shared adblock-check.js)
     // Set initial theme
     setTheme(currentTheme);
     
@@ -1296,31 +1384,13 @@ function initializeApp() {
         }, 3000);
     }
     
-    // Detect AdBlocker with multiple attempts and longer delays
-    console.log('Scheduling first ad blocker detection...');
-    setTimeout(() => {
-        console.log('First ad blocker detection starting...');
-        detectAdBlocker();
-    }, 1000);
-    
-    // Second detection attempt after page is fully loaded
-    setTimeout(() => {
-        console.log('Second ad blocker detection check...');
-        if (!adBlockerDetected) {
-            detectAdBlocker();
-        }
-    }, 5000);
-    
-    // Final detection attempt
-    setTimeout(() => {
-        console.log('Final ad blocker detection check...');
-        if (!adBlockerDetected) {
-            detectAdBlocker();
-        }
-    }, 10000);
+    // Adblock detection is now centralized in adblock-check.js
     
 
 }
+
+// Ensure AdBlocker modal exists (auto-inject on pages that don't include it in HTML)
+// Legacy ensureAdBlockerModalExists removed (handled by adblock-check.js)
 
 // Initialize all event listeners
 function initializeEventListeners() {

@@ -540,9 +540,24 @@
         
         <ul id="activeCodesList" class="codes-list">
           <li class="code-item">
+            <span class="code">EXPEDITIONS</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('EXPEDITIONS')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">3SHUTDOWNS</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('3SHUTDOWNS')">Copy</button>
+          </li>
+          <li class="code-item">
             <span class="code">SORRY4SHUT</span>
             <span class="reward">Free Rewards</span>
             <button class="copy-btn" onclick="copyCode('SORRY4SHUT')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">LOADOUTSFIX</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('LOADOUTSFIX')">Copy</button>
           </li>
           <li class="code-item">
             <span class="code">LOADOUTS2</span>
@@ -550,9 +565,64 @@
             <button class="copy-btn" onclick="copyCode('LOADOUTS2')">Copy</button>
           </li>
           <li class="code-item">
-            <span class="code">1MLIKES</span>
+            <span class="code">LOADOUTS</span>
             <span class="reward">Free Rewards</span>
-            <button class="copy-btn" onclick="copyCode('1MLIKES')">Copy</button>
+            <button class="copy-btn" onclick="copyCode('LOADOUTS')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">UPGRADES</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('UPGRADES')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">WINTERRAID</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('WINTERRAID')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">DRAGONBLUE</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('DRAGONBLUE')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">CCTESTER</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('CCTESTER')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">BEASTPASS</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('BEASTPASS')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">SUMMERMINI</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('SUMMERMINI')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">SHADOWSTATS</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('SHADOWSTATS')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">NEWENCHANT</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('NEWENCHANT')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">ENCHTICKET</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('ENCHTICKET')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">TESTERQA</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('TESTERQA')">Copy</button>
+          </li>
+          <li class="code-item">
+            <span class="code">TESTERCC</span>
+            <span class="reward">Free Rewards</span>
+            <button class="copy-btn" onclick="copyCode('TESTERCC')">Copy</button>
           </li>
         </ul>
       </section>
@@ -563,21 +633,6 @@
         <p>Expired as of: <span id="expiredDate">August 09, 2025</span></p>
         
         <ul id="expiredCodesList" class="codes-list">
-          <li class="code-item expired">
-            <span class="code">SORRY4SHUT</span>
-            <span class="reward">Expired</span>
-            <button class="copy-btn" disabled>Expired</button>
-          </li>
-          <li class="code-item expired">
-            <span class="code">LOADOUTS2</span>
-            <span class="reward">Expired</span>
-            <button class="copy-btn" disabled>Expired</button>
-          </li>
-          <li class="code-item expired">
-            <span class="code">1MLIKES</span>
-            <span class="reward">Expired</span>
-            <button class="copy-btn" disabled>Expired</button>
-          </li>
         </ul>
       </section>
 
@@ -629,8 +684,9 @@
     </main>
   </div>
 
-  <!-- Scripts -->
-  <script src="../script.js"></script>
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <script defer src="../adblock-check.js"></script>
   <script>
     // Copy code function
     function copyCode(code) {

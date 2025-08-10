@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Blocker Test - ReversCodes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ad Blocker Detection Test</h1>
+        <p>This page tests if the ad blocker detection and modal injection is working.</p>
+        <p>If you have an ad blocker enabled, you should see the modal appear.</p>
+        <p>Check the browser console for debugging information.</p>
+        
+        <div id="status">
+            <h2>Status:</h2>
+            <p>Modal Element: <span id="modalStatus">Checking...</span></p>
+            <p>Script Loaded: <span id="scriptStatus">Checking...</span></p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Test script to verify everything is working
+        setTimeout(() => {
+            const modal = document.getElementById('adBlockerModal');
+            const modalStatus = document.getElementById('modalStatus');
+            const scriptStatus = document.getElementById('scriptStatus');
+            
+            if (modal) {
+                modalStatus.textContent = '✅ Found';
+                modalStatus.style.color = 'green';
+            } else {
+                modalStatus.textContent = '❌ Not Found';
+                modalStatus.style.color = 'red';
+            }
+            
+            if (typeof detectAdBlocker === 'function') {
+                scriptStatus.textContent = '✅ Loaded';
+                scriptStatus.style.color = 'green';
+            } else {
+                scriptStatus.textContent = '❌ Not Loaded';
+                scriptStatus.style.color = 'red';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
