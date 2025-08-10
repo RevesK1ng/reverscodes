@@ -1211,6 +1211,12 @@ const mainGalleryGames = [
     desc: 'Crossover game featuring characters from various anime and gaming universes',
   },
   {
+    id: 'typesoul-page',
+    name: 'Type Soul',
+    img: 'images/typesoul.png',
+    desc: 'Bleach-inspired action RPG with Soul Reaper, Quincy, and Hollow paths',
+  },
+  {
     id: 'combatwarriors-page',
     name: 'Combat Warriors',
     img: 'images/combatwarriors.png',
@@ -2394,6 +2400,37 @@ document.addEventListener('DOMContentLoaded', function() {
             copyCodesToClipboard(codes, 'Arise Crossover codes copied to clipboard!');
         });
     }
+
+    // Type Soul Copy All
+    const copyAllTypeSoul = document.getElementById('copyAllTypeSoul');
+    if (copyAllTypeSoul) {
+        copyAllTypeSoul.addEventListener('click', function() {
+            const codes = [
+                'wowshutdowncodeyeah',
+                'superduperfunsecretcode',
+                'yesterdayshutdown',
+                'codeforshutdownisuppose',
+                'thanksfor900k',
+                'setrona1vertagzeu0',
+                'excaliburfool',
+                'higuyscode',
+                'thisiswhywetestthosewhoknow',
+                'goplayranked',
+                'somebugsfixes',
+                '800kcodeyeah',
+                'raidsfixed',
+                'thanksforpatience',
+                'compensationforinconvenientrelease',
+                'sorryforthebankbugs',
+                'mythoughtsonthislater',
+                'rerererelease',
+                '3daysthosewhoknow',
+                'privateservercompensation',
+                'promiseddecembercode'
+            ];
+            copyCodesToClipboard(codes, 'Type Soul codes copied to clipboard!');
+        });
+    }
 });
 
 // Function to copy multiple codes to clipboard
@@ -2483,7 +2520,7 @@ window.addEventListener('popstate', function(event) {
 // Initialize page based on URL hash
 document.addEventListener('DOMContentLoaded', function() {
     const hash = window.location.hash;
-    if (hash && (hash === '#astdx-page' || hash === '#goalbound-page' || hash === '#rivals-page' || hash === '#arisecrossover-page')) {
+    if (hash && (hash === '#astdx-page' || hash === '#goalbound-page' || hash === '#rivals-page' || hash === '#arisecrossover-page' || hash === '#typesoul-page')) {
         showGamePage(hash.substring(1));
     }
 });
