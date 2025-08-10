@@ -81,7 +81,13 @@
     modal.setAttribute('aria-modal', 'true');
     modal.style.cssText = [
       'position:fixed','inset:0','z-index:10000','display:none','align-items:center','justify-content:center',
-      'background:radial-gradient(1200px 600px at 50% -10%, rgba(99,102,241,0.25), transparent), rgba(0,0,0,0.65)',
+      // Mesh gradient overlay: orange, green, purple + subtle dark veil
+      'background:' + [
+        'radial-gradient(800px 600px at 10% 10%, rgba(245,158,11,0.25), transparent)',  // orange
+        'radial-gradient(900px 700px at 90% 20%, rgba(34,197,94,0.22), transparent)',   // green
+        'radial-gradient(1000px 800px at 50% 110%, rgba(139,92,246,0.22), transparent)',// purple
+        'rgba(0,0,0,0.65)'
+      ].join(','),
       'backdrop-filter:blur(6px)'
     ].join(';');
 
@@ -93,7 +99,7 @@
     ].join(';');
 
     const header = document.createElement('div');
-    header.style.cssText = 'padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.08);background:linear-gradient(135deg,rgba(139,92,246,0.25),rgba(99,102,241,0.25))';
+    header.style.cssText = 'padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.08);background:linear-gradient(135deg,rgba(245,158,11,0.28),rgba(34,197,94,0.28),rgba(139,92,246,0.28))';
     header.innerHTML = '<div style="display:flex;align-items:center;gap:10px"><span style="font-size:18px">🛡️</span><strong style="font-size:16px;letter-spacing:.2px">Ad blocker detected</strong></div>';
 
     const body = document.createElement('div');
@@ -105,7 +111,7 @@
       '<li>They fund daily code updates</li>',
       '<li>They support faster site improvements</li>',
       '</ul>',
-      `<div id="rc-adblock-status" style="margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.25);color:#c7d2fe">You have <strong id="rc-deferrals-left">${getRemainingDeferrals()}</strong> of ${MAX_DEFERRALS} "Maybe Later" uses left this week.</div>`
+      `<div id="rc-adblock-status" style="margin-top:10px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg, rgba(245,158,11,0.12), rgba(34,197,94,0.12), rgba(139,92,246,0.12));border:1px solid rgba(139,92,246,0.25);color:#e9d5ff">You have <strong id="rc-deferrals-left">${getRemainingDeferrals()}</strong> of ${MAX_DEFERRALS} "Maybe Later" uses left this week.</div>`
     ].join('');
 
     const footer = document.createElement('div');
@@ -147,7 +153,8 @@
     const maybeBtn = document.createElement('button');
     maybeBtn.type = 'button';
     maybeBtn.textContent = 'Maybe Later';
-    maybeBtn.style.cssText = 'background:rgba(37,99,235,0.08);color:#93c5fd;border:1px solid #2563eb;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer';
+    // Purple-accent secondary button for mesh theme
+    maybeBtn.style.cssText = 'background:rgba(139,92,246,0.12);color:#e9d5ff;border:1px solid #8b5cf6;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer';
     maybeBtn.onclick = () => { recordDeferral(); hideModal(); };
 
     footer.appendChild(disableBtn);
