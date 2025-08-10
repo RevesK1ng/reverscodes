@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Main Sitemap -->
+    <sitemap>
+        <loc>https://reverscodes.com/sitemap.xml</loc>
+        <lastmod>2025-08-07</lastmod>
+    </sitemap>
+    
+    <!-- Game Codes Sitemap -->
+    <sitemap>
+        <loc>https://reverscodes.com/roblox-codes/</loc>
+        <lastmod>2025-08-07</lastmod>
+    </sitemap>
+    
+    <!-- Guides Sitemap -->
+    <sitemap>
+        <loc>https://reverscodes.com/guides.html</loc>
+        <lastmod>2025-08-07</lastmod>
+    </sitemap>
+    
+    <!-- Trending Sitemap -->
+    <sitemap>
+        <loc>https://reverscodes.com/trending.html</loc>
+        <lastmod>2025-08-07</lastmod>
+    </sitemap>
+    
+</sitemapindex>
