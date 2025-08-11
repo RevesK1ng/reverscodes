@@ -1337,6 +1337,11 @@ if (document.getElementById('mainGamesGallery')) {
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
+    // Remove any bulk copy buttons across all pages
+    const bulkButtons = document.querySelectorAll('.copy-all-btn');
+    if (bulkButtons && bulkButtons.length) {
+        bulkButtons.forEach(btn => btn.remove());
+    }
     console.log('ReversCodes Hub: Initializing...');
     
     // Preload critical resources
@@ -2268,192 +2273,38 @@ function copyCode(code) {
     });
 }
 
-// Copy all codes functionality
+// Remove bulk "Copy All" functionality per site policy
 document.addEventListener('DOMContentLoaded', function() {
     // ASTDX Copy All
     const copyAllASTDX = document.getElementById('copyAllASTDX');
-    if (copyAllASTDX) {
-        copyAllASTDX.addEventListener('click', function() {
-            const codes = [
-                'THREEHUNDREDTHOUSANDPLAYERS',
-                'THANKYOUFORSUPPORT',
-                'UPD1',
-                'LIKEF5',
-                'VERYHIGHLIKEB',
-                'ONEEIGHTYFIVELIKES',
-                'FORTYFIVELIKES',
-                'somanylikes',
-                'AFIRSTTIME3001',
-                'FREENIMBUSMOUNT'
-            ];
-            copyCodesToClipboard(codes, 'ASTDX codes copied to clipboard!');
-        });
-    }
+    if (copyAllASTDX) copyAllASTDX.remove();
 
     // Goalbound Copy All
     const copyAllGoalbound = document.getElementById('copyAllGoalbound');
-    if (copyAllGoalbound) {
-        copyAllGoalbound.addEventListener('click', function() {
-            const codes = [
-                'ITOSHI',
-                'EGOSOONIPROMISE',
-                'SRY4EGO',
-                'IMETGEN',
-                '300KLIKES',
-                '200KLIKES',
-                'UPDATE1SOON',
-                'SRYFORBUGS',
-                'RELEASE',
-                'DELAYBOUND'
-            ];
-            copyCodesToClipboard(codes, 'Goalbound codes copied to clipboard!');
-        });
-    }
+    if (copyAllGoalbound) copyAllGoalbound.remove();
 
     // Rivals Copy All
     const copyAllRivals = document.getElementById('copyAllRivals');
-    if (copyAllRivals) {
-        copyAllRivals.addEventListener('click', function() {
-            const codes = [
-                'COMMUNITY15',
-                'COMMUNITY14',
-                'COMMUNITY13',
-                'COMMUNITY12',
-                'COMMUNITY11',
-                'COMMUNITY10',
-                'COMMUNITY9',
-                'COMMUNITY8',
-                '5B_VISITS_WHATTTTTT',
-                'REWARD53',
-                'REWARD52',
-                'REWARD49',
-                'REWARD47',
-                'REWARD46',
-                'roblox_rtc',
-                'THANKYOU_1BVISITS!',
-                'BONUS'
-            ];
-            copyCodesToClipboard(codes, 'Rivals codes copied to clipboard!');
-        });
-    }
+    if (copyAllRivals) copyAllRivals.remove();
 
     // Volleyball Legends Copy All
     const copyAllVolleyballLegends = document.getElementById('copyAllVolleyballLegends');
-    if (copyAllVolleyballLegends) {
-        copyAllVolleyballLegends.addEventListener('click', function() {
-            const codes = [
-                'PROTORI_100K_CLUB',
-                'UPDATE_30',
-                'TSH_RETURNS',
-                'FREE_SLOT_HERE'
-            ];
-            copyCodesToClipboard(codes, 'Volleyball Legends codes copied to clipboard!');
-        });
-    }
+    if (copyAllVolleyballLegends) copyAllVolleyballLegends.remove();
 
     // Basketball Zero Copy All
     const copyAllBasketballZero = document.getElementById('copyAllBasketballZero');
-    if (copyAllBasketballZero) {
-        copyAllBasketballZero.addEventListener('click', function() {
-            const codes = [
-                'CYBER250K',
-                'SEASON2TODAY',
-                'SEASON2COSMETICS',
-                'SORRY4RESTARTAGAIN',
-                'DOBETTERPLS',
-                'SABOTAGEISSHAMEFUL',
-                'UNCLESAM',
-                'VERYSRRYDELAY',
-                'OIL',
-                'GOODWEEKEND',
-                'CHROLLODROPHOORAY',
-                'LEWISAYSSORRY',
-                'ZEROSUMMER',
-                'RELEASE',
-                'CONSOLESUCKS',
-                'ONEMORECODE',
-                'SWITCHERSTYLE',
-                'NEWCHAPTER'
-            ];
-            copyCodesToClipboard(codes, 'Basketball Zero codes copied to clipboard!');
-        });
-    }
+    if (copyAllBasketballZero) copyAllBasketballZero.remove();
 
     // Arise Crossover Copy All
     const copyAllAriseCrossover = document.getElementById('copyAllAriseCrossover');
-    if (copyAllAriseCrossover) {
-        copyAllAriseCrossover.addEventListener('click', function() {
-            const codes = [
-                'BEASTPASS',
-                '1.2MLIKES',
-                'KAIJU',
-                'TalentReset',
-                'FryBalance',
-                'EXPEDITIONS',
-                'TALENTS',
-                'SUMMERMINI',
-                'SUMMER2',
-                'SUMMER',
-                'Begeta+n',
-                '1.1MLIKES'
-            ];
-            copyCodesToClipboard(codes, 'Arise Crossover codes copied to clipboard!');
-        });
-    }
+    if (copyAllAriseCrossover) copyAllAriseCrossover.remove();
 
     // Type Soul Copy All
     const copyAllTypeSoul = document.getElementById('copyAllTypeSoul');
-    if (copyAllTypeSoul) {
-        copyAllTypeSoul.addEventListener('click', function() {
-            const codes = [
-                'wowshutdowncodeyeah',
-                'superduperfunsecretcode',
-                'yesterdayshutdown',
-                'codeforshutdownisuppose',
-                'thanksfor900k',
-                'setrona1vertagzeu0',
-                'excaliburfool',
-                'higuyscode',
-                'thisiswhywetestthosewhoknow',
-                'goplayranked',
-                'somebugsfixes',
-                '800kcodeyeah',
-                'raidsfixed',
-                'thanksforpatience',
-                'compensationforinconvenientrelease',
-                'sorryforthebankbugs',
-                'mythoughtsonthislater',
-                'rerererelease',
-                '3daysthosewhoknow',
-                'privateservercompensation',
-                'promiseddecembercode'
-            ];
-            copyCodesToClipboard(codes, 'Type Soul codes copied to clipboard!');
-        });
-    }
+    if (copyAllTypeSoul) copyAllTypeSoul.remove();
 });
 
-// Function to copy multiple codes to clipboard
-function copyCodesToClipboard(codes, message) {
-    const codesText = codes.join('\n');
-    navigator.clipboard.writeText(codesText).then(function() {
-        showNotification(message, 'success');
-        
-        // Update button text temporarily
-        const button = event.target;
-        const originalText = button.textContent;
-        button.textContent = 'Copied!';
-        button.style.background = 'var(--success-color)';
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.style.background = '';
-        }, 2000);
-    }).catch(function(err) {
-        console.error('Failed to copy codes: ', err);
-        showNotification('Failed to copy codes. Please try again.', 'error');
-    });
-}
+// Removed bulk copy helper per policy
 
 // Game Page Navigation Functions
 function showGamePage(pageId) {
