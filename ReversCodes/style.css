@@ -193,7 +193,7 @@ body::after {
 }
 
 .logo-text {
-    font-family: 'Orbitron', monospace;
+    font-family: 'SWANSONG', 'Orbitron', monospace;
     font-weight: 700;
     font-size: 1.5rem;
     color: white;
@@ -703,6 +703,7 @@ body::after {
 }
 
 .hero-title {
+    font-family: 'SWANSONG', 'Orbitron', monospace;
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--text-primary);
@@ -1665,7 +1666,7 @@ body::after {
 }
 
 .footer-logo-text {
-    font-family: 'Orbitron', monospace;
+    font-family: 'SWANSONG', 'Orbitron', monospace;
     font-weight: 700;
     font-size: 1.25rem;
     color: var(--primary-color);
