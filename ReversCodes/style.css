@@ -193,8 +193,8 @@ body::after {
 }
 
 .logo-text {
-    font-family: 'SWANSONG', 'Orbitron', monospace;
-    font-weight: 700;
+    font-family: 'Audiowide', cursive;
+    font-weight: 400;
     font-size: 1.5rem;
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -703,9 +703,9 @@ body::after {
 }
 
 .hero-title {
-    font-family: 'SWANSONG', 'Orbitron', monospace;
+    font-family: 'Righteous', cursive;
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--text-primary);
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -740,6 +740,135 @@ body::after {
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+/* Giveaway Countdown Timer Styles */
+.giveaway-countdown-box {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3);
+    }
+    100% {
+        box-shadow: 0 12px 40px rgba(245, 158, 11, 0.5);
+    }
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.countdown-status {
+    animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Responsive countdown timer */
+@media (max-width: 768px) {
+    .countdown-timer {
+        gap: 1rem;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+    
+    /* Hide sidebar on mobile devices */
+    .related-content-sidebar {
+        display: none;
+    }
+}
+
+/* Enter Giveaway Button Styles */
+.enter-giveaway-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.enter-giveaway-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.enter-giveaway-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+    .countdown-timer {
+        gap: 0.75rem;
+    }
+    
+    .countdown-item {
+        min-width: 50px;
+    }
+    
+    .countdown-number {
+        font-size: 1.75rem;
+    }
+    
+    .enter-giveaway-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+        margin-top: 1.25rem;
+    }
 }
 
 .hero-buttons {
@@ -1666,8 +1795,8 @@ body::after {
 }
 
 .footer-logo-text {
-    font-family: 'SWANSONG', 'Orbitron', monospace;
-    font-weight: 700;
+    font-family: 'Audiowide', cursive;
+    font-weight: 400;
     font-size: 1.25rem;
     color: var(--primary-color);
 }
@@ -2408,11 +2537,7 @@ body::after {
     }
     
     .related-content-sidebar {
-        position: static;
-        transform: none;
-        width: 100%;
-        margin: 2rem 0;
-        order: -1;
+        display: none;
     }
     
     .related-content-box,
@@ -5113,6 +5238,7 @@ body.dark-theme .nav-game-gallery-btn:hover, body.dark-theme .nav-game-gallery-b
 }
 
 .contact-hero .hero-title {
+    font-family: 'Righteous', cursive;
     font-size: 3rem;
     margin-bottom: 1rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);

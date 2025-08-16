@@ -84,6 +84,71 @@ function throttle(func, limit) {
     };
 }
 
+// Countdown Timer for 1000 Robux Giveaway
+function initializeCountdownTimer() {
+    // Set the target date: August 30, 2025 at 11:59 PM
+    const targetDate = new Date('August 30, 2025 23:59:59').getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Update DOM elements
+        const daysElement = document.getElementById('days');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+        const statusElement = document.getElementById('countdownStatus');
+        
+        if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
+        if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
+        if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
+        if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
+        
+        // Update status message based on time remaining
+        if (distance > 0) {
+            if (days > 7) {
+                statusElement.textContent = '⏰ Giveaway is live! Enter now!';
+            } else if (days > 1) {
+                statusElement.textContent = '🔥 Only a few days left!';
+            } else if (hours > 12) {
+                statusElement.textContent = '⚡ Less than a day remaining!';
+            } else if (hours > 1) {
+                statusElement.textContent = '🚨 Final hours! Enter now!';
+            } else if (minutes > 30) {
+                statusElement.textContent = '💥 Last hour! Hurry up!';
+            } else {
+                statusElement.textContent = '🔥 FINAL COUNTDOWN! Enter now!';
+            }
+        } else {
+            // Contest has ended
+            statusElement.textContent = '🏆 Giveaway has ended!';
+            if (daysElement) daysElement.textContent = '00';
+            if (hoursElement) hoursElement.textContent = '00';
+            if (minutesElement) minutesElement.textContent = '00';
+            if (secondsElement) secondsElement.textContent = '00';
+            return; // Stop the countdown
+        }
+    }
+    
+    // Update countdown every second
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    
+    // Initial update
+    updateCountdown();
+    
+    // Clean up interval when page unloads
+    window.addEventListener('beforeunload', () => {
+        clearInterval(countdownInterval);
+    });
+}
+
 // Global variables
 let currentTheme = localStorage.getItem('theme') || 'light';
 let comments = JSON.parse(localStorage.getItem('comments')) || [];
@@ -1083,6 +1148,14 @@ function scrollToSection(sectionId) {
   }
 }
 
+// Scroll to giveaway section
+function scrollToGiveaway() {
+  const giveawaySection = document.getElementById('giveaway');
+  if (giveawaySection) {
+    giveawaySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 // See More Games button event (if not using scrollToSection inline)
 const seeMoreGamesBtn = document.querySelector('.see-more-games-btn');
 if (seeMoreGamesBtn) {
@@ -1387,6 +1460,9 @@ function initializeApp() {
     
     // Initialize lazy loading
     initializeLazyLoading();
+    
+    // Initialize countdown timer for giveaway
+    initializeCountdownTimer();
     
     // Show welcome notification after loading screen is hidden (only if notification exists)
     if (notification) {
