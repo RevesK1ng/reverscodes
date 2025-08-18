@@ -1,0 +1,5 @@
+[33m9c6c8f9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Update website files and styling
+[33m0d92ea2[m Update sitemap.xml with August 14th dates and create public folder structure
+[33mbec5f75[m Update sitemap.xml with lastmod dates and revised URL structure
+[33me403684[m Fix sitemap.xml - regenerate clean XML structure without nested tags
+[33m7fc0676[m Update sitemap.xml with latest changes
