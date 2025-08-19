@@ -319,6 +319,24 @@ body::after {
     background: var(--primary-color);
 }
 
+/* Light theme support for mobile menu toggle */
+[data-theme="light"] .mobile-menu-toggle span {
+    background: var(--text-primary);
+}
+
+[data-theme="light"] .mobile-menu-toggle:hover span {
+    background: var(--primary-color);
+}
+
+/* Fallback styles for mobile menu toggle to ensure visibility */
+.mobile-menu-toggle span {
+    background: var(--text-primary) !important;
+}
+
+.mobile-menu-toggle:hover span {
+    background: var(--primary-color) !important;
+}
+
 .search-bar {
     position: absolute;
     top: 100%;
@@ -2330,12 +2348,16 @@ body::after {
         text-align: center;
         border-radius: var(--radius-sm);
         transition: var(--transition);
+        color: var(--text-primary);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
     }
     
     .nav-link:hover {
         background: var(--primary-color);
         color: var(--text-inverse);
         transform: translateY(-1px);
+        border-color: var(--primary-color);
     }
     
     /* Dark theme support for mobile nav */
@@ -2347,6 +2369,37 @@ body::after {
     [data-theme="dark"] .nav-link:hover {
         background: var(--primary-color);
         color: var(--text-inverse);
+    }
+    
+    /* Light theme support for mobile nav */
+    [data-theme="light"] .nav {
+        background: var(--bg-header);
+        border-color: var(--border-color);
+    }
+    
+    [data-theme="light"] .nav-link {
+        color: var(--text-primary);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+    }
+    
+    [data-theme="light"] .nav-link:hover {
+        background: var(--primary-color);
+        color: var(--text-inverse);
+        border-color: var(--primary-color);
+    }
+    
+    /* Fallback styles for mobile nav to ensure visibility */
+    .nav-link {
+        color: var(--text-primary) !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+    }
+    
+    .nav-link:hover {
+        background: var(--primary-color) !important;
+        color: var(--text-inverse) !important;
+        border-color: var(--primary-color) !important;
     }
     
     .mobile-menu-toggle {
@@ -2475,10 +2528,57 @@ body::after {
     
     .nav {
         display: none;
+        background: var(--bg-header);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius-md);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        box-shadow: var(--shadow-medium);
+        border: 1px solid var(--border-color);
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
     }
     
     .nav.active {
         display: flex;
+        animation: slideDown 0.3s ease-out;
+        z-index: 1000;
+        position: relative;
+    }
+    
+    .nav-link {
+        color: var(--text-primary);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 0.75rem;
+        border-radius: var(--radius-sm);
+        text-align: center;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+    
+    .nav-link:hover {
+        background: var(--primary-color);
+        color: var(--text-inverse);
+        border-color: var(--primary-color);
+        transform: translateY(-1px);
+    }
+    
+    /* Fallback styles for larger breakpoint mobile nav */
+    .nav-link {
+        color: var(--text-primary) !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+    }
+    
+    .nav-link:hover {
+        background: var(--primary-color) !important;
+        color: var(--text-inverse) !important;
+        border-color: var(--primary-color) !important;
     }
 }
 
